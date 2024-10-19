@@ -18,13 +18,15 @@ public class CameraMove : MonoBehaviour
         //入力でカメラ角度変更
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            Debug.Log("RightArrow");
             //moveCamera.
             //pos.x += 1;
         }
         //「←」入力の場合は変数「pos」のx軸における座標を毎フレーム毎に１だけ減少
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-           // pos.x -= 1;
+            Debug.Log("RightArrow");
+            // pos.x -= 1;
         }
     }
 }

@@ -19,7 +19,7 @@ public class ReticleAim : MonoBehaviour
     [SerializeField] private float DisCollisionAimSize;
 
     //‰ñ“]‘¬“x
-    private float RotSpeed = 0.05f;
+    private float RotSpeed = 0.1f;
 
 
     void Start()
