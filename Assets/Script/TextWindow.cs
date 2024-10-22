@@ -8,6 +8,9 @@ public class TextWindow : MonoBehaviour
 {
     //テキストウィンドウ
 
+    //ゲームマネージャー
+    [SerializeField] private GameManager gameManager;
+
     [SerializeField] private TextMeshProUGUI text;
 
     [SerializeField] private DialogueText dialogueText;
@@ -22,11 +25,17 @@ public class TextWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)/*Input.GetMouseButtonDown(0)*/)
+
+        //テキストを表示
+        if(gameManager.playerController == GameManager.PlayerController.TextWindowMode)
         {
-            // 会話文表示処理を実行する
-            displayDialogueText();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // 会話文表示処理を実行する
+                displayDialogueText();
+            }
         }
+        
     }
 
     /// <summary>
@@ -34,13 +43,13 @@ public class TextWindow : MonoBehaviour
     /// </summary>
     public void displayDialogueText()
     {
-        // パネルが非表示なら表示する
+        //パネルが非表示なら表示する
         if (!panelObject.activeSelf)
         {
             panelObject.SetActive(true);
         }
 
-        // scriptableObjectの情報をパネルに表示する
+        //scriptableObjectの情報をパネルに表示する
         speakerNameText.text = dialogueText.speakerName;
         if (dialogueText.paragraphs.Length > index)
         {
@@ -55,10 +64,15 @@ public class TextWindow : MonoBehaviour
         }
         else
         {
-            // 会話が終了したためパネルを非表示にする
+            //会話が終了したためパネルを非表示にする
             speakerNameText.text = "";
             speakerDialogueText.text = "";
             panelObject.SetActive(false);
+
+            //状態を初期化して照準モードにする
+            gameManager.playerController = GameManager.PlayerController.ReticleMode;
+
+            index = 0;
         }
     }
 
@@ -90,7 +104,7 @@ public class TextWindow : MonoBehaviour
     private void stopTyping()
     {
         StopCoroutine(dialogueCoroutine);
-        // 未表示の会話文を全文表示する
+        //未表示の会話文を全文表示する
         speakerDialogueText.text = dialogueText.paragraphs[index];
         isTyping = false;
         index++; //次の会話文インデックス

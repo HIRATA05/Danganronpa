@@ -8,6 +8,9 @@ public class ReticleAim : MonoBehaviour
 {
     //エイムの操作
 
+    //ゲームマネージャー
+    [SerializeField] private GameManager gameManager;
+
     //照準
     [SerializeField] private Image aimImage;
 
@@ -47,6 +50,14 @@ public class ReticleAim : MonoBehaviour
                 aimImage.sprite = OnCollisionAimImage;
                 //照準サイズ変更
                 transform.localScale = new Vector3(OnCollisionAimSize, OnCollisionAimSize, OnCollisionAimSize);
+
+                //この状態で調べるとテキスト表示
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    // 会話文表示処理を実行する
+                    gameManager.playerController = GameManager.PlayerController.TextWindowMode;
+                }
+
 
             }
             else
