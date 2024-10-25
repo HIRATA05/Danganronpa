@@ -22,6 +22,9 @@ public class TextWindow : MonoBehaviour
 
     private Coroutine dialogueCoroutine;
 
+    public string testtext;
+    public int xyz;
+
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +36,8 @@ public class TextWindow : MonoBehaviour
             {
                 // ‰ï˜b•¶•\¦ˆ—‚ğÀs‚·‚é
                 displayDialogueText();
+
+                Debug.Log(xyz + " : " + testtext);
             }
         }
         

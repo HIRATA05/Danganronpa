@@ -54,8 +54,16 @@ public class ReticleAim : MonoBehaviour
                 //この状態で調べるとテキスト表示
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    //インタフェースを確認する
+                    IReceiveSearch SearchObj = hit.transform.GetComponent<IReceiveSearch>();
+
+                    if (SearchObj != null)
+                    {
+                        SearchObj.ReceiveSearch();
+                    }
+
                     // 会話文表示処理を実行する
-                    gameManager.playerController = GameManager.PlayerController.TextWindowMode;
+                    //gameManager.playerController = GameManager.PlayerController.TextWindowMode;
                 }
 
 

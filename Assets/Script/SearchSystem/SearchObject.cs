@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SearchObject : MonoBehaviour , IReceiveSearch
+public class SearchObject : MonoBehaviour, IReceiveSearch
 {
+    //
     //調べた時のテキスト情報をテキスト管理スクリプトに渡す
 
-    public void ReceiveSearch(float damage)
+    public void ReceiveSearch()
     {
-        Debug.Log("Enemy は " + damage + "ダメージ食らった");
+        Debug.Log("Enemy はダメージ食らった");
         //渡す
 
     }
