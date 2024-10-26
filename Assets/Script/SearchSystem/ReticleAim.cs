@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using static GameManager;
 using TMPro;
-//using UnityEngine.UIElements;
 
 public class ReticleAim : MonoBehaviour
 {
@@ -31,15 +30,10 @@ public class ReticleAim : MonoBehaviour
     private float RotSpeed = 0.1f;
 
 
-    float viewX; // ビューポート座標のxの値
-    float viewY; // ビューポート座標のyの値
-
-
 
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Confined;	//カーソルを画面内に閉じ込める
-        //Cursor.visible = false;		//カーソルを非表示にする
+        
     }
 
     void Update()
@@ -54,20 +48,8 @@ public class ReticleAim : MonoBehaviour
     private void ReticleMove()
     {
         //マウスの位置と照準器の位置を同期させる。
-        //transform.position = Input.mousePosition;
+        transform.position = Input.mousePosition;
 
-        
-        //移動後のビューポート座標の値を取得
-        viewX = Camera.main.WorldToViewportPoint(Input.mousePosition).x;
-        viewY = Camera.main.WorldToViewportPoint(Input.mousePosition).y;
-        // もし移動後のビューポート座標が０から１の範囲ならば
-        if (0 <= viewX && viewX <= Screen.width && 0 <= viewY && viewY <= Screen.height)
-        {
-            Debug.Log(viewY);
-            //マウスの位置と照準器の位置を同期させる。
-            transform.position = Input.mousePosition;
-        }
-        
 
         RaycastHit hit;
 
