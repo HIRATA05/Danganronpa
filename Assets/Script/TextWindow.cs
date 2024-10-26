@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class TextWindow : MonoBehaviour
 {
@@ -11,9 +12,7 @@ public class TextWindow : MonoBehaviour
     //ゲームマネージャー
     [SerializeField] private GameManager gameManager;
 
-    [SerializeField] private TextMeshProUGUI text;
-
-    [SerializeField] private DialogueText dialogueText;
+    [NonSerialized] public DialogueText dialogueText;
     [SerializeField] private GameObject panelObject;
     [SerializeField] private TextMeshProUGUI speakerNameText;
     [SerializeField] private TextMeshProUGUI speakerDialogueText;
@@ -22,13 +21,9 @@ public class TextWindow : MonoBehaviour
 
     private Coroutine dialogueCoroutine;
 
-    public string testtext;
-    public int xyz;
 
-    // Update is called once per frame
     void Update()
     {
-
         //テキストを表示
         if(gameManager.playerController == GameManager.PlayerController.TextWindowMode)
         {
@@ -37,10 +32,8 @@ public class TextWindow : MonoBehaviour
                 // 会話文表示処理を実行する
                 displayDialogueText();
 
-                Debug.Log(xyz + " : " + testtext);
             }
-        }
-        
+        }   
     }
 
     /// <summary>
@@ -53,14 +46,16 @@ public class TextWindow : MonoBehaviour
         {
             panelObject.SetActive(true);
         }
-
+        
         //scriptableObjectの情報をパネルに表示する
-        speakerNameText.text = dialogueText.speakerName;
-        if (dialogueText.paragraphs.Length > index)
+        if (dialogueText.textInfomations.Length > index)
         {
+            //話者の名前を表示
+            speakerNameText.text = dialogueText.textInfomations[index].speakerName;
+
             if (!isTyping)
             {
-                dialogueCoroutine = StartCoroutine(TypeDialogueText(dialogueText.paragraphs[index]));
+                dialogueCoroutine = StartCoroutine(TypeDialogueText(dialogueText.textInfomations[index].paragraphs));
             }
             else
             {
@@ -79,6 +74,7 @@ public class TextWindow : MonoBehaviour
 
             index = 0;
         }
+        
     }
 
     /// <summary>
@@ -100,7 +96,8 @@ public class TextWindow : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
         isTyping = false;
-        index++; //次の会話文インデックス
+        //次の会話文インデックスを進める
+        index++;
     }
 
     /// <summary>
@@ -110,8 +107,9 @@ public class TextWindow : MonoBehaviour
     {
         StopCoroutine(dialogueCoroutine);
         //未表示の会話文を全文表示する
-        speakerDialogueText.text = dialogueText.paragraphs[index];
+        speakerDialogueText.text = dialogueText.textInfomations[index].paragraphs;
         isTyping = false;
-        index++; //次の会話文インデックス
+        //次の会話文インデックスを進める
+        index++;
     }
 }

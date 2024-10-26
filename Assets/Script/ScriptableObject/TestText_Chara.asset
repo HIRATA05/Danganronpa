@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2184e32b683345418bba8483f1b682e, type: 3}
-  m_Name: DialogueText
+  m_Name: TestText_Chara
   m_EditorClassIdentifier: 
-  speakerName: MyName
-  paragraphs:
-  - ABCD
-  - ASASASASASASSSSSSSSSSSS
-  - OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+  textInfomations:
+  - speakerName: UltimateLucky
+    paragraphs: OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+  - speakerName: UltimateLucky
+    paragraphs: monokuma!
+  - speakerName: UltimateLucky
+    paragraphs: Hello!
