@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,9 @@ public class TestChara : MonoBehaviour, IReceiveSearch
 
     [SerializeField] private DialogueText dialogueText;
 
-    GameManager gameManager;
-    TextWindow textWindow;
+    private GameManager gameManager;
+    private CinemachineVirtualCamera[] virtualCameras;
+
 
 
     public void ReceiveSearch()
@@ -19,19 +21,15 @@ public class TestChara : MonoBehaviour, IReceiveSearch
         Debug.Log("Enemy は 1ダメージ食らった");
         //場合によってはフラグによって条件分岐
 
-        //渡す
-        textWindow.dialogueText = dialogueText;
+        gameManager.OpenTextWindow(dialogueText, virtualCameras);
 
-        gameManager.playerController = GameManager.PlayerController.TextWindowMode;
     }
 
     void Start()
     {
         GameObject gm = GameObject.Find("GameManager");
         gameManager = gm.GetComponent<GameManager>();
-        GameObject tw = GameObject.Find("TextWindow");
-        textWindow = tw.GetComponent<TextWindow>();
-
+        virtualCameras = GetComponentsInChildren<CinemachineVirtualCamera>();
     }
 
     void Update()
