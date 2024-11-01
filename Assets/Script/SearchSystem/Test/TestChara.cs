@@ -18,7 +18,7 @@ public class TestChara : MonoBehaviour, IReceiveSearch
     public void ReceiveSearch()
     {
         
-        Debug.Log("Enemy は 1ダメージ食らった");
+        Debug.Log("キャラを調べた");
         //場合によってはフラグによって条件分岐
 
         gameManager.OpenTextWindow(dialogueText, virtualCameras);

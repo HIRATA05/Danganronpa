@@ -629,7 +629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5673b82a746a941b7c86747230d31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam1: 0
 --- !u!4 &279657945
 Transform:
   m_ObjectHideFlags: 0
@@ -760,6 +759,11 @@ MonoBehaviour:
   cameraRotLimit_Right: 40
   cameraRotLimit_Left: -20
   rotateSpeed: 0.5
+--- !u!1 &332307080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5015014388281578167, guid: 203de79a53400ac44a22487bbd4379d7, type: 3}
+  m_PrefabInstance: {fileID: 7190483655619216244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &405400984
 GameObject:
   m_ObjectHideFlags: 3
@@ -1937,7 +1941,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60.000004
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -1963,8 +1967,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000250802}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.207, y: -0.35, z: 1.405}
+  m_LocalRotation: {x: 0, y: -0.10232556, z: 0, w: 0.994751}
+  m_LocalPosition: {x: -2.9404233, y: -0.557, z: 2.6809409}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2014,6 +2018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1043412494}
   - component: {fileID: 1043412493}
+  - component: {fileID: 1043412495}
   m_Layer: 0
   m_Name: TextWindow
   m_TagString: Untagged
@@ -2037,8 +2042,8 @@ MonoBehaviour:
   panelObject: {fileID: 1797296073}
   speakerNameText: {fileID: 1688089587}
   speakerDialogueText: {fileID: 1940069138}
-  mainTaklChara: {fileID: 4063865784551517908, guid: 9bf365e77e11e89479bb9f0d0bae9a2a, type: 3}
-  mainTaklCharaPos: {x: 3, y: -0.3, z: 4}
+  mainTalkChara: {fileID: 0}
+  mainTalkCharaPos: {x: 0, y: 0, z: 0}
   charaSetCanvas: {fileID: 802374982}
   TaklCamera_1: {fileID: 1000250804}
   TaklCamera_2: {fileID: 185925639}
@@ -2058,6 +2063,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1043412495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043412492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf413c4a1e9dde4ba4a4d9419166db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charaObject: []
+  roomObject:
+  - {fileID: 2061723498}
+  - {fileID: 1933059145}
+  - {fileID: 332307080}
 --- !u!1 &1047764796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,6 +2923,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797296073}
   m_CullTransparentMesh: 1
+--- !u!1 &1801056956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801056958}
+  - component: {fileID: 1801056957}
+  m_Layer: 0
+  m_Name: TextCameraManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1801056957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801056956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc7fec0ba54269478234c5d648edc7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talkSet:
+    number: 0
+    cameraSet: []
+--- !u!4 &1801056958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801056956}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1933059145 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3851434871629948578, guid: 6b61783fbd4f9e24eac616c5bd0a5228, type: 3}
+  m_PrefabInstance: {fileID: 3439526824093039921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1940069136
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,6 +3181,11 @@ Transform:
   - {fileID: 2067314602}
   m_Father: {fileID: 600831894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2061723498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 78426964708125702, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+  m_PrefabInstance: {fileID: 5256556031734916932}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2067314601
 GameObject:
   m_ObjectHideFlags: 3
@@ -3802,3 +3881,4 @@ SceneRoots:
   - {fileID: 802374986}
   - {fileID: 1043412494}
   - {fileID: 279657945}
+  - {fileID: 1801056958}

@@ -23,8 +23,8 @@ public class TextWindow : MonoBehaviour
 
 
     //会話を行う主人公キャラのオブジェクトパーツ
-    [SerializeField] private GameObject mainTaklChara;
-    [SerializeField] private Vector3 mainTaklCharaPos;
+    [SerializeField] private GameObject mainTalkChara;
+    [SerializeField] private Vector3 mainTalkCharaPos;
     GameObject mainChara;
     //配置する主人公の親オブジェクト
     [SerializeField] private GameObject charaSetCanvas;
@@ -89,21 +89,19 @@ public class TextWindow : MonoBehaviour
         {
             panelObject.SetActive(true);
 
-
+            /*
             Debug.Log("主人公のオブジェクト配置");
             // 配置する座標を設定
-            Vector3 placePosition = new Vector3(Camera.main.transform.position.x + mainTaklCharaPos.x,
-                0+ mainTaklCharaPos.y, Camera.main.transform.position.z + mainTaklCharaPos.z);
+            Vector3 placePosition = new Vector3(Camera.main.transform.position.x + mainTalkCharaPos.x,
+                0+ mainTalkCharaPos.y, Camera.main.transform.position.z + mainTalkCharaPos.z);
             // 配置する回転角を設定
             Quaternion quate = new Quaternion();
             quate = Quaternion.identity;
             //親オブジェクト設定
             var parent = charaSetCanvas.transform;
             // ブロックの複製
-            mainChara = Instantiate(mainTaklChara, placePosition, quate, parent);
-            //シネマシーンに設定
-
-            //
+            mainChara = Instantiate(mainTalkChara, placePosition, quate, parent);
+            */
 
             //カメラの注視先を設定
 

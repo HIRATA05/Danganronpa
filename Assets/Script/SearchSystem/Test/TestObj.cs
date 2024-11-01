@@ -15,7 +15,7 @@ public class TestObj : MonoBehaviour, IReceiveSearch
 
     public void ReceiveSearch()
     {
-        Debug.Log("Enemy は 6ダメージ食らった");
+        Debug.Log("物を調べた");
         //場合によってはフラグによって条件分岐
 
         //渡す

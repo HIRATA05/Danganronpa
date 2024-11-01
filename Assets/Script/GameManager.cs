@@ -20,8 +20,6 @@ public class GameManager : MonoBehaviour
     private TextWindow textWindow;
 
 
-    //ƒJƒƒ‰‚ğ•\¦
-    public int cam1;
 
     void Start()
     {
