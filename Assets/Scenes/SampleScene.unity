@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2352,6 +2352,12 @@ MonoBehaviour:
   TaklCamera_1: {fileID: 1000250804}
   TaklCamera_2: {fileID: 185925639}
   TaklCamera_3: {fileID: 767468629}
+  rect_Left:
+    serializedVersion: 2
+    x: 0.75
+    y: 0
+    width: 0.25
+    height: 0.8
   rect_Center:
     serializedVersion: 2
     x: 0.25
@@ -2364,18 +2370,24 @@ MonoBehaviour:
     y: 0
     width: 0.25
     height: 0.9
-  rect_Left:
+  rect_CenteringRight_Left:
     serializedVersion: 2
-    x: 0.75
+    x: -0.25
     y: 0
     width: 0.25
-    height: 0.8
-  rect_CenteringRight:
+    height: 0.9
+  rect_CenteringRight_Center:
     serializedVersion: 2
-    x: 0.25
+    x: 0.15
     y: 0
     width: 0.5
     height: 1
+  rect_CenteringRight_Right:
+    serializedVersion: 2
+    x: 0.5
+    y: 0
+    width: 0.5
+    height: 0.9
   rect_CenteringLeft:
     serializedVersion: 2
     x: 0.25
@@ -3347,6 +3359,22 @@ MonoBehaviour:
       camDivision: 0
   - number: 2
     cameraSet:
+    - cameraLookObjectCenter: {fileID: 1933059145}
+      cameraLookObjectRight: {fileID: 2061723498}
+      cameraLookObjectLeft: {fileID: 0}
+      camDivision: 0
+    - cameraLookObjectCenter: {fileID: 1933059145}
+      cameraLookObjectRight: {fileID: 1944096226}
+      cameraLookObjectLeft: {fileID: 0}
+      camDivision: 1
+    - cameraLookObjectCenter: {fileID: 1933059145}
+      cameraLookObjectRight: {fileID: 0}
+      cameraLookObjectLeft: {fileID: 0}
+      camDivision: 2
+    - cameraLookObjectCenter: {fileID: 2061723498}
+      cameraLookObjectRight: {fileID: 332307080}
+      cameraLookObjectLeft: {fileID: 0}
+      camDivision: 1
     - cameraLookObjectCenter: {fileID: 2061723498}
       cameraLookObjectRight: {fileID: 0}
       cameraLookObjectLeft: {fileID: 0}

@@ -36,11 +36,14 @@ public class TextWindow : MonoBehaviour
 
     [Header("カメラの表示範囲")]//カメラの表示範囲
     //中央のみ　左右は画面外
+    [SerializeField] private Rect rect_Left = new Rect(0.0f, 0.0f, 0.25f, 0.9f);
     [SerializeField] private Rect rect_Center = new Rect(0.25f, 0.0f, 0.5f, 1f);
-    [SerializeField] private Rect rect_Right = new Rect(0.0f, 0.0f, 0.25f, 0.9f);
-    [SerializeField] private Rect rect_Left = new Rect(0.75f, 0.0f, 0.25f, 0.8f);
+    [SerializeField] private Rect rect_Right = new Rect(0.5f, 0.0f, 0.25f, 0.9f);
+
     //中央と右　左は画面外
-    [SerializeField] private Rect rect_CenteringRight = new Rect(0.25f, 0.0f, 0.5f, 1f);
+    [SerializeField] private Rect rect_CenteringRight_Left = new Rect(-0.25f, 0.0f, 0.25f, 0.9f);
+    [SerializeField] private Rect rect_CenteringRight_Center = new Rect(0.1f, 0.0f, 0.5f, 1f);
+    [SerializeField] private Rect rect_CenteringRight_Right = new Rect(0.5f, 0.0f, 0.5f, 0.9f);
 
     //中央と左　右は画面外
     [SerializeField] private Rect rect_CenteringLeft = new Rect(0.25f, 0.0f, 0.5f, 1f);
@@ -53,6 +56,9 @@ public class TextWindow : MonoBehaviour
     //子オブジェクトを指定するための3つのヴァーチャルカメラ番号
     private const int vcamNumCenter = 0, vcamNumRight = 1, vcamNumLeft = 2;
 
+    //会話カメラの辞書
+    private Dictionary<int, TalkCameraManager.TalkSet> talkSetDictionary = new();
+
     private void Start()
     {
         TaklCamera_1.rect = rect_Center;
@@ -60,6 +66,13 @@ public class TextWindow : MonoBehaviour
         TaklCamera_3.rect = rect_Left;
 
         roomObjectManager = GetComponent<RoomObjectManager>();
+
+        // 辞書の初期化
+        for (int loop = 0; loop < talkCameraManager.talkSet.Length; loop++)
+        {
+            var talkset = talkCameraManager.talkSet[loop];
+            talkSetDictionary.Add(talkset.number, talkset);
+        }
 
     }
 
@@ -89,9 +102,9 @@ public class TextWindow : MonoBehaviour
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterAndRight)
         {
-            TaklCamera_1.rect = rect_Center;
-            TaklCamera_2.rect = rect_Right;
-            TaklCamera_3.rect = rect_Left;
+            TaklCamera_1.rect = rect_CenteringRight_Center;
+            TaklCamera_2.rect = rect_CenteringRight_Right;
+            TaklCamera_3.rect = rect_CenteringRight_Left;
         }
         
     }
@@ -117,6 +130,7 @@ public class TextWindow : MonoBehaviour
         //scriptableObjectの情報をパネルに表示する
         if (dialogueText.textInfomations.Length > index)
         {
+#if false
             //会話中のカメラを設定
             for(int loop = 0; loop < talkCameraManager.talkSet.Length; loop++)
             {
@@ -144,7 +158,29 @@ public class TextWindow : MonoBehaviour
 
                 }
             }
-            
+#else
+            var talkSet = talkSetDictionary[dialogueText.number];
+            var cameraSet = talkSet.cameraSet[index];
+
+            //カメラの注視対象を設定
+            //中央のカメラ
+            roomObjectManager.RoomObjectPriorityChange(cameraSet.cameraLookObjectCenter, vcamNumCenter);
+            //右のカメラ
+            roomObjectManager.RoomObjectPriorityChange(cameraSet.cameraLookObjectRight, vcamNumRight);
+            //左のカメラ
+            roomObjectManager.RoomObjectPriorityChange(cameraSet.cameraLookObjectLeft, vcamNumLeft);
+
+            //カメラ分割を設定
+            if (currentCameraDivision != cameraSet.camDivision)
+            {
+                Debug.Log("主人公のオブジェクト配置");
+                //それぞれのカメラの表示範囲を指定の位置まで移動する
+                currentCameraDivision = cameraSet.camDivision;
+
+                TalkCameraRectMove();
+
+            }
+#endif
 
             //話者の名前を表示
             speakerNameText.text = dialogueText.textInfomations[index].speakerName;
