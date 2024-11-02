@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2184e32b683345418bba8483f1b682e, type: 3}
   m_Name: TestText_Chara
   m_EditorClassIdentifier: 
+  number: 1
   textInfomations:
   - speakerName: UltimateLucky
     paragraphs: OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO

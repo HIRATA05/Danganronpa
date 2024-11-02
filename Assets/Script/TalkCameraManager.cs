@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextCameraManager : MonoBehaviour
+public class TalkCameraManager : MonoBehaviour
 {
     //RoomManagerからオブジェクトを取得
     //テキストの配列と同じ数だけカメラの注視先とカメラ分割設定を決める
@@ -29,14 +29,14 @@ public class TextCameraManager : MonoBehaviour
     [System.Serializable] public class TalkSet
     {
         //会話番号　Scriptableテキストと同期するための番号
-        [SerializeField] private int number;
+        public int number;
 
         //会話の数だけ作成する
-        [SerializeField] private CameraSet[] cameraSet;
+        public CameraSet[] cameraSet;
     }
 
-    [Header("会話イベントの数だけ設定")]
-    public TalkSet talkSet;
+    [Header("その部屋の会話イベントの数だけ設定")]
+    public TalkSet[] talkSet;
 
 
 

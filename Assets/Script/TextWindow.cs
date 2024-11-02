@@ -11,6 +11,10 @@ public class TextWindow : MonoBehaviour
 
     //ゲームマネージャー
     [SerializeField] private GameManager gameManager;
+    //会話中のカメラの管理
+    [SerializeField] private TalkCameraManager talkCameraManager;
+    //部屋のオブジェクトを管理
+    RoomObjectManager roomObjectManager;
 
     [NonSerialized] public DialogueText dialogueText;
     [SerializeField] private GameObject panelObject;
@@ -21,51 +25,46 @@ public class TextWindow : MonoBehaviour
 
     private Coroutine dialogueCoroutine;
 
-
     //会話を行う主人公キャラのオブジェクトパーツ
     [SerializeField] private GameObject mainTalkChara;
-    [SerializeField] private Vector3 mainTalkCharaPos;
-    GameObject mainChara;
-    //配置する主人公の親オブジェクト
-    [SerializeField] private GameObject charaSetCanvas;
-
+    
 
     //カメラ
     [SerializeField] private Camera TaklCamera_1;
     [SerializeField] private Camera TaklCamera_2;
     [SerializeField] private Camera TaklCamera_3;
 
-    
+    [Header("カメラの表示範囲")]//カメラの表示範囲
+    //中央のみ　左右は画面外
+    [SerializeField] private Rect rect_Center = new Rect(0.25f, 0.0f, 0.5f, 1f);
+    [SerializeField] private Rect rect_Right = new Rect(0.0f, 0.0f, 0.25f, 0.9f);
+    [SerializeField] private Rect rect_Left = new Rect(0.75f, 0.0f, 0.25f, 0.8f);
+    //中央と右　左は画面外
+    [SerializeField] private Rect rect_CenteringRight = new Rect(0.25f, 0.0f, 0.5f, 1f);
+
+    //中央と左　右は画面外
+    [SerializeField] private Rect rect_CenteringLeft = new Rect(0.25f, 0.0f, 0.5f, 1f);
+    //中央と左右　3つとも画面内
+
+
+    //現在のカメラ分割設定
+    TalkCameraManager.CameraSet.CameraDivision currentCameraDivision = TalkCameraManager.CameraSet.CameraDivision.CenterOnly;
+
+    //子オブジェクトを指定するための3つのヴァーチャルカメラ番号
+    private const int vcamNumCenter = 0, vcamNumRight = 1, vcamNumLeft = 2;
 
     private void Start()
     {
-        
+        TaklCamera_1.rect = rect_Center;
+        TaklCamera_2.rect = rect_Right;
+        TaklCamera_3.rect = rect_Left;
 
-        TaklCamera_1.rect = new Rect(0.25f, 0.0f, 0.5f, 1f);//真ん中
-        TaklCamera_2.rect = new Rect(0.0f, 0.0f, 0.25f, 0.9f);//左
-        TaklCamera_3.rect = new Rect(0.75f, 0.0f, 0.25f, 0.8f);//右
-
-        
+        roomObjectManager = GetComponent<RoomObjectManager>();
 
     }
 
     void Update()
     {
-        //カメラテスト
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            TaklCamera_1.rect = new Rect(0.25f, 0.0f, 0.5f, 1f);//真ん中
-            TaklCamera_2.rect = new Rect(0.0f, 0.0f, 0.25f, 0.9f);//左
-            TaklCamera_3.rect = new Rect(0.75f, 0.0f, 0.25f, 0.8f);//右
-        }
-        if (Input.GetKeyUp(KeyCode.T))
-        {
-            TaklCamera_1.rect = new Rect(0.15f, 0.0f, 0.5f, 1f);//真ん中
-            TaklCamera_2.rect = new Rect(-0.1f, 0.0f, 0.25f, 0.9f);//画面外
-            TaklCamera_3.rect = new Rect(0.65f, 0.0f, 0.25f, 0.8f);//右
-        }
-        
-
 
         //テキストを表示
         if (gameManager.playerController == GameManager.PlayerController.TextWindowMode)
@@ -79,6 +78,24 @@ public class TextWindow : MonoBehaviour
         }   
     }
 
+    //3つのカメラの表示範囲を移動する
+    void TalkCameraRectMove()
+    {
+        if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterOnly)
+        {
+            TaklCamera_1.rect = rect_Center;
+            TaklCamera_2.rect = rect_Right;
+            TaklCamera_3.rect = rect_Left;
+        }
+        else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterAndRight)
+        {
+            TaklCamera_1.rect = rect_Center;
+            TaklCamera_2.rect = rect_Right;
+            TaklCamera_3.rect = rect_Left;
+        }
+        
+    }
+
     /// <summary>
     /// 会話文表示処理
     /// </summary>
@@ -89,31 +106,44 @@ public class TextWindow : MonoBehaviour
         {
             panelObject.SetActive(true);
 
-            /*
-            Debug.Log("主人公のオブジェクト配置");
-            // 配置する座標を設定
-            Vector3 placePosition = new Vector3(Camera.main.transform.position.x + mainTalkCharaPos.x,
-                0+ mainTalkCharaPos.y, Camera.main.transform.position.z + mainTalkCharaPos.z);
-            // 配置する回転角を設定
-            Quaternion quate = new Quaternion();
-            quate = Quaternion.identity;
-            //親オブジェクト設定
-            var parent = charaSetCanvas.transform;
-            // ブロックの複製
-            mainChara = Instantiate(mainTalkChara, placePosition, quate, parent);
-            */
-
-            //カメラの注視先を設定
+            //主人公のマップオブジェクト削除
+            if (mainTalkChara.GetComponent<Image>().enabled == false) mainTalkChara.GetComponent<Image>().enabled = true;
 
             //会話用カメラの起動
             CameraEnabled();
-
 
         }
 
         //scriptableObjectの情報をパネルに表示する
         if (dialogueText.textInfomations.Length > index)
         {
+            //会話中のカメラを設定
+            for(int loop = 0; loop < talkCameraManager.talkSet.Length; loop++)
+            {
+                //テキストの番号とカメラ設定の番号が一致している時
+                if (dialogueText.number == talkCameraManager.talkSet[loop].number)
+                {
+                    //カメラの注視対象を設定
+                    //中央のカメラ
+                    roomObjectManager.RoomObjectPriorityChange(talkCameraManager.talkSet[loop].cameraSet[index].cameraLookObjectCenter, vcamNumCenter);
+                    //右のカメラ
+                    roomObjectManager.RoomObjectPriorityChange(talkCameraManager.talkSet[loop].cameraSet[index].cameraLookObjectRight, vcamNumRight);
+                    //左のカメラ
+                    roomObjectManager.RoomObjectPriorityChange(talkCameraManager.talkSet[loop].cameraSet[index].cameraLookObjectLeft, vcamNumLeft);
+
+                    //カメラ分割を設定
+                    if(currentCameraDivision != talkCameraManager.talkSet[loop].cameraSet[index].camDivision)
+                    {
+                        Debug.Log("主人公のオブジェクト配置");
+                        //それぞれのカメラの表示範囲を指定の位置まで移動する
+                        currentCameraDivision = talkCameraManager.talkSet[loop].cameraSet[index].camDivision;
+
+                        TalkCameraRectMove();
+
+                    }
+
+                }
+            }
             
 
             //話者の名前を表示
@@ -136,7 +166,7 @@ public class TextWindow : MonoBehaviour
             panelObject.SetActive(false);
 
             //主人公のマップオブジェクト削除
-            if(mainChara != null) Destroy(mainChara);
+            if(mainTalkChara.GetComponent<Image>().enabled != false) mainTalkChara.GetComponent<Image>().enabled = false;
 
             //会話用カメラの非表示
             CameraEnabled();
