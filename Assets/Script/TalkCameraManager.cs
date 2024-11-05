@@ -15,12 +15,13 @@ public class TalkCameraManager : MonoBehaviour
             CenterOnly,//中央のみ
             CenterAndRight,//中央と右
             CenterAndLeft,//中央と左
+            All,//3つ全て
         }
 
         //カメラで表示するオブジェクト
-        public GameObject cameraLookObjectCenter;//中央
-        public GameObject cameraLookObjectRight;//右
-        public GameObject cameraLookObjectLeft;//左
+        public GameObject camLookCenter;//中央
+        public GameObject camLookRight;//右
+        public GameObject camLookLeft;//左
 
         //カメラ分割の形
         public CameraDivision camDivision;
