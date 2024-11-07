@@ -3459,6 +3459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801056958}
   - component: {fileID: 1801056957}
+  - component: {fileID: 1801056959}
   m_Layer: 0
   m_Name: TalkCameraManager
   m_TagString: Untagged
@@ -3485,58 +3486,121 @@ MonoBehaviour:
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1801056959}
+            m_TargetAssemblyTypeName: CharaEffect, Assembly-CSharp
+            m_MethodName: OnClickEvent
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - camLookCenter: {fileID: 2061723498}
       camLookRight: {fileID: 1944096226}
       camLookLeft: {fileID: 0}
       camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1801056959}
+            m_TargetAssemblyTypeName: CharaEffect, Assembly-CSharp
+            m_MethodName: OnClickEvent
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - camLookCenter: {fileID: 2061723498}
       camLookRight: {fileID: 1933059145}
       camLookLeft: {fileID: 332307080}
       camDivision: 2
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
   - number: 2
     cameraSet:
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 2
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
   - number: 3
     cameraSet:
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 2
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
 --- !u!4 &1801056958
 Transform:
   m_ObjectHideFlags: 0
@@ -3552,6 +3616,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1801056959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801056956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f9a442d3606c54c9f1d3ef2a532553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1826994986
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -36,4 +36,9 @@ public class CharaEffect : MonoBehaviour
     //‚½‚¾SE‚ğ”­¶‚³‚¹‚é
 
 
+    public void OnClickEvent()
+    {
+        Debug.Log("Click");
+    }
+
 }

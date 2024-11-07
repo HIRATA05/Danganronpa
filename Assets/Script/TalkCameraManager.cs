@@ -25,6 +25,9 @@ public class TalkCameraManager : MonoBehaviour
 
         //カメラ分割の形
         public CameraDivision camDivision;
+
+        //会話時のイベント
+        public UnityEngine.Events.UnityEvent OnTalkEvent;
     }
 
     [System.Serializable] public class TalkSet

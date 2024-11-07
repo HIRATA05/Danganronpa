@@ -358,6 +358,8 @@ public class TextWindow : MonoBehaviour
     /// </summary>
     public void displayDialogueText()
     {
+        
+
         //パネルが非表示なら表示する
         if (!panelObject.activeSelf)
         {
@@ -433,6 +435,9 @@ public class TextWindow : MonoBehaviour
 
             if (!isTyping)
             {
+                //会話イベントを発生
+                cameraSet.OnTalkEvent.Invoke();
+
                 dialogueCoroutine = StartCoroutine(TypeDialogueText(dialogueText.textInfomations[index].paragraphs));
             }
             else
