@@ -60,7 +60,9 @@ public class TextWindow : MonoBehaviour
     private Rect rect_current_Center;
     private Rect rect_current_Right;
     //表示範囲変化速度
-    private float rectMoveSpeed = 0.001f;
+    private float rectMoveSpeed = 0.0001f;
+    //表示範囲変化許容値
+    private double RectSetAllow = 0.0001;
 
     //現在のカメラ分割設定
     TalkCameraManager.CameraSet.CameraDivision currentCameraDivision = TalkCameraManager.CameraSet.CameraDivision.CenterOnly;
@@ -72,13 +74,9 @@ public class TextWindow : MonoBehaviour
     private Dictionary<int, TalkCameraManager.TalkSet> talkSetDictionary = new();
 
 
-    [SerializeField] private GameObject instantieatedCard;
-
 
     private void Start()
     {
-        StartCoroutine(MoveCard());
-
         rect_current_Center = TaklCamera_1.rect = rect_CenterOnly_Center;
         rect_current_Right = TaklCamera_2.rect = rect_CenterOnly_Right;
         rect_current_Left = TaklCamera_3.rect = rect_CenterOnly_Left;
@@ -149,8 +147,9 @@ public class TextWindow : MonoBehaviour
             TaklCamera_2.rect = rect_CenteringRight_Right;
             TaklCamera_3.rect = rect_CenteringRight_Left;
             */
+            //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_CenterOnly_Left,
-                rect_CenteringRight_Center, rect_CenteringRight_Right, rect_CenteringRight_Left));
+                                rect_CenteringRight_Center, rect_CenteringRight_Right, rect_CenteringRight_Left));
             /*
             CameraRectMove(rect_current_Center, rect_current_Right, rect_CenterOnly_Left,
                 rect_CenteringRight_Center, rect_CenteringRight_Right, rect_CenteringRight_Left);
@@ -171,28 +170,6 @@ public class TextWindow : MonoBehaviour
 
     }
 
-    
-    // カードを指定された位置に移動させるコルーチン
-    private IEnumerator MoveCard()
-    {
-        Debug.Log("カード移動コルーチン開始");
-        Vector3 StartDeckPos = instantieatedCard.transform.localPosition;
-        Vector3 EndHandPos = new Vector3(0f, 1f, 100f);
-        float animDuration = 1f; // アニメーションの総時間
-        float startTime = Time.time;
-
-        while (Time.time - startTime < animDuration)
-        {
-            float journeyFraction = (Time.time - startTime) / animDuration;
-            //滑らかに移動させるさせる場合は以下のコード追加する
-            //journeyFraction = Mathf.SmoothStep(0f, 1f, journeyFraction);
-            instantieatedCard.transform.localPosition = Vector3.Lerp(StartDeckPos, EndHandPos, journeyFraction);
-            yield return null;
-        }
-        Debug.Log("カード移動終了");
-    }
-    
-
     //3つのカメラを同時に動作
     private IEnumerator CameraRectMove(Rect currentRect_Center, Rect currentRect_Right, Rect currentRect_Left,
                                 Rect SetRect_Center,     Rect SetRect_Right,     Rect SetRect_Left)
@@ -209,48 +186,117 @@ public class TextWindow : MonoBehaviour
         while (!setCompletion)
         {
             //設定された値に近いか調べ違う場合加算か減算する
-            //X
+            //中央カメラX
             if ((SetRect_Center.x - 0.0001) <= currentRect_Center.x && currentRect_Center.x <= (SetRect_Center.x + 0.0001))
                 flgCenter_x = true;
             else
             {
-                Debug.Log("RectCenter　X　移動開始");
                 if (currentRect_Center.x < SetRect_Center.x) currentRect_Center.x += rectMoveSpeed;//加算
                 else currentRect_Center.x -= rectMoveSpeed;//減算
             }
-            //Y
+            //中央カメラY
             if ((SetRect_Center.y - 0.0001) <= currentRect_Center.y && currentRect_Center.y <= (SetRect_Center.y + 0.0001))
                 flgCenter_y = true;
             else
             {
-                Debug.Log("RectCenter　Y　移動開始");
                 if (currentRect_Center.y < SetRect_Center.y) currentRect_Center.y += rectMoveSpeed;//加算
                 else currentRect_Center.y -= rectMoveSpeed;//減算
             }
-            //W
+            //中央カメラW
             if ((SetRect_Center.width - 0.0001) <= currentRect_Center.width && currentRect_Center.width <= (SetRect_Center.width + 0.0001))
                 flgCenter_w = true;
             else
             {
-                Debug.Log("RectCenter　W　移動開始");
                 if (currentRect_Center.width < SetRect_Center.width) currentRect_Center.width += rectMoveSpeed;//加算
                 else currentRect_Center.width -= rectMoveSpeed;//減算
             }
-            //H
+            //中央カメラH
             if ((SetRect_Center.height - 0.0001) <= currentRect_Center.height && currentRect_Center.height <= (SetRect_Center.height + 0.0001))
                 flgCenter_h = true;
             else
             {
-                Debug.Log("RectCenter　H　移動開始");
                 if (currentRect_Center.height < SetRect_Center.height) currentRect_Center.height += rectMoveSpeed;//加算
                 else currentRect_Center.height -= rectMoveSpeed;//減算
             }
             //中央カメラに代入
             TaklCamera_1.rect = currentRect_Center;
 
+            //右カメラX
+            if ((SetRect_Right.x - 0.0001) <= currentRect_Right.x && currentRect_Right.x <= (SetRect_Right.x + 0.0001))
+                flgRight_x = true;
+            else
+            {
+                if (currentRect_Right.x < SetRect_Right.x) currentRect_Right.x += rectMoveSpeed;//加算
+                else currentRect_Right.x -= rectMoveSpeed;//減算
+            }
+            //右カメラY
+            if ((SetRect_Right.y - 0.0001) <= currentRect_Right.y && currentRect_Right.y <= (SetRect_Right.y + 0.0001))
+                flgRight_y = true;
+            else
+            {
+                if (currentRect_Right.y < SetRect_Right.y) currentRect_Right.y += rectMoveSpeed;//加算
+                else currentRect_Right.y -= rectMoveSpeed;//減算
+            }
+            //右カメラW
+            if ((SetRect_Right.width - 0.0001) <= currentRect_Right.width && currentRect_Right.width <= (SetRect_Right.width + 0.0001))
+                flgRight_w = true;
+            else
+            {
+                if (currentRect_Right.width < SetRect_Right.width) currentRect_Right.width += rectMoveSpeed;//加算
+                else currentRect_Right.width -= rectMoveSpeed;//減算
+            }
+            //右カメラH
+            if ((SetRect_Right.height - 0.0001) <= currentRect_Right.height && currentRect_Right.height <= (SetRect_Right.height + 0.0001))
+                flgRight_h = true;
+            else
+            {
+                if (currentRect_Right.height < SetRect_Right.height) currentRect_Right.height += rectMoveSpeed;//加算
+                else currentRect_Right.height -= rectMoveSpeed;//減算
+            }
+            //右カメラに代入
+            TaklCamera_2.rect = currentRect_Right;
+
+            //左カメラX
+            if ((SetRect_Left.x - 0.0001) <= currentRect_Left.x && currentRect_Left.x <= (SetRect_Left.x + 0.0001))
+                flgLeft_x = true;
+            else
+            {
+                if (currentRect_Left.x < SetRect_Left.x) currentRect_Left.x += rectMoveSpeed;//加算
+                else currentRect_Left.x -= rectMoveSpeed;//減算
+            }
+            //左カメラY
+            if ((SetRect_Left.y - 0.0001) <= currentRect_Left.y && currentRect_Left.y <= (SetRect_Left.y + 0.0001))
+                flgLeft_y = true;
+            else
+            {
+                if (currentRect_Left.y < SetRect_Left.y) currentRect_Left.y += rectMoveSpeed;//加算
+                else currentRect_Left.y -= rectMoveSpeed;//減算
+            }
+            //左カメラW
+            if ((SetRect_Left.width - 0.0001) <= currentRect_Left.width && currentRect_Left.width <= (SetRect_Left.width + 0.0001))
+                flgLeft_w = true;
+            else
+            {
+                if (currentRect_Left.width < SetRect_Left.width) currentRect_Left.width += rectMoveSpeed;//加算
+                else currentRect_Left.width -= rectMoveSpeed;//減算
+            }
+            //左カメラH
+            if ((SetRect_Left.height - 0.0001) <= currentRect_Left.height && currentRect_Left.height <= (SetRect_Left.height + 0.0001))
+                flgLeft_h = true;
+            else
+            {
+                if (currentRect_Left.height < SetRect_Left.height) currentRect_Left.height += rectMoveSpeed;//加算
+                else currentRect_Left.height -= rectMoveSpeed;//減算
+            }
+            //左カメラに代入
+            TaklCamera_3.rect = currentRect_Left;
+
             noEndlessLoop++;
             //全ての値が指定値になった時ループ終了
-            if (noEndlessLoop > 1000 || flgCenter_x && flgCenter_y && flgCenter_w && flgCenter_h)
+            if (noEndlessLoop > 1000 ||
+                flgCenter_x && flgCenter_y && flgCenter_w && flgCenter_h &&
+                flgRight_x && flgRight_y && flgRight_w && flgRight_h &&
+                flgLeft_x && flgLeft_y && flgLeft_w && flgLeft_h)
             {
                 //Debug.Log("ループ終了 "+ currentRect_Center.x + ":" + SetRect_Center.x);
                 setCompletion = true; 
