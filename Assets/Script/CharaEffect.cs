@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,18 @@ public class CharaEffect : MonoBehaviour
     void Update()
     {
         
+    }
+
+    //引数はゲームオブジェクトにして、オブジェクトがキャラかどうか判別
+    //スプライトを別の表情画像に変化
+    public void FaceChangeNormal(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if(chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            Debug.Log("CharaEffectでCharaFaceChangeを確認");
+            chara.GetComponent<CharaFaceChange>().FaceChangeNormal();
+        }
     }
 
     //印象的な発言の時に発生する白いフェード

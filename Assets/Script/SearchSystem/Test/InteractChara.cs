@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestChara : MonoBehaviour, IReceiveSearch
+public class InteractChara : MonoBehaviour, IReceiveSearch
 {
 
     //調べた時のテキスト情報をテキスト管理スクリプトに渡す

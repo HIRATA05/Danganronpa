@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestObj : MonoBehaviour, IReceiveSearch
+public class InteractObj : MonoBehaviour, IReceiveSearch
 {
 
     //調べた時のテキスト情報をテキスト管理スクリプトに渡す

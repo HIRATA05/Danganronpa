@@ -11,18 +11,6 @@ using UnityEngine;
     //表示するテキスト
     [TextArea(2, 10)]
     public string paragraphs;
-
-    //カメラ分割の種類
-    enum CameraDivision
-    {
-        //
-        //
-        //
-    }
-    //カメラで表示するオブジェクト
-
-    //カメラ分割の形
-
 }
 
 [CreateAssetMenu(fileName = "DialogueText", menuName = "ScriptableObjects/CreateDialogueText")]
