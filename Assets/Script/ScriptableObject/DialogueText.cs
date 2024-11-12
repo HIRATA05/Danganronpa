@@ -17,7 +17,8 @@ using UnityEngine;
 public class DialogueText : ScriptableObject
 {
     //会話イベントの番号
-    public int number;
+    //public int number;
+    public string textinfo;
 
     //会話テキストの情報
     public TextInfomation[] textInfomations;

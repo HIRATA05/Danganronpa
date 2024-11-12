@@ -6,9 +6,8 @@ using UnityEngine.UI;
 
 public class CharaEffect : MonoBehaviour
 {
-    //会話中にキャラに発生させる演出
-
-
+    //会話中にキャラに発生させる演出等
+    //UnityEventは引数を1つしか設定できないため注意
     
     void Start()
     {
@@ -20,15 +19,63 @@ public class CharaEffect : MonoBehaviour
         
     }
 
-    //引数はゲームオブジェクトにして、オブジェクトがキャラかどうか判別
+    //引数は表情を変化させるキャラ、オブジェクトがキャラかどうか判別
     //スプライトを別の表情画像に変化
-    public void FaceChangeNormal(GameObject chara)
+    public void FaceChange_Normal(GameObject chara)
     {
         //CharaFaceChangeがアタッチされているか確認
         if(chara != null && chara.GetComponent<CharaFaceChange>() != null)
         {
             Debug.Log("CharaEffectでCharaFaceChangeを確認");
-            chara.GetComponent<CharaFaceChange>().FaceChangeNormal();
+            chara.GetComponent<CharaFaceChange>().ChangeFaceNormal();
+        }
+    }
+    public void FaceChange_Talk(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceTalk();
+        }
+    }
+    public void ChangeFace_Think(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceThink();
+        }
+    }
+    public void ChangeFace_Joy(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceJoy();
+        }
+    }
+    public void ChangeFace_Anger(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceAnger();
+        }
+    }
+    public void ChangeFace_Surprise(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceSurprise();
+        }
+    }
+    public void ChangeFace_Frightened(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceFrightened();
         }
     }
 

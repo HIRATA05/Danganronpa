@@ -33,7 +33,8 @@ public class TalkCameraManager : MonoBehaviour
     [System.Serializable] public class TalkSet
     {
         //会話番号　Scriptableテキストと同期するための番号
-        public int number;
+        //public int number;
+        public string textinfo;
 
         //会話の数だけ作成する
         public CameraSet[] cameraSet;

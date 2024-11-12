@@ -1488,8 +1488,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 232452567}
   - {fileID: 331943291}
+  - {fileID: 232452567}
   - {fileID: 1797296074}
   - {fileID: 478776106}
   m_Father: {fileID: 0}
@@ -1664,9 +1664,9 @@ MonoBehaviour:
     height: 0.9
   rect_CenterOnly_Center:
     serializedVersion: 2
-    x: 0.25
+    x: 0.2
     y: 0
-    width: 0.5
+    width: 0.55
     height: 1
   rect_CenterOnly_Right:
     serializedVersion: 2
@@ -1724,7 +1724,7 @@ MonoBehaviour:
     height: 1
   rect_All_Right:
     serializedVersion: 2
-    x: 0.5
+    x: 0.75
     y: 0
     width: 0.25
     height: 0.9
@@ -2242,7 +2242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   talkSet:
-  - number: 1
+  - textinfo: TestCharaTalk
     cameraSet:
     - camLookCenter: {fileID: 2061723498}
       camLookRight: {fileID: 0}
@@ -2272,11 +2272,11 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 1801056959}
             m_TargetAssemblyTypeName: CharaEffect, Assembly-CSharp
-            m_MethodName: OnClickEvent
-            m_Mode: 1
+            m_MethodName: ChangeFace_Surprise
+            m_Mode: 2
             m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_ObjectArgument: {fileID: 2061723498}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -2291,7 +2291,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 1801056959}
             m_TargetAssemblyTypeName: CharaEffect, Assembly-CSharp
-            m_MethodName: FaceChangeNormal
+            m_MethodName: FaceChange_Normal
             m_Mode: 2
             m_Arguments:
               m_ObjectArgument: {fileID: 2061723498}
@@ -2301,44 +2301,80 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-  - number: 2
+          - m_Target: {fileID: 1801056959}
+            m_TargetAssemblyTypeName: CharaEffect, Assembly-CSharp
+            m_MethodName: OnClickEvent
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - textinfo: TestObjectIntaract
     cameraSet:
-    - camLookCenter: {fileID: 0}
+    - camLookCenter: {fileID: 1933059145}
+      camLookRight: {fileID: 2061723498}
+      camLookLeft: {fileID: 1944096226}
+      camDivision: 3
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1801056959}
+            m_TargetAssemblyTypeName: CharaEffect, Assembly-CSharp
+            m_MethodName: OnClickEvent
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - camLookCenter: {fileID: 1933059145}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 0
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
-    - camLookCenter: {fileID: 0}
-      camLookRight: {fileID: 0}
+    - camLookCenter: {fileID: 1944096226}
+      camLookRight: {fileID: 2061723498}
       camLookLeft: {fileID: 0}
       camDivision: 1
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
-    - camLookCenter: {fileID: 0}
+    - camLookCenter: {fileID: 1933059145}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
+      camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 1933059145}
+      camLookRight: {fileID: 2061723498}
+      camLookLeft: {fileID: 1944096226}
       camDivision: 2
       OnTalkEvent:
         m_PersistentCalls:
-          m_Calls: []
-    - camLookCenter: {fileID: 0}
-      camLookRight: {fileID: 0}
-      camLookLeft: {fileID: 0}
-      camDivision: 1
-      OnTalkEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - camLookCenter: {fileID: 0}
-      camLookRight: {fileID: 0}
-      camLookLeft: {fileID: 0}
-      camDivision: 0
-      OnTalkEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - number: 3
+          m_Calls:
+          - m_Target: {fileID: 1801056959}
+            m_TargetAssemblyTypeName: CharaEffect, Assembly-CSharp
+            m_MethodName: OnClickEvent
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  - textinfo: TestTextPumpkkin
     cameraSet:
     - camLookCenter: {fileID: 0}
       camLookRight: {fileID: 0}
@@ -2830,9 +2866,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 802374986}
     m_Modifications:
+    - target: {fileID: 2205344435950172745, guid: 6b61783fbd4f9e24eac616c5bd0a5228, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3851434871629948578, guid: 6b61783fbd4f9e24eac616c5bd0a5228, type: 3}
       propertyPath: m_Name
       value: TestObj_kanban
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632317784535239067, guid: 6b61783fbd4f9e24eac616c5bd0a5228, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6195939238585519571, guid: 6b61783fbd4f9e24eac616c5bd0a5228, type: 3}
       propertyPath: m_Pivot.x
@@ -2914,6 +2958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7456786441900246635, guid: 6b61783fbd4f9e24eac616c5bd0a5228, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2931,6 +2979,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestChara
       objectReference: {fileID: 0}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d5a4e6cefa919b40aebb94cafed51b7, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b2dceae78a9f5149b66e8ba7e561c5f, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6578b58d3b284ee4e916414a55f2b8cb, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: a29deae33b631e9499663e99a4bcf2bd, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 25cc77a42cf5d3145bfe1eba48bfbfef, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: ce35b787ae6fd1d478577bcb2f6abe26, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8af1b09f1a062654dabfd66283300389, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ba3fe5cec98e974e9fe19629db77cb3, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: cb8b1d2afea6a7c41b2e5edddbc9cc6c, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 08423a349e5f83d4db372f7479fdb5b6, type: 3}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: faceImage.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f5932344a4fea04c9b7faece0011755, type: 3}
     - target: {fileID: 8957709913189605501, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3113,6 +3209,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6522839850793025442, guid: 203de79a53400ac44a22487bbd4379d7, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 11400000, guid: 7136a96944e07024a993517a079de2fe, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
