@@ -8,7 +8,8 @@ public class InteractChara : MonoBehaviour, IReceiveSearch
 
     //調べた時のテキスト情報をテキスト管理スクリプトに渡す
 
-    [SerializeField] private DialogueText dialogueText;
+    [SerializeField] private DialogueText TestTextChara_1;
+    [SerializeField] private DialogueText TestTextChara_2;
 
     private GameManager gameManager;
     private CinemachineVirtualCamera[] virtualCameras;
@@ -20,8 +21,14 @@ public class InteractChara : MonoBehaviour, IReceiveSearch
         
         Debug.Log("キャラを調べた");
         //場合によってはフラグによって条件分岐
-
-        gameManager.OpenTextWindow(dialogueText, virtualCameras);
+        if (gameManager.eventFlagData.GameStart)
+        {
+            gameManager.OpenTextWindow(TestTextChara_2, virtualCameras);
+        }
+        else
+        {
+            gameManager.OpenTextWindow(TestTextChara_1, virtualCameras);
+        }
 
     }
 

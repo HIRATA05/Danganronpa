@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5673b82a746a941b7c86747230d31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventFlagData: {fileID: 11400000, guid: 3b3bf62baf078de47b85c1a4e025fa32, type: 2}
 --- !u!4 &279657945
 Transform:
   m_ObjectHideFlags: 0
@@ -2222,6 +2223,7 @@ GameObject:
   - component: {fileID: 1801056958}
   - component: {fileID: 1801056957}
   - component: {fileID: 1801056959}
+  - component: {fileID: 1801056960}
   m_Layer: 0
   m_Name: TalkCameraManager
   m_TagString: Untagged
@@ -2301,9 +2303,9 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 1801056959}
-            m_TargetAssemblyTypeName: CharaEffect, Assembly-CSharp
-            m_MethodName: OnClickEvent
+          - m_Target: {fileID: 1801056960}
+            m_TargetAssemblyTypeName: FlagChangeEffect, Assembly-CSharp
+            m_MethodName: GameStart_Change
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -2411,6 +2413,29 @@ MonoBehaviour:
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
+  - textinfo: TestCharaTalk_2
+    cameraSet:
+    - camLookCenter: {fileID: 2061723498}
+      camLookRight: {fileID: 1944096226}
+      camLookLeft: {fileID: 0}
+      camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 1944096226}
+      camLookRight: {fileID: 2061723498}
+      camLookLeft: {fileID: 1933059145}
+      camDivision: 3
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 2061723498}
+      camLookRight: {fileID: 0}
+      camLookLeft: {fileID: 0}
+      camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
 --- !u!4 &1801056958
 Transform:
   m_ObjectHideFlags: 0
@@ -2436,6 +2461,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95f9a442d3606c54c9f1d3ef2a532553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1801056960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801056956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8edbd5a328a04d49b02f4279b763318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1826994986
@@ -2979,6 +3016,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestChara
       objectReference: {fileID: 0}
+    - target: {fileID: 5307074596940884708, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: GameTest1_Text
+      value: 
+      objectReference: {fileID: 11400000, guid: 5defc1a5adfce5040a4301746cb5e46c, type: 2}
+    - target: {fileID: 5307074596940884708, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: TestTextChara_1
+      value: 
+      objectReference: {fileID: 11400000, guid: 5defc1a5adfce5040a4301746cb5e46c, type: 2}
+    - target: {fileID: 5307074596940884708, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: TestTextChara_2
+      value: 
+      objectReference: {fileID: 11400000, guid: 624488a53ec1a734ca692b97d9a6f248, type: 2}
+    - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
+      propertyPath: defaultFace
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d5a4e6cefa919b40aebb94cafed51b7, type: 3}
     - target: {fileID: 8456961213546903008, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
       propertyPath: faceImage.Array.size
       value: 11
@@ -3069,7 +3122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957709913189605501, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.405
+      value: 0.40499997
       objectReference: {fileID: 0}
     - target: {fileID: 8957709913189605501, guid: 880281080c7db2b47bb7495ce4409c38, type: 3}
       propertyPath: m_LocalRotation.w

@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     private TextWindow textWindow;
 
+    public EventFlagData eventFlagData;
+
 
 
     void Start()

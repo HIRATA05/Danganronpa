@@ -9,7 +9,7 @@ public class CircleDeployer : MonoBehaviour
 {
 
     //Ф╝Мa
-    [SerializeField]
+    [SerializeField, Header("В▒В╠ТlВ┼Й~М`Ф═И═В╠Ф╝МaВЁТ▓Ро")]
     private float _radius;
 
     private void Awake()
