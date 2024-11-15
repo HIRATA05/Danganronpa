@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class CircleDeployer : MonoBehaviour
 {
+    //円形の並びを作るスクリプト
 
     //半径
     [SerializeField, Header("この値で円形範囲の半径を調整")]
@@ -25,7 +26,7 @@ public class CircleDeployer : MonoBehaviour
 
     //子を円状に配置する(ContextMenuで鍵マークの所にメニュー追加)
     [ContextMenu("Deploy")]
-    private void Deploy()
+    public void Deploy()
     {
 
         //子を取得
