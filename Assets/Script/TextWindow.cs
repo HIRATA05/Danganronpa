@@ -89,7 +89,7 @@ public class TextWindow : MonoBehaviour
             var talkset = talkCameraManager.talkSet[loop];
             talkSetDictionary.Add(talkset.textinfo, talkset);
         }
-
+        
     }
 
     void Update()
@@ -320,7 +320,6 @@ public class TextWindow : MonoBehaviour
         TaklCamera_1.enabled = !TaklCamera_1.enabled;
         TaklCamera_2.enabled = !TaklCamera_2.enabled;
         TaklCamera_3.enabled = !TaklCamera_3.enabled;
-
     }
 
     //3‚Â‚ÌƒJƒƒ‰‚Ì•\¦”ÍˆÍ‚ğ“¯‚É•Ï‰»

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 
@@ -8,17 +9,23 @@ public class DiscussionManager : MonoBehaviour
 {
     //ノンストップ議論の全体的な動作を管理
 
+    //ゲームマネージャー
+    [SerializeField] private GameManager gameManager;
+
     //円形の並びを作るスクリプト
     [SerializeField] private CircleDeployer circleDeployer;
+
+    //照準
+    [SerializeField] private Image aimImage;
+    //照準の画像
+    [SerializeField] private Sprite aimImageNormal;
+    [SerializeField] private Sprite aimImageColText;
 
     //議論場所の中心点
     [SerializeField] private GameObject centerDiscussionPoint;
 
     //回転速度
     float rotSpeed = 1.0f;
-
-    //照準
-
 
     //コトダマシリンダー
 
@@ -66,6 +73,14 @@ public class DiscussionManager : MonoBehaviour
         DiscussionInit();
 
         Text.text = speechSet[0].Speech;
+
+        //最初にキャラの円形に沿って数秒間回転
+
+        //議論開始のUI
+
+        //照準を動かせる
+
+
 
         
     }

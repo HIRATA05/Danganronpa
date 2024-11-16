@@ -8,7 +8,9 @@ public class CharaEffect : MonoBehaviour
 {
     //会話中にキャラに発生させる演出等
     //UnityEventは引数を1つしか設定できないため注意
-    
+
+    [SerializeField] private Image eventcgImage;
+
     void Start()
     {
         
@@ -78,6 +80,15 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceFrightened();
         }
     }
+
+    //イベントCGを表示
+    public void EventImageDisplay(Sprite sprite)
+    {
+        eventcgImage.sprite = sprite;
+        eventcgImage.enabled = true;
+    }
+    //イベントCGを非表示
+    public void EventImageDelete() { eventcgImage.enabled = false; }
 
     //印象的な発言の時に発生する白いフェード
     //SEを発生させ一瞬画像を白くして元に戻す

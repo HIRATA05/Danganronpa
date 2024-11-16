@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentRoom: TestRoom
   itemDataBase: {fileID: 11400000, guid: 4d33a3ffe9762db44973a8f7ebbdf278, type: 2}
-  GameStart: 1
-  RoomIn: 0
+  GameStart: 0
+  RoomIn: 1
