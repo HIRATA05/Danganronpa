@@ -9,28 +9,31 @@ public class InteractObj : MonoBehaviour, IReceiveSearch
 
     [SerializeField] private DialogueText dialogueText;
 
-    GameManager gameManager;
-    TextWindow textWindow;
+    private GameManager gameManager;
+    //TextWindow textWindow;
 
 
     public void ReceiveSearch()
     {
         Debug.Log("•¨‚ğ’²‚×‚½");
         //ê‡‚É‚æ‚Á‚Ä‚Íƒtƒ‰ƒO‚É‚æ‚Á‚ÄğŒ•ªŠò
-
+        gameManager.OpenTextWindow(dialogueText);
+        /*
         //“n‚·
         textWindow.dialogueText = dialogueText;
 
         gameManager.playerController = GameManager.PlayerController.TextWindowMode;
+        */
     }
 
     void Start()
     {
         GameObject gm = GameObject.Find("GameManager");
         gameManager = gm.GetComponent<GameManager>();
+        /*
         GameObject tw = GameObject.Find("TextWindow");
         textWindow = tw.GetComponent<TextWindow>();
-
+        */
     }
 
     void Update()

@@ -12,7 +12,7 @@ public class InteractChara : MonoBehaviour, IReceiveSearch
     [SerializeField] private DialogueText TestTextChara_2;
 
     private GameManager gameManager;
-    private CinemachineVirtualCamera[] virtualCameras;
+    //private CinemachineVirtualCamera[] virtualCameras;
 
 
 
@@ -20,14 +20,14 @@ public class InteractChara : MonoBehaviour, IReceiveSearch
     {
         
         Debug.Log("キャラを調べた");
-        //場合によってはフラグによって条件分岐
+        //場合によってはフラグで条件分岐
         if (gameManager.eventFlagData.GameStart)
         {
-            gameManager.OpenTextWindow(TestTextChara_2, virtualCameras);
+            gameManager.OpenTextWindow(TestTextChara_2);
         }
         else
         {
-            gameManager.OpenTextWindow(TestTextChara_1, virtualCameras);
+            gameManager.OpenTextWindow(TestTextChara_1/*, virtualCameras*/);
         }
 
     }
@@ -36,7 +36,7 @@ public class InteractChara : MonoBehaviour, IReceiveSearch
     {
         GameObject gm = GameObject.Find("GameManager");
         gameManager = gm.GetComponent<GameManager>();
-        virtualCameras = GetComponentsInChildren<CinemachineVirtualCamera>();
+        //virtualCameras = GetComponentsInChildren<CinemachineVirtualCamera>();
     }
 
     void Update()

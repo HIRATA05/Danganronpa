@@ -51,6 +51,10 @@ public class ReticleAim : MonoBehaviour
         transform.position = Input.mousePosition;
 
 
+        //照準が透明の時元に戻す
+        if (this.gameObject.GetComponent<Image>().color == Color.clear)
+            this.gameObject.GetComponent<Image>().color = Color.white;
+
         RaycastHit hit;
 
         //MainCameraからマウスの位置にRayを飛ばす
@@ -97,7 +101,7 @@ public class ReticleAim : MonoBehaviour
                     SearchObjInformationText.color = Color.black;
 
                 //この状態で調べるとテキスト表示
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyUp(KeyCode.Space))
                 {
                     //インタフェースを確認する
                     IReceiveSearch SearchObj = hit.transform.GetComponent<IReceiveSearch>();
@@ -107,11 +111,17 @@ public class ReticleAim : MonoBehaviour
                         SearchObj.ReceiveSearch();
                     }
 
+                    
+                    /*
                     //探索可能オブジェクト情報のウィンドウを透明にする
                     if (SearchObjInformationWindow.color != Color.clear)
                         SearchObjInformationWindow.color = Color.clear;
                     if (SearchObjInformationText.color != Color.clear)
                         SearchObjInformationText.color = Color.clear;
+                    //照準を透明にする
+                    if (this.gameObject.GetComponent<Image>().color != Color.clear)
+                        this.gameObject.GetComponent<Image>().color = Color.clear;
+                    */
                 }
 
             }
@@ -154,4 +164,15 @@ public class ReticleAim : MonoBehaviour
             SearchObjInformationText.color = Color.clear;
     }
 
+    public void ColorChangeClaer()
+    {
+        //探索可能オブジェクト情報のウィンドウを透明にする
+        if (SearchObjInformationWindow.color != Color.clear)
+            SearchObjInformationWindow.color = Color.clear;
+        if (SearchObjInformationText.color != Color.clear)
+            SearchObjInformationText.color = Color.clear;
+        //照準を透明にする
+        if (this.gameObject.GetComponent<Image>().color != Color.clear)
+            this.gameObject.GetComponent<Image>().color = Color.clear;
+    }
 }

@@ -22,11 +22,21 @@ public class FlagChangeEffect : MonoBehaviour
         
     }
 
-    //引数は表情を変化させるキャラ、オブジェクトがキャラかどうか判別
-    //スプライトを別の表情画像に変化
+    //スクリプタブルのフラグを変化させてイベントを制御する
     public void GameStart_Change()
     {
         Debug.Log("GameStartをTRUE");
         gameManager.eventFlagData.GameStart = true;
+    }
+
+    public void RoomIn_Change_True()
+    {
+        Debug.Log("RoomInをTRUE");
+        gameManager.eventFlagData.RoomIn_True();
+    }
+    public void RoomIn_Change_False()
+    {
+        Debug.Log("RoomInをFALSE");
+        gameManager.eventFlagData.RoomIn_False();
     }
 }

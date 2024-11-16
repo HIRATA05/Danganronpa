@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2378,35 +2378,35 @@ MonoBehaviour:
             m_CallState: 2
   - textinfo: TestTextPumpkkin
     cameraSet:
-    - camLookCenter: {fileID: 0}
+    - camLookCenter: {fileID: 332307080}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 0
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
-    - camLookCenter: {fileID: 0}
-      camLookRight: {fileID: 0}
+    - camLookCenter: {fileID: 332307080}
+      camLookRight: {fileID: 2061723498}
       camLookLeft: {fileID: 0}
       camDivision: 1
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
-    - camLookCenter: {fileID: 0}
+    - camLookCenter: {fileID: 332307080}
       camLookRight: {fileID: 0}
-      camLookLeft: {fileID: 0}
+      camLookLeft: {fileID: 1944096226}
       camDivision: 2
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
-    - camLookCenter: {fileID: 0}
-      camLookRight: {fileID: 0}
+    - camLookCenter: {fileID: 332307080}
+      camLookRight: {fileID: 2061723498}
       camLookLeft: {fileID: 0}
       camDivision: 1
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
-    - camLookCenter: {fileID: 0}
+    - camLookCenter: {fileID: 2061723498}
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 0
@@ -2433,6 +2433,48 @@ MonoBehaviour:
       camLookRight: {fileID: 0}
       camLookLeft: {fileID: 0}
       camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+  - textinfo: TestRoomIn
+    cameraSet:
+    - camLookCenter: {fileID: 2061723498}
+      camLookRight: {fileID: 1944096226}
+      camLookLeft: {fileID: 0}
+      camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1801056960}
+            m_TargetAssemblyTypeName: FlagChangeEffect, Assembly-CSharp
+            m_MethodName: RoomIn_Change_False
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - camLookCenter: {fileID: 1944096226}
+      camLookRight: {fileID: 2061723498}
+      camLookLeft: {fileID: 1933059145}
+      camDivision: 0
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 2061723498}
+      camLookRight: {fileID: 1944096226}
+      camLookLeft: {fileID: 332307080}
+      camDivision: 3
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 2061723498}
+      camLookRight: {fileID: 1944096226}
+      camLookLeft: {fileID: 0}
+      camDivision: 1
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -2869,6 +2911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2130888224}
+  - component: {fileID: 2130888225}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -2895,6 +2938,20 @@ Transform:
   - {fileID: 987654725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2130888225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130888223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1608d71165ee6d445a3c4399603c81fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomName: TestRoom
+  TestRoomText: {fileID: 11400000, guid: 42ce2c5a06dcbec46be71ba26fb2a5f9, type: 2}
 --- !u!1001 &3439526824093039921
 PrefabInstance:
   m_ObjectHideFlags: 0

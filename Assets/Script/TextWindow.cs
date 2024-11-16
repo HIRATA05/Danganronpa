@@ -97,12 +97,15 @@ public class TextWindow : MonoBehaviour
         //テキストを表示
         if (gameManager.playerController == GameManager.PlayerController.TextWindowMode)
         {
+            //会話文表示処理を実行する
+            //DisplayDialogueText();
+            ProgressText();
+            /*
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //会話文表示処理を実行する
-                DisplayDialogueText();
 
             }
+            */
         }   
     }
 
@@ -136,15 +139,9 @@ public class TextWindow : MonoBehaviour
 
     }
 
-    
-
-    /// <summary>
-    /// 会話文表示処理
-    /// </summary>
-    public void DisplayDialogueText()
+    //会話の進行
+    public void ProgressText()
     {
-        
-
         //パネルが非表示なら表示する
         if (!panelObject.activeSelf)
         {
@@ -156,8 +153,36 @@ public class TextWindow : MonoBehaviour
             //会話用カメラの起動
             CameraEnabled();
 
+            //最初の会話の表示
+            DisplayDialogueText();
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //次の会話の表示
+            DisplayDialogueText();
+        }
+    }
+
+    /// <summary>
+    /// 会話文表示処理
+    /// </summary>
+    public void DisplayDialogueText()
+    {
+        
+        /*
+        //パネルが非表示なら表示する
+        if (!panelObject.activeSelf)
+        {
+            panelObject.SetActive(true);
+
+            //主人公の表示処理
+            if (mainTalkChara.GetComponent<Image>().enabled == false) mainTalkChara.GetComponent<Image>().enabled = true;
+
+            //会話用カメラの起動
+            CameraEnabled();
+        }
+        */
         //scriptableObjectの情報をパネルに表示する
         if (dialogueText.textInfomations.Length > index)
         {

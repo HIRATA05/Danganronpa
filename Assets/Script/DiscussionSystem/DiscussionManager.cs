@@ -67,10 +67,7 @@ public class DiscussionManager : MonoBehaviour
 
         Text.text = speechSet[0].Speech;
 
-        string part = speechSet[0].Speech.Substring(1, 5);
-
-        Debug.Log(part);
-
+        
     }
 
     void Update()

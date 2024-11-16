@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public PlayerController playerController;
 
     private TextWindow textWindow;
+    private ReticleAim reticleAim;
 
     public EventFlagData eventFlagData;
 
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
     {
         GameObject tw = GameObject.Find("TextWindow");
         textWindow = tw.GetComponent<TextWindow>();
+        GameObject ra = GameObject.Find("CorsorImage");
+        reticleAim = ra.GetComponent<ReticleAim>();
 
         playerController = PlayerController.ReticleMode;
     }
@@ -39,18 +42,22 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// リクエストに応えてテキストウインドウを開く
     /// </summary>
-    public void OpenTextWindow(DialogueText dialogueText, CinemachineVirtualCamera[] virtualCameras)
+    public void OpenTextWindow(DialogueText dialogueText/*, CinemachineVirtualCamera[] virtualCameras*/)
     {
         Debug.Log("テキストウィンドウを開く");
 
+        //表示を透明に変える
+        reticleAim.ColorChangeClaer();
+
         textWindow.dialogueText = dialogueText;
         playerController = GameManager.PlayerController.TextWindowMode;
-
+        /*
         virtualCameras[0].Priority = 1;
         virtualCameras[1].Priority = 0;
         virtualCameras[2].Priority = 0;
 
 
         for (int i = 0; i < virtualCameras.Length; i++) { Debug.Log(virtualCameras[i].name); }
+        */
     }
 }

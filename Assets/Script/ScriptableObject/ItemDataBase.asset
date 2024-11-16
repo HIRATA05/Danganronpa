@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16632fd449f146949a0131af5ff9d9e8, type: 3}
-  m_Name: EventFlag
+  m_Script: {fileID: 11500000, guid: 57d7bd0db58492749bf0dfb818b2d133, type: 3}
+  m_Name: ItemDataBase
   m_EditorClassIdentifier: 
-  currentRoom: TestRoom
-  itemDataBase: {fileID: 11400000, guid: 4d33a3ffe9762db44973a8f7ebbdf278, type: 2}
-  GameStart: 1
-  RoomIn: 0
+  items:
+  - {fileID: 11400000, guid: d940cfedc0c26b24ebaee71cc5af08ef, type: 2}
+  truthBullets:
+  - {fileID: 11400000, guid: 9bf6fcca26f31a444a5c21854ed55b67, type: 2}
