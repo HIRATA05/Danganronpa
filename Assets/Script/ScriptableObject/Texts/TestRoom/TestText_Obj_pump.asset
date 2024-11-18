@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textinfo: TestTextPumpkkin
   textInfomations:
-  - speakerName: UltimateDetective
+  - speakerName: test
     paragraphs: Its,testtext
-  - speakerName: UltimateDetective
+  - speakerName: test
     paragraphs: testtext
-  - speakerName: UltimateDetective
+  - speakerName: test
     paragraphs: testtexttesttexttesttext
-  - speakerName: UltimateDetective
+  - speakerName: test
     paragraphs: testtexttesttext
-  - speakerName: UltimateDetective
+  - speakerName: test,test
     paragraphs: testtext??testtexttesttext!

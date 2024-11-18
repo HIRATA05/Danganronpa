@@ -16,8 +16,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DialogueText", menuName = "ScriptableObjects/CreateDialogueText")]
 public class DialogueText : ScriptableObject
 {
-    //会話イベントの番号
-    //public int number;
+    //会話イベントのキー
     public string textinfo;
 
     //会話テキストの情報

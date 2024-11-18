@@ -111,17 +111,6 @@ public class ReticleAim : MonoBehaviour
                         SearchObj.ReceiveSearch();
                     }
 
-                    
-                    /*
-                    //探索可能オブジェクト情報のウィンドウを透明にする
-                    if (SearchObjInformationWindow.color != Color.clear)
-                        SearchObjInformationWindow.color = Color.clear;
-                    if (SearchObjInformationText.color != Color.clear)
-                        SearchObjInformationText.color = Color.clear;
-                    //照準を透明にする
-                    if (this.gameObject.GetComponent<Image>().color != Color.clear)
-                        this.gameObject.GetComponent<Image>().color = Color.clear;
-                    */
                 }
 
             }

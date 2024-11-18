@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        eventFlagData.RoomIn = true;
+
         GameObject tw = GameObject.Find("TextWindow");
         textWindow = tw.GetComponent<TextWindow>();
         GameObject ra = GameObject.Find("CorsorImage");
@@ -39,10 +41,9 @@ public class GameManager : MonoBehaviour
         
     }
 
-    /// <summary>
-    /// リクエストに応えてテキストウインドウを開く
-    /// </summary>
-    public void OpenTextWindow(DialogueText dialogueText/*, CinemachineVirtualCamera[] virtualCameras*/)
+
+    //リクエストに応えてテキストウインドウを開く
+    public void OpenTextWindow(DialogueText dialogueText)
     {
         Debug.Log("テキストウィンドウを開く");
 
@@ -51,13 +52,6 @@ public class GameManager : MonoBehaviour
 
         textWindow.dialogueText = dialogueText;
         playerController = GameManager.PlayerController.TextWindowMode;
-        /*
-        virtualCameras[0].Priority = 1;
-        virtualCameras[1].Priority = 0;
-        virtualCameras[2].Priority = 0;
-
-
-        for (int i = 0; i < virtualCameras.Length; i++) { Debug.Log(virtualCameras[i].name); }
-        */
+        
     }
 }
