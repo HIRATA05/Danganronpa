@@ -9,7 +9,7 @@ public class TestCol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        puls_x = gameObject.transform.position.x;
     }
 
     // Update is called once per frame
@@ -23,5 +23,6 @@ public class TestCol : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("•¶Žš‚É“–‚½‚Á‚½");
+        
     }
 }

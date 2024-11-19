@@ -47,11 +47,14 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("テキストウィンドウを開く");
 
-        //表示を透明に変える
+        //表示を透明化する
+        reticleAim.aimImage.color = Color.clear;
         reticleAim.ColorChangeClaer();
 
         textWindow.dialogueText = dialogueText;
         playerController = GameManager.PlayerController.TextWindowMode;
         
     }
+
+    
 }
