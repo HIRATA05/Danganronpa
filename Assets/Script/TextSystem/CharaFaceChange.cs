@@ -43,7 +43,10 @@ public class CharaFaceChange : MonoBehaviour
     // ï\èÓÇïœÇ¶ÇÈ
     public void ChangeFace(Face face)
     {
-        gameObject.GetComponent<Image>().sprite = faceImage[(int)face];
+        var chara = gameObject.transform.GetChild(0).gameObject.transform.GetChild(0);
+        var shadow = gameObject.transform.GetChild(1).gameObject.transform.GetChild(0);
+        chara.GetComponent<Image>().sprite = faceImage[(int)face];
+        shadow.GetComponent<Image>().sprite = faceImage[(int)face];
     }
 
     public void ChangeFaceNormal() => ChangeFace(Face.Normal);

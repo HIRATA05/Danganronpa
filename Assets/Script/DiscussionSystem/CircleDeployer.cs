@@ -13,6 +13,7 @@ public class CircleDeployer : MonoBehaviour
     [SerializeField, Header("‚±‚Ì’l‚Å‰~Œ`”ÍˆÍ‚Ì”¼Œa‚ğ’²®")]
     private float _radius;
 
+
     private void Awake()
     {
         Deploy();
@@ -56,10 +57,14 @@ public class CircleDeployer : MonoBehaviour
             childPostion.z += _radius * Mathf.Sin(angle);
 
             childList[i].transform.position = childPostion;
-
+            /*
             //Œü‚«‚ğ’†‰›‚É
             var dir = transform.position - childList[i].transform.position;
             childList[i].transform.LookAt(dir);
+            */
+
+            childList[i].transform.rotation = Quaternion.LookRotation(transform.position);
+
         }
 
     }

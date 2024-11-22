@@ -68,7 +68,7 @@ public class TextWindow : MonoBehaviour
     TalkCameraManager.CameraSet.CameraDivision currentCameraDivision = TalkCameraManager.CameraSet.CameraDivision.CenterOnly;
 
     //子オブジェクトを指定するための3つのヴァーチャルカメラ番号
-    private const int vcamNumCenter = 0, vcamNumRight = 1, vcamNumLeft = 2;
+    private const int vcamNumCenter = 2, vcamNumRight = 3, vcamNumLeft = 4;
 
     //会話カメラの辞書
     private Dictionary<string, TalkCameraManager.TalkSet> talkSetDictionary = new();
@@ -142,7 +142,9 @@ public class TextWindow : MonoBehaviour
             panelObject.SetActive(true);
 
             //主人公の表示処理
-            if (mainTalkChara.GetComponent<Image>().enabled == false) mainTalkChara.GetComponent<Image>().enabled = true;
+            var mainChara = mainTalkChara.transform.GetChild(0).gameObject.transform.GetChild(0);
+            var mainCharaShadow = mainTalkChara.transform.GetChild(1).gameObject.transform.GetChild(0);
+            if (mainChara.GetComponent<Image>().enabled == false) { mainChara.GetComponent<Image>().enabled = true; mainCharaShadow.GetComponent<Image>().enabled = true; }
 
             //会話用カメラの起動
             CameraEnabled();
@@ -211,7 +213,10 @@ public class TextWindow : MonoBehaviour
             panelObject.SetActive(false);
 
             //主人公の透過処理
-            if (mainTalkChara.GetComponent<Image>().enabled != false) mainTalkChara.GetComponent<Image>().enabled = false;
+            var mainChara = mainTalkChara.transform.GetChild(0).gameObject.transform.GetChild(0);
+            var mainCharaShadow = mainTalkChara.transform.GetChild(1).gameObject.transform.GetChild(0);
+            if (mainChara.GetComponent<Image>().enabled != false) { mainChara.GetComponent<Image>().enabled = false; mainCharaShadow.GetComponent<Image>().enabled = false; }
+            //if (mainTalkChara.GetComponent<Image>().enabled != false) mainTalkChara.GetComponent<Image>().enabled = false;
 
             //会話用カメラの非表示
             CameraEnabled();
