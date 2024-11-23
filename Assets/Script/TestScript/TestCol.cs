@@ -15,9 +15,10 @@ public class TestCol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         puls_x -= 0.1f;
         gameObject.transform.position = new Vector3(puls_x, gameObject.transform.position.y, gameObject.transform.position.z);
+        */
     }
 
     public void OnTriggerEnter(Collider other)
