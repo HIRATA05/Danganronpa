@@ -215,8 +215,13 @@ public class TextWindow : MonoBehaviour
             //主人公の透過処理
             var mainChara = mainTalkChara.transform.GetChild(0).gameObject.transform.GetChild(0);
             var mainCharaShadow = mainTalkChara.transform.GetChild(1).gameObject.transform.GetChild(0);
-            if (mainChara.GetComponent<Image>().enabled != false) { mainChara.GetComponent<Image>().enabled = false; mainCharaShadow.GetComponent<Image>().enabled = false; }
-            //if (mainTalkChara.GetComponent<Image>().enabled != false) mainTalkChara.GetComponent<Image>().enabled = false;
+            if (mainChara.GetComponent<Image>().enabled != false) 
+            { 
+                mainChara.GetComponent<Image>().enabled = false; mainCharaShadow.GetComponent<Image>().enabled = false; 
+            }
+
+            //画面効果の切り替え
+            gameManager.SwitchDepthOfField(false);
 
             //会話用カメラの非表示
             CameraEnabled();

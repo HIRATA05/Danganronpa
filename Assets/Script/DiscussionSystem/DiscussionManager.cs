@@ -26,6 +26,9 @@ public class DiscussionManager : MonoBehaviour
     //回転速度
     float rotSpeed = 1.0f;
 
+    //次の発言までの時間
+
+
     //コトダマシリンダー
 
 
@@ -61,7 +64,7 @@ public class DiscussionManager : MonoBehaviour
     private int DiscussionNum = 0;
 
     //円形に並ぶ生徒
-    [SerializeField, Header("このオブジェクトが議論で発生する")] private GameObject[] DiscussionMenber;
+    [SerializeField, Header("議論で並ぶキャラ")] private GameObject[] DiscussionMenber;
     //生徒生成の親オブジェクト
     [SerializeField, Header("議論者発生の親オブジェクト")] private GameObject perentObj;
 
@@ -75,7 +78,7 @@ public class DiscussionManager : MonoBehaviour
 
         //最初にキャラの円形に沿って数秒間回転
 
-        //議論開始のUI
+        //議論開始の演出
 
         //照準を動かせる
 
@@ -86,7 +89,8 @@ public class DiscussionManager : MonoBehaviour
 
     void Update()
     {
-        
+        //時間経過で次の文字に進む
+
     }
 
     //発言の移動

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public EventFlagData eventFlagData;
 
+    [SerializeField] private PostProcessVolume postProcessVolume;
+    private DepthOfField depthOfField;
 
 
     void Start()
@@ -41,6 +44,21 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //画面をぼやけさせる効果の切り替え
+    public void SwitchDepthOfField(bool _switch)
+    {
+        //depthOfFieldを取得
+        postProcessVolume.profile.TryGetSettings<DepthOfField>(out depthOfField);
+
+        if (_switch)
+        {
+            depthOfField.active = true;
+        }
+        else
+        {
+            depthOfField.active = false;
+        }
+    }
 
     //リクエストに応えてテキストウインドウを開く
     public void OpenTextWindow(DialogueText dialogueText)
@@ -51,9 +69,12 @@ public class GameManager : MonoBehaviour
         reticleAim.aimImage.color = Color.clear;
         reticleAim.ColorChangeClaer();
 
+        //テキストウィンドウを表示
         textWindow.dialogueText = dialogueText;
         playerController = GameManager.PlayerController.TextWindowMode;
-        
+
+        //画面効果発生
+        SwitchDepthOfField(true);
     }
 
     
