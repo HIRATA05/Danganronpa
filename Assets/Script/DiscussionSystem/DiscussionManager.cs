@@ -14,6 +14,14 @@ public class DiscussionManager : MonoBehaviour
     //円形の並びを作るスクリプト
     [SerializeField] private CircleDeployer circleDeployer;
 
+    enum DiscussionMode
+    {
+        Talk,
+        Shooting
+    }
+    DiscussionMode discussion;
+
+
     //照準
     [SerializeField] private Image aimImage;
     //照準の画像
@@ -27,14 +35,16 @@ public class DiscussionManager : MonoBehaviour
     float rotSpeed = 1.0f;
 
     //次の発言までの時間
-
+    float nextSpeechTime = 5.0f;
+    //現在時間
+    float currentTime = 0.0f;
 
     //コトダマシリンダー
 
 
     //表示するテキスト
-    [SerializeField] private TextMeshProUGUI Text;
-
+    [SerializeField] private GameObject speechText;
+    //論破カラーコード#ffa500　同意カラーコード#41A2E1
     //セリフ
     [System.Serializable]
     public class SpeechSet
@@ -58,7 +68,10 @@ public class DiscussionManager : MonoBehaviour
         public int WeekRangeStart = 0;
         public int WeekRangeEnd = 1;
     }
+    [Header("論破カラーコード#ffa500　同意カラーコード#41A2E1")]
     public SpeechSet[] speechSet;
+
+    private float textThickZ = 0.01f;
 
     //議論の進行番号
     private int DiscussionNum = 0;
@@ -68,29 +81,49 @@ public class DiscussionManager : MonoBehaviour
     //生徒生成の親オブジェクト
     [SerializeField, Header("議論者発生の親オブジェクト")] private GameObject perentObj;
 
+    private bool isTextSetCalled = false;
 
     void Start()
     {
         //議論初期化処理
         DiscussionInit();
 
-        Text.text = speechSet[0].Speech;
 
-        //最初にキャラの円形に沿って数秒間回転
-
-        //議論開始の演出
-
-        //照準を動かせる
-
-
-
-        
     }
 
     void Update()
     {
-        //時間経過で次の文字に進む
+        if (!isTextSetCalled)
+        {
+            isTextSetCalled = true;
+            //文字のデータをセットする
+            speechText.GetComponent<TextMeshProUGUI>().text = speechSet[DiscussionNum].Speech;
 
+            //文字数 speechText.GetComponent<TextMeshProUGUI>().text.Length
+
+            //文字の当たり判定を設定する
+            speechText.AddComponent<BoxCollider>();
+            speechText.GetComponent<BoxCollider>().center = new Vector3(0, 0, 0);
+            speechText.GetComponent<BoxCollider>().size = new Vector3(0, 0, textThickZ);
+        }
+        
+
+        //時間経過で次の文字に進む
+        currentTime += Time.deltaTime;
+        if (currentTime > nextSpeechTime)
+        {
+            currentTime = 0;
+
+            if (DiscussionNum < speechSet.Length)
+            {
+                DiscussionNum++;
+                //文字の当たり判定を削除する
+                Destroy(speechText.GetComponent<BoxCollider>());
+                isTextSetCalled = false;
+            }
+            
+        }
+        
     }
 
     //発言の移動

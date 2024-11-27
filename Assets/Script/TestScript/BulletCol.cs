@@ -27,8 +27,13 @@ public class BulletCol : MonoBehaviour
         {
             Debug.Log("文字に当たった");
             truthBulletShot.BulletMoveEnd();
+
+            //ウィークポイントか確認
+
+            //ウィークポイントなら論破か同意か確認
+
         }
-        
+
         else
         {
             Debug.Log("外れた");
