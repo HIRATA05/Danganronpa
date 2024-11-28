@@ -21,6 +21,12 @@ public class FlagChangeEffect : MonoBehaviour
     {
         
     }
+    
+    //議論に移動
+    public void DiscussionModeSwitch()
+    {
+        gameManager.isDiscussionStart = true;
+    }
 
     //スクリプタブルのフラグを変化させてイベントを制御する
     public void GameStart_Change()

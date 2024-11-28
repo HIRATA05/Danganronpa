@@ -868,6 +868,55 @@ Transform:
   - {fileID: 628900606}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &689710073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 689710075}
+  - component: {fileID: 689710074}
+  m_Layer: 0
+  m_Name: DiscussionTalkModeWindow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &689710074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689710073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a380376297b0aa41beb5b47440e9557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  discussionManager: {fileID: 0}
+  panelObject: {fileID: 0}
+  speakerNameText: {fileID: 0}
+  speakerDialogueText: {fileID: 0}
+--- !u!4 &689710075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689710073}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &811099309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,7 +1467,7 @@ GameObject:
   - component: {fileID: 1076130570}
   - component: {fileID: 1076130573}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: DiscussionMainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1589,7 +1638,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6567abdb0ba2841a7e77e0db7c5f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimImagePos: {fileID: 1312025251}
+  discussionManager: {fileID: 1302360009}
+  aim: {fileID: 1312025250}
+  aimImageNormal: {fileID: 0}
+  aimImageColText: {fileID: 0}
   shotPointCurrent: {fileID: 913351225}
 --- !u!4 &1116307197
 Transform:
@@ -1669,25 +1721,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   circleDeployer: {fileID: 2011173944}
-  aimImage: {fileID: 0}
-  aimImageNormal: {fileID: 0}
-  aimImageColText: {fileID: 0}
   centerDiscussionPoint: {fileID: 2011173942}
-  Text: {fileID: 161874159}
+  DiscussionStartText: {fileID: 0}
+  DiscussionTakeAroundText: {fileID: 0}
+  DiscussionFinishText: {fileID: 0}
+  DiscussionFailureText: {fileID: 0}
+  speechText: {fileID: 161874155}
   speechSet:
   - Speech: <size=15><color=#ffa500>Week</color></size>Point
     SpeechName: "\u5E78\u904B"
     speechType: 0
+    speechMove: 0
     WeekRangeStart: 0
     WeekRangeEnd: 3
   - Speech: TesrSpeech
     SpeechName: "\u5E78\u904B"
     speechType: 2
+    speechMove: 0
     WeekRangeStart: 0
     WeekRangeEnd: 0
   - Speech: <size=15><color=#41A2E1>Week</color></size>Point
     SpeechName: "\u5E78\u904B"
     speechType: 1
+    speechMove: 0
     WeekRangeStart: 0
     WeekRangeEnd: 3
   DiscussionMenber:
@@ -2347,11 +2403,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1852272642}
-  - {fileID: 1076130572}
+  - {fileID: 459597061}
+  - {fileID: 266270328}
   - {fileID: 678048512}
+  - {fileID: 1076130572}
   - {fileID: 2011173943}
   - {fileID: 1852350429}
-  - {fileID: 459597061}
   - {fileID: 1302360010}
   - {fileID: 1116307197}
-  - {fileID: 266270328}
+  - {fileID: 689710075}

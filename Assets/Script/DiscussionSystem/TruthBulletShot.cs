@@ -2,18 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class TruthBulletShot : MonoBehaviour
 {
     //照準を動かす
     //ボタンを押すと発射
     //弾が始点から終点に移動するまで照準が消えて移動不可
-    //
+
+
+    //ノンストップ議論の動作を管理
+    [SerializeField] private DiscussionManager discussionManager;
 
     //照準
-    [SerializeField] private Transform aimImagePos;
+    [SerializeField] private GameObject aim;
+    private Image aimImage;
+    private Transform aimImagePos;
 
+    //照準の画像
+    [SerializeField] private Sprite aimImageNormal;//通常
+    [SerializeField] private Sprite aimImageColText;//発言と重なる
+
+    //コトダマの現在位置
     [SerializeField] private Transform shotPointCurrent;
 
     // 線形補間の始点
@@ -22,18 +31,19 @@ public class TruthBulletShot : MonoBehaviour
     // 線形補間の終点
     private Vector3 shotPointTo = new Vector3();
 
-    // 移動時間[s]
-    //[SerializeField] private float _duration = 10;
+    //リロード状態
+    private bool reloading = false;
+    private float reloadingTime = 3.0f;
 
-    bool reloading = false;
-
+    //弾丸が移動中か
     private bool MoveEnd = false;
-
 
 
     void Start()
     {
-        
+        aimImage = aim.GetComponent<Image>();
+        aimImagePos = aim.transform;
+
         shotPointFrom = shotPointCurrent;
         shotPointCurrent.GetComponent<BulletCol>().SetBulletScript(this.gameObject.GetComponent<TruthBulletShot>());
         Debug.Log(shotPointFrom.position);
@@ -41,25 +51,29 @@ public class TruthBulletShot : MonoBehaviour
 
     void Update()
     {
-        //照準を動かす
-        //マウスの位置と照準器の位置を同期させる。
-        aimImagePos.position = Input.mousePosition;
-
-        RaycastHit hit;
-
-        //MainCameraからマウスの位置にRayを飛ばす
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if(Physics.Raycast(ray, out hit))
+        //議論中か判定
+        if (discussionManager.discussionProgress)
         {
-            //Debug.Log("レイが当たった");
-            //ボタンを押すと発射、発射後数秒間発射不可
-            if (Input.GetKeyUp(KeyCode.Space) && !reloading)
+            //照準を動かす
+            //マウスの位置と照準器の位置を同期させる
+            aimImagePos.position = Input.mousePosition;
+
+            RaycastHit hit;
+
+            //MainCameraからマウスの位置にRayを飛ばす
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
             {
-                shotPointTo = hit.point;
-                Debug.Log("レイが当たった:"+ shotPointTo);
-                shotPointCurrent.position = new Vector3(Camera.main.transform.position.x + 1, Camera.main.transform.position.y, Camera.main.transform.position.z);
-                StartCoroutine(BulletMove());
+                //Debug.Log("レイが当たった");
+                //ボタンを押すと発射、発射後数秒間発射不可
+                if (Input.GetKeyUp(KeyCode.Space) && !reloading)
+                {
+                    shotPointTo = hit.point;
+                    Debug.Log("レイが当たった:" + shotPointTo);
+                    shotPointCurrent.position = new Vector3(Camera.main.transform.position.x + 1, Camera.main.transform.position.y, Camera.main.transform.position.z);
+                    StartCoroutine(BulletMove());
+                }
             }
         }
         
@@ -88,13 +102,24 @@ public class TruthBulletShot : MonoBehaviour
             yield return null;
         }
 
-        //BulletMoveEnd();
+        //弾の位置を変化
         BulletDelete();
-
-
         yield return null;
     }
-    //元の位置に戻し画面内から弾を消す
+
+    //コトダマ発射後のリロード
+    IEnumerator Reload()
+    {
+        //リロード判定をtrueにする
+        reloading = true;
+        yield return new WaitForSeconds(reloadingTime);
+        Debug.Log("リロード終了");
+
+        //リロード判定をfalseにする
+        reloading = false;
+    }
+
+    //初期位置に戻し画面内から弾を消す
     public void BulletDelete()
     {
         shotPointCurrent = shotPointFrom;
@@ -104,20 +129,23 @@ public class TruthBulletShot : MonoBehaviour
     {
         MoveEnd = !MoveEnd;
         
-        Debug.Log("文字接触");
+        Debug.Log("ノンストップ議論終了");
+        //弾の位置を変化
+        BulletDelete();
+
+        //ウィークポイントか確認
+        //ウィークポイント出ない場合NotBreakBullet();
+
+        //ウィークポイントなら論破か同意か確認
+
+        //ノンストップ議論終了処理を呼び出す
+        discussionManager.ShootingFinish();
     }
-    public void BulletMoveEnd()
+    public void NotBreakBullet()
     {
         MoveEnd = !MoveEnd;
         
-        Debug.Log("文字に接触しなかった");
-    }
-    IEnumerator Reload()
-    {
-        reloading = true; //リロード判定をtrueにする
-        yield return new WaitForSeconds(3); //3秒待機
-        Debug.Log("リロード終了");
-        reloading = false; //リロード判定をfalseにする
+        Debug.Log("ウィークポイントに接触しなかった");
     }
 
 }

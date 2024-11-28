@@ -7,14 +7,16 @@ using System;
 
 public class TextWindow : MonoBehaviour
 {
-    //テキストウィンドウ
+    //探索時のテキストウィンドウ
 
     //ゲームマネージャー
     [SerializeField] private GameManager gameManager;
+
     //会話中のカメラの管理
     [SerializeField] private TalkCameraManager talkCameraManager;
     //部屋のオブジェクトを管理
     RoomObjectManager roomObjectManager;
+    //TalkCameraManagerとRoomObjectManagerは部屋を移動した時にその部屋の物に変える処理を後で追加すること
 
     [NonSerialized] public DialogueText dialogueText;
     [SerializeField] private GameObject panelObject;
@@ -100,7 +102,7 @@ public class TextWindow : MonoBehaviour
             //会話文表示処理を実行する
             ProgressText();
             
-        }   
+        }
     }
 
     //3つのカメラの表示範囲を移動する
@@ -182,12 +184,10 @@ public class TextWindow : MonoBehaviour
             //カメラ分割を設定
             if (currentCameraDivision != cameraSet.camDivision)
             {
-                Debug.Log("カメラ切り替え");
                 //それぞれのカメラの表示範囲を指定の位置まで移動する
                 currentCameraDivision = cameraSet.camDivision;
 
                 TalkCameraRectMove();
-
             }
 
             //話者の名前を表示
@@ -230,8 +230,13 @@ public class TextWindow : MonoBehaviour
             gameManager.playerController = GameManager.PlayerController.ReticleMode;
 
             index = 0;
+            
+            if (gameManager.isDiscussionStart)
+            {
+                gameManager.isDiscussionStart = false;
+                gameManager.DiscussionModeChange();
+            }
         }
-        
     }
 
 
