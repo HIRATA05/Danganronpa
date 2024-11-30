@@ -8,18 +8,9 @@ using UnityEngine.UI;
 namespace TECHC.Kamiyashiki
 {
     [System.Serializable]
-    public enum RoomName
-    {
-        ControlRoom,
-        ClassRoom,
-        Garden,
-    }
-
-    [System.Serializable]
     public class Room
     {
-        public RoomName roomName; // 部屋の名前 (enum 型に変更)
-        public GameObject roomObject; // 部屋のオブジェクト
+        public SceneName sceneName; // 遷移先のシーン
         public GameObject mapImage; // マップでの表示画像
     }
 
@@ -27,57 +18,51 @@ namespace TECHC.Kamiyashiki
     {
         // 部屋類
         public List<Room> roomList = new List<Room>();
-        private Dictionary<RoomName, Vector3> roomPositions = new Dictionary<RoomName, Vector3>();
 
         [SerializeField] private EventSystem eventSystem;
-        [SerializeField] private GameObject playerObject;
+
+        [SerializeField] private Canvas ingameCanvas;
+        [SerializeField] private Canvas mapCanvas;
 
         private void Awake()
         {
             foreach (var room in roomList)
             {
                 //　初期設定
-                room.roomObject.name = room.roomName.ToString();
-                room.mapImage.name = room.roomName.ToString();
-
                 room.mapImage.GetComponent<Button>().onClick.AddListener(BeginMoveRoom);
-
-                if (!roomPositions.ContainsKey(room.roomName))
-                {
-                    roomPositions.Add(room.roomName, room.roomObject.transform.position);
-                }
+                room.mapImage.name = room.sceneName.ToString();
             }
+
+            // キャンバス切り替え
+            OpenMapCanvas(false);
         }
 
-        public IEnumerator WaitAndMoveRoom(RoomName roomName, float waitTime, Transform target)
+        public IEnumerator WaitAndMoveRoom(SceneName sceneName, float waitTime, Transform target)
         {
             yield return new WaitForSecondsRealtime(waitTime);
-            MoveRoom(roomName, target);
+            MoveRoom(sceneName);
         }
 
-        public void MoveRoom(RoomName roomName, Transform target)
+        public void MoveRoom(SceneName sceneName)
         {
-            if (roomPositions.TryGetValue(roomName, out Vector3 position))
-            {
-                target.position = position;
-            }
-            else
-            {
-                Debug.LogWarning($"Room '{roomName}' does not exist!");
-            }
+            SceneController.LoadScene(sceneName);
         }
 
         public void BeginMoveRoom()
         {
-            Debug.Log("map");
-            foreach (RoomName room in Enum.GetValues(typeof(RoomName)))
+            foreach (SceneName scene in Enum.GetValues(typeof(SceneName)))
             {
-                if (eventSystem.currentSelectedGameObject.name == room.ToString())
+                if (eventSystem.currentSelectedGameObject.name == scene.ToString())
                 {
-                    Debug.Log("move");
-                    MoveRoom(room, playerObject.transform);
+                    MoveRoom(scene);
                 }
             }
+        }
+
+        public void OpenMapCanvas(bool isOn)
+        {
+            ingameCanvas.enabled = !isOn;
+            mapCanvas.enabled = isOn;
         }
     }
 }

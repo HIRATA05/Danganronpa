@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Results.unity
     guid: 337688a6c8c599344a444873ee59c366
+  - enabled: 1
+    path: Assets/Scenes/Room/ClassRoom.unity
+    guid: 569c97c8b0f7aed498becc5aed351701
+  - enabled: 1
+    path: Assets/Scenes/Room/ControlRoom.unity
+    guid: 612a7ccef4382834481e9a88283f6a08
+  - enabled: 1
+    path: Assets/Scenes/Room/Garden.unity
+    guid: 9f9350b55b8993d48a334f0e50378560
   m_configObjects: {}
