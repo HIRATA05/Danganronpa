@@ -2,20 +2,23 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingPanel : TitlePanelBase
+namespace TECHC.Kamiyashiki
 {
-    [Header("SettingPanel Vars")]
-    [SerializeField] private Button closeBtn;
-
-    public override void InitPanel(UIManager titleUIManager)
+    public class SettingPanel : TitlePanelBase
     {
-        base.InitPanel(titleUIManager);
-        closeBtn.onClick.AddListener(CloseSetting);
-    }
+        [Header("SettingPanel Vars")]
+        [SerializeField] private Button closeBtn;
 
-    private void CloseSetting()
-    {
-        base.ClosePanel();
-        uiManager.ShowPanel(TitlePanelType.MainPanel);
+        public override void InitPanel(UIManager titleUIManager)
+        {
+            base.InitPanel(titleUIManager);
+            closeBtn.onClick.AddListener(CloseSetting);
+        }
+
+        private void CloseSetting()
+        {
+            base.ClosePanel();
+            uiManager.ShowPanel(TitlePanelType.MainPanel);
+        }
     }
 }

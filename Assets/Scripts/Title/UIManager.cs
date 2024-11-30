@@ -2,25 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+namespace TECHC.Kamiyashiki
 {
-    [SerializeField] private TitlePanelBase[] titlePanels;
+    public class UIManager : MonoBehaviour
+    {
+        [SerializeField] private TitlePanelBase[] titlePanels;
+        public SceneName startSceneName;
 
-    void Start()
-    {
-        foreach(var panel in titlePanels)
+        void Start()
         {
-            panel.InitPanel(this);
-        }
-    }
-    public void ShowPanel(TitlePanelBase.TitlePanelType type)
-    {
-        foreach(var panel in titlePanels)
-        {
-            if(panel.PanelType == type)
+            SceneController.GetSceneName();
+            foreach (var panel in titlePanels)
             {
-                panel.ShowPanel();
-                break;
+                panel.InitPanel(this);
+            }
+        }
+        public void ShowPanel(TitlePanelBase.TitlePanelType type)
+        {
+            foreach (var panel in titlePanels)
+            {
+                if (panel.PanelType == type)
+                {
+                    panel.ShowPanel();
+                    break;
+                }
             }
         }
     }
