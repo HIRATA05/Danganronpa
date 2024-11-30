@@ -1,56 +1,43 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace TECHC.Kamiyashiki
 {
-    [SerializeField] private RoomController roomController;
-
-    bool isViewMap = false;
-    int mapLayer;
-    int defaultLayer;
-
-    private void Start()
+    public class Player : MonoBehaviour
     {
-        defaultLayer = 1 << LayerMask.NameToLayer("Default");
-        mapLayer = 1 << LayerMask.NameToLayer("UI");
-        Camera.main.cullingMask = defaultLayer;
-    }
+        [SerializeField] private RoomController roomController;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
+        bool isViewMap = false;
+        int defaultLayer;
+        int mapLayer;
+
+        private void Start()
+        {
+            defaultLayer = 1 << LayerMask.NameToLayer("Default");
+            mapLayer = 1 << LayerMask.NameToLayer("UI");
+            Camera.main.cullingMask = defaultLayer;
+        }
+
+        void Update()
         {
             // マップを開く
-            isViewMap = (isViewMap == true) ? false : true;
-        }
-
-        if (isViewMap)
-        {
-            Camera.main.cullingMask = mapLayer;
-
-            float DebugDrawRayDistance = 15.0f;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.M))
             {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out var hit))
-                {
-                    string objectName = hit.collider.gameObject.name;
-                    Debug.Log("左クリック:" + objectName);
-
-                    if (hit.collider.transform.name == RoomNames.Kitchen.ToString())
-                    {
-                        roomController.MoveRoom(RoomNames.Kitchen, transform);
-                        isViewMap = false;
-                    }
-                }
-                Debug.DrawRay(ray.origin, ray.direction * DebugDrawRayDistance, Color.green, 5, false);
+                isViewMap = (isViewMap == true) ? false : true;
             }
-        }
-        else
-        {
-            Camera.main.cullingMask = defaultLayer;
-            isViewMap = false;
+
+            // マップ切り替え
+            if (isViewMap)
+            {
+                Camera.main.cullingMask = mapLayer;
+            }
+            else
+            {
+                Camera.main.cullingMask = defaultLayer;
+                isViewMap = false;
+            }
         }
     }
 }

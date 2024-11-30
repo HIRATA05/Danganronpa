@@ -2,16 +2,19 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ResultsManager : MonoBehaviour
+namespace TECHC.Kamiyashiki
 {
-    [SerializeField] Button titleBtn;
-    private void Start()
+    public class ResultsManager : MonoBehaviour
     {
-        titleBtn.onClick.AddListener(LoadTitle);
-    }
+        [SerializeField] Button titleBtn;
+        private void Start()
+        {
+            titleBtn.onClick.AddListener(LoadTitle);
+        }
 
-    private void LoadTitle()
-    {
-        StartCoroutine(SceneController.WaitAndLoadScene(SceneName.Title, 0.1f));
+        private void LoadTitle()
+        {
+            StartCoroutine(SceneController.WaitAndLoadScene(SceneName.Title, 0.1f));
+        }
     }
 }
