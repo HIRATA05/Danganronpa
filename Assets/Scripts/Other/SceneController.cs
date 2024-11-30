@@ -11,7 +11,7 @@ namespace TECHC.Kamiyashiki
         InGame,
         Results,
     }
- 
+
     public static class SceneController
     {
         public static void GetSceneName()
