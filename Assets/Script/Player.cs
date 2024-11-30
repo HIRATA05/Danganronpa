@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace TECHC.Kamiyashiki
@@ -9,20 +6,12 @@ namespace TECHC.Kamiyashiki
     {
         [SerializeField] private RoomController roomController;
 
-        bool isViewMap = false;
-
-        private void Start()
-        {
-
-        }
-
         void Update()
         {
-            // マップを開く
+            // マップを開閉
             if (Input.GetKeyDown(KeyCode.M))
             {
-                isViewMap = (isViewMap == true) ? false : true;
-                roomController.OpenMapCanvas(isViewMap);
+                roomController.OpenMapCanvas(!roomController.isOpenMap);
             }
         }
     }

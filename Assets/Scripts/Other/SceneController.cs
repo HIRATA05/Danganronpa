@@ -10,12 +10,6 @@ namespace TECHC.Kamiyashiki
         Title,
         InGame,
         Results,
-        // ↓部屋↓ //
-        MapChangeTest, // テスト用
-        ControlRoom,
-        ClassRoom,
-        Garden,
-        // ↑部屋↑ //
     }
 
     public static class SceneController
