@@ -8,7 +8,7 @@ namespace TECHC.Kamiyashiki
     public enum SceneName
     {
         Title,
-        InGame,
+        SampleScene,
         Results,
     }
 
