@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TECHC.Kamiyashiki
 {
@@ -8,10 +9,10 @@ namespace TECHC.Kamiyashiki
 
         void Update()
         {
-            // マップを開閉
+            // マップを開く
             if (Input.GetKeyDown(KeyCode.M))
             {
-                roomController.OpenMapCanvas(!roomController.isOpenMap);
+                SceneController.LoadScene(SceneName.Map);
             }
         }
     }
