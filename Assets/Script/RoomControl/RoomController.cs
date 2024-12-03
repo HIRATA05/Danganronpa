@@ -14,18 +14,21 @@ namespace TECHC.Kamiyashiki
         Garden,
     }
 
-    [System.Serializable]
-    public class Room
-    {
-        public string roomNameString; // 部屋のシーン名(参照にはEnumを推奨)
-        public RoomName roomName; // 部屋のEnum
-        public GameObject roomButton; // マップに配置するボタン
-    }
-
     public class RoomController : MonoBehaviour
     {
+        [System.Serializable]
+        public class Room
+        {
+            public string roomNameString; // 部屋のシーン名(参照にはEnumを推奨)
+            public RoomName roomName; // 部屋のEnum
+            public GameObject roomButton; // マップに配置するボタン
+                                      //private bool isRoomActive;
+        }
+
         [Header("各部屋設定")]
-        public List<Room> roomList = new List<Room>();
+        [SerializeField]
+        private Room[] roomList;
+        private Dictionary<RoomName, Button> roomButtonDictionary = new Dictionary<RoomName, Button>();
 
         [Header("イベントシステム")]
         [SerializeField] private EventSystem eventSystem;
@@ -35,12 +38,30 @@ namespace TECHC.Kamiyashiki
             // 初期設定
             foreach (var room in roomList)
             {
+                // ボタンオブジェクトの名前をRoomNameと一致させる
+                Debug.Log(room.roomNameString);
+                Debug.Log(room.roomName);
+                Debug.Log(room.roomButton);
+
                 room.roomButton.name = room.roomName.ToString();
                 room.roomButton.GetComponentInChildren<Text>().text = room.roomName.ToString();
 
+                var button = room.roomButton.GetComponent<Button>();
+                Debug.Log(button);
+
+                button.interactable = false;
+                    
                 // マップのボタンにイベントを追加
-                room.roomButton.GetComponent<Button>().onClick.AddListener(OnClickMoveRoom);
+                button.onClick.AddListener(OnClickMoveRoom);
+
+                roomButtonDictionary.Add(room.roomName, button);
             }
+            roomButtonDictionary[GameDataManager.Instance.CurrentRoom].interactable = false;
+        }
+
+        public void CheckButtonAtive()
+        {
+
         }
 
         /// <summary>
@@ -60,6 +81,11 @@ namespace TECHC.Kamiyashiki
         {
             yield return new WaitForSecondsRealtime(_waitTime);
             MoveRoom(_roomName);
+        }
+
+        public void ButtonActiveSetting()
+        {
+
         }
 
         /// <summary>
