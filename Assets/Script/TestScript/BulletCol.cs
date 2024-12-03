@@ -25,7 +25,9 @@ public class BulletCol : MonoBehaviour
         if (other.GetComponent<TextMeshProUGUI>())
         {
             Debug.Log("•¶Žš‚É“–‚½‚Á‚½");
-            truthBulletShot.BulletTextTouch();
+
+
+            truthBulletShot.BulletCol();
 
         }
 

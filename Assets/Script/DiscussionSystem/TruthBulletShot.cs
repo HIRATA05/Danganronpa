@@ -37,7 +37,8 @@ public class TruthBulletShot : MonoBehaviour
 
     //弾丸が移動中か
     private bool MoveEnd = false;
-
+    //文字に当たったか
+    private bool isBulletTextCol = false;
 
     void Start()
     {
@@ -86,22 +87,26 @@ public class TruthBulletShot : MonoBehaviour
         //リロード開始
         StartCoroutine(Reload());
 
-        Vector3 targetPosition = shotPointTo; // 目的の位置の座標を指定
-        Vector3 startPosition = shotPointCurrent.position; // ゲームオブジェクトのTransformコンポーネントを取得
-        float duration = 0.1f; // 着弾までの時間、単位は秒
-        float time = 0.0f;  // 発射からの経過時間
+        Vector3 targetPosition = shotPointTo; //目的の位置の座標を指定
+        Vector3 startPosition = shotPointCurrent.position; //ゲームオブジェクトのTransformコンポーネントを取得
+        float duration = 0.1f; //着弾までの時間、単位は秒
+        float time = 0.0f;  //発射からの経過時間
 
-        // 弾の移動処理
+        //弾の移動処理
         while(!MoveEnd && time < duration)
         {
             time += Time.deltaTime;
             float t = Mathf.Clamp01(time / duration);
             
-            // 目的の位置までduration秒をかけて補間で移動
+            //目的の位置までduration秒をかけて補間で移動
             shotPointCurrent.position = Vector3.Lerp(startPosition, targetPosition, t); // 目的の位置に移動
             yield return null;
         }
-
+        //弾が文字に当たっていた場合
+        if (isBulletTextCol)
+        {
+            BulletTextTouch();
+        }
         //弾の位置を変化
         BulletDelete();
         yield return null;
@@ -122,11 +127,13 @@ public class TruthBulletShot : MonoBehaviour
     //初期位置に戻し画面内から弾を消す
     public void BulletDelete()
     {
+        Debug.Log("弾丸消去");
         shotPointCurrent = shotPointFrom;
     }
 
     public void BulletTextTouch()
     {
+        isBulletTextCol = false;
         MoveEnd = !MoveEnd;
         
         Debug.Log("ノンストップ議論終了");
@@ -148,4 +155,8 @@ public class TruthBulletShot : MonoBehaviour
         Debug.Log("ウィークポイントに接触しなかった");
     }
 
+    public void BulletCol()
+    {
+        isBulletTextCol = true;
+    }
 }

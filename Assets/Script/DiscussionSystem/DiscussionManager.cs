@@ -143,15 +143,18 @@ public class DiscussionManager : MonoBehaviour
                 //文字のデータをセットする
                 speechText.GetComponent<TextMeshProUGUI>().text = speechSet[DiscussionNum].Speech;
 
-                //文字数 speechText.GetComponent<TextMeshProUGUI>().text.Length
+                //文字数取得 speechText.GetComponent<TextMeshProUGUI>().text.Length
                 //SpeechType.Noneの場合ウィークポイントは作らない
+                if (speechSet[DiscussionNum].speechType != SpeechSet.SpeechType.None)
+                {
+                    //発言の文字数から文字の当たり判定を設定する
+                    /*
+                    speechText.AddComponent<BoxCollider>();
+                    speechText.GetComponent<BoxCollider>().center = new Vector3(0, 0, 0);
+                    speechText.GetComponent<BoxCollider>().size = new Vector3(0, 0, textThickZ);
+                    */
+                }
 
-                //発言の文字数から文字の当たり判定を設定する
-                /*
-                speechText.AddComponent<BoxCollider>();
-                speechText.GetComponent<BoxCollider>().center = new Vector3(0, 0, 0);
-                speechText.GetComponent<BoxCollider>().size = new Vector3(0, 0, textThickZ);
-                */
                 //発言表示後議論番号加算
                 DiscussionNum++;
             }
@@ -164,6 +167,7 @@ public class DiscussionManager : MonoBehaviour
 
                 if (DiscussionNum < speechSet.Length)
                 {
+
                     //文字の当たり判定を削除する
                     //Destroy(speechText.GetComponent<BoxCollider>());
 
