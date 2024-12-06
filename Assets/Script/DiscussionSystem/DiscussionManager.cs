@@ -28,6 +28,8 @@ public class DiscussionManager : MonoBehaviour
     //議論場所の中心点
     [SerializeField] private GameObject centerDiscussionPoint;
 
+    //議論カメラ
+
     //カメラ回転速度
     float rotSpeed = 1.0f;
 
@@ -86,6 +88,8 @@ public class DiscussionManager : MonoBehaviour
     public SpeechSet[] speechSet;
 
     //発言の当たり判定の厚さ
+    private float textThickX = 0.0f;
+    private float textThickY = 0.0f;
     private float textThickZ = 0.01f;
 
     //議論の進行番号
@@ -142,8 +146,10 @@ public class DiscussionManager : MonoBehaviour
 
                 //文字のデータをセットする
                 speechText.GetComponent<TextMeshProUGUI>().text = speechSet[DiscussionNum].Speech;
+                //speechText.GetComponent<TextMeshPro>().text = speechSet[DiscussionNum].Speech;
 
                 //文字数取得 speechText.GetComponent<TextMeshProUGUI>().text.Length
+                //文字の大きさ　ウィーク15　通常10
                 //SpeechType.Noneの場合ウィークポイントは作らない
                 if (speechSet[DiscussionNum].speechType != SpeechSet.SpeechType.None)
                 {

@@ -13,6 +13,9 @@ public class TruthBulletShot : MonoBehaviour
     //ノンストップ議論の動作を管理
     [SerializeField] private DiscussionManager discussionManager;
 
+    //ゲームマネージャー
+    [SerializeField] private GameManager gameManager;
+
     //照準
     [SerializeField] private GameObject aim;
     private Image aimImage;
@@ -26,7 +29,7 @@ public class TruthBulletShot : MonoBehaviour
     [SerializeField] private Transform shotPointCurrent;
 
     // 線形補間の始点
-    private Transform shotPointFrom;
+    [SerializeField] private Transform shotPointFrom;
 
     // 線形補間の終点
     private Vector3 shotPointTo = new Vector3();
@@ -45,7 +48,7 @@ public class TruthBulletShot : MonoBehaviour
         aimImage = aim.GetComponent<Image>();
         aimImagePos = aim.transform;
 
-        shotPointFrom = shotPointCurrent;
+        //shotPointFrom = shotPointCurrent;
         shotPointCurrent.GetComponent<BulletCol>().SetBulletScript(this.gameObject.GetComponent<TruthBulletShot>());
         Debug.Log(shotPointFrom.position);
     }
@@ -68,12 +71,13 @@ public class TruthBulletShot : MonoBehaviour
             {
                 //Debug.Log("レイが当たった");
                 //ボタンを押すと発射、発射後数秒間発射不可
-                if (Input.GetKeyUp(KeyCode.Space) && !reloading)
+                if (/*Input.GetKeyUp(KeyCode.Space)*/gameManager.KeyInputSpace() && !reloading)
                 {
                     shotPointTo = hit.point;
                     Debug.Log("レイが当たった:" + shotPointTo);
                     shotPointCurrent.position = new Vector3(Camera.main.transform.position.x + 1, Camera.main.transform.position.y, Camera.main.transform.position.z);
                     StartCoroutine(BulletMove());
+                    
                 }
             }
         }
@@ -128,7 +132,8 @@ public class TruthBulletShot : MonoBehaviour
     public void BulletDelete()
     {
         Debug.Log("弾丸消去");
-        shotPointCurrent = shotPointFrom;
+        shotPointCurrent.position = shotPointFrom.position;
+        Debug.Log(shotPointCurrent.position + " : " + shotPointFrom.position);
     }
 
     public void BulletTextTouch()

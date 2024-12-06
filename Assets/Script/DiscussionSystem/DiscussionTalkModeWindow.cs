@@ -75,7 +75,7 @@ public class DiscussionTalkModeWindow : MonoBehaviour
             DisplayDialogueText();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (/*Input.GetKeyDown(KeyCode.Space)*/gameManager.KeyInputSpace())
         {
             //ŽŸ‚Ì‰ï˜b‚Ì•\Ž¦
             DisplayDialogueText();

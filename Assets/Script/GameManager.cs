@@ -37,6 +37,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject AdventureScene;
     [SerializeField] private GameObject DiscussionScene;
 
+    //キーインプット
+    private float keyElapsedTime = 0;
+    private float keyWaitTime = 0.5f;
+    //スペースキーの有効
+    private bool isSpaceKey = true;
+    //キーの計測状態
+    private bool keyElapsed = false;
+
     void Start()
     {
         eventFlagData.RoomIn = true;//テスト用
@@ -55,6 +63,18 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        //キーインプットの計測開始
+        if (keyElapsed)
+        {
+            keyElapsedTime += Time.deltaTime;
+            
+            if (keyElapsedTime > keyWaitTime)
+            {
+                keyElapsedTime = 0;
+                isSpaceKey = true;//キーを有効
+                keyElapsed = false;
+            }
+        }
         
     }
 
@@ -135,5 +155,25 @@ public class GameManager : MonoBehaviour
 
         //テキストウィンドウを表示
         discussionTalkModeWindow.TextSet(dialogueText);
+    }
+
+    //スペースキーの入力待機
+    public bool KeyInputSpace()
+    {
+        //input = Input.GetKey(KeyCode.Space);
+
+        //keyElapsedTime += Time.deltaTime;
+
+        //スペースキーの入力
+        if (Input.GetKey(KeyCode.Space) && isSpaceKey)
+        {
+            isSpaceKey = false;//キーを無効
+            keyElapsed = true;
+
+            return true;
+        }
+        
+
+        return false;
     }
 }
