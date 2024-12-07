@@ -71,7 +71,7 @@ public class TruthBulletShot : MonoBehaviour
             {
                 //Debug.Log("レイが当たった");
                 //ボタンを押すと発射、発射後数秒間発射不可
-                if (/*Input.GetKeyUp(KeyCode.Space)*/gameManager.KeyInputSpace() && !reloading)
+                if (Input.GetKeyUp(KeyCode.Space)/*gameManager.KeyInputSpace()*/ && !reloading)
                 {
                     shotPointTo = hit.point;
                     Debug.Log("レイが当たった:" + shotPointTo);

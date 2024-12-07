@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -315,8 +315,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185925637}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.579}
+  m_LocalRotation: {x: -0, y: 0.49348646, z: -0, w: 0.8697535}
+  m_LocalPosition: {x: 1.5351539, y: 0, z: 0.18411565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1722,8 +1722,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767468627}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.579}
+  m_LocalRotation: {x: -0, y: 0.49348646, z: -0, w: 0.8697535}
+  m_LocalPosition: {x: 1.5351539, y: 0, z: 0.18411565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2275,6 +2275,7 @@ GameObject:
   - component: {fileID: 936704673}
   - component: {fileID: 936704672}
   - component: {fileID: 936704671}
+  - component: {fileID: 936704674}
   m_Layer: 0
   m_Name: DiscussionMainCamera
   m_TagString: MainCamera
@@ -2418,6 +2419,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &936704674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936704669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e400af20a87b3ef4fa8601a27d58a1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,8 +2875,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000250802}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.43169224, z: -0, w: 0.902021}
-  m_LocalPosition: {x: -1.1424181, y: 0, z: 1.6554329}
+  m_LocalRotation: {x: -0, y: 0.49348646, z: -0, w: 0.8697535}
+  m_LocalPosition: {x: 1.5351539, y: 0, z: 0.18411565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3572,6 +3585,7 @@ MonoBehaviour:
   discussionTalkModeWindow: {fileID: 1581486333}
   circleDeployer: {fileID: 2100111002}
   centerDiscussionPoint: {fileID: 2100111001}
+  DiscussionCamera: {fileID: 936704673}
   DiscussionStartText: {fileID: 11400000, guid: 73378db2c4202b242a4afe936997ebca, type: 2}
   DiscussionTakeAroundText: {fileID: 11400000, guid: 27df6e6f4cea30f4095b66e166cf38c4, type: 2}
   DiscussionFinishText: {fileID: 11400000, guid: 06c1a756cafdb6340856378d66888f40, type: 2}

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     private TextWindow textWindow;
     private ReticleAim reticleAim;
-
+    private DiscussionManager disussionManager;
     private DiscussionTalkModeWindow discussionTalkModeWindow;
 
     public EventFlagData eventFlagData;
@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
         GameObject ra = GameObject.Find("CorsorImage");
         reticleAim = ra.GetComponent<ReticleAim>();
 
+        GameObject dm = GameObject.Find("DiscussionManager");
+        disussionManager = dm.GetComponent<DiscussionManager>();
         GameObject dw = GameObject.Find("DiscussionTalkModeWindow");
         discussionTalkModeWindow = dw.GetComponent<DiscussionTalkModeWindow>();
 
@@ -98,6 +100,7 @@ public class GameManager : MonoBehaviour
     {
         playerController = PlayerController.DiscussionMode;
         SwitchScene();
+        disussionManager.DiscInitCallOn();
     }
 
     //探索シーンと議論シーンの切り替え

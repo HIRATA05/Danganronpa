@@ -22,7 +22,7 @@ public class FlagChangeEffect : MonoBehaviour
         
     }
     
-    //‹c˜_‚ÉˆÚ“®
+    //‚±‚ÌŠÖ”‚ğİ’è‚·‚é‚Æ‹c˜_‚ÉˆÚ“®‚·‚é
     public void DiscussionModeSwitch()
     {
         gameManager.isDiscussionStart = true;
