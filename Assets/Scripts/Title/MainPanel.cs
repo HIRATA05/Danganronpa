@@ -19,7 +19,7 @@ namespace TECHC.Kamiyashiki
 
         private void LoadInGame()
         {
-            StartCoroutine(SceneController.WaitAndLoadScene(uiManager.startRoomName, 0.1f));
+            StartCoroutine(SceneController.WaitAndLoadScene(uiManager.startSceneName, 0.1f));
         }
 
         private void OpenSetting()
