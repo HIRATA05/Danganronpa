@@ -7,106 +7,75 @@ using UnityEngine.UI;
 
 namespace TECHC.Kamiyashiki
 {
+    [System.Serializable]
     public enum RoomName
     {
-        ClassRoom,
         ControlRoom,
+        ClassRoom,
         Garden,
+    }
+
+    [System.Serializable]
+    public class Room
+    {
+        public RoomName roomName; // ï¿½ï¿½ï¿½ï¿½ï¿½Ì–ï¿½ï¿½O (enum ï¿½^ï¿½É•ÏX)
+        public GameObject roomObject; // ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½g
+        public GameObject mapImage; // ï¿½}ï¿½bï¿½vï¿½Å‚Ì•\ï¿½ï¿½ï¿½æ‘œ
     }
 
     public class RoomController : MonoBehaviour
     {
-        [System.Serializable]
-        public class Room
-        {
-            public string roomNameString; // •”‰®‚ÌƒV[ƒ“–¼(QÆ‚É‚ÍEnum‚ğ„§)
-            public RoomName roomName; // •”‰®‚ÌEnum
-            public GameObject roomButton; // ƒ}ƒbƒv‚É”z’u‚·‚éƒ{ƒ^ƒ“
-                                      //private bool isRoomActive;
-        }
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        public List<Room> roomList = new List<Room>();
+        private Dictionary<RoomName, Vector3> roomPositions = new Dictionary<RoomName, Vector3>();
 
-        [Header("Še•”‰®İ’è")]
-        [SerializeField]
-        private Room[] roomList;
-        private Dictionary<RoomName, Button> roomButtonDictionary = new Dictionary<RoomName, Button>();
-
-        [Header("ƒCƒxƒ“ƒgƒVƒXƒeƒ€")]
         [SerializeField] private EventSystem eventSystem;
+        [SerializeField] private GameObject playerObject;
 
         private void Awake()
         {
-            // ‰Šúİ’è
             foreach (var room in roomList)
             {
-                // ƒ{ƒ^ƒ“ƒIƒuƒWƒFƒNƒg‚Ì–¼‘O‚ğRoomName‚Æˆê’v‚³‚¹‚é
-                Debug.Log(room.roomNameString);
-                Debug.Log(room.roomName);
-                Debug.Log(room.roomButton);
+                //ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½İ’ï¿½
+                room.roomObject.name = room.roomName.ToString();
+                room.mapImage.name = room.roomName.ToString();
 
-                room.roomButton.name = room.roomName.ToString();
-                room.roomButton.GetComponentInChildren<Text>().text = room.roomName.ToString();
+                room.mapImage.GetComponent<Button>().onClick.AddListener(BeginMoveRoom);
 
-                var button = room.roomButton.GetComponent<Button>();
-                Debug.Log(button);
-
-                button.interactable = false;
-                    
-                // ƒ}ƒbƒv‚Ìƒ{ƒ^ƒ“‚ÉƒCƒxƒ“ƒg‚ğ’Ç‰Á
-                button.onClick.AddListener(OnClickMoveRoom);
-
-                roomButtonDictionary.Add(room.roomName, button);
+                if (!roomPositions.ContainsKey(room.roomName))
+                {
+                    roomPositions.Add(room.roomName, room.roomObject.transform.position);
+                }
             }
-            roomButtonDictionary[GameDataManager.Instance.CurrentRoom].interactable = false;
         }
 
-        public void CheckButtonAtive()
+        public IEnumerator WaitAndMoveRoom(RoomName roomName, float waitTime, Transform target)
         {
-
+            yield return new WaitForSecondsRealtime(waitTime);
+            MoveRoom(roomName, target);
         }
 
-        /// <summary>
-        /// •”‰®ˆÚ“®‚·‚é
-        /// </summary>
-        public void MoveRoom(RoomName _nextRoom)
+        public void MoveRoom(RoomName roomName, Transform target)
         {
-            GameDataManager.Instance.CurrentRoom = _nextRoom;
-
-            SceneController.LoadScene(_nextRoom);
+            if (roomPositions.TryGetValue(roomName, out Vector3 position))
+            {
+                target.position = position;
+            }
+            else
+            {
+                Debug.LogWarning($"Room '{roomName}' does not exist!");
+            }
         }
 
-        /// <summary>
-        /// n•bŠÔ‘Ò‚Á‚Ä‚©‚ç•”‰®ˆÚ“®‚·‚é
-        /// </summary>
-        public IEnumerator WaitAndMoveRoom(RoomName _roomName, float _waitTime)
+        public void BeginMoveRoom()
         {
-            yield return new WaitForSecondsRealtime(_waitTime);
-            MoveRoom(_roomName);
-        }
-
-        public void ButtonActiveSetting()
-        {
-
-        }
-
-        /// <summary>
-        /// •”‰®ˆÚ“®‚ğŠJn‚·‚é(ƒ{ƒ^ƒ“—pŠÖ”)
-        /// </summary>
-        public void OnClickMoveRoom()
-        {
-            string clickButtonName = eventSystem.currentSelectedGameObject.name;
-
-            //// Œ»İ‚Ì•”‰®‚ğ‰Ÿ‚µ‚½‚çƒŠƒ^[ƒ“‚·‚é
-            //if (clickButtonName == GameDataManager.Instance.CurrentRoom.ToString())
-            //{
-            //    return;
-            //}
-
-            // •”‰®–¼‚ÆƒNƒŠƒbƒN‚µ‚½‰æ‘œ‚Ì–¼‘O‚ªˆê‚È‚ç•”‰®ˆÚ“®
+            Debug.Log("map");
             foreach (RoomName room in Enum.GetValues(typeof(RoomName)))
             {
-                if (clickButtonName == room.ToString())
+                if (eventSystem.currentSelectedGameObject.name == room.ToString())
                 {
-                    MoveRoom(room);
+                    Debug.Log("move");
+                    MoveRoom(room, playerObject.transform);
                 }
             }
         }

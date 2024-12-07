@@ -28,5 +28,10 @@ namespace TECHC.Kamiyashiki
         {
             SceneManager.LoadScene(sceneName.ToString());
         }
+
+        public static void ReloadScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
