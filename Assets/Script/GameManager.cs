@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         eventFlagData.RoomIn = true;//テスト用
+        eventFlagData.GameStart_ClassRoom_True();
 
         GameObject tw = GameObject.Find("TextWindow");
         textWindow = tw.GetComponent<TextWindow>();

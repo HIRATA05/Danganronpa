@@ -16,19 +16,22 @@ public class TextWindow : MonoBehaviour
     [SerializeField] private TalkCameraManager talkCameraManager;
     //部屋のオブジェクトを管理
     RoomObjectManager roomObjectManager;
-    //TalkCameraManagerとRoomObjectManagerは部屋を移動した時にその部屋の物に変える処理を後で追加すること
 
     [NonSerialized] public DialogueText dialogueText;
-    [SerializeField] private GameObject panelObject;
-    [SerializeField] private TextMeshProUGUI speakerNameText;
-    [SerializeField] private TextMeshProUGUI speakerDialogueText;
+    [SerializeField, Header("テキストウィンドウのオブジェクト")] private GameObject panelObject;
+    //表示するテキストによって変化するテキストウィンドウ
+    [SerializeField, Header("テキストウィンドウの画像")] private Sprite textWindowNormal;
+    [SerializeField] private Sprite textWindowDark;
+
+    [SerializeField, Header("話者")] private TextMeshProUGUI speakerNameText;
+    [SerializeField, Header("テキスト")] private TextMeshProUGUI speakerDialogueText;
     int index = 0;
     bool isTyping;
 
     private Coroutine dialogueCoroutine;
 
     //会話を行う主人公キャラのオブジェクトパーツ
-    [SerializeField] private GameObject mainTalkChara;
+    [SerializeField, Header("調べる事のない主人公のオブジェクト")] private GameObject mainTalkChara;
 
     [Header("カメラ設定")]
     //会話カメラ
@@ -132,6 +135,11 @@ public class TextWindow : MonoBehaviour
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_All_Center, rect_All_Right, rect_All_Left));
         }
+        else if(currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.None)
+        {
+            //会話カメラ無し
+            CameraEnabled();
+        }
 
     }
 
@@ -141,6 +149,7 @@ public class TextWindow : MonoBehaviour
         //パネルが非表示なら表示する
         if (!panelObject.activeSelf)
         {
+            
             panelObject.SetActive(true);
 
             //主人公の表示処理
@@ -155,6 +164,14 @@ public class TextWindow : MonoBehaviour
             DisplayDialogueText();
         }
 
+        //カメラが非表示なら表示する
+        if (!TaklCamera_1.enabled)
+        {
+            TaklCamera_1.enabled = true;
+            TaklCamera_2.enabled = true;
+            TaklCamera_3.enabled = true;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //次の会話の表示
@@ -166,6 +183,12 @@ public class TextWindow : MonoBehaviour
     //会話文表示処理
     public void DisplayDialogueText()
     {
+
+        if(dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Normal)
+            panelObject.GetComponent<Image>().sprite = textWindowNormal;
+        else if(dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Dark)
+            panelObject.GetComponent<Image>().sprite = textWindowDark;
+
         //scriptableObjectの情報をパネルに表示する
         if (dialogueText.textInfomations.Length > index)
         {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class CharaEffect : MonoBehaviour
@@ -88,7 +89,11 @@ public class CharaEffect : MonoBehaviour
         eventcgImage.enabled = true;
     }
     //イベントCGを非表示
-    public void EventImageDelete() { eventcgImage.enabled = false; }
+    public void EventImageDelete()
+    {
+        eventcgImage.sprite = null;
+        eventcgImage.enabled = false;
+    }
 
     //印象的な発言の時に発生する白いフェード
     //SEを発生させ一瞬画像を白くして元に戻す

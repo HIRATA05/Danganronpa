@@ -11,6 +11,13 @@ using UnityEngine;
     //表示するテキスト
     [TextArea(2, 10)]
     public string paragraphs;
+    //テキストウィンドウのタイプ
+    public enum TextWindowType
+    {
+        Normal,
+        Dark
+    }
+    public TextWindowType windowType = TextWindowType.Normal;
 }
 
 [CreateAssetMenu(fileName = "DialogueText", menuName = "ScriptableObjects/CreateDialogueText")]

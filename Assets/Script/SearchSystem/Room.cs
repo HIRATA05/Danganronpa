@@ -9,7 +9,7 @@ public class Room : MonoBehaviour
 
     public string roomName;
 
-    [SerializeField, Header("部屋の中での自動発生会話")] private DialogueText TestRoomText;
+    [SerializeField, Header("部屋の中での自動発生会話")] private DialogueText RoomText;
 
     private GameManager gameManager;
 
@@ -23,9 +23,15 @@ public class Room : MonoBehaviour
     void Update()
     {
         //現在の部屋がこの部屋でフラグがTrueで発生フラグが立った時イベント発生
-        if (gameManager.eventFlagData.currentRoom == roomName && gameManager.eventFlagData.RoomIn)
+        if (gameManager.eventFlagData.currentRoom == roomName && roomName == "TestRoom" && gameManager.eventFlagData.RoomIn)
         {
-            gameManager.OpenTextWindow(TestRoomText);
+            Debug.Log("RoomIn");
+            gameManager.OpenTextWindow(RoomText);
+        }
+        else if (gameManager.eventFlagData.currentRoom == roomName && roomName == "ClassRoom_F1" && gameManager.eventFlagData.GameStart_ClassRoom)
+        {
+            Debug.Log("GameStart_ClassRoom");
+            gameManager.OpenTextWindow(RoomText);
         }
 
     }

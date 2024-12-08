@@ -35,6 +35,17 @@ public class FlagChangeEffect : MonoBehaviour
         gameManager.eventFlagData.GameStart = true;
     }
 
+    public void GameStart_ClassRoom_Change_True()
+    {
+        Debug.Log("GameStart_ClassRoom‚ðTRUE");
+        gameManager.eventFlagData.GameStart_ClassRoom_True();
+    }
+    public void GameStart_ClassRoom_Change_False()
+    {
+        Debug.Log("GameStart_ClassRoom‚ðFALSE");
+        gameManager.eventFlagData.GameStart_ClassRoom_False();
+    }
+
     public void RoomIn_Change_True()
     {
         Debug.Log("RoomIn‚ðTRUE");

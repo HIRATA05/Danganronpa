@@ -20,6 +20,10 @@ public class EventFlagData : ScriptableObject
 
     //Trueの時にイベントが発生
     [Header("室内に入った時に発生するシナリオフラグ")]
+    public bool GameStart_ClassRoom;
+    public void GameStart_ClassRoom_True() { GameStart_ClassRoom = true; }
+    public void GameStart_ClassRoom_False() { GameStart_ClassRoom = false; }
+
     public bool RoomIn;
     public void RoomIn_True() { RoomIn = true; }
     public void RoomIn_False() { RoomIn = false; }
