@@ -15,7 +15,9 @@ using UnityEngine;
     public enum TextWindowType
     {
         Normal,
-        Dark
+        Dark,
+        Normal_NonUI,
+        Dark_NonUI
     }
     public TextWindowType windowType = TextWindowType.Normal;
 }

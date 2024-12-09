@@ -18,6 +18,8 @@ public class TextWindow : MonoBehaviour
     RoomObjectManager roomObjectManager;
 
     [NonSerialized] public DialogueText dialogueText;
+    [SerializeField, Header("部屋表示ウィンドウのオブジェクト")] private GameObject roomObject;
+    [SerializeField, Header("時間表示ウィンドウのオブジェクト")] private GameObject timeObject;
     [SerializeField, Header("テキストウィンドウのオブジェクト")] private GameObject panelObject;
     //表示するテキストによって変化するテキストウィンドウ
     [SerializeField, Header("テキストウィンドウの画像")] private Sprite textWindowNormal;
@@ -113,24 +115,28 @@ public class TextWindow : MonoBehaviour
     {
         if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterOnly)
         {
+            CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_CenterOnly_Left,
                                 rect_CenterOnly_Center, rect_CenterOnly_Right, rect_CenterOnly_Left));
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterAndRight)
         {
+            CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_CenteringRight_Center, rect_CenteringRight_Right, rect_CenteringRight_Left));
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterAndLeft)
         {
+            CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_CenteringLeft_Center, rect_CenteringLeft_Right, rect_CenteringLeft_Left));
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.All)
         {
+            CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_All_Center, rect_All_Right, rect_All_Left));
@@ -138,7 +144,13 @@ public class TextWindow : MonoBehaviour
         else if(currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.None)
         {
             //会話カメラ無し
-            CameraEnabled();
+            CameraEnabledOff();
+            Debug.Log("カメラenabled false");
+            /*
+            TaklCamera_1.enabled = false;
+            TaklCamera_2.enabled = false;
+            TaklCamera_3.enabled = false;
+            */
         }
 
     }
@@ -158,7 +170,8 @@ public class TextWindow : MonoBehaviour
             if (mainChara.GetComponent<Image>().enabled == false) { mainChara.GetComponent<Image>().enabled = true; mainCharaShadow.GetComponent<Image>().enabled = true; }
 
             //会話用カメラの起動
-            CameraEnabled();
+            //CameraEnabledOn();
+            //CameraEnabled();
 
             //最初の会話の表示
             DisplayDialogueText();
@@ -167,9 +180,12 @@ public class TextWindow : MonoBehaviour
         //カメラが非表示なら表示する
         if (!TaklCamera_1.enabled)
         {
+            /*
+            Debug.Log("カメラenabled true");
             TaklCamera_1.enabled = true;
             TaklCamera_2.enabled = true;
             TaklCamera_3.enabled = true;
+            */
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -179,15 +195,11 @@ public class TextWindow : MonoBehaviour
         }
     }
 
-
     //会話文表示処理
     public void DisplayDialogueText()
     {
-
-        if(dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Normal)
-            panelObject.GetComponent<Image>().sprite = textWindowNormal;
-        else if(dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Dark)
-            panelObject.GetComponent<Image>().sprite = textWindowDark;
+        //テキストウィンドウの設定によって表示を変化
+        WindowSpriteSetiing();
 
         //scriptableObjectの情報をパネルに表示する
         if (dialogueText.textInfomations.Length > index)
@@ -247,7 +259,11 @@ public class TextWindow : MonoBehaviour
             gameManager.SwitchDepthOfField(false);
 
             //会話用カメラの非表示
-            CameraEnabled();
+            CameraEnabledOff();
+            //CameraEnabled();
+
+            //部屋UIを表示
+            UIWindowActive(true);
 
             //状態を初期化して照準モードにする
             gameManager.playerController = GameManager.PlayerController.ReticleMode;
@@ -295,12 +311,69 @@ public class TextWindow : MonoBehaviour
     }
 
     //会話カメラの起動
-    public void CameraEnabled()
+    public void CameraEnabledOn()
     {
-        //現在のアクティブを反転させる
+        //画面効果の切り替え
+        gameManager.SwitchDepthOfField(true);
+        //現在のアクティブをTRUE
+        /*
         TaklCamera_1.enabled = !TaklCamera_1.enabled;
         TaklCamera_2.enabled = !TaklCamera_2.enabled;
         TaklCamera_3.enabled = !TaklCamera_3.enabled;
+        */
+        TaklCamera_1.enabled = true;
+        TaklCamera_2.enabled = true;
+        TaklCamera_3.enabled = true;
+    }
+    //会話カメラの停止
+    public void CameraEnabledOff()
+    {
+        //画面効果の切り替え
+        gameManager.SwitchDepthOfField(false);
+        //現在のアクティブをFALSE
+        TaklCamera_1.enabled = false;
+        TaklCamera_2.enabled = false;
+        TaklCamera_3.enabled = false;
+    }
+
+    //テキストウィンドウの設定によって表示を変化
+    private void WindowSpriteSetiing()
+    {
+        if (dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Normal)
+        {
+            panelObject.GetComponent<Image>().sprite = textWindowNormal;
+            UIWindowActive(true);
+        }
+        else if (dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Dark)
+        {
+            panelObject.GetComponent<Image>().sprite = textWindowDark;
+            UIWindowActive(true);
+        }
+        else if (dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Normal_NonUI)
+        {
+            panelObject.GetComponent<Image>().sprite = textWindowNormal;
+            UIWindowActive(false);
+        }
+        else if (dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Dark_NonUI)
+        {
+            panelObject.GetComponent<Image>().sprite = textWindowDark;
+            UIWindowActive(false);
+        }
+    }
+
+    //部屋と時間のUIを表示・非表示
+    private void UIWindowActive(bool isChange)
+    {
+        if (isChange == true)
+        {
+            roomObject.SetActive(true);
+            timeObject.SetActive(true);
+        }
+        else if (isChange == false)
+        {
+            roomObject.SetActive(false);
+            timeObject.SetActive(false);
+        }
     }
 
     //3つのカメラの表示範囲を同時に変化

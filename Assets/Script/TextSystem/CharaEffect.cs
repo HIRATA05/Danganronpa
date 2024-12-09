@@ -10,7 +10,11 @@ public class CharaEffect : MonoBehaviour
     //会話中にキャラに発生させる演出等
     //UnityEventは引数を1つしか設定できないため注意
 
-    [SerializeField] private Image eventcgImage;
+    [SerializeField, Header("イベントCG画像")] private Image eventcgImage;
+    [SerializeField, Header("フェード用のイベントCGの裏側")] private Image eventcgBack;
+
+    Color fadeClearColor = new Color(255, 255, 255, 0);
+    Color fadeColor = Color.white;
 
     void Start()
     {
@@ -88,11 +92,42 @@ public class CharaEffect : MonoBehaviour
         eventcgImage.sprite = sprite;
         eventcgImage.enabled = true;
     }
+    //イベントCGをフェードして表示
+    public void EventImageDisplayFade(Sprite sprite)
+    {
+        Color spriteColor;
+        float duration = 0.5f;
+
+        eventcgBack.enabled = true;
+
+        eventcgImage.sprite = sprite;
+        
+        eventcgImage.color = fadeClearColor;
+        eventcgImage.enabled = true;
+
+        spriteColor = eventcgImage.color;
+        //eventcgImage.sprite = BlackImage;
+        StartCoroutine(Fade(1, spriteColor, duration, false));
+
+    }
     //イベントCGを非表示
     public void EventImageDelete()
     {
         eventcgImage.sprite = null;
         eventcgImage.enabled = false;
+    }
+    //イベントCGをフェードして非表示
+    public void EventImageDeleteFade()
+    {
+        Color spriteColor;
+        float duration = 0.3f;
+
+        eventcgImage.color = fadeColor;
+        
+        spriteColor = eventcgImage.color;
+        StartCoroutine(Fade(0, spriteColor, duration, true));
+        //eventcgImage.sprite = null;
+        //eventcgImage.enabled = false;
     }
 
     //印象的な発言の時に発生する白いフェード
@@ -109,12 +144,31 @@ public class CharaEffect : MonoBehaviour
 
     }
 
-    //ただSEを発生させる
+    //SEを発生させる
 
 
-    public void OnClickEvent()
+
+    IEnumerator Fade(float targetAlpha, Color spriteColor, float duration, bool isFadeOut)
     {
-        Debug.Log("Click");
+        while (!Mathf.Approximately(spriteColor.a, targetAlpha))
+        {
+            float changePerFrame = Time.deltaTime / duration;
+            spriteColor.a = Mathf.MoveTowards(spriteColor.a, targetAlpha, changePerFrame);
+            eventcgImage.color = spriteColor;
+            yield return null;
+        }
+        //画像をフェードアウトする時
+        if (isFadeOut)
+        {
+            eventcgImage.enabled = false;
+            eventcgImage.sprite = null;
+            eventcgImage.color = fadeColor;
+        }
+        else
+        {
+            eventcgBack.enabled = false;
+            //eventcgImage.color = fadeColor;
+        }
+       
     }
-
 }
