@@ -198,8 +198,6 @@ public class TextWindow : MonoBehaviour
     //会話文表示処理
     public void DisplayDialogueText()
     {
-        //テキストウィンドウの設定によって表示を変化
-        WindowSpriteSetiing();
 
         //scriptableObjectの情報をパネルに表示する
         if (dialogueText.textInfomations.Length > index)
@@ -207,6 +205,9 @@ public class TextWindow : MonoBehaviour
             //テキスト番号のキーから現在のカメラ設定を取得
             var talkSet = talkSetDictionary[dialogueText.textinfo];
             var cameraSet = talkSet.cameraSet[index];
+
+            //テキストウィンドウの設定によって表示を変化
+            WindowSpriteSetiing();
 
             //カメラの注視対象を設定
             //中央のカメラ

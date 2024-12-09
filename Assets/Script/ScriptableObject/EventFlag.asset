@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentRoom: ClassRoom_F1
   itemDataBase: {fileID: 11400000, guid: 4d33a3ffe9762db44973a8f7ebbdf278, type: 2}
-  GameStart: 1
-  GameStart_ClassRoom: 0
+  GameStart: 0
+  GameStart_Window: 0
+  GameStart_Monitor: 0
+  GameStart_Lacky: 0
+  GameStart_All: 0
+  GameStart_ClassRoom: 1
   RoomIn: 1

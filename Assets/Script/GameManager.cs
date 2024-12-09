@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        //eventFlagData.GameStart = true;
         eventFlagData.RoomIn = true;//テスト用
         eventFlagData.GameStart_ClassRoom_True();
 

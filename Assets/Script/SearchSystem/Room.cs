@@ -28,9 +28,16 @@ public class Room : MonoBehaviour
             Debug.Log("RoomIn");
             gameManager.OpenTextWindow(RoomText);
         }
+        /*
         else if (gameManager.eventFlagData.currentRoom == roomName && roomName == "ClassRoom_F1" && gameManager.eventFlagData.GameStart_ClassRoom)
         {
             Debug.Log("GameStart_ClassRoom");
+            gameManager.OpenTextWindow(RoomText);
+        }
+        */
+        else if (gameManager.eventFlagData.currentRoom == roomName && roomName == "ClassRoom_F1" && gameManager.eventFlagData.GameStart_All)
+        {
+            Debug.Log("GameStart_All");
             gameManager.OpenTextWindow(RoomText);
         }
 

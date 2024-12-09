@@ -18,6 +18,12 @@ public class EventFlagData : ScriptableObject
     [Header("シナリオフラグ")]
     public bool GameStart;
 
+    //ゲーム開始時教室の探索
+    public bool GameStart_Window;
+    public bool GameStart_Monitor;
+    public bool GameStart_Lacky;
+    public bool GameStart_All;
+
     //Trueの時にイベントが発生
     [Header("室内に入った時に発生するシナリオフラグ")]
     public bool GameStart_ClassRoom;
