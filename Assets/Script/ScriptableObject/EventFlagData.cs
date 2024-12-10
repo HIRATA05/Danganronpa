@@ -23,6 +23,8 @@ public class EventFlagData : ScriptableObject
     public bool GameStart_Monitor;
     public bool GameStart_Lacky;
     public bool GameStart_All;
+    public bool GameStart_All_TalkStart;
+    
 
     //Trueの時にイベントが発生
     [Header("室内に入った時に発生するシナリオフラグ")]

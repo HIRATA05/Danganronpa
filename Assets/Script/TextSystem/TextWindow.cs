@@ -155,6 +155,7 @@ public class TextWindow : MonoBehaviour
 
     }
 
+    
     //会話の進行
     public void ProgressText()
     {
@@ -206,6 +207,7 @@ public class TextWindow : MonoBehaviour
             var talkSet = talkSetDictionary[dialogueText.textinfo];
             var cameraSet = talkSet.cameraSet[index];
 
+            
             //テキストウィンドウの設定によって表示を変化
             WindowSpriteSetiing();
 

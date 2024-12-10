@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    //Œ»İ‚¢‚é•”‰®‚ğ’è‹`
+    //Œ»İ‚¢‚é•”‰®‚ğ’è‹` •”‰®‚Ì”‚¾‚¯ì¬
 
     public string roomName;
 
@@ -34,13 +34,13 @@ public class Room : MonoBehaviour
             Debug.Log("GameStart_ClassRoom");
             gameManager.OpenTextWindow(RoomText);
         }
-        */
+        
         else if (gameManager.eventFlagData.currentRoom == roomName && roomName == "ClassRoom_F1" && gameManager.eventFlagData.GameStart_All)
         {
             Debug.Log("GameStart_All");
             gameManager.OpenTextWindow(RoomText);
         }
-
+        */
     }
 
     //Œ»İ‚Ì•”‰®‚ğ‚±‚Ì•”‰®‚É•ÏX

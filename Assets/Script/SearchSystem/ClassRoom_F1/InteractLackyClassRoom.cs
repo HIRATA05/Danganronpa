@@ -13,7 +13,7 @@ public class InteractLackyClassRoom : MonoBehaviour, IReceiveSearch
     {
         Debug.Log("K‰^‰ï˜b");
         //ê‡‚É‚æ‚Á‚Ä‚Íƒtƒ‰ƒO‚É‚æ‚Á‚ÄğŒ•ªŠò
-        if (gameManager.eventFlagData.GameStart_All)
+        if (!gameManager.eventFlagData.GameStart_All_TalkStart)
         {
             gameManager.OpenTextWindow(GameStartText);
         }

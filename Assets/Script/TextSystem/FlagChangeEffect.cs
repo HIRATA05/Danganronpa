@@ -9,12 +9,13 @@ public class FlagChangeEffect : MonoBehaviour
 
     //ゲームマネージャーの取得
     private GameManager gameManager;
-
+    private EventFlagData eventFlagData;
 
     void Start()
     {
         GameObject gm = GameObject.Find("GameManager");
         gameManager = gm.GetComponent<GameManager>();
+        eventFlagData = gameManager.eventFlagData;
     }
 
     void Update()
@@ -32,28 +33,52 @@ public class FlagChangeEffect : MonoBehaviour
     public void GameStart_Change()
     {
         Debug.Log("GameStartをTRUE");
-        gameManager.eventFlagData.GameStart = true;
+        eventFlagData.GameStart = true;
     }
+
+    public void GameStart_WindowChange_True()
+    {
+        Debug.Log("GameStart_WindowをTRUE");
+        eventFlagData.GameStart_Window = true;
+    }
+    public void GameStart_MonitorChange_True()
+    {
+        Debug.Log("GameStart_MonitorをTRUE");
+        eventFlagData.GameStart_Monitor = true;
+    }
+    public void GameStart_LackyChange_True()
+    {
+        Debug.Log("GameStart_LackyをTRUE");
+        eventFlagData.GameStart_Lacky = true;
+    }
+    public void GameStart_All_True()
+    {
+        if (eventFlagData.GameStart_Lacky && eventFlagData.GameStart_Monitor && eventFlagData.GameStart_Window)
+        {
+            eventFlagData.GameStart_All = true;
+        }
+    }
+
 
     public void GameStart_ClassRoom_Change_True()
     {
         Debug.Log("GameStart_ClassRoomをTRUE");
-        gameManager.eventFlagData.GameStart_ClassRoom_True();
+        eventFlagData.GameStart_ClassRoom_True();
     }
     public void GameStart_ClassRoom_Change_False()
     {
         Debug.Log("GameStart_ClassRoomをFALSE");
-        gameManager.eventFlagData.GameStart_ClassRoom_False();
+        eventFlagData.GameStart_ClassRoom_False();
     }
 
     public void RoomIn_Change_True()
     {
         Debug.Log("RoomInをTRUE");
-        gameManager.eventFlagData.RoomIn_True();
+        eventFlagData.RoomIn_True();
     }
     public void RoomIn_Change_False()
     {
         Debug.Log("RoomInをFALSE");
-        gameManager.eventFlagData.RoomIn_False();
+        eventFlagData.RoomIn_False();
     }
 }

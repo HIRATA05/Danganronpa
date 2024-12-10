@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         ReticleMode,//探索
         TextWindowMode,//会話
         DiscussionMode,//議論
+        EventScene//イベントシーン
     }
     [NonSerialized] public PlayerController playerController;
 
@@ -45,9 +46,15 @@ public class GameManager : MonoBehaviour
     //キーの計測状態
     private bool keyElapsed = false;
 
+
     void Start()
     {
-        //eventFlagData.GameStart = true;
+        eventFlagData.GameStart = true;
+        eventFlagData.GameStart_Window = false;
+        eventFlagData.GameStart_Monitor = false;
+        eventFlagData.GameStart_Lacky = false;
+        eventFlagData.GameStart_All = false;
+        eventFlagData.GameStart_All_TalkStart = false;
         eventFlagData.RoomIn = true;//テスト用
         eventFlagData.GameStart_ClassRoom_True();
 
@@ -81,6 +88,7 @@ public class GameManager : MonoBehaviour
         }
         
     }
+
 
     //ReticleModeに変更
     public void ReticleModeChange()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractWindow : MonoBehaviour, IReceiveSearch
+public class InteractMonitor : MonoBehaviour, IReceiveSearch
 {
     //調べた時のテキスト情報をテキスト管理スクリプトに渡す
 
@@ -23,7 +23,7 @@ public class InteractWindow : MonoBehaviour, IReceiveSearch
         {
             gameManager.OpenTextWindow(NormalText);
         }
-        
+
     }
 
     void Start()
@@ -34,6 +34,6 @@ public class InteractWindow : MonoBehaviour, IReceiveSearch
 
     void Update()
     {
-        
+
     }
 }

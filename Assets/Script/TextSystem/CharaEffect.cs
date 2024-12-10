@@ -10,6 +10,8 @@ public class CharaEffect : MonoBehaviour
     //会話中にキャラに発生させる演出等
     //UnityEventは引数を1つしか設定できないため注意
 
+    private GameManager gameManager;
+
     [SerializeField, Header("イベントCG画像")] private Image eventcgImage;
     [SerializeField, Header("フェード用のイベントCGの裏側")] private Image eventcgBack;
 
@@ -18,7 +20,8 @@ public class CharaEffect : MonoBehaviour
 
     void Start()
     {
-        
+        GameObject gm = GameObject.Find("GameManager");
+        gameManager = gm.GetComponent<GameManager>();
     }
 
     void Update()
@@ -128,6 +131,39 @@ public class CharaEffect : MonoBehaviour
         StartCoroutine(Fade(0, spriteColor, duration, true));
         //eventcgImage.sprite = null;
         //eventcgImage.enabled = false;
+    }
+    //自己紹介イベントを表示
+    public void SelfIntoroDisplay(Sprite sprite)
+    {
+        /*
+        eventcgImage.sprite = sprite;
+        eventcgImage.enabled = true;
+
+        //操作不能にする
+        //gameManager.playerController = GameManager.PlayerController.EventScene;
+
+        //一定時間待機
+        StartCoroutine(EventCGDisplay());
+        */
+        
+
+        //操作可能
+        //gameManager.playerController = GameManager.PlayerController.TextWindowMode;
+    }
+
+    private IEnumerator EventCGDisplay()
+    {
+        //操作不能にする
+        gameManager.playerController = GameManager.PlayerController.EventScene;
+
+        yield return new WaitForSeconds(3f);
+
+        //時間で画像消去
+        eventcgImage.sprite = null;
+        eventcgImage.enabled = false;
+
+        //操作可能
+        gameManager.playerController = GameManager.PlayerController.TextWindowMode;
     }
 
     //印象的な発言の時に発生する白いフェード

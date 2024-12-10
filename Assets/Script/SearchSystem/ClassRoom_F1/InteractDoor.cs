@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractDoor : MonoBehaviour, IReceiveSearch
 {
@@ -14,10 +15,10 @@ public class InteractDoor : MonoBehaviour, IReceiveSearch
     {
         Debug.Log("ドアを調べた");
         //場合によってはフラグによって条件分岐
-        if (gameManager.eventFlagData.GameStart_All)
+        if (gameManager.eventFlagData.GameStart_All_TalkStart)
         {
             //別の部屋に移動
-
+            SceneManager.LoadScene("End");
         }
         else
         {
