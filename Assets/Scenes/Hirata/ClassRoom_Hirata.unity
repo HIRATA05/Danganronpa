@@ -6667,20 +6667,6 @@ MonoBehaviour:
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
-    - camLookCenter: {fileID: 454207909431612412}
-      camLookRight: {fileID: 0}
-      camLookLeft: {fileID: 0}
-      camDivision: 0
-      OnTalkEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - camLookCenter: {fileID: 3952594471239565226}
-      camLookRight: {fileID: 0}
-      camLookLeft: {fileID: 0}
-      camDivision: 0
-      OnTalkEvent:
-        m_PersistentCalls:
-          m_Calls: []
     - camLookCenter: {fileID: 3952594471239565226}
       camLookRight: {fileID: 454207909431612412}
       camLookLeft: {fileID: 0}
@@ -6692,27 +6678,6 @@ MonoBehaviour:
       camLookRight: {fileID: 454207909431612412}
       camLookLeft: {fileID: 0}
       camDivision: 1
-      OnTalkEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - camLookCenter: {fileID: 3952594471239565226}
-      camLookRight: {fileID: 454207909431612412}
-      camLookLeft: {fileID: 0}
-      camDivision: 1
-      OnTalkEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - camLookCenter: {fileID: 3952594471239565226}
-      camLookRight: {fileID: 454207909431612412}
-      camLookLeft: {fileID: 0}
-      camDivision: 1
-      OnTalkEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - camLookCenter: {fileID: 3952594471239565226}
-      camLookRight: {fileID: 454207909431612412}
-      camLookLeft: {fileID: 0}
-      camDivision: 4
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -6761,7 +6726,7 @@ MonoBehaviour:
     - camLookCenter: {fileID: 3952594471239565226}
       camLookRight: {fileID: 454207909431612412}
       camLookLeft: {fileID: 0}
-      camDivision: 0
+      camDivision: 1
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -6773,16 +6738,51 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
     - camLookCenter: {fileID: 3952594471239565226}
-      camLookRight: {fileID: 0}
+      camLookRight: {fileID: 454207909431612412}
       camLookLeft: {fileID: 0}
-      camDivision: 0
+      camDivision: 1
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []
     - camLookCenter: {fileID: 3952594471239565226}
-      camLookRight: {fileID: 0}
+      camLookRight: {fileID: 454207909431612412}
       camLookLeft: {fileID: 0}
-      camDivision: 0
+      camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 3952594471239565226}
+      camLookRight: {fileID: 454207909431612412}
+      camLookLeft: {fileID: 0}
+      camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 3952594471239565226}
+      camLookRight: {fileID: 454207909431612412}
+      camLookLeft: {fileID: 0}
+      camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 3952594471239565226}
+      camLookRight: {fileID: 454207909431612412}
+      camLookLeft: {fileID: 0}
+      camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 3952594471239565226}
+      camLookRight: {fileID: 454207909431612412}
+      camLookLeft: {fileID: 0}
+      camDivision: 1
+      OnTalkEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - camLookCenter: {fileID: 3952594471239565226}
+      camLookRight: {fileID: 454207909431612412}
+      camLookLeft: {fileID: 0}
+      camDivision: 1
       OnTalkEvent:
         m_PersistentCalls:
           m_Calls: []

@@ -29,6 +29,7 @@ public class ClassRoom_F1 : MonoBehaviour
             if (eventFlagData.currentRoom == roomName && eventFlagData.GameStart_All)
             {
                 Debug.Log("GameStart_All");
+                eventFlagData.GameStart_All = false;
                 eventFlagData.GameStart_All_TalkStart = true;
                 gameManager.OpenTextWindow(RoomText);
             }
