@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using static TalkCameraManager;
 
 public class TextWindow : MonoBehaviour
 {
@@ -168,7 +169,8 @@ public class TextWindow : MonoBehaviour
             //主人公の表示処理
             var mainChara = mainTalkChara.transform.GetChild(0).gameObject.transform.GetChild(0);
             var mainCharaShadow = mainTalkChara.transform.GetChild(1).gameObject.transform.GetChild(0);
-            if (mainChara.GetComponent<Image>().enabled == false) { mainChara.GetComponent<Image>().enabled = true; mainCharaShadow.GetComponent<Image>().enabled = true; }
+            if (mainChara.GetComponent<Image>().enabled == false)
+            { mainChara.GetComponent<Image>().enabled = true; mainCharaShadow.GetComponent<Image>().enabled = true; }
 
             //会話用カメラの起動
             //CameraEnabledOn();
@@ -231,10 +233,13 @@ public class TextWindow : MonoBehaviour
             //話者の名前を表示
             speakerNameText.text = dialogueText.textInfomations[index].speakerName;
 
+            cameraSet.OnTalkEvent.Invoke();
+            //StartCoroutine(NextTalkEvent(cameraSet));
+
             if (!isTyping)
             {
                 //会話イベントを発生
-                cameraSet.OnTalkEvent.Invoke();
+                //cameraSet.OnTalkEvent.Invoke();
 
                 dialogueCoroutine = StartCoroutine(TypeDialogueText(dialogueText.textInfomations[index].paragraphs));
             }
@@ -242,6 +247,7 @@ public class TextWindow : MonoBehaviour
             {
                 StopTyping();
             }
+            
         }
         else
         {
@@ -281,6 +287,28 @@ public class TextWindow : MonoBehaviour
         }
     }
 
+    private IEnumerator NextTalkEvent(CameraSet cameraSet)
+    {
+        //GameManager.isTalkEvent = false;
+        //会話イベントを発生
+        cameraSet.OnTalkEvent.Invoke();
+
+        //if(cameraSet.OnTalkEvent != null)
+
+        yield return new WaitUntil(() => GameManager.isTalkEvent);
+
+        if (!isTyping)
+        {
+            //会話イベントを発生
+            //cameraSet.OnTalkEvent.Invoke();
+
+            dialogueCoroutine = StartCoroutine(TypeDialogueText(dialogueText.textInfomations[index].paragraphs));
+        }
+        else
+        {
+            StopTyping();
+        }
+    }
 
     //ダイアログのテキストを一文字づつ表示
     private IEnumerator TypeDialogueText(string paragraph)
@@ -297,6 +325,7 @@ public class TextWindow : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
         isTyping = false;
+
         //次の会話文インデックスを進める
         index++;
     }

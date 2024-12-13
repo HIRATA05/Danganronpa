@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject AdventureScene;
     [SerializeField] private GameObject DiscussionScene;
 
+    [NonSerialized] public static bool isTalkEvent = false;
+
     //キーインプット
     private float keyElapsedTime = 0;
     private float keyWaitTime = 0.5f;

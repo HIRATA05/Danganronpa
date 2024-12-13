@@ -135,7 +135,7 @@ public class CharaEffect : MonoBehaviour
     //自己紹介イベントを表示
     public void SelfIntoroDisplay(Sprite sprite)
     {
-        /*
+        
         eventcgImage.sprite = sprite;
         eventcgImage.enabled = true;
 
@@ -144,7 +144,7 @@ public class CharaEffect : MonoBehaviour
 
         //一定時間待機
         StartCoroutine(EventCGDisplay());
-        */
+        
         
 
         //操作可能
@@ -153,10 +153,16 @@ public class CharaEffect : MonoBehaviour
 
     private IEnumerator EventCGDisplay()
     {
+        //イベント中で文字送りできない
+        GameManager.isTalkEvent = false;
+
         //操作不能にする
         gameManager.playerController = GameManager.PlayerController.EventScene;
 
         yield return new WaitForSeconds(3f);
+
+        //イベント終了で文字送りできるようになる
+        GameManager.isTalkEvent = true;
 
         //時間で画像消去
         eventcgImage.sprite = null;
