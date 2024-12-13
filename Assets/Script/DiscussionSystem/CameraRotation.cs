@@ -8,7 +8,7 @@ public class CameraRotation : MonoBehaviour
     private bool isRotate = false;
 
     //‰ñ“]‘¬“x
-    readonly private float rotateSpeed = 1.5f;
+    readonly private float rotateSpeed = 0.5f;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class CameraRotation : MonoBehaviour
 
     private void CameraRotate()
     {
-        Debug.Log("=ƒJƒƒ‰‰ñ“]’†=");
+        //Debug.Log("=ƒJƒƒ‰‰ñ“]’†=");
         //Y²‚É‰ñ“]
         transform.RotateAround(transform.position, Vector3.up, rotateSpeed);
     }
