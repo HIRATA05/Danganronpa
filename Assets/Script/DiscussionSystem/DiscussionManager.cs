@@ -56,11 +56,13 @@ public class DiscussionManager : MonoBehaviour
     [System.Serializable]
     public class SpeechSet
     {
-        //発言
-        public string Speech;
-
         //発言者の名前
         public string SpeechName;
+
+        //発言
+        public string NormalSpeechBefore;
+        public string WeekPointSpeech;
+        public string NormalSpeechAfter;
 
         //論破か同意か
         public enum SpeechType
@@ -78,10 +80,11 @@ public class DiscussionManager : MonoBehaviour
             LeftToRight,//左から右
         }
         public SpeechMovePattern speechMove;
-
+        /*
         //文字色変化の範囲
         public int WeekRangeStart = 0;
         public int WeekRangeEnd = 1;
+        */
     }
     [Header("論破カラーコード#ffa500　同意カラーコード#41A2E1")]
     public SpeechSet[] speechSet;
@@ -196,8 +199,14 @@ public class DiscussionManager : MonoBehaviour
             {
                 isTextSetCalled = true;
 
+                //文字の大きさと色をセット
+                speechSet[DiscussionNum].NormalSpeechBefore = "<size=10><color=white>" + speechSet[DiscussionNum].NormalSpeechBefore;
+                speechSet[DiscussionNum].WeekPointSpeech = "<size=10><color=white>" + speechSet[DiscussionNum].WeekPointSpeech;
+                speechSet[DiscussionNum].NormalSpeechAfter = "<size=10><color=white>" + speechSet[DiscussionNum].NormalSpeechAfter;
+                //全ての文字を合わせて1つの文字列を作る
+                string speech = speechSet[DiscussionNum].NormalSpeechBefore + speechSet[DiscussionNum].WeekPointSpeech + speechSet[DiscussionNum].NormalSpeechAfter;
                 //文字のデータをセットする
-                speechText.GetComponent<TextMeshProUGUI>().text = speechSet[DiscussionNum].Speech;
+                speechText.GetComponent<TextMeshProUGUI>().text = speech;
                 //speechText.GetComponent<TextMeshPro>().text = speechSet[DiscussionNum].Speech;
 
                 //文字数取得 speechText.GetComponent<TextMeshProUGUI>().text.Length

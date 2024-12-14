@@ -233,7 +233,7 @@ public class TextWindow : MonoBehaviour
             //˜bŽÒ‚Ì–¼‘O‚ð•\Ž¦
             speakerNameText.text = dialogueText.textInfomations[index].speakerName;
 
-            cameraSet.OnTalkEvent.Invoke();
+            
             //StartCoroutine(NextTalkEvent(cameraSet));
 
             if (!isTyping)
@@ -247,7 +247,7 @@ public class TextWindow : MonoBehaviour
             {
                 StopTyping();
             }
-            
+            cameraSet.OnTalkEvent.Invoke();
         }
         else
         {
