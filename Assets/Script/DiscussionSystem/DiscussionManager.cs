@@ -201,10 +201,18 @@ public class DiscussionManager : MonoBehaviour
 
                 //文字の大きさと色をセット
                 speechSet[DiscussionNum].NormalSpeechBefore = "<size=10><color=white>" + speechSet[DiscussionNum].NormalSpeechBefore;
-                speechSet[DiscussionNum].WeekPointSpeech = "<size=10><color=white>" + speechSet[DiscussionNum].WeekPointSpeech;
+
+                if(speechSet[DiscussionNum].speechType == SpeechSet.SpeechType.refute)
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=15><color=#ffa500>" + speechSet[DiscussionNum].WeekPointSpeech;
+                else if(speechSet[DiscussionNum].speechType == SpeechSet.SpeechType.consent)
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=15><color=#41A2E1>" + speechSet[DiscussionNum].WeekPointSpeech;
+                else
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=10><color=white>" + speechSet[DiscussionNum].WeekPointSpeech;
+
                 speechSet[DiscussionNum].NormalSpeechAfter = "<size=10><color=white>" + speechSet[DiscussionNum].NormalSpeechAfter;
                 //全ての文字を合わせて1つの文字列を作る
                 string speech = speechSet[DiscussionNum].NormalSpeechBefore + speechSet[DiscussionNum].WeekPointSpeech + speechSet[DiscussionNum].NormalSpeechAfter;
+                Debug.Log(speech);
                 //文字のデータをセットする
                 speechText.GetComponent<TextMeshProUGUI>().text = speech;
                 //speechText.GetComponent<TextMeshPro>().text = speechSet[DiscussionNum].Speech;
