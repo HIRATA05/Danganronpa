@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.UIElements;
 
 public class DiscussionManager : MonoBehaviour
 {
@@ -89,10 +90,8 @@ public class DiscussionManager : MonoBehaviour
     [Header("論破カラーコード#ffa500　同意カラーコード#41A2E1")]
     public SpeechSet[] speechSet;
 
-    //発言の当たり判定の厚さ
-    private float textThickX = 0.0f;
-    private float textThickY = 0.0f;
-    private float textThickZ = 0.01f;
+    private string CurrentWeekPoint;
+    //[NonSerialized] public TextMeshProUGUI SpeechAll;
 
     //議論の進行番号
     private int DiscussionNum = 0;
@@ -105,6 +104,8 @@ public class DiscussionManager : MonoBehaviour
     [SerializeField, Header("議論で並ぶキャラ")] private GameObject[] DiscussionMenber;
     //生徒生成の親オブジェクト
     [SerializeField, Header("議論者発生の親オブジェクト")] private GameObject perentObj;
+    //生成した生徒の消去用の配列
+    private GameObject[] MenberDelete = new GameObject[0];
 
     private bool isDiscussionInitCalled = false;
     private bool isTextSetCalled = false;
@@ -138,11 +139,13 @@ public class DiscussionManager : MonoBehaviour
             //議論番号初期化
             DiscussionNum = 0;
 
+            MenberDelete = new GameObject[DiscussionMenber.Length];
             //DiscussionMenberを順番に生成
             for (int i = 0; i < DiscussionMenber.Length; i++)
             {
-                Instantiate(DiscussionMenber[i], perentObj.transform);
+                MenberDelete[i] = Instantiate(DiscussionMenber[i], perentObj.transform);
             }
+
             //生徒の並びを円形に並べる
             circleDeployer.Deploy();
 
@@ -199,22 +202,28 @@ public class DiscussionManager : MonoBehaviour
             {
                 isTextSetCalled = true;
 
+                //現在の発言を取得
+                //CurrentSpeech = speechSet[DiscussionNum];
+                CurrentWeekPoint = speechSet[DiscussionNum].WeekPointSpeech;
                 //文字の大きさと色をセット
-                speechSet[DiscussionNum].NormalSpeechBefore = "<size=10><color=white>" + speechSet[DiscussionNum].NormalSpeechBefore;
+                speechSet[DiscussionNum].NormalSpeechBefore = "<size=60><color=white>" + speechSet[DiscussionNum].NormalSpeechBefore;
 
                 if(speechSet[DiscussionNum].speechType == SpeechSet.SpeechType.refute)
-                    speechSet[DiscussionNum].WeekPointSpeech = "<size=15><color=#ffa500>" + speechSet[DiscussionNum].WeekPointSpeech;
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#ffa500>" + speechSet[DiscussionNum].WeekPointSpeech;
                 else if(speechSet[DiscussionNum].speechType == SpeechSet.SpeechType.consent)
-                    speechSet[DiscussionNum].WeekPointSpeech = "<size=15><color=#41A2E1>" + speechSet[DiscussionNum].WeekPointSpeech;
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#41A2E1>" + speechSet[DiscussionNum].WeekPointSpeech;
                 else
-                    speechSet[DiscussionNum].WeekPointSpeech = "<size=10><color=white>" + speechSet[DiscussionNum].WeekPointSpeech;
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=60><color=white>" + speechSet[DiscussionNum].WeekPointSpeech;
 
-                speechSet[DiscussionNum].NormalSpeechAfter = "<size=10><color=white>" + speechSet[DiscussionNum].NormalSpeechAfter;
+                speechSet[DiscussionNum].NormalSpeechAfter = "<size=60><color=white>" + speechSet[DiscussionNum].NormalSpeechAfter;
                 //全ての文字を合わせて1つの文字列を作る
-                string speech = speechSet[DiscussionNum].NormalSpeechBefore + speechSet[DiscussionNum].WeekPointSpeech + speechSet[DiscussionNum].NormalSpeechAfter;
+                string speech = speechSet[DiscussionNum].NormalSpeechBefore + " " + speechSet[DiscussionNum].WeekPointSpeech + " " + speechSet[DiscussionNum].NormalSpeechAfter;
                 Debug.Log(speech);
                 //文字のデータをセットする
                 speechText.GetComponent<TextMeshProUGUI>().text = speech;
+
+                //SpeechAll = speechText.GetComponent<TextMeshProUGUI>();
+
                 //speechText.GetComponent<TextMeshPro>().text = speechSet[DiscussionNum].Speech;
 
                 //文字数取得 speechText.GetComponent<TextMeshProUGUI>().text.Length
@@ -287,14 +296,33 @@ public class DiscussionManager : MonoBehaviour
         gameManager.OpenDiscussionWindow(DiscussionTakeAroundText);
         //会話開始
         discussion = DiscussionMode.Talk;
+
+        DiscussionEnd();
         //議論番号をリセット
         DiscussionNum = 0;
+    }
+
+    //議論で発生したものをリセット
+    private void DiscussionEnd()
+    {
+        //発言を初期化
+        speechText.GetComponent<TextMeshProUGUI>().text = "";
+        isTextSetCalled = false;
+        //議論の生徒を消去
+        for (int i = 0; i < MenberDelete.Length; i++)
+        {
+            Destroy(MenberDelete[i]);
+        }
+        //カメラの向きをリセット
+
     }
 
     //議論を停止して論破画像を表示する処理
     public void ShootingFinish()
     {
         Debug.Log("議論終了で会話移行");
+
+        DiscussionEnd();
         //初期化処理発生のフラグを戻す
         //isDiscussionInitCalled = false;
 
@@ -317,5 +345,26 @@ public class DiscussionManager : MonoBehaviour
     {
         isDiscussionInitCalled = false;
     }
+
+    //文字に当たったか判定して正しいウィークポイントか確認
+    public bool TextColWeek()
+    {
+        var index = TMP_TextUtilities.FindIntersectingWord(speechText.GetComponent<TextMeshProUGUI>(), Input.mousePosition, Camera.main);
+        if (index < 0)
+            return false;
+
+        var wordInfo = speechText.GetComponent<TextMeshProUGUI>().textInfo.wordInfo[index];
+
+        Debug.Log(wordInfo.GetWord() + " "+ CurrentWeekPoint/*CurrentSpeech.WeekPointSpeech*/);
+
+        //取得した文字がウィークポイントと同じか判定
+        if(wordInfo.GetWord() == CurrentWeekPoint/*CurrentSpeech.WeekPointSpeech*/)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    //ウィークポイントが論破か同意か判定
 
 }

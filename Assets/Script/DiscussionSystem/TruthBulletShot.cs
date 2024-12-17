@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -106,13 +107,29 @@ public class TruthBulletShot : MonoBehaviour
             shotPointCurrent.position = Vector3.Lerp(startPosition, targetPosition, t); // 目的の位置に移動
             yield return null;
         }
+
+        //弾の位置を変化
+        BulletDelete();
+
+        //ウィークポイントか確認
+        if (discussionManager.TextColWeek())
+        {
+            //ノンストップ議論終了処理を呼び出す
+            discussionManager.ShootingFinish();
+        }
+        else
+        {
+            //ウィークポイント出ない場合
+            NotBreakBullet();
+        }
+        /*
         //弾が文字に当たっていた場合
         if (isBulletTextCol)
         {
             BulletTextTouch();
         }
-        //弾の位置を変化
-        BulletDelete();
+        */
+        
         yield return null;
     }
 
@@ -146,12 +163,19 @@ public class TruthBulletShot : MonoBehaviour
         BulletDelete();
 
         //ウィークポイントか確認
-        //ウィークポイント出ない場合NotBreakBullet();
-
+        if (discussionManager.TextColWeek())
+        {
+            //ノンストップ議論終了処理を呼び出す
+            discussionManager.ShootingFinish();
+        }
+        else
+        {
+            //ウィークポイント出ない場合
+            NotBreakBullet();
+        }
         //ウィークポイントなら論破か同意か確認
 
-        //ノンストップ議論終了処理を呼び出す
-        discussionManager.ShootingFinish();
+
     }
     public void NotBreakBullet()
     {
