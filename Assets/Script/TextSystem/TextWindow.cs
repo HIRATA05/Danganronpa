@@ -239,7 +239,7 @@ public class TextWindow : MonoBehaviour
             if (!isTyping)
             {
                 //会話イベントを発生
-                //cameraSet.OnTalkEvent.Invoke();
+                cameraSet.OnTalkEvent.Invoke();
 
                 dialogueCoroutine = StartCoroutine(TypeDialogueText(dialogueText.textInfomations[index].paragraphs));
             }
@@ -247,7 +247,7 @@ public class TextWindow : MonoBehaviour
             {
                 StopTyping();
             }
-            cameraSet.OnTalkEvent.Invoke();
+            
         }
         else
         {
@@ -289,9 +289,10 @@ public class TextWindow : MonoBehaviour
 
     private IEnumerator NextTalkEvent(CameraSet cameraSet)
     {
-        //GameManager.isTalkEvent = false;
+        GameManager.isTalkEvent = false;
         //会話イベントを発生
         cameraSet.OnTalkEvent.Invoke();
+        //文字送りの前に一定時間画像を表示してから消去するイベントを追加したい
 
         //if(cameraSet.OnTalkEvent != null)
 
