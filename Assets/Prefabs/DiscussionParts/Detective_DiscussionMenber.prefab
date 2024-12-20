@@ -407,6 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3570633768952546287}
+  - component: {fileID: 292292114056038951}
   m_Layer: 0
   m_Name: Detective_DiscussionMenber
   m_TagString: Untagged
@@ -427,11 +428,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1174964368136864284}
   - {fileID: 6373534321954592360}
   - {fileID: 3644195615564881067}
-  - {fileID: 1174964368136864284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292292114056038951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6230298026897901353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5beaa30d8b13f4db8559773662159a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
 --- !u!1 &6773602047413437223
 GameObject:
   m_ObjectHideFlags: 0

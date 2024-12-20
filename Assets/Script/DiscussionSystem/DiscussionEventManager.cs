@@ -38,6 +38,12 @@ public class DiscussionEventManager : MonoBehaviour
         
     }
 
+    //議論で発生したものをリセットする処理を呼び出す
+    public void DiscussionEndCall()
+    {
+        
+    }
+
     //議論会話終了後の移行先変更
     public void DiscussionTalkFinishDiscussion()
     {

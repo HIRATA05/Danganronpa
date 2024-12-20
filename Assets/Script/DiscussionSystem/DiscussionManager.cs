@@ -33,6 +33,8 @@ public class DiscussionManager : MonoBehaviour
 
     //議論カメラ
     [SerializeField] private Camera DiscussionCamera;
+    [SerializeField] private GameObject MainVirtualCamera;
+    private CinemachineVirtualCamera MainCCVirtualCamera;
 
     //次の発言までの時間
     float nextSpeechTime = 5.0f;
@@ -101,6 +103,9 @@ public class DiscussionManager : MonoBehaviour
     private float elapsedTime = 0.0f;
     private float startTime = 5.0f;
 
+    //現在の発言者の名前
+    private string CureentSpeechName;
+
     //円形に並ぶ生徒
     [SerializeField, Header("議論で並ぶキャラ")] private GameObject[] DiscussionMenber;
     //生徒生成の親オブジェクト
@@ -116,7 +121,7 @@ public class DiscussionManager : MonoBehaviour
 
     void Start()
     {
-        
+        MainCCVirtualCamera = MainVirtualCamera.GetComponent<CinemachineVirtualCamera>();
     }
 
     void Update()
@@ -180,11 +185,12 @@ public class DiscussionManager : MonoBehaviour
                 elapsedTime = 0;
 
                 //カメラを停止
-                DiscussionCamera.GetComponent<CameraRotation>().RotateOff();
+                //DiscussionCamera.GetComponent<CameraRotation>().RotateOff();
+                MainVirtualCamera.GetComponent<CameraRotation>().RotateOff();
 
                 //カメラを主人公に向ける
                 CameraPriority(0);
-
+                
 
                 //上記終了後議論開始
                 discussion = DiscussionMode.Shooting;
@@ -230,16 +236,16 @@ public class DiscussionManager : MonoBehaviour
                 //speechText.GetComponent<TextMeshPro>().text = speechSet[DiscussionNum].Speech;
 
                 //文字数取得 speechText.GetComponent<TextMeshProUGUI>().text.Length
-                //文字の大きさ　ウィーク15　通常10
                 //SpeechType.Noneの場合ウィークポイントは作らない
-                if (speechSet[DiscussionNum].speechType != SpeechSet.SpeechType.None)
+
+                //現在の発言者を取得
+                for(int i = 0; i < InstantiateMenber.Length; i++)
                 {
-                    //発言の文字数から文字の当たり判定を設定する
-                    /*
-                    speechText.AddComponent<BoxCollider>();
-                    speechText.GetComponent<BoxCollider>().center = new Vector3(0, 0, 0);
-                    speechText.GetComponent<BoxCollider>().size = new Vector3(0, 0, textThickZ);
-                    */
+                    if(speechSet[DiscussionNum].SpeechName == InstantiateMenber[i].GetComponent<SpeechName>().speechName)
+                    {
+                        //カメラを発言者に向ける
+                        CameraPriority(i);
+                    }
                 }
 
                 //発言表示後議論番号加算
@@ -282,15 +288,29 @@ public class DiscussionManager : MonoBehaviour
     //ヴァーチャルカメラの優先度を変化してカメラを変化
     private void CameraPriority(int charaNum)
     {
-        for (int i = 0; i < InstantiateMenber.Length; i++)
+        //議論メンバー＋メインカメラ
+        for (int i = 0; i < InstantiateMenber.Length + 1; i++)
         {
-            if(i == charaNum)
+            if(i == InstantiateMenber.Length + 1)
             {
-                InstantiateMenber[i].GetComponent<CinemachineVirtualCameraBase>().Priority = 1;
+                Debug.Log("i == InstantiateMenber.Length + 1");
+                MainCCVirtualCamera.Priority = 1;
+            }
+            else if(i == charaNum)
+            {
+                Debug.Log("i == charaNum");
+                Debug.Log(InstantiateMenber[i].name);
+                InstantiateMenber[i].transform.GetChild(0).gameObject.GetComponent<CinemachineVirtualCamera>().Priority = 1;
             }
             else
             {
-                InstantiateMenber[0].GetComponent<CinemachineVirtualCameraBase>().Priority = 0;
+                Debug.Log("else");
+                if(i < InstantiateMenber.Length)
+                {
+                    InstantiateMenber[i].transform.GetChild(0).gameObject.GetComponent<CinemachineVirtualCamera>().Priority = 0;
+                }
+                
+                MainCCVirtualCamera.Priority = 0;
             }
         }
     }
@@ -302,8 +322,8 @@ public class DiscussionManager : MonoBehaviour
         discussion = DiscussionMode.BeforeDiscussion;
 
         //一定時間カメラを回す
-        DiscussionCamera.GetComponent<CameraRotation>().RotateOn();
-
+        //DiscussionCamera.GetComponent<CameraRotation>().RotateOn();
+        MainVirtualCamera.GetComponent<CameraRotation>().RotateOn();
     }
 
     //会話の発生後議論を一巡させる
@@ -320,7 +340,7 @@ public class DiscussionManager : MonoBehaviour
     }
 
     //議論で発生したものをリセット
-    private void DiscussionEnd()
+    public void DiscussionEnd()
     {
         //発言を初期化
         speechText.GetComponent<TextMeshProUGUI>().text = "";
@@ -331,7 +351,7 @@ public class DiscussionManager : MonoBehaviour
             Destroy(InstantiateMenber[i]);
         }
         //カメラの向きをリセット
-
+        MainVirtualCamera.transform.rotation = Quaternion.identity;
     }
 
     //議論を停止して論破画像を表示する処理
@@ -339,7 +359,7 @@ public class DiscussionManager : MonoBehaviour
     {
         Debug.Log("議論終了で会話移行");
 
-        DiscussionEnd();
+        DiscussionEnd();//後で会話終了時に発生するように変える
         //初期化処理発生のフラグを戻す
         //isDiscussionInitCalled = false;
 

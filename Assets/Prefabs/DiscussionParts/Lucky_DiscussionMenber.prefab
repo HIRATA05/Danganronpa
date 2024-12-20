@@ -53,6 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 670984073869505818}
+  - component: {fileID: 961071802008355591}
   m_Layer: 0
   m_Name: Lucky_DiscussionMenber
   m_TagString: Untagged
@@ -73,11 +74,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4868471434509815355}
   - {fileID: 8026210882479782870}
   - {fileID: 9172770908603348397}
-  - {fileID: 4868471434509815355}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961071802008355591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981385683723660072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5beaa30d8b13f4db8559773662159a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
 --- !u!1 &3009522325491974280
 GameObject:
   m_ObjectHideFlags: 0

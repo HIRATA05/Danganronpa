@@ -435,6 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8612157558292536695}
+  - component: {fileID: 1861010829938758684}
   m_Layer: 0
   m_Name: JapaneseArcher_DiscussionMenber
   m_TagString: Untagged
@@ -455,11 +456,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 735024324426725740}
   - {fileID: 1183018446551832861}
   - {fileID: 2812772732707002944}
-  - {fileID: 735024324426725740}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1861010829938758684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6140829032170602395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5beaa30d8b13f4db8559773662159a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speechName: "\u30EC\u30A4\u30BC\u30A4 \u30EA\u30F3"
 --- !u!1 &6817807373687478153
 GameObject:
   m_ObjectHideFlags: 0

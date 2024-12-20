@@ -1867,7 +1867,6 @@ GameObject:
   - component: {fileID: 936704675}
   - component: {fileID: 936704672}
   - component: {fileID: 936704671}
-  - component: {fileID: 936704674}
   m_Layer: 0
   m_Name: DiscussionMainCamera
   m_TagString: MainCamera
@@ -2011,18 +2010,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &936704674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936704669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e400af20a87b3ef4fa8601a27d58a1c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &936704675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2043,7 +2030,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 0.2
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -2342,6 +2329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992954148}
   - component: {fileID: 992954149}
+  - component: {fileID: 992954150}
   m_Layer: 0
   m_Name: DiscussionMainVirtualCamera
   m_TagString: Untagged
@@ -2404,6 +2392,18 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 341088499}
+--- !u!114 &992954150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992954147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e400af20a87b3ef4fa8601a27d58a1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000250802
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,25 +3196,26 @@ MonoBehaviour:
   circleDeployer: {fileID: 2100111002}
   centerDiscussionPoint: {fileID: 2100111001}
   DiscussionCamera: {fileID: 936704673}
+  MainVirtualCamera: {fileID: 992954147}
   DiscussionStartText: {fileID: 11400000, guid: 73378db2c4202b242a4afe936997ebca, type: 2}
   DiscussionTakeAroundText: {fileID: 11400000, guid: 27df6e6f4cea30f4095b66e166cf38c4, type: 2}
   DiscussionFinishText: {fileID: 11400000, guid: 06c1a756cafdb6340856378d66888f40, type: 2}
   DiscussionFailureText: {fileID: 11400000, guid: 717f82ee9df4e364880b8bc2df0d4e2a, type: 2}
   speechText: {fileID: 1475232964}
   speechSet:
-  - SpeechName: "\u5E78\u904B"
+  - SpeechName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
     NormalSpeechBefore: "\u30C6\u30B9\u30C8\u7528"
     WeekPointSpeech: 
     NormalSpeechAfter: "\u767A\u8A00\u53F0\u8A5E"
     speechType: 2
     speechMove: 0
-  - SpeechName: "\u5E78\u904B"
+  - SpeechName: "\u30EC\u30A4\u30BC\u30A4 \u30EA\u30F3"
     NormalSpeechBefore: "\u3042\u3044\u3046"
     WeekPointSpeech: "\u3048\u304A"
     NormalSpeechAfter: "\u304B\u304D\u304F"
     speechType: 1
     speechMove: 0
-  - SpeechName: "\u5E78\u904B"
+  - SpeechName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
     NormalSpeechBefore: "\u306A\u3093\u3067"
     WeekPointSpeech: "\u56F3\u66F8\u9928\u306A\u3093\u304B\u306B"
     NormalSpeechAfter: "\u3044\u3063\u305F\u3093\u3059\u304B\u306D\uFF1F"
@@ -3673,8 +3674,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 992954148}
   - {fileID: 936704670}
+  - {fileID: 992954148}
   - {fileID: 2100111003}
   - {fileID: 750871481}
   m_Father: {fileID: 691144824}
