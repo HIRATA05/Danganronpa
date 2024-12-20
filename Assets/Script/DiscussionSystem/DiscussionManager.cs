@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.UIElements;
+using Cinemachine;
 
 public class DiscussionManager : MonoBehaviour
 {
@@ -104,8 +105,8 @@ public class DiscussionManager : MonoBehaviour
     [SerializeField, Header("議論で並ぶキャラ")] private GameObject[] DiscussionMenber;
     //生徒生成の親オブジェクト
     [SerializeField, Header("議論者発生の親オブジェクト")] private GameObject perentObj;
-    //生成した生徒の消去用の配列
-    private GameObject[] MenberDelete = new GameObject[0];
+    //生成した生徒の配列
+    private GameObject[] InstantiateMenber = new GameObject[0];
 
     private bool isDiscussionInitCalled = false;
     private bool isTextSetCalled = false;
@@ -139,11 +140,11 @@ public class DiscussionManager : MonoBehaviour
             //議論番号初期化
             DiscussionNum = 0;
 
-            MenberDelete = new GameObject[DiscussionMenber.Length];
+            InstantiateMenber = new GameObject[DiscussionMenber.Length];
             //DiscussionMenberを順番に生成
             for (int i = 0; i < DiscussionMenber.Length; i++)
             {
-                MenberDelete[i] = Instantiate(DiscussionMenber[i], perentObj.transform);
+                InstantiateMenber[i] = Instantiate(DiscussionMenber[i], perentObj.transform);
             }
 
             //生徒の並びを円形に並べる
@@ -182,6 +183,8 @@ public class DiscussionManager : MonoBehaviour
                 DiscussionCamera.GetComponent<CameraRotation>().RotateOff();
 
                 //カメラを主人公に向ける
+                CameraPriority(0);
+
 
                 //上記終了後議論開始
                 discussion = DiscussionMode.Shooting;
@@ -276,7 +279,21 @@ public class DiscussionManager : MonoBehaviour
 
     }
 
-    
+    //ヴァーチャルカメラの優先度を変化してカメラを変化
+    private void CameraPriority(int charaNum)
+    {
+        for (int i = 0; i < InstantiateMenber.Length; i++)
+        {
+            if(i == charaNum)
+            {
+                InstantiateMenber[i].GetComponent<CinemachineVirtualCameraBase>().Priority = 1;
+            }
+            else
+            {
+                InstantiateMenber[0].GetComponent<CinemachineVirtualCameraBase>().Priority = 0;
+            }
+        }
+    }
 
     //議論を開始する処理
     public void ShootingInit()
@@ -309,9 +326,9 @@ public class DiscussionManager : MonoBehaviour
         speechText.GetComponent<TextMeshProUGUI>().text = "";
         isTextSetCalled = false;
         //議論の生徒を消去
-        for (int i = 0; i < MenberDelete.Length; i++)
+        for (int i = 0; i < InstantiateMenber.Length; i++)
         {
-            Destroy(MenberDelete[i]);
+            Destroy(InstantiateMenber[i]);
         }
         //カメラの向きをリセット
 
