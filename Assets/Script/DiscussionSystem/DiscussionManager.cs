@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.UIElements;
 using Cinemachine;
+using Unity.VisualScripting;
 
 public class DiscussionManager : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class DiscussionManager : MonoBehaviour
 
     //議論時のテキストウィンドウ
     [SerializeField] private DiscussionTalkModeWindow discussionTalkModeWindow;
+
+    //議論時のUI
+    [SerializeField] private DiscussionUI discussionUI;
 
     //円形の並びを作るスクリプト
     [SerializeField] private CircleDeployer circleDeployer;
@@ -55,7 +59,7 @@ public class DiscussionManager : MonoBehaviour
 
     //表示するテキスト
     [SerializeField] private GameObject speechText;
-
+    
     //セリフ
     [System.Serializable]
     public class SpeechSet
@@ -84,7 +88,10 @@ public class DiscussionManager : MonoBehaviour
             LeftToRight,//左から右
         }
         public SpeechMovePattern speechMove;
-        
+
+        //コトダマを間違えた時の会話
+        public DialogueText DiscussionMistakeText;
+
     }
     [Header("論破カラーコード#ffa500　同意カラーコード#41A2E1")]
     public SpeechSet[] speechSet;
@@ -98,9 +105,6 @@ public class DiscussionManager : MonoBehaviour
     //議論開始の際の時間
     private float elapsedTime = 0.0f;
     private float startTime = 5.0f;
-
-    //現在の発言者の名前
-    private string CureentSpeechName;
 
     //円形に並ぶ生徒
     [SerializeField, Header("議論で並ぶキャラ")] private GameObject[] DiscussionMenber;
@@ -186,7 +190,9 @@ public class DiscussionManager : MonoBehaviour
 
                 //カメラを主人公に向ける
                 CameraPriority(0);
-                
+
+                //最大発言番号を設定
+                discussionUI.SpeechNumMaxSet(speechSet.Length);
 
                 //上記終了後議論開始
                 discussion = DiscussionMode.Shooting;
@@ -246,6 +252,9 @@ public class DiscussionManager : MonoBehaviour
 
                 //発言表示後議論番号加算
                 DiscussionNum++;
+
+                //発言番号と発言者を設定
+                discussionUI.SpeechNumSet(DiscussionNum, speechSet[DiscussionNum].SpeechName);
             }
 
             //時間経過で次の文字に進む
@@ -289,18 +298,18 @@ public class DiscussionManager : MonoBehaviour
         {
             if(i == InstantiateMenber.Length + 1)
             {
-                Debug.Log("i == InstantiateMenber.Length + 1");
+                //Debug.Log("i == InstantiateMenber.Length + 1");
                 MainCCVirtualCamera.Priority = 1;
             }
             else if(i == charaNum)
             {
-                Debug.Log("i == charaNum");
+                //Debug.Log("i == charaNum");
                 Debug.Log(InstantiateMenber[i].name);
                 InstantiateMenber[i].transform.GetChild(0).gameObject.GetComponent<CinemachineVirtualCamera>().Priority = 1;
             }
             else
             {
-                Debug.Log("else");
+                //Debug.Log("else");
                 if(i < InstantiateMenber.Length)
                 {
                     InstantiateMenber[i].transform.GetChild(0).gameObject.GetComponent<CinemachineVirtualCamera>().Priority = 0;
