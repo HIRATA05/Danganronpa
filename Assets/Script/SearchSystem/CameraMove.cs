@@ -2,10 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
+using static GameManager;
 
 public class CameraMove : MonoBehaviour
 {
+
+    //ゲームマネージャー
+    [SerializeField] private GameManager gameManager;
+
     //カメラ
     [SerializeField] private GameObject moveCamera;
 
@@ -27,6 +31,14 @@ public class CameraMove : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.playerController == PlayerController.ReticleMode)
+        {
+            CameraRot();
+        }
+    }
+
+    private void CameraRot()
+    {
         //回転させる速度
         float rot = Input.GetAxis("Horizontal") * rotateSpeed;
 
@@ -41,7 +53,5 @@ public class CameraMove : MonoBehaviour
         //軸の角度を変える
         eularAngles.y = angle;
         cameraShaft.transform.rotation = Quaternion.Euler(eularAngles);
-
-
     }
 }

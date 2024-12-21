@@ -1257,7 +1257,7 @@ MonoBehaviour:
   titlePanels:
   - {fileID: 8442820455532279691}
   - {fileID: 7933239735771305955}
-  startSceneName: 1
+  startRoomName: 0
 --- !u!4 &1600357188
 Transform:
   m_ObjectHideFlags: 0

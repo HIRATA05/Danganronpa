@@ -7,11 +7,10 @@ namespace TECHC.Kamiyashiki
     public class UIManager : MonoBehaviour
     {
         [SerializeField] private TitlePanelBase[] titlePanels;
-        public SceneName startSceneName;
+        public RoomName startRoomName;
 
         void Start()
         {
-            SceneController.GetSceneName();
             foreach (var panel in titlePanels)
             {
                 panel.InitPanel(this);

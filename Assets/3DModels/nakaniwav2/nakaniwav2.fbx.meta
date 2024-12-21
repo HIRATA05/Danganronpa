@@ -3,7 +3,62 @@ guid: 8888b906c648f804592ab90007213d5c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grass
+    second: {fileID: 2100000, guid: 4d9439b8525657a43ae7af0ff48ac4ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: haisra
+    second: {fileID: 2100000, guid: 1d2706d81b8ae8742a1e3d8fb852c4ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kabe
+    second: {fileID: 2100000, guid: c8ec9dde1ef21974db63e416727611b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 674eb09ccf14fab4492aaab854db12e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: obusyekuto
+    second: {fileID: 2100000, guid: 288b2c11a787da443a569d4b83b3259a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ori
+    second: {fileID: 2100000, guid: 2a25bf9d6e4b07d4aaccf2e935792c4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: test
+    second: {fileID: 2100000, guid: 80aaef9ff5a7d8643b7052e8b02c4544, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wood
+    second: {fileID: 2100000, guid: f9dfe12ac1040794697da70f08ff9b54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u30DE\u30C6\u30EA\u30A2\u30EB"
+    second: {fileID: 2100000, guid: 40606fd22cfe3b54d96929755c733336, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u30DE\u30C6\u30EA\u30A2\u30EB.001"
+    second: {fileID: 2100000, guid: f9796f5df9e02ff458352d9d17565e01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u30DE\u30C6\u30EA\u30A2\u30EB.002"
+    second: {fileID: 2100000, guid: 9d99881326f46d84f8fcfaf4dc69dcc6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

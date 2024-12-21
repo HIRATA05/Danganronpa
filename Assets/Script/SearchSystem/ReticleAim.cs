@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using static GameManager;
 using TMPro;
-//using UnityEngine.UIElements;
 
 public class ReticleAim : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class ReticleAim : MonoBehaviour
     [SerializeField] private GameManager gameManager;
 
     //照準
-    [SerializeField] private Image aimImage;
+    public Image aimImage;
 
     //照準の画像
     [SerializeField] private Sprite OnCollisionAimImage_Obj;
@@ -31,15 +30,10 @@ public class ReticleAim : MonoBehaviour
     private float RotSpeed = 0.1f;
 
 
-    float viewX; // ビューポート座標のxの値
-    float viewY; // ビューポート座標のyの値
-
-
 
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Confined;	//カーソルを画面内に閉じ込める
-        //Cursor.visible = false;		//カーソルを非表示にする
+        
     }
 
     void Update()
@@ -54,20 +48,12 @@ public class ReticleAim : MonoBehaviour
     private void ReticleMove()
     {
         //マウスの位置と照準器の位置を同期させる。
-        //transform.position = Input.mousePosition;
+        transform.position = Input.mousePosition;
 
-        
-        //移動後のビューポート座標の値を取得
-        viewX = Camera.main.WorldToViewportPoint(Input.mousePosition).x;
-        viewY = Camera.main.WorldToViewportPoint(Input.mousePosition).y;
-        // もし移動後のビューポート座標が０から１の範囲ならば
-        if (0 <= viewX && viewX <= Screen.width && 0 <= viewY && viewY <= Screen.height)
-        {
-            Debug.Log(viewY);
-            //マウスの位置と照準器の位置を同期させる。
-            transform.position = Input.mousePosition;
-        }
-        
+
+        //照準が透明の時元に戻す
+        if (this.gameObject.GetComponent<Image>().color == Color.clear)
+            this.gameObject.GetComponent<Image>().color = Color.white;
 
         RaycastHit hit;
 
@@ -104,7 +90,9 @@ public class ReticleAim : MonoBehaviour
                     transform.localScale = new Vector3(OnCollisionAimSize, OnCollisionAimSize, OnCollisionAimSize);
                 }
 
-
+                //照準を可視化する
+                if (aimImage.color != Color.white)
+                    aimImage.color = Color.white;
                 //探索可能オブジェクト情報のウィンドウを可視化する
                 if (SearchObjInformationWindow.color != Color.white)
                     SearchObjInformationWindow.color = Color.white;
@@ -115,7 +103,7 @@ public class ReticleAim : MonoBehaviour
                     SearchObjInformationText.color = Color.black;
 
                 //この状態で調べるとテキスト表示
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyUp(KeyCode.Space))
                 {
                     //インタフェースを確認する
                     IReceiveSearch SearchObj = hit.transform.GetComponent<IReceiveSearch>();
@@ -123,13 +111,10 @@ public class ReticleAim : MonoBehaviour
                     if (SearchObj != null)
                     {
                         SearchObj.ReceiveSearch();
+
+                        
                     }
 
-                    //探索可能オブジェクト情報のウィンドウを透明にする
-                    if (SearchObjInformationWindow.color != Color.clear)
-                        SearchObjInformationWindow.color = Color.clear;
-                    if (SearchObjInformationText.color != Color.clear)
-                        SearchObjInformationText.color = Color.clear;
                 }
 
             }
@@ -166,10 +151,20 @@ public class ReticleAim : MonoBehaviour
         transform.localScale = new Vector3(DisCollisionAimSize, DisCollisionAimSize, DisCollisionAimSize);
 
         //探索可能オブジェクト情報のウィンドウを透明にする
+        ColorChangeClaer();
+
+    }
+
+    //色を透明に変える
+    public void ColorChangeClaer()
+    {
+        /*
+        if (aimImage.color != Color.clear)
+            aimImage.color = Color.clear;
+        */
         if (SearchObjInformationWindow.color != Color.clear)
             SearchObjInformationWindow.color = Color.clear;
         if (SearchObjInformationText.color != Color.clear)
             SearchObjInformationText.color = Color.clear;
     }
-
 }
