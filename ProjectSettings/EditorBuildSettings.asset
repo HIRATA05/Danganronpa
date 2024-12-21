@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Hirata/DiscussionTest_Hirata.unity
+    guid: e8aff4e222ba8f642b21697d7ee976a3
+  - enabled: 1
     path: Assets/Scenes/Hirata/ClassRoom_Hirata.unity
     guid: e5df84b9baefee84593febc82beca00b
   - enabled: 1

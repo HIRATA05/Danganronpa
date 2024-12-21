@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 20297854}
   - component: {fileID: 20297853}
   m_Layer: 5
-  m_Name: Revolver
+  m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6158,6 +6158,7 @@ MonoBehaviour:
   circleDeployer: {fileID: 2100111002}
   centerDiscussionPoint: {fileID: 2100111001}
   DiscussionCamera: {fileID: 936704673}
+  MainVirtualCamera: {fileID: 0}
   DiscussionStartText: {fileID: 11400000, guid: 73378db2c4202b242a4afe936997ebca, type: 2}
   DiscussionTakeAroundText: {fileID: 11400000, guid: 27df6e6f4cea30f4095b66e166cf38c4, type: 2}
   DiscussionFinishText: {fileID: 11400000, guid: 06c1a756cafdb6340856378d66888f40, type: 2}

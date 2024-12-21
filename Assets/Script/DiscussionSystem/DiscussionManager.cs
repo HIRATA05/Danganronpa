@@ -84,11 +84,7 @@ public class DiscussionManager : MonoBehaviour
             LeftToRight,//左から右
         }
         public SpeechMovePattern speechMove;
-        /*
-        //文字色変化の範囲
-        public int WeekRangeStart = 0;
-        public int WeekRangeEnd = 1;
-        */
+        
     }
     [Header("論破カラーコード#ffa500　同意カラーコード#41A2E1")]
     public SpeechSet[] speechSet;

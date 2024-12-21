@@ -57,13 +57,9 @@ public class CircleDeployer : MonoBehaviour
             childPostion.z += _radius * Mathf.Sin(angle);
 
             childList[i].transform.position = childPostion;
-            /*
-            //Œü‚«‚ð’†‰›‚É
-            var dir = transform.position - childList[i].transform.position;
-            childList[i].transform.LookAt(dir);
-            */
 
-            childList[i].transform.rotation = Quaternion.LookRotation(transform.position);
+            //Œü‚«‚ð’†‰›‚É
+            childList[i].transform.rotation = Quaternion.LookRotation(childList[i].transform.position - transform.position);
 
         }
 
