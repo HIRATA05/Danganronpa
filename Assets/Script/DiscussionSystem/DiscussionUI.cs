@@ -82,7 +82,7 @@ public class DiscussionUI : MonoBehaviour
         {
             //議論終了のテキストと処理を呼ぶ
             //論破失敗時会話 DiscussionFailureText
-
+            Debug.Log("論破失敗時会話");
         }
     }
 
