@@ -7,6 +7,7 @@ public class DiscussionEventManager : MonoBehaviour
     //議論会話時のイベント
 
     private DiscussionTalkModeWindow discussionTalkModeWindow;
+    private DiscussionUI discussionUI;
 
     //会話時のイベント
     [System.Serializable]
@@ -52,6 +53,16 @@ public class DiscussionEventManager : MonoBehaviour
     public void DiscussionTalkFinishAdventure()
     {
         discussionTalkModeWindow.talkFinish = DiscussionTalkModeWindow.TalkFinish.AdventureMode;
+    }
+
+    //発言力を減少の処理を呼び出す
+    public void SpeechPoworDamageDisp()
+    {
+        //画面を揺らす
+
+
+        //発言力を減少させる
+        discussionUI.SpeechPoworDamage();
     }
 
 }

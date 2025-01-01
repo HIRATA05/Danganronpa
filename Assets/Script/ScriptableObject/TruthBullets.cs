@@ -14,7 +14,6 @@ public class TruthBullets : ScriptableObject
 
     public TruthBullets(TruthBullets bullet)
     {
-        //this.type = item.type;
         this.id = bullet.id;
         this.bulletName = bullet.bulletName;
         this.getFlag = bullet.getFlag;

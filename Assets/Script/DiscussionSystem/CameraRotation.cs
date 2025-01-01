@@ -8,7 +8,7 @@ public class CameraRotation : MonoBehaviour
     private bool isRotate = false;
 
     //‰ñ“]‘¬“x
-    readonly private float rotateSpeed = 1.0f;
+    public float rotateSpeed = 0.5f;
 
     void Start()
     {

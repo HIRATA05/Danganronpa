@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2184e32b683345418bba8483f1b682e, type: 3}
   m_Name: TestDisc_Mistake_Rin
   m_EditorClassIdentifier: 
-  textinfo: TestMistake
+  textinfo: TestMistake_Rin
   textInfomations:
   - speakerName: test
     paragraphs: TestMistake

@@ -28,8 +28,9 @@ public class DiscussionTalkModeWindow : MonoBehaviour
     //会話終了後の移行先
     public enum TalkFinish
     {
-        DiscussionMode,
-        AdventureMode,
+        DiscussionMode,//議論の最初に移行
+        AdventureMode,//探索に移行
+        TakeAroundDiscussionMode,//一巡して議論の最初に移行
     }
     [NonSerialized] public TalkFinish talkFinish;
 
@@ -118,17 +119,23 @@ public class DiscussionTalkModeWindow : MonoBehaviour
             switch (talkFinish)
             {
                 case TalkFinish.DiscussionMode:
+                    //議論に移行
                     discussionManager.ShootingInit();
                     Debug.Log("議論に移行");
                     break;
+                    
+                case TalkFinish.TakeAroundDiscussionMode:
+                    //議論を再開
+                    discussionManager.DiscussionStart();
+                    Debug.Log("一巡して議論を再開");
+                    break;
+                    
                 case TalkFinish.AdventureMode:
+                    //探索に移行
                     gameManager.ReticleModeChange();
                     Debug.Log("照準操作探索に移行");
                     break;
-                default:
-                    gameManager.ReticleModeChange();
-                    Debug.Log("照準操作探索に移行");
-                    break;
+                
             }
 
             index = 0;

@@ -98,6 +98,9 @@ public class GameManager : MonoBehaviour
         playerController = PlayerController.ReticleMode;
         Debug.Log("照準操作探索に移行");
         SwitchScene();
+
+        //議論終了後の会話発生
+        OpenTextWindow(disussionManager.AfterText);
     }
 
     //TextWindowModeに変更
@@ -164,9 +167,12 @@ public class GameManager : MonoBehaviour
     }
 
     //リクエストに応えて議論用テキストウインドウを開く
-    public void OpenDiscussionWindow(DialogueText dialogueText)
+    public void OpenDiscussionWindow(DialogueText dialogueText, DiscussionTalkModeWindow.TalkFinish talkFinishSet)
     {
         Debug.Log("議論用テキストウィンドウを開く");
+
+        //会話終了時の移行先を設定
+        discussionTalkModeWindow.talkFinish = talkFinishSet;
 
         //テキストウィンドウを表示
         discussionTalkModeWindow.TextSet(dialogueText);

@@ -81,6 +81,8 @@ public class TruthBulletShot : MonoBehaviour
                     
                 }
             }
+
+            
         }
         
     }
@@ -104,7 +106,7 @@ public class TruthBulletShot : MonoBehaviour
             float t = Mathf.Clamp01(time / duration);
             
             //目的の位置までduration秒をかけて補間で移動
-            shotPointCurrent.position = Vector3.Lerp(startPosition, targetPosition, t); // 目的の位置に移動
+            shotPointCurrent.position = Vector3.Lerp(startPosition, targetPosition, t); //目的の位置に移動
             yield return null;
         }
 
@@ -114,8 +116,21 @@ public class TruthBulletShot : MonoBehaviour
         //ウィークポイントか確認
         if (discussionManager.TextColWeek())
         {
-            //ノンストップ議論終了処理を呼び出す
-            discussionManager.ShootingFinish();
+            //現在のコトダマでウィークポイントが正しいか判定
+            if (discussionManager.TruthBulletCompare())
+            {
+                //ノンストップ議論終了処理を呼び出す
+                discussionManager.ShootingFinish();
+            }
+            else
+            {
+                //失敗演出の後に発言ごとの失敗テキスト発生
+                discussionManager.DiscussionFailureChange(shotPointCurrent.position);
+                Debug.Log("ウィークポイント間違えた時の会話");
+                
+                NotBreakBullet();
+            }
+            
         }
         else
         {

@@ -6,7 +6,8 @@ using TMPro;
 using System;
 using UnityEngine.UIElements;
 using Cinemachine;
-using Unity.VisualScripting;
+using Cysharp.Threading.Tasks;
+using static UnityEditor.PlayerSettings;
 
 public class DiscussionManager : MonoBehaviour
 {
@@ -45,20 +46,19 @@ public class DiscussionManager : MonoBehaviour
     //現在時間
     float currentTime = 0.0f;
 
-    //コトダマシリンダー　コトダマのクラスを後で作る
-    //[SerializeField] private コトダマクラス[] cylinder;
-
     //議論開始時会話
-    [SerializeField] private DialogueText DiscussionStartText;
+    [SerializeField, Header("開始の会話")] private DialogueText DiscussionStartText;
     //議論一巡時会話
-    [SerializeField] private DialogueText DiscussionTakeAroundText;
+    [SerializeField, Header("一巡時の会話")] private DialogueText DiscussionTakeAroundText;
     //議論終了時会話
-    [SerializeField] private DialogueText DiscussionFinishText;
-    //論破失敗時会話
-    [SerializeField] private DialogueText DiscussionFailureText;
+    [SerializeField, Header("議論終了時の会話")] private DialogueText DiscussionFinishText;
+    //論破ゲームオーバー時会話
+    [SerializeField, Header("ゲームオーバー時の会話")] private DialogueText DiscussionGameOverText;
+    //議論終了後の照準モードでの会話
+    [Header("議論終了後の会話")] public DialogueText AfterText;
 
-    //表示するテキスト
-    [SerializeField] private GameObject speechText;
+    //発言を表示するテキスト
+    [SerializeField, Header("発言セリフ")] private GameObject speechText;
     
     //セリフ
     [System.Serializable]
@@ -72,6 +72,7 @@ public class DiscussionManager : MonoBehaviour
         public string WeekPointSpeech;
         public string NormalSpeechAfter;
 
+        /*
         //論破か同意か
         public enum SpeechType
         {
@@ -79,7 +80,8 @@ public class DiscussionManager : MonoBehaviour
             consent,
             None
         }
-        public SpeechType speechType = SpeechType.None;
+        */
+        public DiscussionUI.SpeechType speechType = DiscussionUI.SpeechType.None;
 
         //発言の移動パターン
         public enum SpeechMovePattern
@@ -95,6 +97,10 @@ public class DiscussionManager : MonoBehaviour
     }
     [Header("論破カラーコード#ffa500　同意カラーコード#41A2E1")]
     public SpeechSet[] speechSet;
+
+    private SpeechSet CurrentSpeech;
+    private string CurrentSpeechWeekPoint;
+    private DiscussionUI.SpeechType CurrentSpeechType;
 
     private string CurrentWeekPoint;
     //[NonSerialized] public TextMeshProUGUI SpeechAll;
@@ -155,14 +161,18 @@ public class DiscussionManager : MonoBehaviour
             //生徒の並びを円形に並べる
             circleDeployer.Deploy();
 
+            //コトダマのセットアップ
+            discussionUI.BulletSelectSet();
+
             //議論開始時の会話データを入れる
-            gameManager.OpenDiscussionWindow(DiscussionStartText);
+            gameManager.OpenDiscussionWindow(DiscussionStartText, DiscussionTalkModeWindow.TalkFinish.DiscussionMode);
             //ノンストップ議論の開始
             discussion = DiscussionMode.Talk;
         }
 
     }
 
+    //議論中の処理
     private void DiscussionPlay()
     {
         //会話
@@ -172,7 +182,7 @@ public class DiscussionManager : MonoBehaviour
 
         }
         //議論開始前の演出
-        else if(discussion == DiscussionMode.BeforeDiscussion)
+        else if (discussion == DiscussionMode.BeforeDiscussion)
         {
             //Debug.Log("議論開始経過時間：" + elapsedTime);
 
@@ -188,6 +198,9 @@ public class DiscussionManager : MonoBehaviour
                 //DiscussionCamera.GetComponent<CameraRotation>().RotateOff();
                 MainVirtualCamera.GetComponent<CameraRotation>().RotateOff();
 
+                //議論開始処理
+                DiscussionStart();
+                /*
                 //カメラを主人公に向ける
                 CameraPriority(0);
 
@@ -197,6 +210,7 @@ public class DiscussionManager : MonoBehaviour
                 //上記終了後議論開始
                 discussion = DiscussionMode.Shooting;
                 discussionProgress = true;
+                */
             }
 
             //時間経過
@@ -208,28 +222,42 @@ public class DiscussionManager : MonoBehaviour
         {
             //議論時のUI表示
 
+
+            //右クリックでコトダマを切り替え
+            if (Input.GetMouseButtonDown(1))
+            {
+                discussionUI.BulletSelectChange();
+            }
+            
+            
+
+
             //一定時間ごとに文字を変化
             if (!isTextSetCalled)
             {
                 isTextSetCalled = true;
 
                 //現在の発言を取得
-                //CurrentSpeech = speechSet[DiscussionNum];
-                CurrentWeekPoint = speechSet[DiscussionNum].WeekPointSpeech;
+                CurrentSpeech = speechSet[DiscussionNum];
+                CurrentSpeechWeekPoint = speechSet[DiscussionNum].WeekPointSpeech;
+                Debug.Log("CurrentSpeechウィークポイント：" + CurrentSpeech.WeekPointSpeech + " CurrentSpeechWeekPoint:" + CurrentSpeechWeekPoint);
+                CurrentSpeechType = speechSet[DiscussionNum].speechType;
+                //CurrentWeekPoint = speechSet[DiscussionNum].WeekPointSpeech;
                 //文字の大きさと色をセット
-                speechSet[DiscussionNum].NormalSpeechBefore = "<size=60><color=white>" + speechSet[DiscussionNum].NormalSpeechBefore;
+                speechSet[DiscussionNum].NormalSpeechBefore = "<size=60><color=white> " + speechSet[DiscussionNum].NormalSpeechBefore;
 
-                if(speechSet[DiscussionNum].speechType == SpeechSet.SpeechType.refute)
-                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#ffa500>" + speechSet[DiscussionNum].WeekPointSpeech;
-                else if(speechSet[DiscussionNum].speechType == SpeechSet.SpeechType.consent)
-                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#41A2E1>" + speechSet[DiscussionNum].WeekPointSpeech;
+                if(speechSet[DiscussionNum].speechType == DiscussionUI.SpeechType.refute)
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#ffa500> " + speechSet[DiscussionNum].WeekPointSpeech;
+                else if(speechSet[DiscussionNum].speechType == DiscussionUI.SpeechType.consent)
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#41A2E1> " + speechSet[DiscussionNum].WeekPointSpeech;
                 else
-                    speechSet[DiscussionNum].WeekPointSpeech = "<size=60><color=white>" + speechSet[DiscussionNum].WeekPointSpeech;
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=60><color=white> " + speechSet[DiscussionNum].WeekPointSpeech;
 
-                speechSet[DiscussionNum].NormalSpeechAfter = "<size=60><color=white>" + speechSet[DiscussionNum].NormalSpeechAfter;
+                speechSet[DiscussionNum].NormalSpeechAfter = "<size=60><color=white> " + speechSet[DiscussionNum].NormalSpeechAfter;
                 //全ての文字を合わせて1つの文字列を作る
                 string speech = speechSet[DiscussionNum].NormalSpeechBefore + " " + speechSet[DiscussionNum].WeekPointSpeech + " " + speechSet[DiscussionNum].NormalSpeechAfter;
-                Debug.Log(speech);
+                //Debug.Log(speech);
+
                 //文字のデータをセットする
                 speechText.GetComponent<TextMeshProUGUI>().text = speech;
 
@@ -250,11 +278,11 @@ public class DiscussionManager : MonoBehaviour
                     }
                 }
 
-                //発言表示後議論番号加算
-                DiscussionNum++;
-
                 //発言番号と発言者を設定
                 discussionUI.SpeechNumSet(DiscussionNum, speechSet[DiscussionNum].SpeechName);
+
+                //発言表示後議論番号加算
+                DiscussionNum++;
             }
 
             //時間経過で次の文字に進む
@@ -265,10 +293,7 @@ public class DiscussionManager : MonoBehaviour
 
                 if (DiscussionNum < speechSet.Length)
                 {
-
-                    //文字の当たり判定を削除する
-                    //Destroy(speechText.GetComponent<BoxCollider>());
-
+                    //発言文字の変化フラグ
                     isTextSetCalled = false;
                     Debug.Log(DiscussionNum + ":" + speechSet.Length);
                 }
@@ -335,13 +360,30 @@ public class DiscussionManager : MonoBehaviour
     public void TakeAround()
     {
         //議論一巡時の会話データを入れる
-        gameManager.OpenDiscussionWindow(DiscussionTakeAroundText);
+        gameManager.OpenDiscussionWindow(DiscussionTakeAroundText, DiscussionTalkModeWindow.TalkFinish.DiscussionMode);
         //会話開始
         discussion = DiscussionMode.Talk;
 
-        DiscussionEnd();
+        //DiscussionEnd();
         //議論番号をリセット
         DiscussionNum = 0;
+    }
+
+    //議論開始
+    public void DiscussionStart()
+    {
+        //カメラを主人公に向ける
+        CameraPriority(0);
+
+        //最大発言番号を設定
+        discussionUI.SpeechNumMaxSet(speechSet.Length);
+
+        //UIを表示
+        discussionUI.DiscussionDispUI(true);
+
+        //上記終了後議論開始
+        discussion = DiscussionMode.Shooting;
+        discussionProgress = true;
     }
 
     //議論で発生したものをリセット
@@ -371,15 +413,17 @@ public class DiscussionManager : MonoBehaviour
         //プレイヤーの議論操作を終了
         discussionProgress = false;
 
+        //UIを非表示
+        discussionUI.DiscussionDispUI(false);
+
         //論破演出画像表示
 
         //画面の割れる演出
 
         //議論終了後の会話データを入れる
-        gameManager.OpenDiscussionWindow(DiscussionFinishText);
+        gameManager.OpenDiscussionWindow(DiscussionFinishText, DiscussionTalkModeWindow.TalkFinish.AdventureMode);
         //会話開始
         discussion = DiscussionMode.Talk;
-
     }
 
     //議論フェイズの初期化を発生させるフラグ
@@ -397,16 +441,51 @@ public class DiscussionManager : MonoBehaviour
 
         var wordInfo = speechText.GetComponent<TextMeshProUGUI>().textInfo.wordInfo[index];
 
-        Debug.Log(wordInfo.GetWord() + " "+ CurrentWeekPoint/*CurrentSpeech.WeekPointSpeech*/);
+        Debug.Log("取得した発言:"+wordInfo.GetWord() + " "+ CurrentSpeechWeekPoint /*CurrentSpeech.WeekPointSpeech CurrentSpeech.WeekPointSpeech*/);
 
         //取得した文字がウィークポイントと同じか判定
-        if(wordInfo.GetWord() == CurrentWeekPoint/*CurrentSpeech.WeekPointSpeech*/)
+        if(wordInfo.GetWord() == CurrentSpeechWeekPoint /*CurrentSpeech.WeekPointSpeech CurrentSpeech.WeekPointSpeech*/)
         {
+            //条件が正しい時Trueを返す
             return true;
         }
         return false;
     }
 
-    //ウィークポイントが論破か同意か判定
+    //現在のコトダマでウィークポイントを判定
+    public bool TruthBulletCompare()
+    {
+        //コトダマのタイプとウィークポイントが論破か同意か判定
+        if (discussionUI.Bullet[discussionUI.BulletCount].BulletType == CurrentSpeechType/*CurrentSpeech.speechType*/)
+        {
+            Debug.Log("コトダマの標的:" + discussionUI.Bullet[discussionUI.BulletCount].TargetSpeech + " 取得したウィークポイント：" + CurrentSpeechWeekPoint);
+            //コトダマと発言が正しいか判定
+            if (discussionUI.Bullet[discussionUI.BulletCount].TargetSpeech == CurrentSpeechWeekPoint /*CurrentSpeech.WeekPointSpeech*/)
+            {
+                return true;
+            }
+        }
 
+        return false;
+    }
+
+    //ウィークポイントを論破出来なかった時会話に移行
+    public async void DiscussionFailureChange(Vector3 BulletPos)
+    {
+        //失敗演出
+        //着弾位置にバリアの位置を変化
+        discussionUI.BarrierPosSet(BulletPos, CurrentSpeechType/*CurrentSpeech.speechType*/);
+
+        //透明度0になるまで低下
+        discussionUI.BarrierAlpha();
+
+        //非同期で条件が満たされるまで待機
+        await UniTask.WaitUntil(() => discussionUI.isBarrier);
+
+        //議論失敗時の会話データを入れる
+        gameManager.OpenDiscussionWindow(CurrentSpeech.DiscussionMistakeText, DiscussionTalkModeWindow.TalkFinish.DiscussionMode);
+        //会話の開始
+        discussion = DiscussionMode.Talk;
+    }
+    
 }
