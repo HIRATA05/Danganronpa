@@ -21,6 +21,8 @@ public class DiscussionUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI SpeakerNameText;
     //現在のコトダマの名前
     [SerializeField] private TextMeshProUGUI BulletNameText;
+    //発射するコトダマの表示名
+    [SerializeField] private TextMeshProUGUI ShotBulletText;
     //発言力の画像
     [SerializeField] private Sprite LifeImageNormal;
     [SerializeField] private Sprite LifeImageDamage;
@@ -34,17 +36,17 @@ public class DiscussionUI : MonoBehaviour
     //バリア演出終了フラグ
     [NonSerialized] public bool isBarrier = false;
     //論破する時のバリアの色
-    private Color refuteColor = new Color(255, 200, 0, 255);
-    private Color consentColor = new Color(255, 200, 0, 255);
+    private Color32 refuteColor = new Color32(255, 200, 0, 255);
+    private Color32 consentColor = new Color32(0, 200, 255, 255);
     //バリアの待機時間
-    private float barrierWaitTime = 1.0f;
+    //private float barrierWaitTime = 0.1f;
 
     //コトダマのタイプ
     public enum SpeechType
     {
-        refute,
-        consent,
-        None
+        refute,//論破
+        consent,//同意
+        None//無し
     }
 
     //コトダマクラス
@@ -53,7 +55,8 @@ public class DiscussionUI : MonoBehaviour
     {
         //コトダマ情報
         public TruthBullets truthBullets;
-        
+
+        //コトダマのタイプ
         public SpeechType BulletType;
 
         //コトダマの放つ対象となる発言　BulletTypeとTargetSpeechが発言と一致した時論破出来る
@@ -79,7 +82,6 @@ public class DiscussionUI : MonoBehaviour
         {
             DiscussionWindow.SetActive(isActive);
         }
-        
     }
 
     //コトダマの設定
@@ -89,6 +91,9 @@ public class DiscussionUI : MonoBehaviour
 
         //コトダマの名前表示を設定
         BulletNameText.text = Bullet[BulletCount].truthBullets.bulletName;
+
+        //発射するコトダマの名前表示を変える
+        ShotBulletText.text = Bullet[BulletCount].truthBullets.bulletName;
     }
 
     //コトダマの選択を切り替える
@@ -105,6 +110,24 @@ public class DiscussionUI : MonoBehaviour
         Debug.Log("コトダマの番号:"+ BulletCount);
         //コトダマの名前表示を更新
         BulletNameText.text = Bullet[BulletCount].truthBullets.bulletName;
+
+        //発射するコトダマの名前表示を変える
+        ShotBulletText.text = Bullet[BulletCount].truthBullets.bulletName;
+    }
+
+    //コトダマ発射時のシリンダーの文字消去
+    public void CylinderTextErase()
+    {
+        //コトダマの名前表示を透明
+        BulletNameText.color = Color.clear;
+        
+    }
+
+    //コトダマ発射時のシリンダーの文字解除
+    public void CylinderTextReturn()
+    {
+        //色を黒に変えて解除
+        BulletNameText.color = Color.black;
     }
 
     //発言力の設定
@@ -191,7 +214,7 @@ public class DiscussionUI : MonoBehaviour
     {
         //位置を変化
         Barrier.transform.position = Pos;
-
+        
         //発言のタイプによってバリアの色を変える
         if(speechType == SpeechType.refute)
         {
@@ -201,22 +224,29 @@ public class DiscussionUI : MonoBehaviour
         {
             Barrier.GetComponent<Image>().color = consentColor;
         }
-
+        else if (speechType == SpeechType.None)
+        {
+            Barrier.GetComponent<Image>().color = refuteColor;
+        }
+        
+        //Barrier.GetComponent<Image>().color = Color.white;
         //バリア演出終了フラグをFalse
         isBarrier = false;
     }
 
     //バリアの透明度を段々と低下
-    public /*async*/ void BarrierAlpha()
+    public IEnumerator BarrierAlpha()
     {
         //透明度0になるまで低下
         for (int i = 0; i < 255; i++)
         {
+            Debug.Log("バリアの透明度低下中");
             //透明度を減らす
-            Barrier.GetComponent<Image>().color = Barrier.GetComponent<Image>().color - new Color32(0, 0, 0, 1);
-            //時間待機
-            //await UniTask.Delay(TimeSpan.FromSeconds(barrierWaitTime));
+            Barrier.GetComponent<Image>().color -= new Color32(0, 0, 0, 1);
+            //1フレーム待機
+            yield return null;
         }
+        Debug.Log("バリアの透明度低下終了");
         //バリア演出終了フラグをTrue
         isBarrier = true;
     }

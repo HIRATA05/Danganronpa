@@ -21,6 +21,7 @@ public class BulletCol : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        /*
         //当たったものに文字コンポーネントがあれば
         if (other.GetComponent<TextMeshProUGUI>())
         {
@@ -30,7 +31,7 @@ public class BulletCol : MonoBehaviour
             truthBulletShot.BulletCol();
 
         }
-
+        */
     }
 
     //当たり判定スクリプトにコトダマ管理スクリプトを渡す

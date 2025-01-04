@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SearchObj
   - SearchChara
+  - Speech
   layers:
   - Default
   - TransparentFX

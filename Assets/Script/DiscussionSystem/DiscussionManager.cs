@@ -29,7 +29,8 @@ public class DiscussionManager : MonoBehaviour
     {
         Talk,//会話
         BeforeDiscussion,//議論前演出
-        Shooting//ノンストップ議論
+        Shooting,//ノンストップ議論
+        Effect//議論中演出
     }
     [NonSerialized] public DiscussionMode discussion;
 
@@ -88,6 +89,7 @@ public class DiscussionManager : MonoBehaviour
         {
             RightToLeft,//右から左
             LeftToRight,//左から右
+
         }
         public SpeechMovePattern speechMove;
 
@@ -187,6 +189,9 @@ public class DiscussionManager : MonoBehaviour
             //Debug.Log("議論開始経過時間：" + elapsedTime);
 
             //議論開始の文字演出
+            //ノンストップ議論
+            
+            //開始
 
 
             if (elapsedTime > startTime)
@@ -200,37 +205,22 @@ public class DiscussionManager : MonoBehaviour
 
                 //議論開始処理
                 DiscussionStart();
-                /*
-                //カメラを主人公に向ける
-                CameraPriority(0);
-
-                //最大発言番号を設定
-                discussionUI.SpeechNumMaxSet(speechSet.Length);
-
-                //上記終了後議論開始
-                discussion = DiscussionMode.Shooting;
-                discussionProgress = true;
-                */
+                
             }
 
             //時間経過
             elapsedTime += Time.deltaTime;
-
         }
         //議論
         else if (discussion == DiscussionMode.Shooting && discussionProgress)
         {
-            //議論時のUI表示
-
-
+            
             //右クリックでコトダマを切り替え
             if (Input.GetMouseButtonDown(1))
             {
+                //コトダマを入れ替え
                 discussionUI.BulletSelectChange();
             }
-            
-            
-
 
             //一定時間ごとに文字を変化
             if (!isTextSetCalled)
@@ -244,16 +234,16 @@ public class DiscussionManager : MonoBehaviour
                 CurrentSpeechType = speechSet[DiscussionNum].speechType;
                 //CurrentWeekPoint = speechSet[DiscussionNum].WeekPointSpeech;
                 //文字の大きさと色をセット
-                speechSet[DiscussionNum].NormalSpeechBefore = "<size=60><color=white> " + speechSet[DiscussionNum].NormalSpeechBefore;
+                speechSet[DiscussionNum].NormalSpeechBefore = "<size=60><color=white>" + speechSet[DiscussionNum].NormalSpeechBefore;
 
                 if(speechSet[DiscussionNum].speechType == DiscussionUI.SpeechType.refute)
-                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#ffa500> " + speechSet[DiscussionNum].WeekPointSpeech;
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#ffa500>" + speechSet[DiscussionNum].WeekPointSpeech;
                 else if(speechSet[DiscussionNum].speechType == DiscussionUI.SpeechType.consent)
-                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#41A2E1> " + speechSet[DiscussionNum].WeekPointSpeech;
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=65><color=#41A2E1>" + speechSet[DiscussionNum].WeekPointSpeech;
                 else
-                    speechSet[DiscussionNum].WeekPointSpeech = "<size=60><color=white> " + speechSet[DiscussionNum].WeekPointSpeech;
+                    speechSet[DiscussionNum].WeekPointSpeech = "<size=60><color=white>" + speechSet[DiscussionNum].WeekPointSpeech;
 
-                speechSet[DiscussionNum].NormalSpeechAfter = "<size=60><color=white> " + speechSet[DiscussionNum].NormalSpeechAfter;
+                speechSet[DiscussionNum].NormalSpeechAfter = "<size=60><color=white>" + speechSet[DiscussionNum].NormalSpeechAfter;
                 //全ての文字を合わせて1つの文字列を作る
                 string speech = speechSet[DiscussionNum].NormalSpeechBefore + " " + speechSet[DiscussionNum].WeekPointSpeech + " " + speechSet[DiscussionNum].NormalSpeechAfter;
                 //Debug.Log(speech);
@@ -287,6 +277,7 @@ public class DiscussionManager : MonoBehaviour
 
             //時間経過で次の文字に進む
             currentTime += Time.deltaTime;
+
             if (currentTime > nextSpeechTime)
             {
                 currentTime = 0;
@@ -365,6 +356,10 @@ public class DiscussionManager : MonoBehaviour
         discussion = DiscussionMode.Talk;
 
         //DiscussionEnd();
+        //文字のデータを初期化
+        speechText.GetComponent<TextMeshProUGUI>().text = "";
+        currentTime = 0;
+        isTextSetCalled = false;
         //議論番号をリセット
         DiscussionNum = 0;
     }
@@ -391,7 +386,9 @@ public class DiscussionManager : MonoBehaviour
     {
         //発言を初期化
         speechText.GetComponent<TextMeshProUGUI>().text = "";
+        currentTime = 0;
         isTextSetCalled = false;
+
         //議論の生徒を消去
         for (int i = 0; i < InstantiateMenber.Length; i++)
         {
@@ -415,6 +412,9 @@ public class DiscussionManager : MonoBehaviour
 
         //UIを非表示
         discussionUI.DiscussionDispUI(false);
+
+        //演出描写の状態に変更
+        discussion = DiscussionMode.Effect;
 
         //論破演出画像表示
 
@@ -472,18 +472,21 @@ public class DiscussionManager : MonoBehaviour
     //ウィークポイントを論破出来なかった時会話に移行
     public async void DiscussionFailureChange(Vector3 BulletPos)
     {
-        //失敗演出
+        //失敗演出描写の状態に変更
+        discussion = DiscussionMode.Effect;
+        discussionProgress = false;
+
         //着弾位置にバリアの位置を変化
         discussionUI.BarrierPosSet(BulletPos, CurrentSpeechType/*CurrentSpeech.speechType*/);
 
         //透明度0になるまで低下
-        discussionUI.BarrierAlpha();
-
+        StartCoroutine(discussionUI.BarrierAlpha());
+        
         //非同期で条件が満たされるまで待機
         await UniTask.WaitUntil(() => discussionUI.isBarrier);
 
         //議論失敗時の会話データを入れる
-        gameManager.OpenDiscussionWindow(CurrentSpeech.DiscussionMistakeText, DiscussionTalkModeWindow.TalkFinish.DiscussionMode);
+        gameManager.OpenDiscussionWindow(CurrentSpeech.DiscussionMistakeText, DiscussionTalkModeWindow.TalkFinish.TakeAroundDiscussionMode);
         //会話の開始
         discussion = DiscussionMode.Talk;
     }

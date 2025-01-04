@@ -482,7 +482,7 @@ RectTransform:
   m_GameObject: {fileID: 127010866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 784340754}
@@ -505,8 +505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7893877, b: 0, a: 0.003921569}
-  m_RaycastTarget: 1
+  m_Color: {r: 0, g: 0.78112984, b: 1, a: 0}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -846,10 +846,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   discussionManager: {fileID: 1480627613}
+  discussionUI: {fileID: 880089495}
   gameManager: {fileID: 279657944}
   aim: {fileID: 1146878655}
-  aimImageNormal: {fileID: 0}
-  aimImageColText: {fileID: 0}
+  bulletText: {fileID: 1840237028}
   shotPointCurrent: {fileID: 1840237024}
   shotPointFrom: {fileID: 936704670}
 --- !u!1 &232452566
@@ -2159,6 +2159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: class_room_test1
       objectReference: {fileID: 0}
+    - target: {fileID: 8673133487306294313, guid: 4eb5a12ae15e3104e95ba6c866b211a4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: da54749ba0f1f614391e9882d9d90047, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2640,7 +2644,7 @@ GameObject:
   - component: {fileID: 824137239}
   m_Layer: 5
   m_Name: TruthBulletCanvas
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2777,6 +2781,7 @@ MonoBehaviour:
   SpeechNumMaxText: {fileID: 1794207992}
   SpeakerNameText: {fileID: 1758205889}
   BulletNameText: {fileID: 1364539437}
+  ShotBulletText: {fileID: 1840237028}
   LifeImageNormal: {fileID: 21300000, guid: 7e5aa47bb2b9ae2479d9d7caf9efcb2c, type: 3}
   LifeImageDamage: {fileID: 21300000, guid: 30ed31722b5673644ba0e978d3961d07, type: 3}
   SpeechPoworPanel: {fileID: 122590343}
@@ -3479,7 +3484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e400af20a87b3ef4fa8601a27d58a1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 0.5
+  rotateSpeed: 0.3
 --- !u!1 &1000250802
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,7 +3814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4429,7 +4434,7 @@ GameObject:
   - component: {fileID: 1475232965}
   m_Layer: 5
   m_Name: WeekPointText
-  m_TagString: Untagged
+  m_TagString: Speech
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4478,7 +4483,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 40, y: 10, z: 0.01}
   m_Center: {x: -13, y: 0, z: 0}
@@ -4502,7 +4507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <size=10><color=white><size=15><color=red>Week<size=10><color=white>Point
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb44d26151ba9b4b9602827c5d8b898, type: 2}
   m_sharedMaterial: {fileID: 1461241199327126946, guid: fdb44d26151ba9b4b9602827c5d8b898, type: 2}
@@ -6250,7 +6255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 300, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!54 &1840237025
