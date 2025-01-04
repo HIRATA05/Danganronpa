@@ -31,6 +31,11 @@ public class DiscussionUI : MonoBehaviour
 
     [SerializeField] private Image[] LifePos;
 
+    //議論開始演出
+    [SerializeField] private GameObject NonStopDiscussionEffect;
+    [SerializeField] private GameObject StartEffect;
+    
+
     //論破失敗時のバリア
     [SerializeField] private GameObject Barrier;
     //バリア演出終了フラグ
@@ -190,25 +195,6 @@ public class DiscussionUI : MonoBehaviour
         }
     }
 
-    /*
-    //論破失敗演出
-    public async void DiscussionFailureBarrier(Vector3 BulletPos)
-    {
-        //失敗演出
-        //着弾位置にバリアの位置を変化
-        BarrierPosSet(BulletPos);
-
-        //透明解除
-
-
-        //透明度0になるまで低下
-        BarrierAlpha();
-
-        //非同期で条件が満たされるまで待機
-        await UniTask.WaitUntil(() => isBarrier);
-
-    }*/
-
     //バリアの位置をセット
     public void BarrierPosSet(Vector3 Pos, DiscussionUI.SpeechType speechType)
     {
@@ -249,6 +235,28 @@ public class DiscussionUI : MonoBehaviour
         Debug.Log("バリアの透明度低下終了");
         //バリア演出終了フラグをTrue
         isBarrier = true;
+    }
+
+    //議論開始演出
+    public IEnumerator DiscussionBeforeStartEffect()
+    {
+        //ノンストップ議論表示
+
+        NonStopDiscussionEffect.SetActive(true);
+        //アニメーション
+
+        yield return new WaitForSeconds(3);
+
+        //ノンストップ議論表示消去
+        NonStopDiscussionEffect.SetActive(false);
+        //開始文字表示
+        StartEffect.SetActive(true);
+        //アニメーション
+
+        yield return new WaitForSeconds(2);
+
+        //開始文字表示消去
+        StartEffect.SetActive(false);
     }
 
     void Start()

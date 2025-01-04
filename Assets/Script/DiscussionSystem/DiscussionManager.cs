@@ -112,7 +112,7 @@ public class DiscussionManager : MonoBehaviour
 
     //議論開始の際の時間
     private float elapsedTime = 0.0f;
-    private float startTime = 5.0f;
+    private float startTime = 6.0f;
 
     //円形に並ぶ生徒
     [SerializeField, Header("議論で並ぶキャラ")] private GameObject[] DiscussionMenber;
@@ -123,6 +123,9 @@ public class DiscussionManager : MonoBehaviour
 
     private bool isDiscussionInitCalled = false;
     private bool isTextSetCalled = false;
+
+    //議論前の演出発生のフラグ
+    private bool BeforeDiscussion = false;
 
     //議論中かどうか
     [NonSerialized] public bool discussionProgress = false;
@@ -188,16 +191,21 @@ public class DiscussionManager : MonoBehaviour
         {
             //Debug.Log("議論開始経過時間：" + elapsedTime);
 
-            //議論開始の文字演出
-            //ノンストップ議論
-            
-            //開始
+            //議論開始の文字演出発生
+            if (!BeforeDiscussion)
+            {
+                BeforeDiscussion = true;
 
+                //議論開始の文字演出
+                StartCoroutine(discussionUI.DiscussionBeforeStartEffect());
+            }
 
             if (elapsedTime > startTime)
             {
                 Debug.Log("=議論を開始=");
                 elapsedTime = 0;
+
+                BeforeDiscussion = false;
 
                 //カメラを停止
                 //DiscussionCamera.GetComponent<CameraRotation>().RotateOff();
