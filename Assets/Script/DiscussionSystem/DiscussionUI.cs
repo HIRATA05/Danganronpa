@@ -195,6 +195,28 @@ public class DiscussionUI : MonoBehaviour
         }
     }
 
+    //論破演出
+    public void RefuteImageEffect(DiscussionUI.SpeechType speechType)
+    {
+        //発言のタイプによって表示する画像を変える
+        if (speechType == SpeechType.refute)
+        {
+            //論破演出画像表示
+
+        }
+        else if (speechType == SpeechType.consent)
+        {
+            //論破演出画像表示
+
+        }
+
+        //角度を変えるアニメーション
+
+        //画面の割れる演出
+
+
+    }
+
     //バリアの位置をセット
     public void BarrierPosSet(Vector3 Pos, DiscussionUI.SpeechType speechType)
     {
@@ -259,6 +281,7 @@ public class DiscussionUI : MonoBehaviour
         StartEffect.SetActive(false);
     }
 
+    
     void Start()
     {
         

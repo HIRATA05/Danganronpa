@@ -952,6 +952,7 @@ MonoBehaviour:
   gameManager: {fileID: 279657944}
   aim: {fileID: 1146878655}
   bulletText: {fileID: 1840237028}
+  bulletPoint: {x: 300, y: 0, z: -1000}
   shotPointCurrent: {fileID: 1840237024}
   shotPointFrom: {fileID: 936704670}
 --- !u!1 &232452566
@@ -4010,6 +4011,7 @@ GameObject:
   - component: {fileID: 1127892727}
   - component: {fileID: 1127892729}
   - component: {fileID: 1127892728}
+  - component: {fileID: 1127892730}
   m_Layer: 5
   m_Name: StartEffectText
   m_TagString: Untagged
@@ -4133,6 +4135,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127892726}
   m_CullTransparentMesh: 1
+--- !u!95 &1127892730
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127892726}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aca19911d58709f45965887395f45e1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1146878655
 GameObject:
   m_ObjectHideFlags: 0
@@ -5131,26 +5154,26 @@ MonoBehaviour:
   AfterText: {fileID: 0}
   speechText: {fileID: 1475232964}
   speechSet:
-  - SpeechName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
+  - SpeechName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
     NormalSpeechBefore: "\u30C6\u30B9\u30C8\u7528"
     WeekPointSpeech: 
     NormalSpeechAfter: "\u767A\u8A00\u53F0\u8A5E"
     speechType: 2
-    speechMove: 0
+    speechMove: 1
     DiscussionMistakeText: {fileID: 0}
   - SpeechName: "\u30EC\u30A4\u30BC\u30A4 \u30EA\u30F3"
     NormalSpeechBefore: "\u3042\u3044\u3046"
     WeekPointSpeech: "\u3048\u304A\u304B\u304D\u304F"
     NormalSpeechAfter: 
     speechType: 1
-    speechMove: 0
+    speechMove: 2
     DiscussionMistakeText: {fileID: 11400000, guid: 94a6acc324f6d4e44ba7ae015531257a, type: 2}
   - SpeechName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
     NormalSpeechBefore: "\u30CB\u30E5\u30FC"
     WeekPointSpeech: "\u30C0\u30F3\u30AC\u30F3\u30ED\u30F3\u30D1"
     NormalSpeechAfter: -rebuild-
     speechType: 0
-    speechMove: 0
+    speechMove: 3
     DiscussionMistakeText: {fileID: 11400000, guid: 541dc3b080357e24ea0fa9ad61af148e, type: 2}
   DiscussionMenber:
   - {fileID: 6230298026897901353, guid: 55a85596735b1314693a30b5b00a9b6c, type: 3}

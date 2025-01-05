@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 using Cinemachine;
 using Cysharp.Threading.Tasks;
 using static UnityEditor.PlayerSettings;
+using static DiscussionUI;
 
 public class DiscussionManager : MonoBehaviour
 {
@@ -89,7 +90,9 @@ public class DiscussionManager : MonoBehaviour
         {
             RightToLeft,//右から左
             LeftToRight,//左から右
-
+            TopToBottom,//上から下
+            BottomToTop,//下から上
+            Stop,//停止
         }
         public SpeechMovePattern speechMove;
 
@@ -129,6 +132,17 @@ public class DiscussionManager : MonoBehaviour
 
     //議論中かどうか
     [NonSerialized] public bool discussionProgress = false;
+
+    //発言を表示するテキストの移動位置
+    //左
+    private Vector3 speechPosLeft = new Vector3(-600,0,0);
+    //右
+    private Vector3 speechPosRight = new Vector3(600, 0, 0);
+    //上
+    private Vector3 speechPosTop = new Vector3(0, 400, 0);
+    //下
+    private Vector3 speechPosBottom = new Vector3(0, -400, 0);
+
 
     void Start()
     {
@@ -276,6 +290,9 @@ public class DiscussionManager : MonoBehaviour
                     }
                 }
 
+                //発言を移動
+                StartCoroutine(SpeechMove(speechSet[DiscussionNum]));
+
                 //発言番号と発言者を設定
                 discussionUI.SpeechNumSet(DiscussionNum, speechSet[DiscussionNum].SpeechName);
 
@@ -307,11 +324,59 @@ public class DiscussionManager : MonoBehaviour
     }
 
     //発言の移動
-    public void SpeechMove(SpeechSet speech)
+    public IEnumerator SpeechMove(SpeechSet speech)
     {
         //移動パターンによって発言の発生位置や動きが変化
-        //カメラの動きも変化
 
+        //RectTransformを取得
+        RectTransform rectTransform = speechText.GetComponent<RectTransform>();
+
+        float duration = nextSpeechTime;//終点までの時間
+        float time = 0.0f;//経過時間
+        //始点と終点の位置
+        Vector3 startPos = Vector3.zero, goalPos = Vector3.zero;
+
+        //左から右
+        if (speech.speechMove == SpeechSet.SpeechMovePattern.LeftToRight)
+        {
+            //始点と終点を設定
+            startPos = speechPosLeft; goalPos = speechPosRight;
+        }
+        //右から左
+        else if (speech.speechMove == SpeechSet.SpeechMovePattern.RightToLeft)
+        {
+            startPos = speechPosLeft; goalPos = speechPosRight;
+        }
+        //上から下
+        else if (speech.speechMove == SpeechSet.SpeechMovePattern.TopToBottom)
+        {
+            startPos = speechPosTop; goalPos = speechPosBottom;
+        }
+        //下から上
+        else if (speech.speechMove == SpeechSet.SpeechMovePattern.BottomToTop)
+        {
+            startPos = speechPosBottom; goalPos = speechPosTop;
+        }
+        //停止
+        else if (speech.speechMove == SpeechSet.SpeechMovePattern.Stop)
+        {
+            startPos = Vector3.zero; goalPos = Vector3.zero;
+        }
+
+        //初期位置を設定
+        rectTransform.localPosition = startPos;
+        
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float t = Mathf.Clamp01(time / duration);
+
+            //目的の位置までduration秒をかけて補間で移動
+            rectTransform.localPosition = Vector3.Lerp(startPos, goalPos, t);//目的の位置に移動
+            yield return null;
+        }
+        
+        //yield return null;
     }
 
     //ヴァーチャルカメラの優先度を変化してカメラを変化
@@ -358,12 +423,17 @@ public class DiscussionManager : MonoBehaviour
     //会話の発生後議論を一巡させる
     public void TakeAround()
     {
+        //議論中状態を解除
+        discussionProgress = false;
+
         //議論一巡時の会話データを入れる
-        gameManager.OpenDiscussionWindow(DiscussionTakeAroundText, DiscussionTalkModeWindow.TalkFinish.DiscussionMode);
+        gameManager.OpenDiscussionWindow(DiscussionTakeAroundText, DiscussionTalkModeWindow.TalkFinish.TakeAroundDiscussionMode);
         //会話開始
         discussion = DiscussionMode.Talk;
 
         //DiscussionEnd();
+        //UIを非表示
+        discussionUI.DiscussionDispUI(false);
         //文字のデータを初期化
         speechText.GetComponent<TextMeshProUGUI>().text = "";
         currentTime = 0;
@@ -396,6 +466,8 @@ public class DiscussionManager : MonoBehaviour
         speechText.GetComponent<TextMeshProUGUI>().text = "";
         currentTime = 0;
         isTextSetCalled = false;
+        //議論番号をリセット
+        DiscussionNum = 0;
 
         //議論の生徒を消去
         for (int i = 0; i < InstantiateMenber.Length; i++)
@@ -418,15 +490,19 @@ public class DiscussionManager : MonoBehaviour
         //プレイヤーの議論操作を終了
         discussionProgress = false;
 
-        //UIを非表示
-        discussionUI.DiscussionDispUI(false);
-
         //演出描写の状態に変更
         discussion = DiscussionMode.Effect;
 
         //論破演出画像表示
-
+        //角度を変えるアニメーション
+        discussionUI.RefuteImageEffect(CurrentSpeechType);
         //画面の割れる演出
+
+        //非同期で条件が満たされるまで待機
+        //await UniTask.WaitUntil(() => discussionUI.);
+
+        //UIを非表示
+        discussionUI.DiscussionDispUI(false);
 
         //議論終了後の会話データを入れる
         gameManager.OpenDiscussionWindow(DiscussionFinishText, DiscussionTalkModeWindow.TalkFinish.AdventureMode);
@@ -493,6 +569,14 @@ public class DiscussionManager : MonoBehaviour
         //非同期で条件が満たされるまで待機
         await UniTask.WaitUntil(() => discussionUI.isBarrier);
 
+        //発言を初期化
+        speechText.GetComponent<TextMeshProUGUI>().text = "";
+        currentTime = 0;
+        isTextSetCalled = false;
+        //議論番号をリセット
+        DiscussionNum = 0;
+        //UIを非表示
+        discussionUI.DiscussionDispUI(false);
         //議論失敗時の会話データを入れる
         gameManager.OpenDiscussionWindow(CurrentSpeech.DiscussionMistakeText, DiscussionTalkModeWindow.TalkFinish.TakeAroundDiscussionMode);
         //会話の開始

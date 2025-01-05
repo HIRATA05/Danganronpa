@@ -31,6 +31,10 @@ public class TruthBulletShot : MonoBehaviour
     */
     //コトダマの文章
     [SerializeField] private TextMeshProUGUI bulletText;
+
+    //コトダマの位置
+    [SerializeField] private Vector3 bulletPoint;
+
     //コトダマの現在位置
     [SerializeField] private Transform shotPointCurrent;
 
@@ -96,7 +100,7 @@ public class TruthBulletShot : MonoBehaviour
                 {
                     shotPointTo = hit.point;
                     Debug.Log("レイが当たった:" + shotPointTo);
-                    //shotPointCurrent.position = new Vector3(Camera.main.transform.position.x + 1, Camera.main.transform.position.y, Camera.main.transform.position.z);
+                    shotPointCurrent.GetComponent<RectTransform>().localPosition = bulletPoint;
                     StartCoroutine(BulletMove());
                     
                 }
@@ -116,8 +120,6 @@ public class TruthBulletShot : MonoBehaviour
 
         //現在のコトダマの名前を取得
         bulletText.text = discussionUI.Bullet[discussionUI.BulletCount].truthBullets.bulletName;
-
-        
 
         //リロード開始
         StartCoroutine(Reload());
@@ -201,8 +203,10 @@ public class TruthBulletShot : MonoBehaviour
     public void BulletDelete(Vector3 startPos)
     {
         Debug.Log("弾丸消去");
-        shotPointCurrent.position = startPos;//shotPointFrom.position;
-        Debug.Log(shotPointCurrent.position + " : " + startPos);
+        //現在のコトダマの名前を非表示
+        bulletText.text = "";
+        //初期位置に戻す
+        shotPointCurrent.position = startPos;
     }
     /*
     public void BulletTextTouch()

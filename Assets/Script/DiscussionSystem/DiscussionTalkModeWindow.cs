@@ -152,6 +152,7 @@ public class DiscussionTalkModeWindow : MonoBehaviour
         {
             colorIndex++;
             speakerDialogueText.text = paragraph;
+            //#006AB6 #0095d9
             displayText = speakerDialogueText.text.Insert(colorIndex, "<color=#00000000>");
             speakerDialogueText.text = displayText;
             yield return new WaitForSeconds(0.05f);
