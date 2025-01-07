@@ -25,6 +25,9 @@ public class DiscussionTalkModeWindow : MonoBehaviour
 
     private Coroutine dialogueCoroutine;
 
+    //議論参加メンバーの情報配列
+    [NonSerialized] public GameObject[] DiscussionMenber;
+
     //会話終了後の移行先
     public enum TalkFinish
     {
@@ -37,6 +40,8 @@ public class DiscussionTalkModeWindow : MonoBehaviour
     //会話カメラの辞書
     private Dictionary<string, DiscussionEventSet> talkSetDictionary = new();
 
+
+    
 
     void Start()
     {
@@ -93,8 +98,16 @@ public class DiscussionTalkModeWindow : MonoBehaviour
             var talkSet = talkSetDictionary[dialogueText.textinfo];
             var talkEvent = talkSet.discussionEvent.OnTalkEvent[index];
 
+            //表示する文字の色を設定によって変える
+            if(dialogueText.textInfomations[index].colorType == TextInfomation.TextColorType.Blue)
+                speakerDialogueText.color = Color.cyan;
+            else speakerDialogueText.color = Color.white;
+
             //話者の名前を表示
             speakerNameText.text = dialogueText.textInfomations[index].speakerName;
+
+            //会話中のキャラにカメラを向ける
+            SpeechCameraSet(speakerNameText);
 
             if (!isTyping)
             {
@@ -171,5 +184,20 @@ public class DiscussionTalkModeWindow : MonoBehaviour
         isTyping = false;
         //次の会話文インデックスを進める
         index++;
+    }
+
+    //発言者のカメラを設定
+    public void SpeechCameraSet(TextMeshProUGUI speakerName)
+    {
+        for (int i = 0; i < DiscussionMenber.Length; i++)
+        {
+            Debug.Log("speakerName.text:"+ speakerName.text + "  <SpeechName>().speechName"+ DiscussionMenber[i].GetComponent<SpeechName>().speechName);
+            if (speakerName.text == DiscussionMenber[i].GetComponent<SpeechName>().speechName)
+            {
+                Debug.Log("CameraPriority(i)呼び出し");
+                //カメラを発言者に向ける
+                discussionManager.CameraPriority(i);
+            }
+        }
     }
 }

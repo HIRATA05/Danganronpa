@@ -4,11 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
-using UnityEngine.UIElements;
 using Cinemachine;
 using Cysharp.Threading.Tasks;
-using static UnityEditor.PlayerSettings;
-using static DiscussionUI;
 
 public class DiscussionManager : MonoBehaviour
 {
@@ -176,6 +173,8 @@ public class DiscussionManager : MonoBehaviour
             {
                 InstantiateMenber[i] = Instantiate(DiscussionMenber[i], perentObj.transform);
             }
+            //会話のため議論メンバーのデータを議論会話ウィンドウに送る
+            discussionTalkModeWindow.DiscussionMenber = InstantiateMenber;
 
             //生徒の並びを円形に並べる
             circleDeployer.Deploy();
@@ -281,14 +280,18 @@ public class DiscussionManager : MonoBehaviour
                 //SpeechType.Noneの場合ウィークポイントは作らない
 
                 //現在の発言者を取得
-                for(int i = 0; i < InstantiateMenber.Length; i++)
+                for (int i = 0; i < InstantiateMenber.Length; i++)
                 {
-                    if(speechSet[DiscussionNum].SpeechName == InstantiateMenber[i].GetComponent<SpeechName>().speechName)
+                    if (speechSet[DiscussionNum].SpeechName == InstantiateMenber[i].GetComponent<SpeechName>().speechName)
                     {
+                        //同意相手の画像を設定
+                        discussionUI.ConsentCharaSetting(InstantiateMenber[i].GetComponent<SpeechName>().speechCharaSprite);
                         //カメラを発言者に向ける
                         CameraPriority(i);
                     }
                 }
+                //SpeechCameraSet();
+                
 
                 //発言を移動
                 StartCoroutine(SpeechMove(speechSet[DiscussionNum]));
@@ -378,22 +381,36 @@ public class DiscussionManager : MonoBehaviour
         
         //yield return null;
     }
-
-    //ヴァーチャルカメラの優先度を変化してカメラを変化
-    private void CameraPriority(int charaNum)
+    /*
+    //発言者のカメラを設定
+    public void SpeechCameraSet()
     {
-        //議論メンバー＋メインカメラ
+        for (int i = 0; i < InstantiateMenber.Length; i++)
+        {
+            if (speechSet[DiscussionNum].SpeechName == InstantiateMenber[i].GetComponent<SpeechName>().speechName)
+            {
+                //同意相手の画像を設定
+                discussionUI.ConsentCharaSetting(InstantiateMenber[i].GetComponent<SpeechName>().speechCharaSprite);
+                //カメラを発言者に向ける
+                CameraPriority(i);
+            }
+        }
+    }
+    */
+    //ヴァーチャルカメラの優先度を変化してカメラを変化
+    public void CameraPriority(int charaNum)
+    {
         for (int i = 0; i < InstantiateMenber.Length + 1; i++)
         {
-            if(i == InstantiateMenber.Length + 1)
+            /*
+            if(i == InstantiateMenber.Length + 1 && charaNum == InstantiateMenber.Length + 1)
             {
-                //Debug.Log("i == InstantiateMenber.Length + 1");
+                Debug.Log("i == InstantiateMenber.Length + 1");
                 MainCCVirtualCamera.Priority = 1;
-            }
-            else if(i == charaNum)
+            }*/
+            if(i == charaNum)
             {
-                //Debug.Log("i == charaNum");
-                Debug.Log(InstantiateMenber[i].name);
+                //Debug.Log("i == charaNum　"+ InstantiateMenber[i].name);
                 InstantiateMenber[i].transform.GetChild(0).gameObject.GetComponent<CinemachineVirtualCamera>().Priority = 1;
             }
             else
@@ -409,12 +426,27 @@ public class DiscussionManager : MonoBehaviour
         }
     }
 
+    //議論のメインカメラに切り替える
+    public void MainCameraChange()
+    {
+        //議論メンバーのカメラの優先度を下げる
+        for (int i = 0; i < InstantiateMenber.Length; i++)
+        {
+            InstantiateMenber[i].transform.GetChild(0).gameObject.GetComponent<CinemachineVirtualCamera>().Priority = 0;
+        }
+        //メインカメラの優先度を上げる
+        MainCCVirtualCamera.Priority = 1;
+    }
+
     //議論を開始する処理
     public void ShootingInit()
     {
         //議論前の演出の発生に移行
         discussion = DiscussionMode.BeforeDiscussion;
 
+        //カメラを議論カメラに切り替え
+        //CameraPriority(InstantiateMenber.Length + 1);
+        MainCameraChange();
         //一定時間カメラを回す
         //DiscussionCamera.GetComponent<CameraRotation>().RotateOn();
         MainVirtualCamera.GetComponent<CameraRotation>().RotateOn();
@@ -479,11 +511,15 @@ public class DiscussionManager : MonoBehaviour
     }
 
     //議論を停止して論破画像を表示する処理
-    public void ShootingFinish()
+    public async void ShootingFinish()
     {
         Debug.Log("議論終了で会話移行");
 
-        DiscussionEnd();//後で会話終了時に発生するように変える
+        //DiscussionEnd();//後で会話終了時に発生するように変える
+        //発言を初期化
+        speechText.GetComponent<TextMeshProUGUI>().text = "";
+        currentTime = 0;
+        isTextSetCalled = false;
         //初期化処理発生のフラグを戻す
         //isDiscussionInitCalled = false;
 
@@ -495,11 +531,10 @@ public class DiscussionManager : MonoBehaviour
 
         //論破演出画像表示
         //角度を変えるアニメーション
-        discussionUI.RefuteImageEffect(CurrentSpeechType);
-        //画面の割れる演出
+        StartCoroutine(discussionUI.RefuteImageEffect(CurrentSpeechType));
 
         //非同期で条件が満たされるまで待機
-        //await UniTask.WaitUntil(() => discussionUI.);
+        await UniTask.WaitUntil(() => discussionUI.isRefuteFinish);
 
         //UIを非表示
         discussionUI.DiscussionDispUI(false);
@@ -546,6 +581,13 @@ public class DiscussionManager : MonoBehaviour
             //コトダマと発言が正しいか判定
             if (discussionUI.Bullet[discussionUI.BulletCount].TargetSpeech == CurrentSpeechWeekPoint /*CurrentSpeech.WeekPointSpeech*/)
             {
+                /*
+                if(CurrentSpeechType == SpeechType.consent)
+                {
+                    //同意相手の画像を設定
+                    discussionUI.ConsentCharaSetting();
+                }
+                */
                 return true;
             }
         }
@@ -582,5 +624,16 @@ public class DiscussionManager : MonoBehaviour
         //会話の開始
         discussion = DiscussionMode.Talk;
     }
-    
+    /*
+    //ゲームオーバー時の会話発生
+    public void DiscussionGameOver()
+    {
+        //UIを非表示
+        discussionUI.DiscussionDispUI(false);
+        //議論失敗時の会話データを入れる
+        gameManager.OpenDiscussionWindow(DiscussionGameOverText, DiscussionTalkModeWindow.TalkFinish.AdventureMode);
+        //会話の開始
+        discussion = DiscussionMode.Talk;
+    }
+    */
 }

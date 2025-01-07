@@ -11,6 +11,13 @@ using UnityEngine;
     //表示するテキスト
     [TextArea(2, 10)]
     public string paragraphs;
+    //表示するテキストの色タイプ
+    public enum TextColorType
+    {
+        Normal,//通常の白
+        Blue//思考の青
+    }
+    public TextColorType colorType = TextColorType.Normal;
     //テキストウィンドウのタイプ
     public enum TextWindowType
     {

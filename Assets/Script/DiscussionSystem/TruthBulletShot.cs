@@ -129,9 +129,6 @@ public class TruthBulletShot : MonoBehaviour
         float duration = 0.6f; //着弾までの時間、単位は秒
         float time = 0.0f;  //発射からの経過時間
 
-        //着弾地点によって角度を変化
-
-
         //弾の移動処理
         while(/*!MoveEnd && */time < duration)
         {

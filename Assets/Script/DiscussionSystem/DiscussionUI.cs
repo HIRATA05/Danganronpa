@@ -5,12 +5,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
+using Unity.VisualScripting;
 
 public class DiscussionUI : MonoBehaviour
 {
     //議論のUI
 
-
+    //議論全体の管理
+    [SerializeField] private DiscussionManager discussionManager;
     //UIのウィンドウ
     [SerializeField] private GameObject DiscussionWindow;
     //現在の発言番号
@@ -40,6 +42,13 @@ public class DiscussionUI : MonoBehaviour
     [SerializeField] private GameObject Barrier;
     //バリア演出終了フラグ
     [NonSerialized] public bool isBarrier = false;
+    //論破演出画像
+    [SerializeField] private GameObject RefuteEffect;
+    [SerializeField] private GameObject ConsentEffect;
+    //同意相手の画像
+    [SerializeField] private Image ConsentChara;
+    //論破演出終了フラグ
+    [NonSerialized] public bool isRefuteFinish = false;
     //論破する時のバリアの色
     private Color32 refuteColor = new Color32(255, 200, 0, 255);
     private Color32 consentColor = new Color32(0, 200, 255, 255);
@@ -79,6 +88,10 @@ public class DiscussionUI : MonoBehaviour
     private int Life;
     private int MaxLife = 5;
 
+    //フェード用演出パネル
+    [SerializeField] private Image FadeEffect;
+
+    
 
     //議論UIの表示
     public void DiscussionDispUI(bool isActive)
@@ -86,6 +99,7 @@ public class DiscussionUI : MonoBehaviour
         if(DiscussionWindow.activeSelf != isActive)
         {
             DiscussionWindow.SetActive(isActive);
+            SpeechPoworPanel.SetActive(isActive);
         }
     }
 
@@ -177,6 +191,7 @@ public class DiscussionUI : MonoBehaviour
         {
             //議論終了のテキストと処理を呼ぶ
             //論破ゲームオーバー時会話 DiscussionGameOverText
+            //discussionManager.DiscussionGameOver();
             Debug.Log("論破ゲームオーバー時会話");
         }
     }
@@ -196,25 +211,65 @@ public class DiscussionUI : MonoBehaviour
     }
 
     //論破演出
-    public void RefuteImageEffect(DiscussionUI.SpeechType speechType)
+    public IEnumerator RefuteImageEffect(DiscussionUI.SpeechType speechType)
     {
+        //論破演出開始
+        isRefuteFinish = false;
         //発言のタイプによって表示する画像を変える
         if (speechType == SpeechType.refute)
         {
-            //論破演出画像表示
-
+            //矛盾論破演出画像表示
+            RefuteEffect.SetActive(true);
         }
         else if (speechType == SpeechType.consent)
         {
-            //論破演出画像表示
-
+            //同意論破演出画像表示
+            ConsentEffect.SetActive(true);
         }
 
-        //角度を変えるアニメーション
+        //待機時間設定
+        float waitTime = 3;
+        //一定時間待機
+        yield return new WaitForSeconds(waitTime);
 
-        //画面の割れる演出
+        Color color = FadeEffect.color;
+        float duration = 1.0f;
+        int FadeInAlpha = 1;
+        int FadeOutAlpha = 0;
+        //フェードインさせる
+        while (!Mathf.Approximately(color.a, FadeInAlpha))
+        {
+            float changePerFrame = Time.deltaTime / duration;
+            color.a = Mathf.MoveTowards(color.a, FadeInAlpha, changePerFrame);
+            FadeEffect.color = color;
+            yield return null;
+        }
+        //論破演出画像を非表示
+        if (RefuteEffect.activeSelf)
+        {
+            RefuteEffect.SetActive(false);
+        }
+        if (ConsentEffect.activeSelf)
+        {
+            ConsentEffect.SetActive(false);
+        }
+        //論破演出終了
+        isRefuteFinish = true;
+        //フェードアウトさせる
+        while (!Mathf.Approximately(color.a, FadeOutAlpha))
+        {
+            float changePerFrame = Time.deltaTime / duration;
+            color.a = Mathf.MoveTowards(color.a, FadeOutAlpha, changePerFrame);
+            FadeEffect.color = color;
+            yield return null;
+        }
 
+    }
 
+    //同意相手の画像を設定
+    public void ConsentCharaSetting(Sprite consentChara)
+    {
+        ConsentChara.sprite = consentChara;
     }
 
     //バリアの位置をセット
