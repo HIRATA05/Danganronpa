@@ -1,10 +1,12 @@
 using Cinemachine;
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
-using static TalkCameraManager;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,6 +35,11 @@ public class GameManager : MonoBehaviour
 
     //会話終了時議論開始のフラグ
     public bool isDiscussionStart = false;
+
+    //フェード用演出パネル
+    [SerializeField, Header("フェード演出用画像")] private Image FadeEffect;
+    //フェード完了のフラグ
+    bool fadeComp = false;
 
     //場面切り替え用
     [SerializeField] private GameObject AdventureScene;
@@ -111,10 +118,21 @@ public class GameManager : MonoBehaviour
     }
 
     //DiscussionModeに変更
-    public void DiscussionModeChange()
+    public async void DiscussionModeChange()
     {
+        fadeComp = false;
+        //フェードインさせる
+        StartCoroutine(FadeScreen(true));
+        
+        //フェードイン完了まで待機
+        await UniTask.WaitUntil(() => fadeComp);
+
         playerController = PlayerController.DiscussionMode;
+        //シーン切り替え
         SwitchScene();
+        //フェードアウトさせる
+        StartCoroutine(FadeScreen(false));
+        //議論開始を呼び出す
         disussionManager.DiscInitCallOn();
     }
 
@@ -177,7 +195,7 @@ public class GameManager : MonoBehaviour
         //テキストウィンドウを表示
         discussionTalkModeWindow.TextSet(dialogueText);
     }
-
+    /*
     //スペースキーの入力待機
     public bool KeyInputSpace()
     {
@@ -196,5 +214,39 @@ public class GameManager : MonoBehaviour
         
 
         return false;
+    }*/
+
+    //画面にフェード演出を発生
+    public IEnumerator FadeScreen(bool isFade)
+    {
+        Color color = FadeEffect.color;
+        float duration = 1.0f;
+        int FadeAlpha;
+        //trueでフェードイン
+        if (isFade)
+        {
+            FadeAlpha = 1;
+        }
+        //falseでフェードアウト
+        else
+        {
+            FadeAlpha = 0;
+        }
+         
+        //フェードインさせる
+        while (!Mathf.Approximately(color.a, FadeAlpha))
+        {
+            float changePerFrame = Time.deltaTime / duration;
+            color.a = Mathf.MoveTowards(color.a, FadeAlpha, changePerFrame);
+            FadeEffect.color = color;
+            yield return null;
+        }
+
+        //フェードインの時フェード完了フラグを立てる
+        if (isFade)
+        {
+            fadeComp = true;
+        }
+        
     }
 }

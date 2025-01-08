@@ -209,7 +209,11 @@ public class TextWindow : MonoBehaviour
             var talkSet = talkSetDictionary[dialogueText.textinfo];
             var cameraSet = talkSet.cameraSet[index];
 
-            
+            //表示する文字の色を設定によって変える
+            if (dialogueText.textInfomations[index].colorType == TextInfomation.TextColorType.Blue)
+                speakerDialogueText.color = Color.cyan;
+            else speakerDialogueText.color = Color.white;
+
             //テキストウィンドウの設定によって表示を変化
             WindowSpriteSetiing();
 
@@ -279,6 +283,7 @@ public class TextWindow : MonoBehaviour
 
             index = 0;
             
+            //フラグがある場合その部屋の議論が発生
             if (gameManager.isDiscussionStart)
             {
                 gameManager.isDiscussionStart = false;

@@ -39,7 +39,7 @@ public class TruthBulletShot : MonoBehaviour
     [SerializeField] private Transform shotPointCurrent;
 
     // 線形補間の始点
-    [SerializeField] private Transform shotPointFrom;
+    //[SerializeField] private Transform shotPointFrom;
 
     // 線形補間の終点
     private Vector3 shotPointTo = new Vector3();

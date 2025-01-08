@@ -11,8 +11,10 @@ public class DiscussionUI : MonoBehaviour
 {
     //議論のUI
 
+    //ゲームマネージャー
+    [SerializeField] private GameManager gameManager;
     //議論全体の管理
-    [SerializeField] private DiscussionManager discussionManager;
+    //[SerializeField] private DiscussionManager discussionManager;
     //UIのウィンドウ
     [SerializeField] private GameObject DiscussionWindow;
     //現在の発言番号
@@ -231,7 +233,7 @@ public class DiscussionUI : MonoBehaviour
         float waitTime = 3;
         //一定時間待機
         yield return new WaitForSeconds(waitTime);
-
+        /*
         Color color = FadeEffect.color;
         float duration = 1.0f;
         int FadeInAlpha = 1;
@@ -244,6 +246,10 @@ public class DiscussionUI : MonoBehaviour
             FadeEffect.color = color;
             yield return null;
         }
+        */
+        //フェードインさせる
+        StartCoroutine(gameManager.FadeScreen(true));
+
         //論破演出画像を非表示
         if (RefuteEffect.activeSelf)
         {
@@ -255,6 +261,10 @@ public class DiscussionUI : MonoBehaviour
         }
         //論破演出終了
         isRefuteFinish = true;
+
+        //フェードアウトさせる
+        StartCoroutine(gameManager.FadeScreen(false));
+        /*
         //フェードアウトさせる
         while (!Mathf.Approximately(color.a, FadeOutAlpha))
         {
@@ -263,7 +273,7 @@ public class DiscussionUI : MonoBehaviour
             FadeEffect.color = color;
             yield return null;
         }
-
+        */
     }
 
     //同意相手の画像を設定
