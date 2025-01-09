@@ -213,4 +213,10 @@ public class CharaEffect : MonoBehaviour
         }
        
     }
+
+    //オブジェクトを表示　時計の数字など
+    public void ObjActiveOn(GameObject gameObject)
+    {
+        gameObject.SetActive(true);
+    }
 }

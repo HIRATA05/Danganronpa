@@ -22,9 +22,29 @@ public class EventFlagData : ScriptableObject
     public bool GameStart_Window;
     public bool GameStart_Monitor;
     public bool GameStart_Lacky;
-    public bool GameStart_All;
+    public bool GameStart_All;//全て完了
     public bool GameStart_All_TalkStart;
-    
+
+    //自己紹介
+    public bool SelfIntoro_Acher;
+    public bool SelfIntoro_Hacker;
+    public bool SelfIntoro_PhantomThief;
+    public bool SelfIntoro_All;//全て完了
+
+    //モノクマ遭遇で探索開始後
+    public bool AdventureStart;
+
+    //食堂
+    //食堂での議論完了
+    public bool DiscStart;
+    //倉庫開放のための弓道家への要請
+    public bool WarehouseRequest;
+
+    //中庭
+    //public bool Battery
+
+    //倉庫
+    public bool IronBars;//鉄格子探索
 
     //Trueの時にイベントが発生
     [Header("室内に入った時に発生するシナリオフラグ")]
@@ -32,8 +52,14 @@ public class EventFlagData : ScriptableObject
     public void GameStart_ClassRoom_True() { GameStart_ClassRoom = true; }
     public void GameStart_ClassRoom_False() { GameStart_ClassRoom = false; }
 
+    //食堂に入った時
+    public bool RoomIn_Dining;
+
     public bool RoomIn;
     public void RoomIn_True() { RoomIn = true; }
     public void RoomIn_False() { RoomIn = false; }
+
+    //キャラの配置フラグ
+    
 
 }
