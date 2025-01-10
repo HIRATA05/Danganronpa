@@ -123,6 +123,103 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &9141971
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1902083495}
+    m_Modifications:
+    - target: {fileID: 603590179183594960, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417848566884134798, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_Name
+      value: ClockText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417848566884134798, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491751508245914563, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_Name
+      value: DigitalclockModel_After
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491751508245914563, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 603590179183594960, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+    - {fileID: 6214774357351467262, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+--- !u!1 &9141972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6491751508245914563, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+  m_PrefabInstance: {fileID: 9141971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9141973 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+  m_PrefabInstance: {fileID: 9141971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &34425751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,6 +367,878 @@ PrefabInstance:
     - target: {fileID: 2588596536469417950, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: m_Name
       value: DiningClock
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[0].textinfo
+      value: Dining_RoomIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].textinfo
+      value: SelfIntro_Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[2].textinfo
+      value: SelfIntroAfter_Archer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[3].textinfo
+      value: Dining_Lacky
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].textinfo
+      value: Dining_LackyClock
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[5].textinfo
+      value: Dining_Window
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[6].textinfo
+      value: DigitalClockNoBattery
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].textinfo
+      value: DigitalClockBatteryIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[8].textinfo
+      value: DigitalClockInAfter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].textinfo
+      value: WarehouseRequest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[10].textinfo
+      value: MonokumaPrank
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[2].cameraSet.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[3].cameraSet.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[6].cameraSet.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[8].cameraSet.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[10].cameraSet.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[0].cameraSet.Array.data[0].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[0].cameraSet.Array.data[1].camDivision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[0].cameraSet.Array.data[2].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].camLookLeft
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[2].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[4].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[4].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[5].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[5].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[6].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[6].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[7].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[7].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[8].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[8].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[9].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[9].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[2].cameraSet.Array.data[0].camDivision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[3].cameraSet.Array.data[0].camDivision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[3].cameraSet.Array.data[1].camDivision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[6].cameraSet.Array.data[0].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[0].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[1].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[2].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[4].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[8].cameraSet.Array.data[1].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[0].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[1].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[2].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[3].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[4].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[5].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[6].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[7].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[8].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[9].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[0].cameraSet.Array.data[0].camLookRight
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[0].cameraSet.Array.data[1].camLookRight
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[0].cameraSet.Array.data[2].camLookRight
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[10].cameraSet.Array.data[0].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].camLookRight
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[10].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[10].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[11].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[11].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[12].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[12].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[13].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[13].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[14].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[14].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[15].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[15].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[16].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[16].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[17].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[17].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[18].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[18].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[19].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[19].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[1].camLookRight
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[20].camDivision
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[20].camLookLeft
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[2].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[4].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[5].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[6].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[7].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[8].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[9].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[3].cameraSet.Array.data[1].camLookRight
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[6].cameraSet.Array.data[0].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[0].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[1].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[2].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[4].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[8].cameraSet.Array.data[0].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[8].cameraSet.Array.data[1].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[0].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[10].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[11].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[12].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[13].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[14].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[15].camDivision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[1].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[2].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[3].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[4].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[5].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[6].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[7].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[8].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[9].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[10].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[11].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[12].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[13].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[14].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[15].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[16].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[17].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[18].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[19].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[1].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[20].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[2].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[4].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[5].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[6].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[7].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[8].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[9].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[2].cameraSet.Array.data[0].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[3].cameraSet.Array.data[0].camLookCenter
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[3].cameraSet.Array.data[1].camLookCenter
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[0].camLookCenter
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[1].camLookCenter
+      value: 
+      objectReference: {fileID: 34425755}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[6].cameraSet.Array.data[0].camLookCenter
+      value: 
+      objectReference: {fileID: 691544207}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[6].cameraSet.Array.data[1].camLookCenter
+      value: 
+      objectReference: {fileID: 691544207}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[0].camLookCenter
+      value: 
+      objectReference: {fileID: 691544207}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[1].camLookCenter
+      value: 
+      objectReference: {fileID: 691544207}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[2].camLookCenter
+      value: 
+      objectReference: {fileID: 691544207}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].camLookCenter
+      value: 
+      objectReference: {fileID: 691544207}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[4].camLookCenter
+      value: 
+      objectReference: {fileID: 691544207}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[8].cameraSet.Array.data[0].camLookCenter
+      value: 
+      objectReference: {fileID: 691544207}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[8].cameraSet.Array.data[1].camLookCenter
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[0].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[10].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[11].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[12].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[13].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[14].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[15].camLookRight
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[1].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[2].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[3].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[4].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[5].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[6].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[7].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[8].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[9].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[10].cameraSet.Array.data[0].camLookCenter
+      value: 
+      objectReference: {fileID: 691544208}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[10].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[11].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[12].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[13].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[14].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[15].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[16].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[17].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[18].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[19].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[20].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[10].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[11].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[12].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[13].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[14].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[9].cameraSet.Array.data[15].camLookCenter
+      value: 
+      objectReference: {fileID: 1139987899}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[0].cameraSet.Array.data[2].OnTalkEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[1].OnTalkEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[2].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 691544210}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 691544209}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 691544209}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[0].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RoomIn_Dining_True
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelfIntoro_Archer_True
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelfIntoroDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ObjActiveOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FlagChangeEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CharaEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CharaEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 21300000, guid: 882ce7e9cc79cdc4690b447e58eb0be2, type: 3}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1902083494}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[0].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[1].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Sprite, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[7].cameraSet.Array.data[3].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ObjModeSwitch, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: discussionEventSet.Array.data[2].discussionEvent.OnTalkEvent.Array.size
@@ -449,6 +1418,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5552856263357172927, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       insertIndex: 2
       addedObject: {fileID: 34425757}
+    - targetCorrespondingSourceObject: {fileID: 2588596536469417950, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 691544211}
   m_SourcePrefab: {fileID: 100100000, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
 --- !u!1 &34425752 stripped
 GameObject:
@@ -484,6 +1456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: Dining
   RoomText: {fileID: 11400000, guid: bcb0fc5063dd4d8409df68875fac3729, type: 2}
+  DiscStartText: {fileID: 0}
 --- !u!114 &34425757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,43 +1667,63 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1902083495}
     m_Modifications:
+    - target: {fileID: 603590179183594960, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647640233224151797, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417848566884134798, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_Name
+      value: ClockText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417848566884134798, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.272
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0688
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.1067
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -746,13 +1739,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6491751508245914563, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
       propertyPath: m_Name
-      value: DigitalclockModel
+      value: DigitalclockModel_Befor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 603590179183594960, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+    - {fileID: 6214774357351467262, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+--- !u!4 &315584089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5862707284079737209, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+  m_PrefabInstance: {fileID: 315584088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &315584090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6491751508245914563, guid: ba480b08153f72d4e97e476be98985c5, type: 3}
+  m_PrefabInstance: {fileID: 315584088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &691544207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2588596536469417950, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+  m_PrefabInstance: {fileID: 34425751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &691544208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5745755847721061325, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+  m_PrefabInstance: {fileID: 34425751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &691544209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9118431654313580483, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+  m_PrefabInstance: {fileID: 34425751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f9a442d3606c54c9f1d3ef2a532553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &691544210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 316461359648626118, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+  m_PrefabInstance: {fileID: 34425751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8edbd5a328a04d49b02f4279b763318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &691544211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691544207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5dcf8825325c74392176a1608f2615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DigitalClockNoBatteryText: {fileID: 11400000, guid: 2379eeb963cdc4146866ed925108d1ec, type: 2}
+  DigitalClockBatteryInText: {fileID: 11400000, guid: 6624f83547e950c40b8a8d8db69430c1, type: 2}
+  DigitalClockInAfter: {fileID: 11400000, guid: 76b582ecb575c0e499a3118d87ba1c44, type: 2}
 --- !u!1 &737760401
 GameObject:
   m_ObjectHideFlags: 3
@@ -1167,7 +2219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelfIntoroText: {fileID: 11400000, guid: 2f8b028232fffdc43882b4591f8c05e7, type: 2}
   SelfIntoroAfterText: {fileID: 11400000, guid: afa73e482d6af7f4089756aa7a5d7649, type: 2}
-  DiscStartText: {fileID: 0}
+  RequestText: {fileID: 0}
 --- !u!65 &1139987904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1482,6 +2534,54 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1341162699}
+--- !u!1 &1902083493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1902083495}
+  - component: {fileID: 1902083494}
+  m_Layer: 0
+  m_Name: Digitalclock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1902083494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902083493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098ad17c14bb5b342bbf1eb5c067a97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Befor: {fileID: 315584090}
+  After: {fileID: 9141972}
+--- !u!4 &1902083495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902083493}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 4.272, y: -1.0688, z: 2.1067}
+  m_LocalScale: {x: 0.050000016, y: 0.1, z: 0.10000003}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 315584089}
+  - {fileID: 9141973}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1972359670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +2717,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 797680285}
   - {fileID: 2099980083}
-  - {fileID: 315584088}
+  - {fileID: 1902083495}
   - {fileID: 34425751}
   - {fileID: 929900723}

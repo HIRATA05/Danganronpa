@@ -25,17 +25,18 @@ public class Dining : MonoBehaviour
     {
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
-
-            if (eventFlagData.currentRoom == roomName && eventFlagData.RoomIn_Dining)
+            //始めて食堂へ入った時の会話
+            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_Dining)
             {
                 Debug.Log("RoomIn_Dining");
-                eventFlagData.RoomIn_Dining = false;
+                eventFlagData.RoomIn_Dining = true;
                 gameManager.OpenTextWindow(RoomText);
             }
-            if (eventFlagData.currentRoom == roomName && eventFlagData.WarehouseRequest)
+            //倉庫のギミック解除要請
+            if (eventFlagData.currentRoom == roomName && eventFlagData.AdventureStart && eventFlagData.IronBars && !eventFlagData.WarehouseRequest)
             {
                 Debug.Log("WarehouseRequest");
-                eventFlagData.WarehouseRequest = false;
+                eventFlagData.WarehouseRequest = true;
                 gameManager.OpenTextWindow(DiscStartText);
             }
         }

@@ -19,7 +19,7 @@ public class InteractJapaneseArcherDining : MonoBehaviour, IReceiveSearch
             gameManager.OpenTextWindow(RequestText);
         }
         //é©å»è–âÓ
-        else if (!gameManager.eventFlagData.SelfIntoro_Acher)
+        else if (!gameManager.eventFlagData.SelfIntoro_Archer)
         {
             gameManager.OpenTextWindow(SelfIntoroText);
         }

@@ -135,12 +135,12 @@ public class CharaEffect : MonoBehaviour
     //自己紹介イベントを表示
     public void SelfIntoroDisplay(Sprite sprite)
     {
-        
+        GameManager.isTalkPause = true;
         eventcgImage.sprite = sprite;
         eventcgImage.enabled = true;
 
         //操作不能にする
-        //gameManager.playerController = GameManager.PlayerController.EventScene;
+        gameManager.playerController = GameManager.PlayerController.EventScene;
 
         //一定時間待機
         StartCoroutine(EventCGDisplay());
@@ -157,8 +157,9 @@ public class CharaEffect : MonoBehaviour
         GameManager.isTalkEvent = false;
 
         //操作不能にする
-        gameManager.playerController = GameManager.PlayerController.EventScene;
+        //gameManager.playerController = GameManager.PlayerController.EventScene;
 
+        //指定時間待機
         yield return new WaitForSeconds(3f);
 
         //イベント終了で文字送りできるようになる
@@ -167,6 +168,8 @@ public class CharaEffect : MonoBehaviour
         //時間で画像消去
         eventcgImage.sprite = null;
         eventcgImage.enabled = false;
+
+        GameManager.isTalkPause = false;
 
         //操作可能
         gameManager.playerController = GameManager.PlayerController.TextWindowMode;
@@ -214,9 +217,13 @@ public class CharaEffect : MonoBehaviour
        
     }
 
-    //オブジェクトを表示　時計の数字など
-    public void ObjActiveOn(GameObject gameObject)
+    //オブジェクトの状態の切り替え　時計の数字など
+    public void DigitalClockObjSwitch(ObjModeSwitch objModeSwitch)
     {
-        gameObject.SetActive(true);
+        //切り替え後に変化
+        objModeSwitch.DisplayObjSwitch();
     }
+    //オブジェクトの状態の切り替え　中庭の窓
+
+
 }

@@ -45,7 +45,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject AdventureScene;
     [SerializeField] private GameObject DiscussionScene;
 
+    //会話に設定したイベントの発生フラグ
     [NonSerialized] public static bool isTalkEvent = false;
+    //会話との間に待機時間が発生するイベントフラグ
+    [NonSerialized] public static bool isTalkPause = false;
 
     //キーインプット
     private float keyElapsedTime = 0;

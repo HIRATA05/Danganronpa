@@ -15,7 +15,7 @@ MonoBehaviour:
   textinfo: SelfIntro_Archer
   textInfomations:
   - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
-    paragraphs: "\u51B7\u6CC9\u3055\u3093\u3001\u65B0\u3057\u3044\u4EBA\u3092\u898B\u3064\u3051\u305F\u3088\u3002"
+    paragraphs: "\u51B7\u6CC9\u3055\u3093\u3001\u65B0\u3057\u3044\u4EBA\u3092\u767A\u898B\u3057\u305F\u3088\u3002"
     colorType: 0
     windowType: 0
   - speakerName: "\u512A\u96C5\u306A\u5973\u6027"

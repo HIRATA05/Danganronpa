@@ -26,7 +26,7 @@ public class EventFlagData : ScriptableObject
     public bool GameStart_All_TalkStart;
 
     //自己紹介
-    public bool SelfIntoro_Acher;
+    public bool SelfIntoro_Archer;
     public bool SelfIntoro_Hacker;
     public bool SelfIntoro_PhantomThief;
     public bool SelfIntoro_All;//全て完了
@@ -39,6 +39,8 @@ public class EventFlagData : ScriptableObject
     public bool DiscStart;
     //倉庫開放のための弓道家への要請
     public bool WarehouseRequest;
+    //デジタル時計
+    public bool Digitalclock;
 
     //中庭
     //public bool Battery

@@ -59,7 +59,6 @@ public class FlagChangeEffect : MonoBehaviour
         }
     }
 
-
     public void GameStart_ClassRoom_Change_True()
     {
         Debug.Log("GameStart_ClassRoomをTRUE");
@@ -81,4 +80,38 @@ public class FlagChangeEffect : MonoBehaviour
         Debug.Log("RoomInをFALSE");
         eventFlagData.RoomIn_False();
     }
+
+    //自己紹介
+    public void SelfIntoro_Archer_True()
+    {
+        eventFlagData.SelfIntoro_Archer = true;
+    }
+    public void SelfIntoro_Hacker_True()
+    {
+        eventFlagData.SelfIntoro_Hacker = true;
+    }
+    public void SelfIntoro_PhantomThief_True()
+    {
+        eventFlagData.SelfIntoro_PhantomThief = true;
+    }
+    public void SelfIntoro_All_True()
+    {
+        if(eventFlagData.SelfIntoro_Archer && eventFlagData.SelfIntoro_Hacker && eventFlagData.SelfIntoro_PhantomThief)
+        {
+            eventFlagData.SelfIntoro_All = true;
+        }
+    }
+
+    //食堂に入った時の自動発生会話フラグ
+    public void RoomIn_Dining_True()
+    {
+        eventFlagData.RoomIn_Dining = true;
+    }
+    /*
+    //デジタル時計の動作
+    public void Digitalclock_True()
+    {
+
+    }*/
+
 }

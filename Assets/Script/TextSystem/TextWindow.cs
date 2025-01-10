@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using static TalkCameraManager;
+using Cysharp.Threading.Tasks;
 
 public class TextWindow : MonoBehaviour
 {
@@ -199,7 +200,7 @@ public class TextWindow : MonoBehaviour
     }
 
     //会話文表示処理
-    public void DisplayDialogueText()
+    public async void DisplayDialogueText()
     {
 
         //scriptableObjectの情報をパネルに表示する
@@ -237,13 +238,22 @@ public class TextWindow : MonoBehaviour
             //話者の名前を表示
             speakerNameText.text = dialogueText.textInfomations[index].speakerName;
 
-            
+            //会話イベントを発生
+            cameraSet.OnTalkEvent.Invoke();
             //StartCoroutine(NextTalkEvent(cameraSet));
+
+            //自己紹介関数で自己紹介発生フラグをTrue
+            //Trueの時はUniTaskで待機
+            if (GameManager.isTalkPause)
+            {
+                //設定したイベントが完了するまで待機
+                await UniTask.WaitUntil(() => GameManager.isTalkEvent);
+            }
 
             if (!isTyping)
             {
                 //会話イベントを発生
-                cameraSet.OnTalkEvent.Invoke();
+                //cameraSet.OnTalkEvent.Invoke();
 
                 dialogueCoroutine = StartCoroutine(TypeDialogueText(dialogueText.textInfomations[index].paragraphs));
             }
