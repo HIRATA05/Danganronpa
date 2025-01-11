@@ -36,7 +36,7 @@ public class EventFlagData : ScriptableObject
 
     //食堂
     //食堂での議論完了
-    public bool DiscStart;
+    public bool DiningDiscStart;
     //倉庫開放のための弓道家への要請
     public bool WarehouseRequest;
     //デジタル時計
@@ -44,6 +44,8 @@ public class EventFlagData : ScriptableObject
 
     //中庭
     //public bool Battery
+    //ロープ付き窓
+    public bool RopeWindow;
 
     //倉庫
     public bool IronBars;//鉄格子探索

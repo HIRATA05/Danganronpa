@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ObjModeSwitch;
 
 public class ObjModeSwitch : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public class ObjModeSwitch : MonoBehaviour
     private GameManager gameManager;
     private EventFlagData eventFlagData;
 
+    //オブジェクトの種類
+    public enum ObjType
+    {
+        Digitalclock,//時計
+        RopeWindow,//中庭の窓
+        GardenStatue,//中庭の石像
+    }
+    public ObjType objType;
+
     void Start()
     {
         //ゲームマネージャー取得
@@ -20,16 +30,34 @@ public class ObjModeSwitch : MonoBehaviour
         gameManager = gm.GetComponent<GameManager>();
         eventFlagData = gameManager.eventFlagData;
         //フラグによって表示するオブジェクトを変える
-        if (eventFlagData.Digitalclock)
+        if (objType == ObjType.Digitalclock)
         {
-            Befor.SetActive(false);
-            After.SetActive(true);
+            if (eventFlagData.Digitalclock)
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
         }
-        else
+        else if (objType == ObjType.RopeWindow)
         {
-            Befor.SetActive(true);
-            After.SetActive(false);
+            if (eventFlagData.RopeWindow)
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+
         }
+        
     }
 
     void Update()
@@ -40,7 +68,15 @@ public class ObjModeSwitch : MonoBehaviour
     //表示するオブジェクトを変化
     public void DisplayObjSwitch()
     {
-        eventFlagData.Digitalclock = true;
+        //設定されら種類によって変更するフラグを変化
+        if(objType == ObjType.Digitalclock)
+        {
+            eventFlagData.Digitalclock = true;
+        }
+        else if (objType == ObjType.RopeWindow)
+        {
+            eventFlagData.RopeWindow = true;
+        }
         Befor.SetActive(false);
         After.SetActive(true);
     }

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16632fd449f146949a0131af5ff9d9e8, type: 3}
+  m_Name: InitEventFlag
+  m_EditorClassIdentifier: 
+  currentRoom: ClassRoom_F1
+  itemDataBase: {fileID: 0}
+  GameStart: 1
+  GameStart_Window: 0
+  GameStart_Monitor: 0
+  GameStart_Lacky: 0
+  GameStart_All: 0
+  GameStart_All_TalkStart: 0
+  SelfIntoro_Archer: 0
+  SelfIntoro_Hacker: 0
+  SelfIntoro_PhantomThief: 0
+  SelfIntoro_All: 0
+  AdventureStart: 0
+  DiningDiscStart: 0
+  WarehouseRequest: 0
+  Digitalclock: 0
+  RopeWindow: 0
+  IronBars: 0
+  GameStart_ClassRoom: 1
+  RoomIn_Dining: 0
+  RoomIn: 1

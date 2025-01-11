@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dining : MonoBehaviour
+public class Warehouse : MonoBehaviour
 {
     //現在いる部屋を定義 部屋の数だけ作成
 
@@ -25,17 +25,15 @@ public class Dining : MonoBehaviour
     {
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
-            //始めて食堂へ入った時の会話
+            //始めて倉庫へ入った時の会話
             if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_Dining)
             {
-                Debug.Log("RoomIn_Dining");
                 eventFlagData.RoomIn_Dining = true;
                 gameManager.OpenTextWindow(RoomText);
             }
-            //モノクマの悪ふざけの会話
-            if (eventFlagData.currentRoom == roomName && eventFlagData.AdventureStart && eventFlagData.IronBars && eventFlagData.WarehouseRequest && !eventFlagData.DiningDiscStart)
+            //扉開錠の要請
+            if (eventFlagData.currentRoom == roomName && eventFlagData.WarehouseRequest)
             {
-                Debug.Log("WarehouseRequest");
                 eventFlagData.DiningDiscStart = true;
                 gameManager.OpenTextWindow(DiscStartText);
             }

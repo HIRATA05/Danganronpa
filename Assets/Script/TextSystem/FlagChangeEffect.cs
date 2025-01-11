@@ -107,11 +107,10 @@ public class FlagChangeEffect : MonoBehaviour
     {
         eventFlagData.RoomIn_Dining = true;
     }
-    /*
-    //デジタル時計の動作
-    public void Digitalclock_True()
+    //倉庫の仕掛け解除の要請
+    public void WarehouseRequest_True()
     {
-
-    }*/
+        eventFlagData.WarehouseRequest = true;
+    }
 
 }

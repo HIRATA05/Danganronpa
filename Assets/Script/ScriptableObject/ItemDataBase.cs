@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemDataBase : ScriptableObject
 {
     //アイテム
-    [Header("アイテムリスト")] public List<Item> items = new List<Item>();
+    //[Header("アイテムリスト")] public List<Item> items = new List<Item>();
 
     //コトダマ
     [Header("コトダマリスト")] public List<TruthBullets> truthBullets = new List<TruthBullets>();

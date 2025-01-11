@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        /*
         eventFlagData.GameStart = true;
         eventFlagData.GameStart_Window = false;
         eventFlagData.GameStart_Monitor = false;
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
         textWindow = tw.GetComponent<TextWindow>();
         GameObject ra = GameObject.Find("CorsorImage");
         reticleAim = ra.GetComponent<ReticleAim>();
-
+        */
         GameObject dm = GameObject.Find("DiscussionManager");
         disussionManager = dm.GetComponent<DiscussionManager>();
         GameObject dw = GameObject.Find("DiscussionTalkModeWindow");

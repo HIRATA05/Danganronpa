@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b8cb2779159fcd4390adc7ed44dd5be, type: 3}
-  m_Name: MonokumaInfo
+  m_Name: Wrench
   m_EditorClassIdentifier: 
-  id: 0
-  bulletName: "\u30E2\u30CE\u30AF\u30DE\u306E\u69CB\u9020"
+  id: 4
+  bulletName: "\u30EC\u30F3\u30C1"
   getFlag: 0
-  infomation: "\u30E2\u30CE\u30AF\u30DE\u306F\u4F53\u306F\u30D5\u30A7\u30EB\u30C8\u5730\u3067\u3067\u304D\u3066\u3044\u308B\n\u4E2D\u8EAB\u306F\u6A5F\u68B0\u4ED5\u639B\u3051\u306E\u30ED\u30DC\u30C3\u30C8\u306E\u3088\u3046\u3060\u3002"
+  infomation: "\u30CA\u30C3\u30C8\u3092\u53D6\u308A\u5916\u305B\u308B\u5DE5\u5177"

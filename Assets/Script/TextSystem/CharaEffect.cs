@@ -218,12 +218,17 @@ public class CharaEffect : MonoBehaviour
     }
 
     //オブジェクトの状態の切り替え　時計の数字など
-    public void DigitalClockObjSwitch(ObjModeSwitch objModeSwitch)
+    public void ObjSwitch(ObjModeSwitch objModeSwitch)
     {
         //切り替え後に変化
         objModeSwitch.DisplayObjSwitch();
     }
+    /*
     //オブジェクトの状態の切り替え　中庭の窓
-
+    public void WindowObjSwitch(ObjModeSwitch objModeSwitch)
+    {
+        //切り替え後に変化
+        objModeSwitch.DisplayObjSwitch();
+    }*/
 
 }

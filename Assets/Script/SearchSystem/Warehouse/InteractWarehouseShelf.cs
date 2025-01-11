@@ -2,27 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractLackyDining : MonoBehaviour, IReceiveSearch
+public class InteractWarehouseShelf : MonoBehaviour, IReceiveSearch
 {
-    [SerializeField] private DialogueText DiningText;
-    [SerializeField] private DialogueText BatteryText;
+    [SerializeField] private DialogueText WrenchGetText; //レンチ入手
+    [SerializeField] private DialogueText NormalText;//通常
 
     private GameManager gameManager;
 
     public void ReceiveSearch()
     {
-        Debug.Log("幸運会話");
         //場合によってはフラグによって条件分岐
-        //電池を入れて時計を動かした後
-        if (gameManager.eventFlagData.itemDataBase.truthBullets[3].getFlag)
+        //レンチを入手していない時入手
+        if (!gameManager.eventFlagData.itemDataBase.truthBullets[4].getFlag)
         {
-            gameManager.OpenTextWindow(BatteryText);
+            gameManager.OpenTextWindow(WrenchGetText);
         }
+        //探索後
         else
         {
-            gameManager.OpenTextWindow(DiningText);
+            gameManager.OpenTextWindow(NormalText);
         }
-
     }
 
     void Start()
