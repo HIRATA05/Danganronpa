@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractWarehouseShelf : MonoBehaviour, IReceiveSearch
+public class InteractRope : MonoBehaviour, IReceiveSearch
 {
-    //[SerializeField] private DialogueText WrenchGetText; //レンチ入手
+    [SerializeField] private DialogueText RopeGetText; //ロープ入手
     [SerializeField] private DialogueText NormalText;//通常
 
     private GameManager gameManager;
@@ -12,19 +12,16 @@ public class InteractWarehouseShelf : MonoBehaviour, IReceiveSearch
     public void ReceiveSearch()
     {
         //場合によってはフラグによって条件分岐
-        /*
         //レンチを入手していない時入手
-        if (!gameManager.eventFlagData.itemDataBase.truthBullets[4].getFlag)
+        if (!gameManager.eventFlagData.itemDataBase.truthBullets[1].getFlag)
         {
-            gameManager.OpenTextWindow(WrenchGetText);
+            gameManager.OpenTextWindow(RopeGetText);
         }
         //探索後
         else
         {
-            
+            gameManager.OpenTextWindow(NormalText);
         }
-        */
-        gameManager.OpenTextWindow(NormalText);
     }
 
     void Start()

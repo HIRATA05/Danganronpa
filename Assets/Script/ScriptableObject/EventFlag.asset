@@ -20,5 +20,25 @@ MonoBehaviour:
   GameStart_Lacky: 1
   GameStart_All: 1
   GameStart_All_TalkStart: 1
+  SelfIntoro_Archer: 0
+  SelfIntoro_Hacker: 0
+  SelfIntoro_PhantomThief: 0
+  SelfIntoro_All: 0
+  AdventureStart: 0
+  DiningDiscStart: 0
+  WarehouseRequest: 0
+  Digitalclock: 0
+  BatteryInLight: 0
+  F2Request: 0
+  F2Open: 0
+  RopeWindow: 0
+  F2Intrusion: 0
+  F2OpenArcher: 0
+  IronBars: 0
+  WarehouseArcher: 0
+  IronBarsOpen: 0
   GameStart_ClassRoom: 0
+  RoomIn_Dining: 0
+  RoomIn_Garden: 0
+  RoomIn_Warehouse: 0
   RoomIn: 1

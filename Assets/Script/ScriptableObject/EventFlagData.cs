@@ -19,6 +19,7 @@ public class EventFlagData : ScriptableObject
     public bool GameStart;
 
     //ゲーム開始時教室の探索
+    [Header("プロローグ")]
     public bool GameStart_Window;
     public bool GameStart_Monitor;
     public bool GameStart_Lacky;
@@ -35,6 +36,7 @@ public class EventFlagData : ScriptableObject
     public bool AdventureStart;
 
     //食堂
+    [Header("食堂")]
     //食堂での議論完了
     public bool DiningDiscStart;
     //倉庫開放のための弓道家への要請
@@ -43,12 +45,27 @@ public class EventFlagData : ScriptableObject
     public bool Digitalclock;
 
     //中庭
-    //public bool Battery
+    [Header("中庭")]
+    //ライトからバッテリー入手
+    public bool BatteryInLight;
+    //
+
+    //2階開放のための弓道家への要請
+    public bool F2Request;
+    //条件が揃って2階開放イベント発生可能
+    public bool F2Open;
     //ロープ付き窓
     public bool RopeWindow;
+    //2階侵入後
+    public bool F2Intrusion;
+    //2階開放イベントの間弓道家表示
+    public bool F2OpenArcher;
 
     //倉庫
+    [Header("倉庫")]
     public bool IronBars;//鉄格子探索
+    public bool WarehouseArcher;//倉庫にいる弓道家
+    public bool IronBarsOpen;//鉄格子解除
 
     //Trueの時にイベントが発生
     [Header("室内に入った時に発生するシナリオフラグ")]
@@ -58,6 +75,10 @@ public class EventFlagData : ScriptableObject
 
     //食堂に入った時
     public bool RoomIn_Dining;
+    //中庭に入った時
+    public bool RoomIn_Garden;
+    //倉庫に入った時
+    public bool RoomIn_Warehouse;
 
     public bool RoomIn;
     public void RoomIn_True() { RoomIn = true; }

@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractWarehouseShelf : MonoBehaviour, IReceiveSearch
+public class InteractWarehouseShelfBack : MonoBehaviour, IReceiveSearch
 {
-    //[SerializeField] private DialogueText WrenchGetText; //ƒƒ“ƒ`“όθ
+    //‘qΙ‰‚Μ’I
+
+    [SerializeField] private DialogueText ClawGetText; //ηκ’ά“όθ
     [SerializeField] private DialogueText NormalText;//’Κν
 
     private GameManager gameManager;
@@ -12,19 +14,16 @@ public class InteractWarehouseShelf : MonoBehaviour, IReceiveSearch
     public void ReceiveSearch()
     {
         //κ‡‚Ι‚ζ‚Α‚Δ‚Νƒtƒ‰ƒO‚Ι‚ζ‚Α‚Δπ•ªς
-        /*
-        //ƒƒ“ƒ`‚π“όθ‚µ‚Δ‚Ά‚Θ‚Ά“όθ
-        if (!gameManager.eventFlagData.itemDataBase.truthBullets[4].getFlag)
+        //ηκ’ά‚π“όθ‚µ‚Δ‚Ά‚Θ‚Ά“όθ
+        if (!gameManager.eventFlagData.itemDataBase.truthBullets[5].getFlag)
         {
-            gameManager.OpenTextWindow(WrenchGetText);
+            gameManager.OpenTextWindow(ClawGetText);
         }
         //’Tυγ
         else
         {
-            
+            gameManager.OpenTextWindow(NormalText);
         }
-        */
-        gameManager.OpenTextWindow(NormalText);
     }
 
     void Start()

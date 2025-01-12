@@ -8,8 +8,8 @@ public class Warehouse : MonoBehaviour
 
     public string roomName;
 
-    [SerializeField, Header("部屋の中での自動発生会話")] private DialogueText RoomText;
-    [SerializeField] private DialogueText DiscStartText;
+    [SerializeField, Header("部屋の中での自動発生会話")] private DialogueText RoomFirstText;
+    [SerializeField] private DialogueText RequestText;
 
     private GameManager gameManager;
     private EventFlagData eventFlagData;
@@ -26,16 +26,16 @@ public class Warehouse : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //始めて倉庫へ入った時の会話
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_Dining)
+            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_Warehouse)
             {
-                eventFlagData.RoomIn_Dining = true;
-                gameManager.OpenTextWindow(RoomText);
+                eventFlagData.RoomIn_Warehouse = true;
+                gameManager.OpenTextWindow(RoomFirstText);
             }
             //扉開錠の要請
-            if (eventFlagData.currentRoom == roomName && eventFlagData.WarehouseRequest)
+            if (eventFlagData.currentRoom == roomName && !eventFlagData.WarehouseRequest && eventFlagData.IronBars)
             {
-                eventFlagData.DiningDiscStart = true;
-                gameManager.OpenTextWindow(DiscStartText);
+                eventFlagData.WarehouseRequest = true;
+                gameManager.OpenTextWindow(RequestText);
             }
         }
 

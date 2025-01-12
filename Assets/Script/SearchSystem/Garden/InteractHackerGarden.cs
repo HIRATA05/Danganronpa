@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractWarehouseShelf : MonoBehaviour, IReceiveSearch
+public class InteractHackerGarden : MonoBehaviour, IReceiveSearch
 {
-    //[SerializeField] private DialogueText WrenchGetText; //レンチ入手
+    //ハッカー自己紹介
+
+    [SerializeField] private DialogueText SelfIntoroText; //自己紹介
     [SerializeField] private DialogueText NormalText;//通常
 
     private GameManager gameManager;
@@ -12,19 +14,16 @@ public class InteractWarehouseShelf : MonoBehaviour, IReceiveSearch
     public void ReceiveSearch()
     {
         //場合によってはフラグによって条件分岐
-        /*
-        //レンチを入手していない時入手
-        if (!gameManager.eventFlagData.itemDataBase.truthBullets[4].getFlag)
+        //鉤爪を入手していない時入手
+        if (!gameManager.eventFlagData.SelfIntoro_Hacker)
         {
-            gameManager.OpenTextWindow(WrenchGetText);
+            gameManager.OpenTextWindow(SelfIntoroText);
         }
         //探索後
         else
         {
-            
+            gameManager.OpenTextWindow(NormalText);
         }
-        */
-        gameManager.OpenTextWindow(NormalText);
     }
 
     void Start()

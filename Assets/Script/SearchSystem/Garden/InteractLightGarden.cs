@@ -2,29 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractWarehouseShelf : MonoBehaviour, IReceiveSearch
+public class InteractLightGarden : MonoBehaviour, IReceiveSearch
 {
-    //[SerializeField] private DialogueText WrenchGetText; //レンチ入手
-    [SerializeField] private DialogueText NormalText;//通常
+    //ライト
+
+    [SerializeField] private DialogueText GetText; //電池入手
+    [SerializeField] private DialogueText AfterText;//入手後
 
     private GameManager gameManager;
 
     public void ReceiveSearch()
     {
         //場合によってはフラグによって条件分岐
-        /*
-        //レンチを入手していない時入手
-        if (!gameManager.eventFlagData.itemDataBase.truthBullets[4].getFlag)
+        //鉤爪を入手していない時入手
+        if (!gameManager.eventFlagData.itemDataBase.truthBullets[3].getFlag)
         {
-            gameManager.OpenTextWindow(WrenchGetText);
+            gameManager.OpenTextWindow(GetText);
         }
         //探索後
         else
         {
-            
+            gameManager.OpenTextWindow(AfterText);
         }
-        */
-        gameManager.OpenTextWindow(NormalText);
     }
 
     void Start()

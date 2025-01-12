@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2184e32b683345418bba8483f1b682e, type: 3}
+  m_Name: WarehouseShelfWrench
+  m_EditorClassIdentifier: 
+  textinfo: WarehouseShelfWrench
+  textInfomations:
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u5927\u304D\u306A\u68DA\u306B\u8272\u3005\u5165\u3063\u3066\u3044\u308B\u304C\u2026\u3053\u308C\u306F\uFF1F"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u30EC\u30F3\u30C1\u306E\u3088\u3046\u3060\uFF1F\u4E00\u5FDC\u6301\u3063\u3066\u304A\u304F\u304B\u2026"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u30EC\u30F3\u30C1\u3092\u624B\u306B\u5165\u308C\u305F"
+    colorType: 0
+    windowType: 0

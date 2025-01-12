@@ -81,6 +81,28 @@ public class FlagChangeEffect : MonoBehaviour
         eventFlagData.RoomIn_False();
     }
 
+    //コトダマ入手
+    public void TruesBulletGet_MonokumaInfo()
+    {
+        eventFlagData.itemDataBase.truthBullets[0].getFlag = true;
+    }
+    public void TruesBulletGet_Rope()
+    {
+        eventFlagData.itemDataBase.truthBullets[1].getFlag = true;
+    }
+    public void TruesBulletGet_ArcherySet()
+    {
+        eventFlagData.itemDataBase.truthBullets[2].getFlag = true;
+    }
+    public void TruesBulletGet_Battery()
+    {
+        eventFlagData.itemDataBase.truthBullets[3].getFlag = true;
+    }
+    public void TruesBulletGet_Claw()
+    {
+        eventFlagData.itemDataBase.truthBullets[5].getFlag = true;
+    }
+
     //自己紹介
     public void SelfIntoro_Archer_True()
     {
@@ -107,10 +129,19 @@ public class FlagChangeEffect : MonoBehaviour
     {
         eventFlagData.RoomIn_Dining = true;
     }
+    //鉄格子の解除開始
+    public void IronBars_True()
+    {
+        eventFlagData.IronBars = true;
+    }
     //倉庫の仕掛け解除の要請
     public void WarehouseRequest_True()
     {
         eventFlagData.WarehouseRequest = true;
     }
-
+    //鉄格子の解除
+    public void IronBarsOpen_True()
+    {
+        eventFlagData.IronBarsOpen = true;
+    }
 }

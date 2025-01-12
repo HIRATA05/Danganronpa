@@ -12,16 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d7bd0db58492749bf0dfb818b2d133, type: 3}
   m_Name: ItemDataBase
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11400000, guid: d940cfedc0c26b24ebaee71cc5af08ef, type: 2}
   truthBullets:
   - {fileID: 11400000, guid: 9bf6fcca26f31a444a5c21854ed55b67, type: 2}
   - {fileID: 11400000, guid: 21a80141f0539014198ec0d380d16bf9, type: 2}
   - {fileID: 11400000, guid: 6803d6c53da47a2479f31a132d92fb90, type: 2}
   - {fileID: 11400000, guid: dbc3249feb98bd8449e28adce7ccb672, type: 2}
   - {fileID: 11400000, guid: 15b5f99ceb80f0c458858f709d6dfd5d, type: 2}
-  - {fileID: 11400000, guid: 9bf6fcca26f31a444a5c21854ed55b67, type: 2}
-  - {fileID: 11400000, guid: 9bf6fcca26f31a444a5c21854ed55b67, type: 2}
-  - {fileID: 11400000, guid: 9bf6fcca26f31a444a5c21854ed55b67, type: 2}
-  - {fileID: 11400000, guid: 9bf6fcca26f31a444a5c21854ed55b67, type: 2}
-  - {fileID: 11400000, guid: 9bf6fcca26f31a444a5c21854ed55b67, type: 2}
+  - {fileID: 11400000, guid: a19e5fe2ce004f848b877ee00e641c7a, type: 2}
+  - {fileID: 11400000, guid: e1bd15af93c03ae4888bbab088a6c3d7, type: 2}
+  - {fileID: 11400000, guid: e80c5a6a1bb7c6a47aa2f2519e1a058a, type: 2}
+  - {fileID: 11400000, guid: b2efb0b097b89f94c8c8679508790037, type: 2}

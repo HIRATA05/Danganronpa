@@ -70,12 +70,12 @@ public class GameManager : MonoBehaviour
         eventFlagData.GameStart_All_TalkStart = false;
         eventFlagData.RoomIn = true;//テスト用
         eventFlagData.GameStart_ClassRoom_True();
-
+        */
         GameObject tw = GameObject.Find("TextWindow");
         textWindow = tw.GetComponent<TextWindow>();
         GameObject ra = GameObject.Find("CorsorImage");
         reticleAim = ra.GetComponent<ReticleAim>();
-        */
+        
         GameObject dm = GameObject.Find("DiscussionManager");
         disussionManager = dm.GetComponent<DiscussionManager>();
         GameObject dw = GameObject.Find("DiscussionTalkModeWindow");

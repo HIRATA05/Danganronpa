@@ -18,8 +18,11 @@ public class ObjModeSwitch : MonoBehaviour
     public enum ObjType
     {
         Digitalclock,//時計
+        WarehouseArcher,//倉庫の弓道家
         RopeWindow,//中庭の窓
-        GardenStatue,//中庭の石像
+        GardenHacker,//中庭のハッカー
+        GardenPhantomThief,//中庭の怪盗
+        GardenArcher,//中庭の弓道家
     }
     public ObjType objType;
 
@@ -43,6 +46,19 @@ public class ObjModeSwitch : MonoBehaviour
                 After.SetActive(false);
             }
         }
+        else if (objType == ObjType.WarehouseArcher)
+        {
+            if (eventFlagData.WarehouseArcher)
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
         else if (objType == ObjType.RopeWindow)
         {
             if (eventFlagData.RopeWindow)
@@ -55,9 +71,47 @@ public class ObjModeSwitch : MonoBehaviour
                 Befor.SetActive(true);
                 After.SetActive(false);
             }
-
         }
-        
+        else if (objType == ObjType.GardenHacker)
+        {
+            if (eventFlagData.AdventureStart)
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+        else if (objType == ObjType.GardenPhantomThief)
+        {
+            if (eventFlagData.AdventureStart && !eventFlagData.F2Intrusion)//探索開始から2階侵入後の間表示
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+        else if (objType == ObjType.GardenArcher)
+        {
+            if (eventFlagData.F2OpenArcher)//2階侵入イベントの間表示
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+
     }
 
     void Update()
@@ -73,10 +127,19 @@ public class ObjModeSwitch : MonoBehaviour
         {
             eventFlagData.Digitalclock = true;
         }
+        if (objType == ObjType.WarehouseArcher)
+        {
+            eventFlagData.WarehouseArcher = true;
+        }
         else if (objType == ObjType.RopeWindow)
         {
             eventFlagData.RopeWindow = true;
         }
+        else if (objType == ObjType.GardenArcher)
+        {
+            eventFlagData.F2OpenArcher = true;
+        }
+
         Befor.SetActive(false);
         After.SetActive(true);
     }

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2184e32b683345418bba8483f1b682e, type: 3}
+  m_Name: RopeGetAfter
+  m_EditorClassIdentifier: 
+  textinfo: RopeGetAfter
+  textInfomations:
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u7D30\u3044\u30ED\u30FC\u30D7\u306E\u675F\u304C\u3042\u308B\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u7279\u306B\u6C17\u306B\u306A\u308B\u3082\u306E\u3082\u7121\u3044\u306A\u3002"
+    colorType: 0
+    windowType: 0
