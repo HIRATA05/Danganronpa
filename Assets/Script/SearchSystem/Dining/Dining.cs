@@ -10,6 +10,7 @@ public class Dining : MonoBehaviour
 
     [SerializeField, Header("部屋の中での自動発生会話")] private DialogueText RoomText;
     [SerializeField] private DialogueText DiscStartText;
+    [SerializeField] private DialogueText MonokumaCallText;
 
     private GameManager gameManager;
     private EventFlagData eventFlagData;
@@ -38,6 +39,13 @@ public class Dining : MonoBehaviour
                 Debug.Log("WarehouseRequest");
                 eventFlagData.DiningDiscStart = true;
                 gameManager.OpenTextWindow(DiscStartText);
+            }
+            //自己紹介後呼び出し
+            if (eventFlagData.currentRoom == roomName && eventFlagData.SelfIntoro_All && !eventFlagData.SelfIntoro_Call)
+            {
+                Debug.Log("モノクマの登場");
+                eventFlagData.SelfIntoro_Call = true;
+                gameManager.OpenTextWindow(MonokumaCallText);
             }
         }
 

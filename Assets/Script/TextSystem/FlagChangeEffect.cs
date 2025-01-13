@@ -144,4 +144,18 @@ public class FlagChangeEffect : MonoBehaviour
     {
         eventFlagData.IronBarsOpen = true;
     }
+    //中庭の2階開放イベント発生
+    public void F2Request_True()
+    {
+        eventFlagData.F2Request = true;
+    }
+    //2階開放イベント達成可能
+    public void F2Open_True()
+    {
+        if(gameManager.eventFlagData.itemDataBase.truthBullets[1].getFlag && gameManager.eventFlagData.itemDataBase.truthBullets[2].getFlag &&
+            gameManager.eventFlagData.itemDataBase.truthBullets[5].getFlag)
+        {
+            eventFlagData.F2Open = true;
+        }
+    }
 }

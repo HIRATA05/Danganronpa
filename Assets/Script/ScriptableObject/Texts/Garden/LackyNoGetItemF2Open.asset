@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2184e32b683345418bba8483f1b682e, type: 3}
+  m_Name: LackyNoGetItemF2Open
+  m_EditorClassIdentifier: 
+  textinfo: LackyNoGetItemF2Open
+  textInfomations:
+  - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
+    paragraphs: "\u30ED\u30FC\u30D7\u3068\u5F13\u77E2\u3068\u9264\u722A\u304B\u3041\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
+    paragraphs: "\u30ED\u30FC\u30D7\u306F\u5009\u5EAB\u306B\u3042\u3063\u305F\u308A\u3057\u306A\u3044\u304B\u306A\u3002\n\u5F13\u77E2\u306A\u3089\u5F13\u9053\u5834\u306B\u3042\u308A\u305D\u3046\u3060\u3088\u306D\u3002"
+    colorType: 0
+    windowType: 0

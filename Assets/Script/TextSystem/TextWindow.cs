@@ -82,7 +82,8 @@ public class TextWindow : MonoBehaviour
     //会話カメラの辞書
     private Dictionary<string, TalkCameraManager.TalkSet> talkSetDictionary = new();
 
-
+    //最初の処理フラグ
+    private bool isStartFlag = false;
 
     private void Start()
     {
@@ -106,9 +107,17 @@ public class TextWindow : MonoBehaviour
         //テキストを表示
         if (gameManager.playerController == GameManager.PlayerController.TextWindowMode)
         {
+            if (!panelObject.activeSelf)
+                panelObject.SetActive(true);
             //会話文表示処理を実行する
             ProgressText();
             
+        }
+        else if(gameManager.playerController == GameManager.PlayerController.EventScene)
+        {
+            //イベント演出でテキスト非表示
+            if(panelObject.activeSelf)
+                panelObject.SetActive(false);
         }
     }
 
@@ -162,9 +171,11 @@ public class TextWindow : MonoBehaviour
     public void ProgressText()
     {
         //パネルが非表示なら表示する
-        if (!panelObject.activeSelf)
+
+        //最初の表示処理
+        if (!isStartFlag /*!panelObject.activeSelf*/)
         {
-            
+            isStartFlag = true;
             panelObject.SetActive(true);
 
             //主人公の表示処理
@@ -238,6 +249,9 @@ public class TextWindow : MonoBehaviour
             //話者の名前を表示
             speakerNameText.text = dialogueText.textInfomations[index].speakerName;
 
+            //一瞬非表示
+            UIWindowActive(false);
+
             //会話イベントを発生
             cameraSet.OnTalkEvent.Invoke();
             //StartCoroutine(NextTalkEvent(cameraSet));
@@ -249,6 +263,9 @@ public class TextWindow : MonoBehaviour
                 //設定したイベントが完了するまで待機
                 await UniTask.WaitUntil(() => GameManager.isTalkEvent);
             }
+
+            //表示解除
+            UIWindowActive(true);
 
             if (!isTyping)
             {
@@ -269,7 +286,7 @@ public class TextWindow : MonoBehaviour
             speakerNameText.text = "";
             speakerDialogueText.text = "";
             panelObject.SetActive(false);
-
+            isStartFlag = false;
             //主人公の透過処理
             var mainChara = mainTalkChara.transform.GetChild(0).gameObject.transform.GetChild(0);
             var mainCharaShadow = mainTalkChara.transform.GetChild(1).gameObject.transform.GetChild(0);

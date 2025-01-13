@@ -31,7 +31,7 @@ public class InteractPhantomThiefGarden : MonoBehaviour, IReceiveSearch
         //2ŠK‚Ö‚ÌˆÚ“®‚ð’ñˆÄŒãƒAƒCƒeƒ€–³‚µ
         else if (gameManager.eventFlagData.F2Request)
         {
-            gameManager.OpenTextWindow(RequestClaerAfterText);
+            gameManager.OpenTextWindow(RequestClaerBeforText);
         }
         //2ŠK‚Ö‚ÌˆÚ“®‚ð’ñˆÄ
         else

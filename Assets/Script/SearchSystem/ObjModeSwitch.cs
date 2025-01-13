@@ -87,7 +87,7 @@ public class ObjModeSwitch : MonoBehaviour
         }
         else if (objType == ObjType.GardenPhantomThief)
         {
-            if (eventFlagData.AdventureStart && !eventFlagData.F2Intrusion)//’TõŠJn‚©‚ç2ŠKN“üŒã‚ÌŠÔ•\¦
+            if (eventFlagData.AdventureStart && eventFlagData.F2OpenPhantomThief && !eventFlagData.F2Intrusion)//’TõŠJn‚©‚ç2ŠKN“üŒã‚ÌŠÔ•\¦
             {
                 Befor.SetActive(false);
                 After.SetActive(true);
@@ -100,7 +100,7 @@ public class ObjModeSwitch : MonoBehaviour
         }
         else if (objType == ObjType.GardenArcher)
         {
-            if (eventFlagData.F2OpenArcher)//2ŠKN“üƒCƒxƒ“ƒg‚ÌŠÔ•\¦
+            if (eventFlagData.F2OpenArcher && !eventFlagData.F2Intrusion)//2ŠKN“üƒCƒxƒ“ƒg‚ÌŠÔ•\¦
             {
                 Befor.SetActive(false);
                 After.SetActive(true);

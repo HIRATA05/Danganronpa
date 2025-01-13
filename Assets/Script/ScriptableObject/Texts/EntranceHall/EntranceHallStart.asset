@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2184e32b683345418bba8483f1b682e, type: 3}
+  m_Name: EntranceHallStart
+  m_EditorClassIdentifier: 
+  textinfo: EntranceHallStart
+  textInfomations:
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u8868\u672D\u306B\u306F\u7384\u95A2\u30DB\u30FC\u30EB\u3063\u3066\u66F8\u3044\u3066\u3042\u3063\u305F\u304C\u2026"
+    colorType: 1
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u306A\u3093\u3060\u3088\u3053\u308C\u2026\uFF01"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u76EE\u306E\u524D\u306B\u306F\u5DE8\u5927\u306A\u9244\u306E\u6249\u304C\u305D\u3073\u3048\u305F\u3063\u3066\u3044\u305F\u2026"
+    colorType: 1
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u306A\u3042\u3001\u3053\u3053\u3063\u3066\u672C\u5F53\u306B\u7384\u95A2\u306A\u306E\u304B\uFF1F"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
+    paragraphs: "\u3046\u30FC\u3093\u3001\u3069\u3046\u306A\u3093\u3067\u3057\u3087\u3046\uFF1F"
+    colorType: 0
+    windowType: 0
+  - speakerName: ???
+    paragraphs: "\u3044\u3084\u3001\u3053\u3053\u306F\u7384\u95A2\u30DB\u30FC\u30EB\u3067\u9593\u9055\u3044\u306A\u3044\u3068\u601D\u3046\u306A\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u304A\u524D\u306F\uFF1F"
+    colorType: 0
+    windowType: 0
+  - speakerName: ???
+    paragraphs: "\u30DC\u30AF\u306E\u540D\u524D\u306F\u4E8C\u968E\u5802\u521D\u6D41\u4E43\u3002\u8D85\u9AD8\u6821\u7D1A\u306E\u602A\u76D7\u3055\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
+    paragraphs: "\u3048\u3048\uFF01\u602A\u76D7\uFF01\uFF1F"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u7434\u7947\u2026\u306A\u3093\u3067\u304A\u524D\u304C\u9A5A\u3044\u3066\u308B\u3093\u3060\uFF1F"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
+    paragraphs: "\u3048\u3063\u3068\u3001\u3060\u3063\u3066\u3055\u3063\u304D\u306F\u2026"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30CB\u30AB\u30A4\u30C9\u30A6 \u30CF\u30EB\u30CE"
+    paragraphs: "\u3075\u3075\u3001\u5197\u8AC7\u3060\u3088\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u5197\u8AC7\u3060\u3063\u3066\uFF1F"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30CB\u30AB\u30A4\u30C9\u30A6 \u30CF\u30EB\u30CE"
+    paragraphs: "\u672C\u5F53\u306F\u306D\u2026\u8D85\u9AD8\u6821\u7D1A\u306E\u2026\u624B\u54C1\u5E2B\u306A\u3093\u3060\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u624B\u54C1\u5E2B\uFF1F\u30DE\u30B8\u30C3\u30AF\u304C\u3067\u304D\u308B\u3063\u3066\u3053\u3068\u304B\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30CB\u30AB\u30A4\u30C9\u30A6 \u30CF\u30EB\u30CE"
+    paragraphs: "\u305D\u3046\u3060\u3088\u3001\u4EBA\u4F53\u5207\u65AD\u304B\u3089\u6C34\u4E2D\u8131\u51FA\u307E\u3067\u306A\u3093\u3067\u3082\u3054\u3056\u308C\u3055\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
+    paragraphs: "\u3042\u3063\uFF01\u3058\u3083\u3042\u3055\u3001\u4ECA\u306A\u306B\u304B\u62AB\u9732\u3067\u304D\u308B\u3082\u306E\u3063\u3066\u3042\u308B\u304B\u306A\u3002\n\u4E8C\u968E\u5802\u3055\u3093\u306E\u624B\u54C1\u898B\u3066\u307F\u305F\u3044\u3067\u3059\uFF01"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30CB\u30AB\u30A4\u30C9\u30A6 \u30CF\u30EB\u30CE"
+    paragraphs: "\u624B\u54C1\u306B\u306F\u7A2E\u3068\u4ED5\u639B\u3051\u304C\u5927\u4E8B\u3060\u304B\u3089\u306D\u2026\u30C8\u30E9\u30F3\u30D7\u304C\u4E00\u679A\u3082\u306A\u3044\u4ECA\u306F\u7121\u7406\u304B\u306A\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u305D\u3046\u304B\u2026\u305D\u308C\u306F\u6B8B\u5FF5\u3060\u306A\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30CB\u30AB\u30A4\u30C9\u30A6 \u30CF\u30EB\u30CE"
+    paragraphs: "\u3042\u3042\u3067\u3082\u3001\u3061\u3087\u3063\u3068\u3057\u305F\u96A0\u3057\u82B8\u306A\u3089\u3067\u304D\u308B\u3088\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
+    paragraphs: "\u672C\u5F53\uFF01\uFF1F"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30CB\u30AB\u30A4\u30C9\u30A6 \u30CF\u30EB\u30CE"
+    paragraphs: "\u30A4\u30BF\u30EA\u30A2\u306E\u53CB\u4EBA\u304B\u3089\u6559\u308F\u3063\u305F\u3082\u306E\u306A\u3093\u3060\u3051\u3069\u2026"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30CB\u30AB\u30A4\u30C9\u30A6 \u30CF\u30EB\u30CE"
+    paragraphs: "\u8033\u306E\u7A74\u306B\u8033\u3092\u5168\u90E8\u5165\u308C\u308B\u3063\u3066\u3082\u306E\u3055\u3002"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u3069\u3063\u304B\u306E\u30DE\u30F3\u30AC\u3067\u805E\u3044\u305F\u306A\u305D\u3046\u3044\u3046\u306E\u2026"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
+    paragraphs: "\u3084\u3063\u3071\u308A\u3044\u3044\u3067\u3059\u2026"
+    colorType: 0
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u4E8C\u968E\u5802\u521D\u6D41\u4E43\u2026\u5999\u306A\u611F\u3058\u3060\u304C\u3001\u60AA\u3044\u30E4\u30C4\u3067\u306F\u306A\u3055\u305D\u3046\u3060\u306A\u3002"
+    colorType: 1
+    windowType: 0

@@ -9,7 +9,8 @@ public class Garden : MonoBehaviour
     public string roomName;
 
     [SerializeField, Header("部屋の中での自動発生会話")] private DialogueText RoomFirstText;
-    [SerializeField] private DialogueText OpenText;
+    //[SerializeField] private DialogueText OpenText;
+    [SerializeField] private DialogueText MonokumaCallText;
 
     private GameManager gameManager;
     private EventFlagData eventFlagData;
@@ -31,11 +32,20 @@ public class Garden : MonoBehaviour
                 eventFlagData.RoomIn_Garden = true;
                 gameManager.OpenTextWindow(RoomFirstText);
             }
+            /*
             //2階開放イベント　2階開放がFalseで開放可能がTrueの時発生
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.F2Request && eventFlagData.F2Open)
+            else if (eventFlagData.currentRoom == roomName && !eventFlagData.F2Request && eventFlagData.F2Open)
             {
-                eventFlagData.WarehouseRequest = true;
+                eventFlagData.F2Request = true;
                 gameManager.OpenTextWindow(OpenText);
+            }
+            */
+            //自己紹介後呼び出し
+            if (eventFlagData.currentRoom == roomName && eventFlagData.SelfIntoro_All && !eventFlagData.SelfIntoro_Call)
+            {
+                Debug.Log("モノクマの登場");
+                eventFlagData.SelfIntoro_Call = true;
+                gameManager.OpenTextWindow(MonokumaCallText);
             }
         }
 

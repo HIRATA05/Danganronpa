@@ -31,6 +31,7 @@ public class EventFlagData : ScriptableObject
     public bool SelfIntoro_Hacker;
     public bool SelfIntoro_PhantomThief;
     public bool SelfIntoro_All;//全て完了
+    public bool SelfIntoro_Call;//全て完了後モノクマの呼び出し
 
     //モノクマ遭遇で探索開始後
     public bool AdventureStart;
@@ -48,9 +49,7 @@ public class EventFlagData : ScriptableObject
     [Header("中庭")]
     //ライトからバッテリー入手
     public bool BatteryInLight;
-    //
-
-    //2階開放のための弓道家への要請
+    //2階開放のための怪盗の提案
     public bool F2Request;
     //条件が揃って2階開放イベント発生可能
     public bool F2Open;
@@ -58,6 +57,8 @@ public class EventFlagData : ScriptableObject
     public bool RopeWindow;
     //2階侵入後
     public bool F2Intrusion;
+    //2階開放イベントの間怪盗表示
+    public bool F2OpenPhantomThief;
     //2階開放イベントの間弓道家表示
     public bool F2OpenArcher;
 
@@ -66,6 +67,10 @@ public class EventFlagData : ScriptableObject
     public bool IronBars;//鉄格子探索
     public bool WarehouseArcher;//倉庫にいる弓道家
     public bool IronBarsOpen;//鉄格子解除
+
+
+    //脱出イベント
+    public bool EscepeEvent;
 
     //Trueの時にイベントが発生
     [Header("室内に入った時に発生するシナリオフラグ")]
@@ -77,14 +82,17 @@ public class EventFlagData : ScriptableObject
     public bool RoomIn_Dining;
     //中庭に入った時
     public bool RoomIn_Garden;
+    //玄関ホールに入った時
+    public bool RoomIn_EntranceHall;
+    //体育館に入った時
+    public bool RoomIn_Gym;
     //倉庫に入った時
     public bool RoomIn_Warehouse;
+    //弓道場に入った時
+    public bool RoomIn_KyudoHall;
 
     public bool RoomIn;
     public void RoomIn_True() { RoomIn = true; }
     public void RoomIn_False() { RoomIn = false; }
-
-    //キャラの配置フラグ
-    
 
 }

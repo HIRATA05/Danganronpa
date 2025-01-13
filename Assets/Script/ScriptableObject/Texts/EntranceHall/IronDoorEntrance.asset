@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2184e32b683345418bba8483f1b682e, type: 3}
+  m_Name: IronDoorEntrance
+  m_EditorClassIdentifier: 
+  textinfo: IronDoorEntrance
+  textInfomations:
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u5DE8\u5927\u306A\u6249\u3060\u3002\u3069\u3046\u3084\u3063\u3066\u3082\u958B\u304D\u305D\u3046\u306B\u306A\u3044\u306A\u2026"
+    colorType: 1
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u3053\u306E\u5148\u306B\u51FA\u53E3\u304C\u3042\u308B\u306E\u3060\u308D\u3046\u304B\u2026"
+    colorType: 1
+    windowType: 0

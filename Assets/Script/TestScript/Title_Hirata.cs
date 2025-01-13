@@ -17,7 +17,11 @@ public class Title_Hirata : MonoBehaviour
     public void SceneMove()
     {
         //フラグを初期化
-        InitFlag.itemDataBase = new ItemDataBase();
+        for (int i = 0; i < InitFlag.itemDataBase.truthBullets.Count; i++)
+        {
+            InitFlag.itemDataBase.truthBullets[i].getFlag = false;
+        }
+        Debug.Log("フラグデータ");
         SaveFlag = InitFlag;
 
         SceneManager.LoadScene(NextScene);
