@@ -33,6 +33,9 @@ public class EventFlagData : ScriptableObject
     public bool SelfIntoro_All;//全て完了
     public bool SelfIntoro_Call;//全て完了後モノクマの呼び出し
 
+    //モノクマ登場
+    public bool AppMonokuma;
+
     //モノクマ遭遇で探索開始後
     public bool AdventureStart;
 

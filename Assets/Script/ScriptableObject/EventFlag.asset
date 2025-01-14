@@ -14,17 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentRoom: ClassRoom_F1
   itemDataBase: {fileID: 11400000, guid: 4d33a3ffe9762db44973a8f7ebbdf278, type: 2}
-  GameStart: 0
-  GameStart_Window: 1
-  GameStart_Monitor: 1
-  GameStart_Lacky: 1
+  GameStart: 1
+  GameStart_Window: 0
+  GameStart_Monitor: 0
+  GameStart_Lacky: 0
   GameStart_All: 0
-  GameStart_All_TalkStart: 1
+  GameStart_All_TalkStart: 0
   SelfIntoro_Archer: 0
   SelfIntoro_Hacker: 0
   SelfIntoro_PhantomThief: 0
   SelfIntoro_All: 0
   SelfIntoro_Call: 0
+  AppMonokuma: 0
   AdventureStart: 0
   DiningDiscStart: 0
   WarehouseRequest: 0
@@ -40,7 +41,7 @@ MonoBehaviour:
   WarehouseArcher: 0
   IronBarsOpen: 0
   EscepeEvent: 0
-  GameStart_ClassRoom: 0
+  GameStart_ClassRoom: 1
   RoomIn_Dining: 0
   RoomIn_Garden: 0
   RoomIn_EntranceHall: 0

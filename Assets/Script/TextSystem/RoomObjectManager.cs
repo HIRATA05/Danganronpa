@@ -29,7 +29,7 @@ public class RoomObjectManager : MonoBehaviour
         for (int i = 0; i < roomObject.Length; i++)
         {
             //nullである場合はプライオリティをゼロ
-            if (CameraObject == null)
+            if (CameraObject == null || !CameraObject.activeSelf)
             {
                 CameraNumberCheck(roomObject[i], CameraNum, priorityOff);
 

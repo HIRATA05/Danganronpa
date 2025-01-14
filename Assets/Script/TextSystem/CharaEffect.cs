@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharaEffect : MonoBehaviour
@@ -31,7 +32,7 @@ public class CharaEffect : MonoBehaviour
 
     //引数は表情を変化させるキャラ、オブジェクトがキャラかどうか判別
     //スプライトを別の表情画像に変化
-    public void FaceChange_Normal(GameObject chara)
+    public void ChangeFace_Normal(GameObject chara)
     {
         //CharaFaceChangeがアタッチされているか確認
         if(chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -40,7 +41,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceNormal();
         }
     }
-    public void FaceChange_Talk(GameObject chara)
+    public void ChangeFace_Talk(GameObject chara)
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -175,20 +176,6 @@ public class CharaEffect : MonoBehaviour
         gameManager.playerController = GameManager.PlayerController.TextWindowMode;
     }
 
-    //印象的な発言の時に発生する白いフェード
-    //SEを発生させ一瞬画像を白くして元に戻す
-    public void ImageFedeWhite(Image charaImage)
-    {
-        //色を取得
-        Color color = charaImage.color;
-
-        //SE発生
-
-
-        //画像のフェード処理
-
-    }
-
     //SEを発生させる
 
 
@@ -230,5 +217,11 @@ public class CharaEffect : MonoBehaviour
         //切り替え後に変化
         objModeSwitch.DisplayObjSwitch();
     }*/
+
+    //エンディングシーンに遷移
+    public void CallEndingScene()
+    {
+        SceneManager.LoadScene(gameManager.EndingScene);
+    }
 
 }

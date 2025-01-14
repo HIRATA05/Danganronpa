@@ -11,6 +11,7 @@ public class EntranceHall : MonoBehaviour
 
     [SerializeField, Header("部屋の中での自動発生会話")] private DialogueText RoomFirstText;
     [SerializeField] private DialogueText EscepeText;
+    [SerializeField] private DialogueText MonokumaCallText;
 
     private GameManager gameManager;
     private EventFlagData eventFlagData;
@@ -31,6 +32,13 @@ public class EntranceHall : MonoBehaviour
             {
                 eventFlagData.RoomIn_EntranceHall = true;
                 gameManager.OpenTextWindow(RoomFirstText);
+            }
+            //自己紹介後呼び出し
+            if (eventFlagData.currentRoom == roomName && eventFlagData.SelfIntoro_All && !eventFlagData.SelfIntoro_Call)
+            {
+                Debug.Log("モノクマの登場");
+                eventFlagData.SelfIntoro_Call = true;
+                gameManager.OpenTextWindow(MonokumaCallText);
             }
             //脱出スイッチ入手後
             if (gameManager.eventFlagData.itemDataBase.truthBullets[8].getFlag && !gameManager.eventFlagData.EscepeEvent)

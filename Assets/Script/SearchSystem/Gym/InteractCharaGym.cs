@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractPhantomThiefEntranceHall : MonoBehaviour, IReceiveSearch
+public class InteractCharaGym : MonoBehaviour, IReceiveSearch
 {
-    //玄関ホールの
+    //体育館のキャラ
 
     [SerializeField] private DialogueText NormalText;
 
@@ -15,6 +15,7 @@ public class InteractPhantomThiefEntranceHall : MonoBehaviour, IReceiveSearch
         //場合によってはフラグによって条件分岐
 
         gameManager.OpenTextWindow(NormalText);
+
     }
 
     void Start()
@@ -25,16 +26,11 @@ public class InteractPhantomThiefEntranceHall : MonoBehaviour, IReceiveSearch
 
     void Update()
     {
-        //探索開始前や脱出時表示する
-        if (!gameManager.eventFlagData.AdventureStart)
+        //探索開始前は表示する
+        if (gameManager.eventFlagData.AdventureStart)
         {
-            gameObject.SetActive(true);
+            if(gameObject.activeSelf)
+                gameObject.SetActive(false);
         }
-        /*
-        if (gameManager.eventFlagData.itemDataBase.truthBullets[8].getFlag)
-        {
-            gameObject.SetActive(true);
-        }
-        */
     }
 }

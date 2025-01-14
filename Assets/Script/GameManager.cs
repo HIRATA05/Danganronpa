@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
     //会話との間に待機時間が発生するイベントフラグ
     [NonSerialized] public static bool isTalkPause = false;
 
+    //エンディングシーン
+    public string EndingScene = "EndingScene";
+
     //キーインプット
     private float keyElapsedTime = 0;
     private float keyWaitTime = 0.5f;

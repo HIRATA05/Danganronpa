@@ -17,12 +17,16 @@ public class ObjModeSwitch : MonoBehaviour
     //オブジェクトの種類
     public enum ObjType
     {
+        GameStartGym,//体育館のキャラ表示
+        MonokumaGym,//体育館のモノクマ表示
         Digitalclock,//時計
         WarehouseArcher,//倉庫の弓道家
         RopeWindow,//中庭の窓
         GardenHacker,//中庭のハッカー
         GardenPhantomThief,//中庭の怪盗
         GardenArcher,//中庭の弓道家
+
+        Ending//脱出
     }
     public ObjType objType;
 
@@ -33,7 +37,33 @@ public class ObjModeSwitch : MonoBehaviour
         gameManager = gm.GetComponent<GameManager>();
         eventFlagData = gameManager.eventFlagData;
         //フラグによって表示するオブジェクトを変える
-        if (objType == ObjType.Digitalclock)
+        if (objType == ObjType.GameStartGym)
+        {
+            if (eventFlagData.AdventureStart)
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+        else if (objType == ObjType.MonokumaGym)
+        {
+            if (eventFlagData.AppMonokuma)
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+        else if (objType == ObjType.Digitalclock)
         {
             if (eventFlagData.Digitalclock)
             {
@@ -112,6 +142,19 @@ public class ObjModeSwitch : MonoBehaviour
             }
         }
 
+        else if (objType == ObjType.Ending)
+        {
+            if (eventFlagData.itemDataBase.truthBullets[8].getFlag)//脱出イベント時表示
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
     }
 
     void Update()
@@ -123,11 +166,19 @@ public class ObjModeSwitch : MonoBehaviour
     public void DisplayObjSwitch()
     {
         //設定されら種類によって変更するフラグを変化
-        if(objType == ObjType.Digitalclock)
+        if (objType == ObjType.GameStartGym)
+        {
+            eventFlagData.AdventureStart = true;
+        }
+        else if (objType == ObjType.MonokumaGym)
+        {
+            eventFlagData.AppMonokuma = true;
+        }
+        else if (objType == ObjType.Digitalclock)
         {
             eventFlagData.Digitalclock = true;
         }
-        if (objType == ObjType.WarehouseArcher)
+        else if (objType == ObjType.WarehouseArcher)
         {
             eventFlagData.WarehouseArcher = true;
         }
