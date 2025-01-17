@@ -1,0 +1,32 @@
+[Info]
+Version = 3
+
+[Object]
+Acs1 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\BathMirror.x
+Pmd2 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\Šó–]ƒ–•ôŠw‰€ŠñhÉ100.pmx
+Acs3 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\StandMirror.x
+Acs4 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\screen.x
+
+[Effect]
+Default = none
+Acs1 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\BathMirror.fx
+Pmd2 = none
+Acs3 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\StandMirror.fx
+Acs4 = none
+
+[Effect@MirrorWFRT]
+Owner = Acs1
+Acs1 = none
+Acs1.show = false
+Pmd2 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\MirrorWF_v005\Bath_MWF_Object.fxsub
+Acs3 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\MirrorWF_v005\Bath_MWF_Object.fxsub
+Acs4 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\MirrorWF_v005\Bath_MWF_Object.fxsub
+
+[Effect@MirrorWFRT(1)]
+Owner = Acs3
+Acs1 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\MirrorWF_v005\Stand_MWF_Object.fxsub
+Pmd2 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\MirrorWF_v005\Stand_MWF_Object.fxsub
+Acs3 = none
+Acs3.show = false
+Acs4 = D:\blender\58_DanganRoom\Šó–]ƒ–•ôŠw‰€ŠñhÉ_100\MirrorWF_v005\Stand_MWF_Object.fxsub
+
