@@ -9,6 +9,7 @@ public class Gym : MonoBehaviour
     public string roomName;
 
     [SerializeField, Header("部屋の中での自動発生会話")] private DialogueText RoomFirstText;
+    [SerializeField] private DialogueText AppMonokumaAfterText;
 
     private GameManager gameManager;
     private EventFlagData eventFlagData;
@@ -29,6 +30,12 @@ public class Gym : MonoBehaviour
             {
                 eventFlagData.RoomIn_Gym = true;
                 gameManager.OpenTextWindow(RoomFirstText);
+            }
+            //モノクマの話終了後
+            if(eventFlagData.currentRoom == roomName && !eventFlagData.AppMonokumaAfter)
+            {
+                eventFlagData.AppMonokumaAfter = true;
+                gameManager.OpenTextWindow(AppMonokumaAfterText);
             }
         }
     }

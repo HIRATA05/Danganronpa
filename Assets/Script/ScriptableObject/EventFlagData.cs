@@ -35,7 +35,8 @@ public class EventFlagData : ScriptableObject
 
     //モノクマ登場
     public bool AppMonokuma;
-
+    //モノクマ退場
+    public bool AppMonokumaAfter;
     //モノクマ遭遇で探索開始後
     public bool AdventureStart;
 
