@@ -15,7 +15,7 @@ public class DiscussionTalkModeWindow : MonoBehaviour
     [SerializeField] private DiscussionManager discussionManager;
     [SerializeField] private DiscussionEventManager discussionEventManager;
 
-    public DialogueText dialogueText;
+    /*[NonSerialized] */public DialogueText dialogueText;
 
     [SerializeField] private GameObject panelObject;
     [SerializeField] private TextMeshProUGUI speakerNameText;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8cb2779159fcd4390adc7ed44dd5be, type: 3}
   m_Name: KeyDataProcessingRoom
   m_EditorClassIdentifier: 
-  id: 7
+  id: 8
   bulletName: "\u60C5\u5831\u51E6\u7406\u5BA4\u306E\u9375"
   getFlag: 0
   infomation: "\u60C5\u5831\u51E6\u7406\u5BA4\u3092\u958B\u304F\u305F\u3081\u306E\u9375"

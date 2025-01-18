@@ -13,6 +13,7 @@ public class EventFlagData : ScriptableObject
     //アイテム
     [Header("アイテム")]
     public ItemDataBase itemDataBase;
+    public bool EscepeSwitch;
 
     //シナリオ進行のためのフラグ設定
     [Header("シナリオフラグ")]

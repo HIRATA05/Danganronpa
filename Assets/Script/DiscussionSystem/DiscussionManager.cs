@@ -30,7 +30,7 @@ public class DiscussionManager : MonoBehaviour
         Shooting,//ノンストップ議論
         Effect//議論中演出
     }
-    [NonSerialized] public DiscussionMode discussion;
+    [NonSerialized] public DiscussionMode discussion = DiscussionMode.Effect;
 
     //議論場所の中心点
     [SerializeField] private GameObject centerDiscussionPoint;
@@ -186,6 +186,7 @@ public class DiscussionManager : MonoBehaviour
             gameManager.OpenDiscussionWindow(DiscussionStartText, DiscussionTalkModeWindow.TalkFinish.DiscussionMode);
             //ノンストップ議論の開始
             discussion = DiscussionMode.Talk;
+            Debug.Log("=DiscussionInit完了=");
         }
 
     }
@@ -548,6 +549,7 @@ public class DiscussionManager : MonoBehaviour
     //議論フェイズの初期化を発生させるフラグ
     public void DiscInitCallOn()
     {
+        Debug.Log("議論初期化");
         isDiscussionInitCalled = false;
     }
 

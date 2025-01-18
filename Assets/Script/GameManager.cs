@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        /*
         //キーインプットの計測開始
         if (keyElapsed)
         {
@@ -102,7 +103,7 @@ public class GameManager : MonoBehaviour
                 keyElapsed = false;
             }
         }
-        
+        */
     }
 
 
@@ -134,11 +135,12 @@ public class GameManager : MonoBehaviour
         //フェードイン完了まで待機
         await UniTask.WaitUntil(() => fadeComp);
 
-        playerController = PlayerController.DiscussionMode;
+        
         //シーン切り替え
         SwitchScene();
         //フェードアウトさせる
         StartCoroutine(FadeScreen(false));
+        playerController = PlayerController.DiscussionMode;
         //議論開始を呼び出す
         disussionManager.DiscInitCallOn();
     }

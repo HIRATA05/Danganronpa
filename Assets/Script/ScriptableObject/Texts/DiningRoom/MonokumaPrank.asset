@@ -99,7 +99,7 @@ MonoBehaviour:
     colorType: 0
     windowType: 0
   - speakerName: 
-    paragraphs: "\u30B3\u30C8\u30C0\u30DE\uFF62\u30E2\u30CE\u30AF\u30DE\u306E\u69CB\u9020\uFF63\u3092\u53D6\u5F97\u3057\u307E\u3057\u305F"
+    paragraphs: "\u30B3\u30C8\u30C0\u30DE \u30E2\u30CE\u30AF\u30DE\u306E\u69CB\u9020\u3092\u53D6\u5F97\u3057\u307E\u3057\u305F"
     colorType: 0
     windowType: 0
   - speakerName: "\u30E2\u30CE\u30AF\u30DE"

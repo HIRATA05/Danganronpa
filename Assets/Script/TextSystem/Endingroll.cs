@@ -24,7 +24,7 @@ public class Endingroll : MonoBehaviour
         if (rectTransform.anchoredPosition.y < Endpos)
         {
 
-            Staffrollposition.y += 0.1f;
+            Staffrollposition.y += 0.5f;
             rectTransform.anchoredPosition = Staffrollposition;
         }
         else

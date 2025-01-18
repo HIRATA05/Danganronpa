@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b8cb2779159fcd4390adc7ed44dd5be, type: 3}
-  m_Name: EscapeButton
+  m_Name: Korosiai
   m_EditorClassIdentifier: 
-  id: 9
-  bulletName: "\u8131\u51FA\u30DC\u30BF\u30F3"
+  id: 7
+  bulletName: "\u30B3\u30ED\u30B7\u30A2\u30A4\u5B66\u5712\u751F\u6D3B\u306E\u60C5\u5831"
   getFlag: 0
-  infomation: "\u7384\u95A2\u30DB\u30FC\u30EB\u306E\u6249\u3092\u958B\u3051\u308B\u30DC\u30BF\u30F3"
+  infomation: "\u30B3\u30ED\u30B7\u30A2\u30A4\u5B66\u5712\u751F\u6D3B\u306F\u904E\u53BB\u4F55\u5EA6\u3082\u7E70\u308A\u8FD4\u3055\u308C\u3066\u304D\u305F\u3002\n\u5B66\u5712\u306E\u4E2D\u306B\u9ED2\u5E55\u304C\u6F5C\u3093\u3067\u3044\u308B\u3089\u3057\u3044\u3002"

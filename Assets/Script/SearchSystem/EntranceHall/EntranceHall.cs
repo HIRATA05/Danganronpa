@@ -41,7 +41,7 @@ public class EntranceHall : MonoBehaviour
                 gameManager.OpenTextWindow(MonokumaCallText);
             }
             //脱出スイッチ入手後
-            if (gameManager.eventFlagData.itemDataBase.truthBullets[8].getFlag && !gameManager.eventFlagData.EscepeEvent)
+            if (gameManager.eventFlagData.EscepeSwitch && !gameManager.eventFlagData.EscepeEvent)
             {
                 gameManager.eventFlagData.EscepeEvent = true;
                 gameManager.OpenTextWindow(EscepeText);
