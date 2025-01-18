@@ -94,6 +94,8 @@ public class EventFlagData : ScriptableObject
     public bool RoomIn_Warehouse;
     //‹|“¹ê‚É“ü‚Á‚½
     public bool RoomIn_KyudoHall;
+    //}‘º
+    public bool RoomIn_Library;
 
     public bool RoomIn;
     public void RoomIn_True() { RoomIn = true; }

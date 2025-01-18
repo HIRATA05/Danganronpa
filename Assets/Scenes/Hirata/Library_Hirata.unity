@@ -1451,9 +1451,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1012836442}
   - component: {fileID: 1012836444}
+  - component: {fileID: 1012836445}
   - component: {fileID: 1012836443}
   m_Layer: 0
-  m_Name: BookShelf (1)
+  m_Name: BookShelf
   m_TagString: SearchObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1513,6 +1514,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1012836445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012836441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a12b794d229cb8479900b766f4100ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NormalText: {fileID: 11400000, guid: 6ad7a004a0a4af542a0d9411087cebf6, type: 2}
+  AfterText: {fileID: 11400000, guid: a4bb122907499b548ab98e4b10570767, type: 2}
 --- !u!1 &1210140654
 GameObject:
   m_ObjectHideFlags: 3
@@ -2006,7 +2021,7 @@ GameObject:
   - component: {fileID: 1463513492}
   - component: {fileID: 1463513491}
   m_Layer: 0
-  m_Name: BookShelf
+  m_Name: BookShelfNoInfo
   m_TagString: SearchObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2892,8 +2907,30 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1975996565253779075, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 358458086}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8005347477244031400, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1791918661}
   m_SourcePrefab: {fileID: 100100000, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+--- !u!1 &1791918660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8005347477244031400, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+  m_PrefabInstance: {fileID: 1791918659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1791918661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791918660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd03b52b58a637547a9a7e4425c45eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomName: Library
+  RoomFirstText: {fileID: 11400000, guid: dd4d8c46b29bde74da8cadcf2f519ea8, type: 2}
 --- !u!1 &1800054750
 GameObject:
   m_ObjectHideFlags: 0
