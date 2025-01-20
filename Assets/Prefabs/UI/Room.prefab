@@ -173,6 +173,81 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 6893434077352401235}
+--- !u!1 &120205315891571340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8931983429746597536}
+  - component: {fileID: 6105336041979171353}
+  - component: {fileID: 4439152356552068353}
+  m_Layer: 5
+  m_Name: SpeecherNameWindow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8931983429746597536
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120205315891571340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8307769753341202566}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 560, y: 94.99603}
+  m_SizeDelta: {x: 306.2234, y: 64.619}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6105336041979171353
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120205315891571340}
+  m_CullTransparentMesh: 1
+--- !u!114 &4439152356552068353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120205315891571340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &221731011501698270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &203671560327614207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3130,6 +3205,12 @@ MonoBehaviour:
   textWindowNormal: {fileID: 21300000, guid: bfe277e3186c20949841a453a2370628, type: 3}
   textWindowDark: {fileID: 21300000, guid: 1a090898c9b2cc548be0e29b17bd95e0, type: 3}
   speakerNameText: {fileID: 7100789483767325297}
+  speakerName: {fileID: 4439152356552068353}
+  speakerNameDetective: {fileID: 21300000, guid: bf1698520bef33e40acfe4165c46d4e0, type: 3}
+  speakerNameLacky: {fileID: 21300000, guid: eef104b7188dc4c43875c11bbe1d9702, type: 3}
+  speakerNameHacker: {fileID: 21300000, guid: b1d4bf5ebe5e4614ba1fd115fcb4a030, type: 3}
+  speakerNameArcher: {fileID: 21300000, guid: 388b2be95e71b4f489bd90fd71aec665, type: 3}
+  speakerNameThief: {fileID: 21300000, guid: 71e37ac864fd68e4d963bb41e5bc8a69, type: 3}
   speakerDialogueText: {fileID: 3410903957772566617}
   mainTalkChara: {fileID: 5745755847721061325}
   TaklCamera_1: {fileID: 5184522596988737401}
@@ -3907,6 +3988,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4967163763820086468}
+  - {fileID: 8931983429746597536}
   - {fileID: 203671560327614207}
   m_Father: {fileID: 2687391621708655270}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

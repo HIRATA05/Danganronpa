@@ -28,6 +28,13 @@ public class TextWindow : MonoBehaviour
     [SerializeField] private Sprite textWindowDark;
 
     [SerializeField, Header("話者")] private TextMeshProUGUI speakerNameText;
+    [SerializeField, Header("話者の名前画像")] private Image speakerName;
+    [SerializeField] private Sprite speakerNameDetective;//探偵
+    [SerializeField] private Sprite speakerNameLacky;//幸運
+    [SerializeField] private Sprite speakerNameHacker;//ハッカー
+    [SerializeField] private Sprite speakerNameArcher;//弓道家
+    [SerializeField] private Sprite speakerNameThief;//怪盗
+
     [SerializeField, Header("テキスト")] private TextMeshProUGUI speakerDialogueText;
     int index = 0;
     bool isTyping;
@@ -247,7 +254,27 @@ public class TextWindow : MonoBehaviour
             }
 
             //話者の名前を表示
-            speakerNameText.text = dialogueText.textInfomations[index].speakerName;
+            //speakerNameText.text = dialogueText.textInfomations[index].speakerName;
+            if(dialogueText.textInfomations[index].speakerName == "シノノメ トオル")
+            {
+                speakerName.sprite = speakerNameDetective;
+            }
+            else if (dialogueText.textInfomations[index].speakerName == "コトギ マナ")
+            {
+                speakerName.sprite = speakerNameLacky;
+            }
+            else if (dialogueText.textInfomations[index].speakerName == "ミナセ ツミカ")
+            {
+                speakerName.sprite = speakerNameHacker;
+            }
+            else if (dialogueText.textInfomations[index].speakerName == "レイゼイ リン")
+            {
+                speakerName.sprite = speakerNameArcher;
+            }
+            else if (dialogueText.textInfomations[index].speakerName == "ニカイドウ ハルノ")
+            {
+                speakerName.sprite = speakerNameThief;
+            }
 
             //一瞬非表示
             UIWindowActive(false);

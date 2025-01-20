@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BookShelfLibrary : MonoBehaviour, IReceiveSearch
+public class InteractLibraryBook : MonoBehaviour, IReceiveSearch
 {
     //}‘º‚Ì–{’I
 
@@ -16,11 +16,11 @@ public class BookShelfLibrary : MonoBehaviour, IReceiveSearch
     public void ReceiveSearch()
     {
         //ê‡‚É‚æ‚Á‚Ä‚Íƒtƒ‰ƒO‚É‚æ‚Á‚ÄğŒ•ªŠò
-        
+
         //
-        if (gameManager.eventFlagData.F2Request && !Search)
+        if (!gameManager.eventFlagData.LibraryBook)
         {
-            Search = true;
+            gameManager.eventFlagData.LibraryBook = true;
             gameManager.OpenTextWindow(NormalText);
         }
         else
@@ -38,6 +38,6 @@ public class BookShelfLibrary : MonoBehaviour, IReceiveSearch
 
     void Update()
     {
-
+        
     }
 }

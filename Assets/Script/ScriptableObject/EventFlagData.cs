@@ -73,6 +73,10 @@ public class EventFlagData : ScriptableObject
     public bool WarehouseArcher;//‘qŒÉ‚É‚¢‚é‹|“¹‰Æ
     public bool IronBarsOpen;//“SŠiq‰ğœ
 
+    //}‘º
+    [Header("}‘º")]
+    public bool BookShelf;//–{’I
+    public bool LibraryBook;//–{
 
     //’EoƒCƒxƒ“ƒg
     public bool EscepeEvent;

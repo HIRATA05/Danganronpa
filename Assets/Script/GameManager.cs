@@ -140,9 +140,11 @@ public class GameManager : MonoBehaviour
         SwitchScene();
         //フェードアウトさせる
         StartCoroutine(FadeScreen(false));
-        playerController = PlayerController.DiscussionMode;
+        
         //議論開始を呼び出す
         disussionManager.DiscInitCallOn();
+
+        playerController = PlayerController.DiscussionMode;
     }
 
     //探索シーンと議論シーンの切り替え
