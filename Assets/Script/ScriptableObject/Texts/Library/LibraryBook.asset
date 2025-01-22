@@ -13,4 +13,104 @@ MonoBehaviour:
   m_Name: LibraryBook
   m_EditorClassIdentifier: 
   textinfo: LibraryBook
-  textInfomations: []
+  textInfomations:
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0

@@ -13,4 +13,76 @@ MonoBehaviour:
   m_Name: BookShelf
   m_EditorClassIdentifier: 
   textinfo: BookShelf
-  textInfomations: []
+  textInfomations:
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0

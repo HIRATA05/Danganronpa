@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: BookShelfAfter
   m_EditorClassIdentifier: 
   textinfo: BookShelfAfter
-  textInfomations: []
+  textInfomations:
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0

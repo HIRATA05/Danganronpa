@@ -540,6 +540,9 @@ public class DiscussionManager : MonoBehaviour
         //UIを非表示
         discussionUI.DiscussionDispUI(false);
 
+        //現在のライフに従ってスコアを減らす
+        discussionUI.LifeCountScoreUp();
+
         //議論終了後の会話データを入れる
         gameManager.OpenDiscussionWindow(DiscussionFinishText, DiscussionTalkModeWindow.TalkFinish.AdventureMode);
         //会話開始

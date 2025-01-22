@@ -77,6 +77,8 @@ public class EventFlagData : ScriptableObject
     [Header("図書室")]
     public bool BookShelf;//本棚
     public bool LibraryBook;//本
+    public bool DuraluminCaseInteract;//ケース
+    public bool DuraluminCaseLogic;//ケース謎解き前
 
     //脱出イベント
     public bool EscepeEvent;
@@ -105,5 +107,8 @@ public class EventFlagData : ScriptableObject
     public bool RoomIn;
     public void RoomIn_True() { RoomIn = true; }
     public void RoomIn_False() { RoomIn = false; }
+
+    //リザルトのスコア
+    [Header("スコア")] public int Score = 0;
 
 }

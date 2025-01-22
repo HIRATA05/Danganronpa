@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     private TextWindow textWindow;
     private ReticleAim reticleAim;
-    private DiscussionManager disussionManager;
+    [NonSerialized] public DiscussionManager disussionManager;
     private DiscussionTalkModeWindow discussionTalkModeWindow;
 
     public EventFlagData eventFlagData;

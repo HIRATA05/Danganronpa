@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: LibraryWindow
   m_EditorClassIdentifier: 
   textinfo: LibraryWindow
-  textInfomations: []
+  textInfomations:
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0
+  - speakerName: 
+    paragraphs: 
+    colorType: 0
+    windowType: 0

@@ -11,8 +11,6 @@ public class InteractLibraryBook : MonoBehaviour, IReceiveSearch
 
     private GameManager gameManager;
 
-    bool Search = false;
-
     public void ReceiveSearch()
     {
         //ê‡‚É‚æ‚Á‚Ä‚Íƒtƒ‰ƒO‚É‚æ‚Á‚ÄğŒ•ªŠò
