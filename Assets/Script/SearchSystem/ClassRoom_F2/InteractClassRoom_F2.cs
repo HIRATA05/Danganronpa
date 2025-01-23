@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractBookShelfNoInfoLibrary : MonoBehaviour, IReceiveSearch
+public class InteractClassRoom_F2 : MonoBehaviour, IReceiveSearch
 {
-    //}‘º‚Ì–{’I
+    //2ŠK‹³º‚ÌƒCƒxƒ“ƒg–³‚µ’Tõƒ|ƒCƒ“ƒg
 
-    [SerializeField] private DialogueText NormalText; //}‘º‚Ì–{’I
+    [SerializeField] private DialogueText NormalText;
 
 
     private GameManager gameManager;
@@ -27,6 +27,6 @@ public class InteractBookShelfNoInfoLibrary : MonoBehaviour, IReceiveSearch
 
     void Update()
     {
-
+        
     }
 }

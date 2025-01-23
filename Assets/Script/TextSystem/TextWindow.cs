@@ -275,6 +275,10 @@ public class TextWindow : MonoBehaviour
             {
                 speakerName.sprite = speakerNameThief;
             }
+            else
+            {
+                speakerName.sprite = null;
+            }
 
             //ˆêu”ñ•\¦
             UIWindowActive(false);

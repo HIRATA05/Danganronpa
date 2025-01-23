@@ -102,6 +102,18 @@ public class FlagChangeEffect : MonoBehaviour
     {
         eventFlagData.itemDataBase.truthBullets[5].getFlag = true;
     }
+    public void TruesBulletGet_NotePc()
+    {
+        eventFlagData.itemDataBase.truthBullets[6].getFlag = true;
+    }
+    public void TruesBulletGet_Korosiai()
+    {
+        eventFlagData.itemDataBase.truthBullets[7].getFlag = true;
+    }
+    public void TruesBulletGet_Key()
+    {
+        eventFlagData.itemDataBase.truthBullets[8].getFlag = true;
+    }
 
     //©ŒÈĞ‰î
     public void SelfIntoro_Archer_True()
@@ -158,4 +170,24 @@ public class FlagChangeEffect : MonoBehaviour
             eventFlagData.F2Open = true;
         }
     }
+    //2ŠK‹³º’Ê‹CŒû’Tõ
+    public void ClassRoomF2_Vent_True()
+    {
+        eventFlagData.ClassRoomF2_Vent = true;
+    }
+    //2ŠK‹³º’Ê‹CŒû’Tõ
+    public void ClassRoomF2_Window_True()
+    {
+        eventFlagData.ClassRoomF2_Window = true;
+    }
+    //}‘º‚Ì–{’I‚ğ’TõA‹@ŠBHìº‚Ö
+    public void MemoMachineWork_True()
+    {
+        eventFlagData.MemoMachineWork = true;
+    }
+    //ƒnƒbƒJ[‚Ö‹¦—Í—v¿
+
+    //ƒvƒŒƒX‚Åƒ‚ƒmƒNƒ}”j‰ó
+
+    
 }

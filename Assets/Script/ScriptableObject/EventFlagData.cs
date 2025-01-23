@@ -73,12 +73,28 @@ public class EventFlagData : ScriptableObject
     public bool WarehouseArcher;//倉庫にいる弓道家
     public bool IronBarsOpen;//鉄格子解除
 
+    //2階教室
+    [Header("2階教室")]
+    public bool ClassRoomF2StartPhantomThief;//2階教室イベント最初の怪盗
+    public bool ClassRoomF2_Vent;//2階教室の通気口探索
+    public bool ClassRoomF2_Window;//2階教室の窓探索
+    public bool ClassRoomF2_All;//2階教室の全探索
+    public bool ClassRoomF2_All_TalkStart;//2階教室の全探索後の会話発生
+
     //図書室
     [Header("図書室")]
     public bool BookShelf;//本棚
     public bool LibraryBook;//本
     public bool DuraluminCaseInteract;//ケース
     public bool DuraluminCaseLogic;//ケース謎解き前
+    public bool MemoMachineWork;//本棚探索後
+
+    //機械工作室
+    [Header("機械工作室")]
+    public bool PressMachineLock;//プレス機ロック確認
+    public bool HackerPressMachineRequest;//ハッカーへ協力要請
+
+    public bool PressMachineShelfUnlock;//プレスでモノクマ破壊機械工作室棚解除
 
     //脱出イベント
     public bool EscepeEvent;
@@ -101,6 +117,8 @@ public class EventFlagData : ScriptableObject
     public bool RoomIn_Warehouse;
     //弓道場に入った時
     public bool RoomIn_KyudoHall;
+    //2階教室
+    public bool RoomIn_ClassRoom_F2;
     //図書室
     public bool RoomIn_Library;
 

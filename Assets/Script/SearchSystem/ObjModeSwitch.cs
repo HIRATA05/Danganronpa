@@ -25,6 +25,8 @@ public class ObjModeSwitch : MonoBehaviour
         GardenHacker,//’†’ë‚ÌƒnƒbƒJ[
         GardenPhantomThief,//’†’ë‚Ì‰ö“
         GardenArcher,//’†’ë‚Ì‹|“¹‰Æ
+        ClassRoomF2PhantomThief,//2ŠK‹³º‚Ì‰ö“
+        ClassRoomF2Lacky,//2ŠK‹³º‚ÌK‰^
 
         Ending//’Eo
     }
@@ -141,6 +143,32 @@ public class ObjModeSwitch : MonoBehaviour
                 After.SetActive(false);
             }
         }
+        else if (objType == ObjType.ClassRoomF2PhantomThief)
+        {
+            if (eventFlagData.ClassRoomF2StartPhantomThief)//2ŠKN“üŒãÅ‰‚¾‚¯•\¦
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+        else if (objType == ObjType.ClassRoomF2Lacky)
+        {
+            if (eventFlagData.ClassRoomF2_All)//2ŠK‹³º’TõŒã•\¦
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
 
         else if (objType == ObjType.Ending)
         {
@@ -189,6 +217,14 @@ public class ObjModeSwitch : MonoBehaviour
         else if (objType == ObjType.GardenArcher)
         {
             eventFlagData.F2OpenArcher = true;
+        }
+        else if (objType == ObjType.ClassRoomF2PhantomThief)
+        {
+            eventFlagData.ClassRoomF2StartPhantomThief = true;
+        }
+        else if (objType == ObjType.ClassRoomF2Lacky && eventFlagData.ClassRoomF2_Vent && eventFlagData.ClassRoomF2_Window)
+        {
+            eventFlagData.ClassRoomF2_All = true;
         }
 
         Befor.SetActive(false);

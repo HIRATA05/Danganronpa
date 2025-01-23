@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16632fd449f146949a0131af5ff9d9e8, type: 3}
   m_Name: EventFlag
   m_EditorClassIdentifier: 
-  currentRoom: Dining
+  currentRoom: ClassRoom_F2
   itemDataBase: {fileID: 11400000, guid: 4d33a3ffe9762db44973a8f7ebbdf278, type: 2}
   EscepeSwitch: 0
   GameStart: 1
@@ -42,6 +42,19 @@ MonoBehaviour:
   IronBars: 1
   WarehouseArcher: 0
   IronBarsOpen: 0
+  ClassRoomF2StartPhantomThief: 1
+  ClassRoomF2_Vent: 0
+  ClassRoomF2_Window: 0
+  ClassRoomF2_All: 0
+  ClassRoomF2_All_TalkStart: 0
+  BookShelf: 0
+  LibraryBook: 0
+  DuraluminCaseInteract: 0
+  DuraluminCaseLogic: 0
+  MemoMachineWork: 0
+  PressMachineLock: 0
+  HackerPressMachineRequest: 0
+  PressMachineShelfUnlock: 0
   EscepeEvent: 0
   GameStart_ClassRoom: 1
   RoomIn_Dining: 1
@@ -50,5 +63,7 @@ MonoBehaviour:
   RoomIn_Gym: 0
   RoomIn_Warehouse: 0
   RoomIn_KyudoHall: 0
+  RoomIn_ClassRoom_F2: 0
   RoomIn_Library: 0
   RoomIn: 1
+  Score: 0

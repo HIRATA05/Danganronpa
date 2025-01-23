@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2184e32b683345418bba8483f1b682e, type: 3}
-  m_Name: LibraryBookAfter
+  m_Name: WindowClassRoom_F2
   m_EditorClassIdentifier: 
-  textinfo: LibraryBookAfter
+  textinfo: WindowClassRoom_F2
   textInfomations:
   - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
-    paragraphs: "\u5E0C\u671B\u30F6\u5CF0\u5B66\u5712\u516C\u5F0F\u8CC7\u6599\u2026\n\u4FFA\u306E\u77E5\u3089\u306A\u3044\u8D85\u9AD8\u6821\u7D1A\u306B\u3064\u3044\u3066\u66F8\u304B\u308C\u305F\u672C\u3060\u3002"
+    paragraphs: "\u3053\u3053\u304B\u3089\u767B\u3063\u3066\u304D\u305F\u3093\u3060\u3088\u306A\u3002"
     colorType: 1
     windowType: 0
   - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
-    paragraphs: "\u3053\u308C\u306B\u66F8\u304B\u308C\u3066\u3044\u308B\u3053\u3068\u306E\u610F\u5473\u306F\u306A\u3093\u3060\uFF1F\n\u4FFA\u305F\u3061\u3068\u3069\u3093\u306A\u95A2\u4FC2\u304C\u3042\u308B\u3093\u3060\uFF1F"
+    paragraphs: "\u3053\u306E\u7A93\u306B\u306F\u9244\u677F\u304C\u5F35\u3089\u308C\u3066\u3044\u306A\u3044\u306E\u304B\u3002"
     colorType: 1
     windowType: 0
