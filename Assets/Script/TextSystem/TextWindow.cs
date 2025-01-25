@@ -257,26 +257,32 @@ public class TextWindow : MonoBehaviour
             //speakerNameText.text = dialogueText.textInfomations[index].speakerName;
             if(dialogueText.textInfomations[index].speakerName == "シノノメ トオル")
             {
+                speakerName.color = Color.white;
                 speakerName.sprite = speakerNameDetective;
             }
             else if (dialogueText.textInfomations[index].speakerName == "コトギ マナ")
             {
+                speakerName.color = Color.white;
                 speakerName.sprite = speakerNameLacky;
             }
             else if (dialogueText.textInfomations[index].speakerName == "ミナセ ツミカ")
             {
+                speakerName.color = Color.white;
                 speakerName.sprite = speakerNameHacker;
             }
             else if (dialogueText.textInfomations[index].speakerName == "レイゼイ リン")
             {
+                speakerName.color = Color.white;
                 speakerName.sprite = speakerNameArcher;
             }
             else if (dialogueText.textInfomations[index].speakerName == "ニカイドウ ハルノ")
             {
+                speakerName.color = Color.white;
                 speakerName.sprite = speakerNameThief;
             }
             else
             {
+                speakerName.color = Color.clear;
                 speakerName.sprite = null;
             }
 
@@ -463,12 +469,12 @@ public class TextWindow : MonoBehaviour
         if (isChange == true)
         {
             roomObject.SetActive(true);
-            timeObject.SetActive(true);
+            //timeObject.SetActive(true);
         }
         else if (isChange == false)
         {
             roomObject.SetActive(false);
-            timeObject.SetActive(false);
+            //timeObject.SetActive(false);
         }
     }
 

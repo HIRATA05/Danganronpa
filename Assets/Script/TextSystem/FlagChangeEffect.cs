@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FlagChangeEffect : MonoBehaviour
 {
@@ -173,21 +174,36 @@ public class FlagChangeEffect : MonoBehaviour
     //2階教室通気口探索
     public void ClassRoomF2_Vent_True()
     {
-        eventFlagData.ClassRoomF2_Vent = true;
+        if(!eventFlagData.ClassRoomF2_Vent) eventFlagData.ClassRoomF2_Vent = true;
     }
     //2階教室通気口探索
     public void ClassRoomF2_Window_True()
     {
-        eventFlagData.ClassRoomF2_Window = true;
+        if(!eventFlagData.ClassRoomF2_Window) eventFlagData.ClassRoomF2_Window = true;
     }
     //図書室の本棚を探索、機械工作室へ
     public void MemoMachineWork_True()
     {
         eventFlagData.MemoMachineWork = true;
     }
-    //ハッカーへ協力要請
+    /*
+    //機械工作室のプレス機のロックを確認
+    public void PressMachineLock_True()
+    {
+        eventFlagData.PressMachineLock = true;
+    }*/
 
-    //プレスでモノクマ破壊
+    //ハッカーへ協力要請完了
+    public void HackerPressMachineRequest_True()
+    {
+        eventFlagData.HackerPressMachineRequest = true;
+    }
 
-    
+
+    //部屋移動
+    public void SceneChange(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
 }

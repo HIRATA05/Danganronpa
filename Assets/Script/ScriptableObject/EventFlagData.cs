@@ -91,10 +91,13 @@ public class EventFlagData : ScriptableObject
 
     //機械工作室
     [Header("機械工作室")]
-    public bool PressMachineLock;//プレス機ロック確認
-    public bool HackerPressMachineRequest;//ハッカーへ協力要請
-
+    public bool PressMachineLock;//プレス機ロック確認　ハッカーへ向かう
+    public bool HackerPressMachineRequest;//ハッカーへ協力要請完了　ハッカー出現
+    public bool PreesMoveDown;//プレス機の起動
+    public bool MonokumaGreenPreesMove;//モノクマグリーンをプレス機まで移動
     public bool PressMachineShelfUnlock;//プレスでモノクマ破壊機械工作室棚解除
+
+    
 
     //脱出イベント
     public bool EscepeEvent;
@@ -121,6 +124,10 @@ public class EventFlagData : ScriptableObject
     public bool RoomIn_ClassRoom_F2;
     //図書室
     public bool RoomIn_Library;
+    //機械工作室
+    public bool RoomIn_MachineWorkRoom;
+    //ハッカーの個室
+    public bool RoomIn_HackerRoom;
 
     public bool RoomIn;
     public void RoomIn_True() { RoomIn = true; }

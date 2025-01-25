@@ -27,6 +27,9 @@ public class ObjModeSwitch : MonoBehaviour
         GardenArcher,//中庭の弓道家
         ClassRoomF2PhantomThief,//2階教室の怪盗
         ClassRoomF2Lacky,//2階教室の幸運
+        MachineRoomHacker,//機械工作室のハッカー
+        MonokuGreenMove,//モノクマグリーンの移動
+        PressMachine,//プレス機
 
         Ending//脱出
     }
@@ -169,6 +172,46 @@ public class ObjModeSwitch : MonoBehaviour
                 After.SetActive(false);
             }
         }
+        else if (objType == ObjType.PressMachine)
+        {
+            if (eventFlagData.PressMachineShelfUnlock)//プレス機の起動
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+        else if (objType == ObjType.MachineRoomHacker)
+        {
+            if (eventFlagData.HackerPressMachineRequest)//機械工作室のハッカー
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+        else if (objType == ObjType.MonokuGreenMove)
+        {
+            if (eventFlagData.MonokumaGreenPreesMove)//モノクマグリーン
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+        
 
         else if (objType == ObjType.Ending)
         {
@@ -226,6 +269,20 @@ public class ObjModeSwitch : MonoBehaviour
         {
             eventFlagData.ClassRoomF2_All = true;
         }
+        else if (objType == ObjType.PressMachine)
+        {
+            eventFlagData.PressMachineShelfUnlock = true;
+        }
+        else if (objType == ObjType.MachineRoomHacker)
+        {
+            eventFlagData.HackerPressMachineRequest = true;
+        }
+        else if (objType == ObjType.MonokuGreenMove)
+        {
+            eventFlagData.MonokumaGreenPreesMove = true;
+        }
+        
+
 
         Befor.SetActive(false);
         After.SetActive(true);
