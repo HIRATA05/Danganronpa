@@ -199,6 +199,40 @@ public class FlagChangeEffect : MonoBehaviour
         eventFlagData.HackerPressMachineRequest = true;
     }
 
+    //情報処理室モニター
+    public void Moniter_DataProcessingRoom_True()
+    {
+        eventFlagData.Moniter_DataProcessingRoom = true;
+    }
+    //情報処理室死体
+    public void Dead_True()
+    {
+        eventFlagData.Dead = true;
+    }
+    //情報処理室通気口の蓋
+    public void Vent_Huta_True()
+    {
+        eventFlagData.Vent_Huta = true;
+    }
+    //情報処理室全探索会話発生
+    public void DataProcessingRoom_All_True()
+    {
+        if (eventFlagData.Moniter_DataProcessingRoom && eventFlagData.Dead && eventFlagData.Vent_Huta)
+        {
+            eventFlagData.DataProcessingRoom_All = true;
+        }
+    }
+    //情報処理室全探索後会話終了
+    public void AllTalkEndFlag_True()
+    {
+        eventFlagData.AllTalkEndFlag = true;
+    }
+    //脱出ボタン入手
+    public void EscepeSwitch_True()
+    {
+        eventFlagData.EscepeSwitch = true;
+    }
+    
 
     //部屋移動
     public void SceneChange(string scene)

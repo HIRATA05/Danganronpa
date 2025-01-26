@@ -30,7 +30,8 @@ public class ObjModeSwitch : MonoBehaviour
         MachineRoomHacker,//機械工作室のハッカー
         MonokuGreenMove,//モノクマグリーンの移動
         PressMachine,//プレス機
-
+        DataProcessRoomLacky,//情報処理室の幸運
+        DataProcessRoomChara,//情報処理室のキャラ達
         Ending//脱出
     }
     public ObjType objType;
@@ -211,11 +212,37 @@ public class ObjModeSwitch : MonoBehaviour
                 After.SetActive(false);
             }
         }
+        else if (objType == ObjType.DataProcessRoomLacky)
+        {
+            if (eventFlagData.Lacky_DataProcessingRoom)//情報処理室の幸運
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
+        else if (objType == ObjType.DataProcessRoomChara)
+        {
+            if (eventFlagData.Chara_DataProcessingRoom)//情報処理室のキャラ
+            {
+                Befor.SetActive(false);
+                After.SetActive(true);
+            }
+            else
+            {
+                Befor.SetActive(true);
+                After.SetActive(false);
+            }
+        }
         
 
         else if (objType == ObjType.Ending)
         {
-            if (eventFlagData.itemDataBase.truthBullets[8].getFlag)//脱出イベント時表示
+            if (eventFlagData.EscepeSwitch)//脱出イベント時表示
             {
                 Befor.SetActive(false);
                 After.SetActive(true);
@@ -281,11 +308,22 @@ public class ObjModeSwitch : MonoBehaviour
         {
             eventFlagData.MonokumaGreenPreesMove = true;
         }
-        
-
+        else if (objType == ObjType.DataProcessRoomLacky)
+        {
+            eventFlagData.Lacky_DataProcessingRoom = true;
+        }
+        else if (objType == ObjType.DataProcessRoomChara)
+        {
+            eventFlagData.Chara_DataProcessingRoom = true;
+        }
 
         Befor.SetActive(false);
         After.SetActive(true);
     }
 
+    public void DisplayObjSwitch_Befor()
+    {
+        Befor.SetActive(true);
+        After.SetActive(false);
+    }
 }

@@ -97,7 +97,17 @@ public class EventFlagData : ScriptableObject
     public bool MonokumaGreenPreesMove;//モノクマグリーンをプレス機まで移動
     public bool PressMachineShelfUnlock;//プレスでモノクマ破壊機械工作室棚解除
 
-    
+    //情報処理室
+    [Header("情報処理室")]
+    public bool Dead;//死体
+    public bool Vent_Huta;//通気口の蓋
+    public bool Moniter_DataProcessingRoom;//モニター
+    public bool DataProcessingRoom_All;//全探索後会話
+    public bool DataProcessingRoom_AllTalk;//全探索後会話発生
+    public bool AllTalkEndFlag;//全探索後会話終了
+    public bool MonokumaTruth_DataProcessingRoom;//真実
+    public bool Lacky_DataProcessingRoom;//情報処理室の幸運
+    public bool Chara_DataProcessingRoom;//情報処理室のキャラ
 
     //脱出イベント
     public bool EscepeEvent;
@@ -128,6 +138,8 @@ public class EventFlagData : ScriptableObject
     public bool RoomIn_MachineWorkRoom;
     //ハッカーの個室
     public bool RoomIn_HackerRoom;
+    //情報処理室
+    public bool RoomIn_DataProcessingRoom;
 
     public bool RoomIn;
     public void RoomIn_True() { RoomIn = true; }
