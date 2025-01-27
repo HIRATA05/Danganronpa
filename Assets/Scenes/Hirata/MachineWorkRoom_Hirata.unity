@@ -4583,9 +4583,25 @@ PrefabInstance:
       value: 6.96
       objectReference: {fileID: 0}
     - target: {fileID: 3428429121778634108, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: roomObject.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428429121778634108, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: roomObject.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 612617771}
+    - target: {fileID: 3428429121778634108, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: roomObject.Array.data[4]
+      value: 
+      objectReference: {fileID: 1644334270}
+    - target: {fileID: 3428429121778634108, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: roomObject.Array.data[5]
+      value: 
+      objectReference: {fileID: 1088154847}
+    - target: {fileID: 3563323316627607614, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 95f5655d615bea441914c78a0cd8903b, type: 3}
     - target: {fileID: 3785431483429771417, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.5

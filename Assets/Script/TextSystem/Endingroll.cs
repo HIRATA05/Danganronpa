@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Endingroll : MonoBehaviour
 {
+    [SerializeField] private EventFlagData eventFlagData;
+    [SerializeField] private TextMeshProUGUI ScoreText;
+
     Vector3 Staffrollposition;
     public RectTransform rectTransform;
     public float Endpos;
@@ -15,7 +19,7 @@ public class Endingroll : MonoBehaviour
     void Start()
     {
         Staffrollposition = rectTransform.anchoredPosition;
-
+        ScoreText.text = eventFlagData.Score.ToString() + "/50";
     }
 
     void Update()

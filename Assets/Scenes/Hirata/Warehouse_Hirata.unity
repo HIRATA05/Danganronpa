@@ -3857,6 +3857,10 @@ PrefabInstance:
       propertyPath: roomObject.Array.data[7]
       value: 
       objectReference: {fileID: 768152862}
+    - target: {fileID: 3563323316627607614, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 95f5655d615bea441914c78a0cd8903b, type: 3}
     - target: {fileID: 5352308064179424729, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.3

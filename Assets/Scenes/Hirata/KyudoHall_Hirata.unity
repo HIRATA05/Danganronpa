@@ -789,6 +789,10 @@ PrefabInstance:
       propertyPath: roomObject.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3563323316627607614, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 95f5655d615bea441914c78a0cd8903b, type: 3}
     - target: {fileID: 5459118473853142290, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: cameraRotLimit_Left
       value: -50

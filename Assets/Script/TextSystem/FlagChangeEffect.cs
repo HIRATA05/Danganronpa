@@ -232,7 +232,11 @@ public class FlagChangeEffect : MonoBehaviour
     {
         eventFlagData.EscepeSwitch = true;
     }
-    
+    //ƒ‚ƒmƒNƒ}‰“oêI—¹
+    public void AppMonokumaEnd_True()
+    {
+        eventFlagData.AppMonokumaEnd = true;
+    }
 
     //•”‰®ˆÚ“®
     public void SceneChange(string scene)

@@ -21,14 +21,14 @@ MonoBehaviour:
   GameStart_Lacky: 0
   GameStart_All: 0
   GameStart_All_TalkStart: 0
-  SelfIntoro_Archer: 1
+  SelfIntoro_Archer: 0
   SelfIntoro_Hacker: 0
   SelfIntoro_PhantomThief: 0
-  SelfIntoro_All: 1
-  SelfIntoro_Call: 1
+  SelfIntoro_All: 0
+  SelfIntoro_Call: 0
   AppMonokuma: 0
   AppMonokumaAfter: 0
-  AdventureStart: 1
+  AdventureStart: 0
   DiningDiscStart: 0
   WarehouseRequest: 0
   Digitalclock: 0
@@ -39,10 +39,10 @@ MonoBehaviour:
   F2Intrusion: 0
   F2OpenPhantomThief: 0
   F2OpenArcher: 0
-  IronBars: 1
+  IronBars: 0
   WarehouseArcher: 0
   IronBarsOpen: 0
-  ClassRoomF2StartPhantomThief: 1
+  ClassRoomF2StartPhantomThief: 0
   ClassRoomF2_Vent: 0
   ClassRoomF2_Window: 0
   ClassRoomF2_All: 0
@@ -54,10 +54,21 @@ MonoBehaviour:
   MemoMachineWork: 0
   PressMachineLock: 0
   HackerPressMachineRequest: 0
+  PreesMoveDown: 0
+  MonokumaGreenPreesMove: 0
   PressMachineShelfUnlock: 0
+  Dead: 0
+  Vent_Huta: 0
+  Moniter_DataProcessingRoom: 0
+  DataProcessingRoom_All: 0
+  DataProcessingRoom_AllTalk: 0
+  AllTalkEndFlag: 0
+  MonokumaTruth_DataProcessingRoom: 0
+  Lacky_DataProcessingRoom: 0
+  Chara_DataProcessingRoom: 0
   EscepeEvent: 0
   GameStart_ClassRoom: 1
-  RoomIn_Dining: 1
+  RoomIn_Dining: 0
   RoomIn_Garden: 0
   RoomIn_EntranceHall: 0
   RoomIn_Gym: 0
@@ -65,5 +76,8 @@ MonoBehaviour:
   RoomIn_KyudoHall: 0
   RoomIn_ClassRoom_F2: 0
   RoomIn_Library: 0
+  RoomIn_MachineWorkRoom: 0
+  RoomIn_HackerRoom: 0
+  RoomIn_DataProcessingRoom: 0
   RoomIn: 1
   Score: 0

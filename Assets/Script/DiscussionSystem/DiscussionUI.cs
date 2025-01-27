@@ -259,6 +259,8 @@ public class DiscussionUI : MonoBehaviour
             yield return null;
         }
         */
+        
+
         //フェードインさせる
         StartCoroutine(gameManager.FadeScreen(true));
 

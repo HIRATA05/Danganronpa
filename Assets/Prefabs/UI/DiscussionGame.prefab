@@ -285,6 +285,11 @@ MonoBehaviour:
   - {fileID: 2981385683723660072, guid: b17135cf4f98d8440b92e46349b0e93c, type: 3}
   - {fileID: 6140829032170602395, guid: 466e48efe40e0554f984c950f3919299, type: 3}
   perentObj: {fileID: 8731147557896799730}
+  audioSourceBgm: {fileID: 0}
+  audioSourceSe: {fileID: 0}
+  RonpaBgm: {fileID: 8300000, guid: 039366416f53665498fa5aae873c9d62, type: 3}
+  RonpaSe: {fileID: 8300000, guid: e1b67a14d24d7ff48b5bd0a6db6e62fd, type: 3}
+  BreakSe: {fileID: 8300000, guid: 316f5c12553232744865fc963144b094, type: 3}
 --- !u!1 &492709504162154330
 GameObject:
   m_ObjectHideFlags: 0

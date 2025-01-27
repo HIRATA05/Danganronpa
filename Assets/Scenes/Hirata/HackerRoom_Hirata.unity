@@ -1417,6 +1417,10 @@ PrefabInstance:
       propertyPath: roomObject.Array.data[3]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3563323316627607614, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 95f5655d615bea441914c78a0cd8903b, type: 3}
     - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: discussionEventSet.Array.data[0].textinfo
       value: HackerRoom_Start
@@ -1458,28 +1462,60 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: discussionEventSet.Array.data[2].discussionEvent.OnTalkEvent.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: discussionEventSet.Array.data[4].discussionEvent.OnTalkEvent.Array.data[1].m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: discussionEventSet.Array.data[2].discussionEvent.OnTalkEvent.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: discussionEventSet.Array.data[4].discussionEvent.OnTalkEvent.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: discussionEventSet.Array.data[2].discussionEvent.OnTalkEvent.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 766456753}
+    - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: discussionEventSet.Array.data[4].discussionEvent.OnTalkEvent.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 626451716}
     - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: discussionEventSet.Array.data[2].discussionEvent.OnTalkEvent.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: discussionEventSet.Array.data[4].discussionEvent.OnTalkEvent.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: discussionEventSet.Array.data[2].discussionEvent.OnTalkEvent.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BGMSound
       objectReference: {fileID: 0}
     - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: discussionEventSet.Array.data[4].discussionEvent.OnTalkEvent.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SpeechPoworDamageDisp
       objectReference: {fileID: 0}
     - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: discussionEventSet.Array.data[2].discussionEvent.OnTalkEvent.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CharaEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: discussionEventSet.Array.data[4].discussionEvent.OnTalkEvent.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: DiscussionEventManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: discussionEventSet.Array.data[2].discussionEvent.OnTalkEvent.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 95f5655d615bea441914c78a0cd8903b, type: 3}
+    - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: discussionEventSet.Array.data[2].discussionEvent.OnTalkEvent.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4347837811970998259, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: discussionEventSet.Array.data[4].discussionEvent.OnTalkEvent.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1517,6 +1553,14 @@ PrefabInstance:
       propertyPath: AfterText
       value: 
       objectReference: {fileID: 11400000, guid: 3dd18f44e76db0949845b0673819c0fd, type: 2}
+    - target: {fileID: 7054173749820460656, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: audioSourceSe
+      value: 
+      objectReference: {fileID: 840093212}
+    - target: {fileID: 7054173749820460656, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: audioSourceBgm
+      value: 
+      objectReference: {fileID: 840093213}
     - target: {fileID: 7054173749820460656, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: DiscussionStartText
       value: 
@@ -1943,6 +1987,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &766456753 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9118431654313580483, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+  m_PrefabInstance: {fileID: 259469150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f9a442d3606c54c9f1d3ef2a532553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &811615918
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,6 +2070,16 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1340782460}
+--- !u!82 &840093212 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1926143059410890693, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+  m_PrefabInstance: {fileID: 259469150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &840093213 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3563323316627607614, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+  m_PrefabInstance: {fileID: 259469150}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1087450117
 GameObject:
   m_ObjectHideFlags: 0
