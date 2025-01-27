@@ -469,12 +469,12 @@ public class TextWindow : MonoBehaviour
         if (isChange == true)
         {
             roomObject.SetActive(true);
-            //timeObject.SetActive(true);
+            timeObject.SetActive(true);
         }
         else if (isChange == false)
         {
             roomObject.SetActive(false);
-            //timeObject.SetActive(false);
+            timeObject.SetActive(false);
         }
     }
 
