@@ -1,64 +1,9 @@
 fileFormatVersion: 2
-guid: f7222e5e78eaecf41aad38e01892acda
+guid: 18dfbae463423bc468240cf03a4fd925
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 01 - Default
-    second: {fileID: 2100000, guid: e833df0a1a26f2243bfae2dd866e57c0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 02 - Default
-    second: {fileID: 2100000, guid: 6b61b03a232ec824299dddc391fc2063, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: blackboard
-    second: {fileID: 2100000, guid: 70f69e2abc6100e46a6a1adc795d8efd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: chair
-    second: {fileID: 2100000, guid: efdec7a3a28111f478f10dac9894f1d4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: desk
-    second: {fileID: 2100000, guid: 8110ec2fcd7e77642bcd9923094b2ba1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: floor
-    second: {fileID: 2100000, guid: da54749ba0f1f614391e9882d9d90047, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: iron
-    second: {fileID: 2100000, guid: b80cb3bc27fa2db4fa2274b33a952ea8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: kyoutaku
-    second: {fileID: 2100000, guid: a7bb92fd8d9fbde4e9bb5594aa244e96, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: light
-    second: {fileID: 2100000, guid: bd9673739282712439efafda15291874, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: light2
-    second: {fileID: 2100000, guid: 7deef8c9a8d7bfe48b276a7f2a6b0623, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wall
-    second: {fileID: 2100000, guid: d1be701ef50a6e44ab5ce4df15ac778b, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

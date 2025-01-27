@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/3DModels/Gym/配布用体育館＠操ちゃん/ガラス.png.meta
-guid: e9f3a2c6ee3821f4e8f0543f6c79726d
-========
-guid: 2b1808f0ee5335740bae305b73e7714f
->>>>>>>> main:Assets/3DModels/教室 (2)/教室/T_clock.psd.meta
+guid: bf75b6d1a5241124690f54bdbf763b11
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -86,6 +82,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
