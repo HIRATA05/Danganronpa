@@ -10,6 +10,7 @@ namespace TECHC.Kamiyashiki
         Title,
         InGame,
         Results,
+        Map,
     }
  
     public static class SceneController
