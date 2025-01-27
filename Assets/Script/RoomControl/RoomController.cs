@@ -33,6 +33,7 @@ namespace TECHC.Kamiyashiki
         [SerializeField]
         private Room[] roomList;
         private RoomName currentRoom;
+        public GameObject MapPanel;
 
         [Header("イベントシステム")]
         [SerializeField] private EventSystem eventSystem;
@@ -86,6 +87,13 @@ namespace TECHC.Kamiyashiki
 
         private void Update()
         {
+            // マップを開く
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                SceneController.LoadScene(SceneName.Map);
+                MapPanel.SetActive(true);
+            }
+
             if (Input.GetKeyDown(KeyCode.Q)) { OpenRoom(RoomName.ClassRoom); }
             if (Input.GetKeyDown(KeyCode.W)) { OpenRoom(RoomName.ControlRoom); }
             if (Input.GetKeyDown(KeyCode.E)) { OpenRoom(RoomName.Garden); }
@@ -150,6 +158,7 @@ namespace TECHC.Kamiyashiki
             currentRoom = _nextRoom;
 
             SceneController.LoadScene(_nextRoom);
+            MapPanel.SetActive(false);
         }
 
         /// <summary>

@@ -9,11 +9,7 @@ namespace TECHC.Kamiyashiki
 
         void Update()
         {
-            // マップを開く
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                SceneController.LoadScene(SceneName.Map);
-            }
+            
         }
     }
 }
