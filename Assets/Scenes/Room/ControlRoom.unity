@@ -474,6 +474,50 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1073894574}
+--- !u!1 &145241353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145241354}
+  - component: {fileID: 145241355}
+  m_Layer: 0
+  m_Name: MapOpener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &145241354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145241353}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 260512958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &145241355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145241353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf859f7150b60a41a214891e92e0a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &163611979
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +964,8 @@ Transform:
   m_LocalPosition: {x: -2.1161995, y: 12.359942, z: -9.363469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 145241354}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &279372523
@@ -7967,7 +8012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf859f7150b60a41a214891e92e0a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomController: {fileID: 0}
 --- !u!114 &2033702333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16678,5 +16722,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 1445436787}
   - {fileID: 757981779}
-  - {fileID: 260512958}
   - {fileID: 49331006}
+  - {fileID: 260512958}
