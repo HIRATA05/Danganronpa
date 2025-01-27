@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FlagChangeEffect : MonoBehaviour
 {
@@ -102,6 +103,18 @@ public class FlagChangeEffect : MonoBehaviour
     {
         eventFlagData.itemDataBase.truthBullets[5].getFlag = true;
     }
+    public void TruesBulletGet_NotePc()
+    {
+        eventFlagData.itemDataBase.truthBullets[6].getFlag = true;
+    }
+    public void TruesBulletGet_Korosiai()
+    {
+        eventFlagData.itemDataBase.truthBullets[7].getFlag = true;
+    }
+    public void TruesBulletGet_Key()
+    {
+        eventFlagData.itemDataBase.truthBullets[8].getFlag = true;
+    }
 
     //自己紹介
     public void SelfIntoro_Archer_True()
@@ -158,4 +171,77 @@ public class FlagChangeEffect : MonoBehaviour
             eventFlagData.F2Open = true;
         }
     }
+    //2階教室通気口探索
+    public void ClassRoomF2_Vent_True()
+    {
+        if(!eventFlagData.ClassRoomF2_Vent) eventFlagData.ClassRoomF2_Vent = true;
+    }
+    //2階教室通気口探索
+    public void ClassRoomF2_Window_True()
+    {
+        if(!eventFlagData.ClassRoomF2_Window) eventFlagData.ClassRoomF2_Window = true;
+    }
+    //図書室の本棚を探索、機械工作室へ
+    public void MemoMachineWork_True()
+    {
+        eventFlagData.MemoMachineWork = true;
+    }
+    /*
+    //機械工作室のプレス機のロックを確認
+    public void PressMachineLock_True()
+    {
+        eventFlagData.PressMachineLock = true;
+    }*/
+
+    //ハッカーへ協力要請完了
+    public void HackerPressMachineRequest_True()
+    {
+        eventFlagData.HackerPressMachineRequest = true;
+    }
+
+    //情報処理室モニター
+    public void Moniter_DataProcessingRoom_True()
+    {
+        eventFlagData.Moniter_DataProcessingRoom = true;
+    }
+    //情報処理室死体
+    public void Dead_True()
+    {
+        eventFlagData.Dead = true;
+    }
+    //情報処理室通気口の蓋
+    public void Vent_Huta_True()
+    {
+        eventFlagData.Vent_Huta = true;
+    }
+    //情報処理室全探索会話発生
+    public void DataProcessingRoom_All_True()
+    {
+        if (eventFlagData.Moniter_DataProcessingRoom && eventFlagData.Dead && eventFlagData.Vent_Huta)
+        {
+            eventFlagData.DataProcessingRoom_All = true;
+        }
+    }
+    //情報処理室全探索後会話終了
+    public void AllTalkEndFlag_True()
+    {
+        eventFlagData.AllTalkEndFlag = true;
+    }
+    //脱出ボタン入手
+    public void EscepeSwitch_True()
+    {
+        eventFlagData.EscepeSwitch = true;
+    }
+    //モノクマ初登場終了
+    public void AppMonokumaEnd_True()
+    {
+        eventFlagData.AppMonokumaEnd = true;
+    }
+
+    //部屋移動
+    public void SceneChange(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
 }

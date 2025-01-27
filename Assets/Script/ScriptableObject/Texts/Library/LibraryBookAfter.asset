@@ -13,4 +13,12 @@ MonoBehaviour:
   m_Name: LibraryBookAfter
   m_EditorClassIdentifier: 
   textinfo: LibraryBookAfter
-  textInfomations: []
+  textInfomations:
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u5E0C\u671B\u30F6\u5CF0\u5B66\u5712\u516C\u5F0F\u8CC7\u6599\u2026\n\u4FFA\u306E\u77E5\u3089\u306A\u3044\u8D85\u9AD8\u6821\u7D1A\u306B\u3064\u3044\u3066\u66F8\u304B\u308C\u305F\u672C\u3060\u3002"
+    colorType: 1
+    windowType: 0
+  - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
+    paragraphs: "\u3053\u308C\u306B\u66F8\u304B\u308C\u3066\u3044\u308B\u3053\u3068\u306E\u610F\u5473\u306F\u306A\u3093\u3060\uFF1F\n\u4FFA\u305F\u3061\u3068\u3069\u3093\u306A\u95A2\u4FC2\u304C\u3042\u308B\u3093\u3060\uFF1F"
+    colorType: 1
+    windowType: 0

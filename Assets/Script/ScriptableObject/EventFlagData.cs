@@ -36,6 +36,8 @@ public class EventFlagData : ScriptableObject
 
     //モノクマ登場
     public bool AppMonokuma;
+    //モノクマ登場終了
+    public bool AppMonokumaEnd;
     //モノクマ退場
     public bool AppMonokumaAfter;
     //モノクマ遭遇で探索開始後
@@ -73,6 +75,41 @@ public class EventFlagData : ScriptableObject
     public bool WarehouseArcher;//倉庫にいる弓道家
     public bool IronBarsOpen;//鉄格子解除
 
+    //2階教室
+    [Header("2階教室")]
+    public bool ClassRoomF2StartPhantomThief;//2階教室イベント最初の怪盗
+    public bool ClassRoomF2_Vent;//2階教室の通気口探索
+    public bool ClassRoomF2_Window;//2階教室の窓探索
+    public bool ClassRoomF2_All;//2階教室の全探索
+    public bool ClassRoomF2_All_TalkStart;//2階教室の全探索後の会話発生
+
+    //図書室
+    [Header("図書室")]
+    public bool BookShelf;//本棚
+    public bool LibraryBook;//本
+    public bool DuraluminCaseInteract;//ケース
+    public bool DuraluminCaseLogic;//ケース謎解き前
+    public bool MemoMachineWork;//本棚探索後
+
+    //機械工作室
+    [Header("機械工作室")]
+    public bool PressMachineLock;//プレス機ロック確認　ハッカーへ向かう
+    public bool HackerPressMachineRequest;//ハッカーへ協力要請完了　ハッカー出現
+    public bool PreesMoveDown;//プレス機の起動
+    public bool MonokumaGreenPreesMove;//モノクマグリーンをプレス機まで移動
+    public bool PressMachineShelfUnlock;//プレスでモノクマ破壊機械工作室棚解除
+
+    //情報処理室
+    [Header("情報処理室")]
+    public bool Dead;//死体
+    public bool Vent_Huta;//通気口の蓋
+    public bool Moniter_DataProcessingRoom;//モニター
+    public bool DataProcessingRoom_All;//全探索後会話
+    public bool DataProcessingRoom_AllTalk;//全探索後会話発生
+    public bool AllTalkEndFlag;//全探索後会話終了
+    public bool MonokumaTruth_DataProcessingRoom;//真実
+    public bool Lacky_DataProcessingRoom;//情報処理室の幸運
+    public bool Chara_DataProcessingRoom;//情報処理室のキャラ
 
     //脱出イベント
     public bool EscepeEvent;
@@ -95,11 +132,22 @@ public class EventFlagData : ScriptableObject
     public bool RoomIn_Warehouse;
     //弓道場に入った時
     public bool RoomIn_KyudoHall;
+    //2階教室
+    public bool RoomIn_ClassRoom_F2;
     //図書室
     public bool RoomIn_Library;
+    //機械工作室
+    public bool RoomIn_MachineWorkRoom;
+    //ハッカーの個室
+    public bool RoomIn_HackerRoom;
+    //情報処理室
+    public bool RoomIn_DataProcessingRoom;
 
     public bool RoomIn;
     public void RoomIn_True() { RoomIn = true; }
     public void RoomIn_False() { RoomIn = false; }
+
+    //リザルトのスコア
+    [Header("スコア")] public int Score = 0;
 
 }

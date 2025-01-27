@@ -88,7 +88,7 @@ public class DiscussionUI : MonoBehaviour
 
     //主人公の発言力
     private int Life;
-    private int MaxLife = 5;
+    public int MaxLife = 5;
 
     //フェード用演出パネル
     [SerializeField] private Image FadeEffect;
@@ -182,6 +182,10 @@ public class DiscussionUI : MonoBehaviour
 
         //発言力にダメージ
         Life--;
+        if(Life < 0)//0以下になった時0にする
+        {
+            Life = 0;
+        }
 
         if (Life > 0)
         {
@@ -189,6 +193,7 @@ public class DiscussionUI : MonoBehaviour
             LifeImageChange(Life);
 
         }
+        /*
         else
         {
             //議論終了のテキストと処理を呼ぶ
@@ -196,6 +201,7 @@ public class DiscussionUI : MonoBehaviour
             //discussionManager.DiscussionGameOver();
             Debug.Log("論破ゲームオーバー時会話");
         }
+        */
     }
 
     //ライフ画像を変える
@@ -210,6 +216,12 @@ public class DiscussionUI : MonoBehaviour
             //ダメージハートに差し替える
             LifePos[i].sprite = LifeImageDamage;
         }
+    }
+
+    //ライフ数によってスコアを加算
+    public void LifeCountScoreUp()
+    {
+        gameManager.eventFlagData.Score += (Life * 5);
     }
 
     //論破演出
@@ -247,6 +259,8 @@ public class DiscussionUI : MonoBehaviour
             yield return null;
         }
         */
+        
+
         //フェードインさせる
         StartCoroutine(gameManager.FadeScreen(true));
 

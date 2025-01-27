@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class InteractLibraryBook : MonoBehaviour, IReceiveSearch
+{
+    //}‘º‚Ì–{’I
+
+    [SerializeField] private DialogueText NormalText; //}‘º‚Ì–{’I
+    [SerializeField] private DialogueText AfterText; //}‘º‚Ì–{’I’²¸Œã
+
+    private GameManager gameManager;
+
+    public void ReceiveSearch()
+    {
+        //ê‡‚É‚æ‚Á‚Ä‚Íƒtƒ‰ƒO‚É‚æ‚Á‚ÄğŒ•ªŠò
+
+        //
+        if (!gameManager.eventFlagData.LibraryBook)
+        {
+            gameManager.eventFlagData.LibraryBook = true;
+            gameManager.OpenTextWindow(NormalText);
+        }
+        else
+        {
+            gameManager.OpenTextWindow(AfterText);
+        }
+
+    }
+
+    void Start()
+    {
+        GameObject gm = GameObject.Find("GameManager");
+        gameManager = gm.GetComponent<GameManager>();
+    }
+
+    void Update()
+    {
+        
+    }
+}

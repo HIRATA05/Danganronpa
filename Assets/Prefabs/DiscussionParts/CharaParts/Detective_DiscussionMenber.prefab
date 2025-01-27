@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -0.5}
-  m_SizeDelta: {x: 1, y: 2}
+  m_SizeDelta: {x: 1, y: 2.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5565154838075754462
 CanvasRenderer:
@@ -110,7 +110,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -0.5}
-  m_SizeDelta: {x: 1, y: 2}
+  m_SizeDelta: {x: 1, y: 2.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4644747171906569575
 CanvasRenderer:
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 8813512092155360896}
   - component: {fileID: 6986614169758648995}
   - component: {fileID: 2229871986597203497}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ShadowCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 7081628332903961899}
   - component: {fileID: 2024657876007009313}
   - component: {fileID: 2805989267824317927}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CharaCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

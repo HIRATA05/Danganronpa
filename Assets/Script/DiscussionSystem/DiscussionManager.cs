@@ -140,6 +140,22 @@ public class DiscussionManager : MonoBehaviour
     //下
     private Vector3 speechPosBottom = new Vector3(0, -400, 0);
 
+    //音声
+    [Header("サウンド")]
+    public AudioSource audioSourceBgm;
+    public AudioSource audioSourceSe;
+    public AudioClip RonpaBgm;
+    public AudioClip RonpaSe;
+    public AudioClip BreakSe;
+
+    public void BgmAudio(AudioClip audio)
+    {
+        audioSourceBgm.clip = audio;
+    }
+    public void SeAudio(AudioClip audio)
+    {
+        audioSourceSe.clip = audio;
+    }
 
     void Start()
     {
@@ -209,6 +225,9 @@ public class DiscussionManager : MonoBehaviour
             if (!BeforeDiscussion)
             {
                 BeforeDiscussion = true;
+
+                //BGM
+                BgmAudio(RonpaBgm);
 
                 //議論開始の文字演出
                 StartCoroutine(discussionUI.DiscussionBeforeStartEffect());
@@ -530,6 +549,7 @@ public class DiscussionManager : MonoBehaviour
         //演出描写の状態に変更
         discussion = DiscussionMode.Effect;
 
+        SeAudio(RonpaSe);
         //論破演出画像表示
         //角度を変えるアニメーション
         StartCoroutine(discussionUI.RefuteImageEffect(CurrentSpeechType));
@@ -539,6 +559,9 @@ public class DiscussionManager : MonoBehaviour
 
         //UIを非表示
         discussionUI.DiscussionDispUI(false);
+
+        //現在のライフに従ってスコアを減らす
+        discussionUI.LifeCountScoreUp();
 
         //議論終了後の会話データを入れる
         gameManager.OpenDiscussionWindow(DiscussionFinishText, DiscussionTalkModeWindow.TalkFinish.AdventureMode);

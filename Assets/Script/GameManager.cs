@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     private TextWindow textWindow;
     private ReticleAim reticleAim;
-    private DiscussionManager disussionManager;
+    [NonSerialized] public DiscussionManager disussionManager;
     private DiscussionTalkModeWindow discussionTalkModeWindow;
 
     public EventFlagData eventFlagData;
@@ -140,9 +140,11 @@ public class GameManager : MonoBehaviour
         SwitchScene();
         //フェードアウトさせる
         StartCoroutine(FadeScreen(false));
-        playerController = PlayerController.DiscussionMode;
+        
         //議論開始を呼び出す
         disussionManager.DiscInitCallOn();
+
+        playerController = PlayerController.DiscussionMode;
     }
 
     //探索シーンと議論シーンの切り替え

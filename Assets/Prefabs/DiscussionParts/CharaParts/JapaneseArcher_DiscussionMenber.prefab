@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3edce40ae3999904397b2e89dd822d8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5b5b1234a6ddab4c9e788e575f37933, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 1465453270968958019}
   - component: {fileID: 1462554827791500920}
   - component: {fileID: 5320114351760458061}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CharaCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3edce40ae3999904397b2e89dd822d8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5b5b1234a6ddab4c9e788e575f37933, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 2405910445061380459}
   - component: {fileID: 2300777245329583313}
   - component: {fileID: 5936709765543933813}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ShadowCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

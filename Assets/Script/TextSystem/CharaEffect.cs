@@ -19,6 +19,11 @@ public class CharaEffect : MonoBehaviour
     Color fadeClearColor = new Color(255, 255, 255, 0);
     Color fadeColor = Color.white;
 
+    [SerializeField] private AudioSource audioSourceBgm;
+    [SerializeField] private AudioSource audioSourceSe;
+
+    [SerializeField] private AudioClip SelfIntroSE;
+
     void Start()
     {
         GameObject gm = GameObject.Find("GameManager");
@@ -143,10 +148,11 @@ public class CharaEffect : MonoBehaviour
         //操作不能にする
         gameManager.playerController = GameManager.PlayerController.EventScene;
 
+        //SE
+        SESound(SelfIntroSE);
+
         //一定時間待機
         StartCoroutine(EventCGDisplay());
-        
-        
 
         //操作可能
         //gameManager.playerController = GameManager.PlayerController.TextWindowMode;
@@ -175,9 +181,6 @@ public class CharaEffect : MonoBehaviour
         //操作可能
         gameManager.playerController = GameManager.PlayerController.TextWindowMode;
     }
-
-    //SEを発生させる
-
 
 
     IEnumerator Fade(float targetAlpha, Color spriteColor, float duration, bool isFadeOut)
@@ -222,6 +225,18 @@ public class CharaEffect : MonoBehaviour
     public void CallEndingScene()
     {
         SceneManager.LoadScene(gameManager.EndingScene);
+    }
+
+    //BGM
+    public void BGMSound(AudioClip audio)
+    {
+        audioSourceBgm.clip = audio;
+    }
+
+    //SE
+    public void SESound(AudioClip audio)
+    {
+        audioSourceSe.clip = audio;
     }
 
 }

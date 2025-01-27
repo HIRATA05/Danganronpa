@@ -32,7 +32,7 @@ public class Gym : MonoBehaviour
                 gameManager.OpenTextWindow(RoomFirstText);
             }
             //モノクマの話終了後
-            if(eventFlagData.currentRoom == roomName && !eventFlagData.AppMonokumaAfter)
+            else if(eventFlagData.currentRoom == roomName && !eventFlagData.AppMonokumaAfter && eventFlagData.AppMonokumaEnd)
             {
                 eventFlagData.AppMonokumaAfter = true;
                 gameManager.OpenTextWindow(AppMonokumaAfterText);
