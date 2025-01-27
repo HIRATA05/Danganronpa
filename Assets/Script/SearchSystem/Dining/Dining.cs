@@ -27,21 +27,21 @@ public class Dining : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //始めて食堂へ入った時の会話
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_Dining)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_Dining)
             {
                 Debug.Log("RoomIn_Dining");
                 eventFlagData.RoomIn_Dining = true;
                 gameManager.OpenTextWindow(RoomText);
             }
             //モノクマの悪ふざけの会話
-            if (eventFlagData.currentRoom == roomName && eventFlagData.AdventureStart && eventFlagData.IronBars && eventFlagData.WarehouseRequest && !eventFlagData.DiningDiscStart)
+            if (/*eventFlagData.currentRoom == roomName &&*/ eventFlagData.AdventureStart && eventFlagData.IronBars && eventFlagData.WarehouseRequest && !eventFlagData.DiningDiscStart)
             {
                 Debug.Log("WarehouseRequest");
                 eventFlagData.DiningDiscStart = true;
                 gameManager.OpenTextWindow(DiscStartText);
             }
             //自己紹介後呼び出し
-            if (eventFlagData.currentRoom == roomName && eventFlagData.SelfIntoro_All && !eventFlagData.SelfIntoro_Call)
+            if (/*eventFlagData.currentRoom == roomName &&*/ eventFlagData.SelfIntoro_All && !eventFlagData.SelfIntoro_Call)
             {
                 Debug.Log("モノクマの登場");
                 eventFlagData.SelfIntoro_Call = true;

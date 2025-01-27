@@ -11,13 +11,26 @@ namespace TECHC.Kamiyashiki
 {
     public enum RoomName
     {
-        ClassRoom,
-        ControlRoom,
-        Garden,
+        教室1F,
+        情報処理室,
+        玄関ホール,
+        食堂,
+        中庭,
+        体育館,
+        倉庫,
+        道場,
+        生徒個室,
+        教室2F,
+        図書室,
+        機械工作室,
     }
 
     public class RoomController : MonoBehaviour
     {
+
+        [Header("フラグデータ")]
+        [SerializeField] private EventFlagData eventFlagData;
+
         private static RoomController instance = null;
 
         [System.Serializable]
@@ -81,8 +94,56 @@ namespace TECHC.Kamiyashiki
             }
             LockRoom();
             // 現在の部屋を開放する
-            currentRoom = RoomName.ClassRoom;
-            OpenRoom(currentRoom);
+            //currentRoom = RoomName.教室1F;
+            //OpenRoom(currentRoom);
+            
+            //フラグによって部屋を開放
+            if (!eventFlagData.F2ClassRoom)
+            {
+                OpenRoom(RoomName.教室1F);
+
+                if (eventFlagData.GameStart_All_TalkStart)
+                {
+                    OpenRoom(RoomName.玄関ホール);
+                    OpenRoom(RoomName.中庭);
+                    OpenRoom(RoomName.食堂);
+                } 
+            }
+            
+
+            if (eventFlagData.SelfIntoro_Call && !eventFlagData.F2ClassRoom)
+            {
+                OpenRoom(RoomName.体育館);
+            }
+
+            if (eventFlagData.AdventureStart && !eventFlagData.F2ClassRoom)
+            {
+                OpenRoom(RoomName.倉庫);
+                OpenRoom(RoomName.道場);
+
+            }
+
+            if (eventFlagData.F2Intrusion)
+            {
+                OpenRoom(RoomName.教室2F);
+            }
+
+            if (eventFlagData.F2Intrusion && !eventFlagData.F2ClassRoom)
+            {
+                OpenRoom(RoomName.図書室);
+                OpenRoom(RoomName.機械工作室);
+            }
+
+            if (eventFlagData.PressMachineLock && eventFlagData.itemDataBase.truthBullets[6].getFlag)
+            {
+                OpenRoom(RoomName.生徒個室);
+            }
+
+            if (eventFlagData.itemDataBase.truthBullets[8].getFlag)
+            {
+                OpenRoom(RoomName.情報処理室);
+            }
+            
         }
 
         private void Update()
@@ -93,10 +154,12 @@ namespace TECHC.Kamiyashiki
                 SceneController.LoadScene(SceneName.Map);
                 MapPanel.SetActive(true);
             }
-
+            /*
             if (Input.GetKeyDown(KeyCode.Q)) { OpenRoom(RoomName.ClassRoom); }
             if (Input.GetKeyDown(KeyCode.W)) { OpenRoom(RoomName.ControlRoom); }
-            if (Input.GetKeyDown(KeyCode.E)) { OpenRoom(RoomName.Garden); }
+            if (Input.GetKeyDown(KeyCode.E)) { OpenRoom(RoomName.Garden); }*/
+
+            
         }
 
         private void LockRoom()

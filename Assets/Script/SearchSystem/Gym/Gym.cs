@@ -26,13 +26,13 @@ public class Gym : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //始めて体育館へ入った時の会話
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_Gym)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_Gym)
             {
                 eventFlagData.RoomIn_Gym = true;
                 gameManager.OpenTextWindow(RoomFirstText);
             }
             //モノクマの話終了後
-            else if(eventFlagData.currentRoom == roomName && !eventFlagData.AppMonokumaAfter && eventFlagData.AppMonokumaEnd)
+            else if(/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.AppMonokumaAfter && eventFlagData.AppMonokumaEnd)
             {
                 eventFlagData.AppMonokumaAfter = true;
                 gameManager.OpenTextWindow(AppMonokumaAfterText);

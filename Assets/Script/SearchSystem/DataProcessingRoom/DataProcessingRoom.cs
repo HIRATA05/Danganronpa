@@ -27,19 +27,19 @@ public class DataProcessingRoom : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //情報処理室へ入った時の会話
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_DataProcessingRoom)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_DataProcessingRoom)
             {
                 eventFlagData.RoomIn_DataProcessingRoom = true;
                 gameManager.OpenTextWindow(RoomText);
             }
             //探索後モノクマ登場
-            else if(eventFlagData.currentRoom == roomName && eventFlagData.DataProcessingRoom_All && !eventFlagData.DataProcessingRoom_AllTalk)
+            else if(/*eventFlagData.currentRoom == roomName &&*/ eventFlagData.DataProcessingRoom_All && !eventFlagData.DataProcessingRoom_AllTalk)
             {
                 eventFlagData.DataProcessingRoom_AllTalk = true;
                 gameManager.OpenTextWindow(MonokumaTruthText);
             }
             //モノクマとの会話　真実
-            else if(eventFlagData.currentRoom == roomName && eventFlagData.AllTalkEndFlag && !eventFlagData.MonokumaTruth_DataProcessingRoom)
+            else if(/*eventFlagData.currentRoom == roomName &&*/ eventFlagData.AllTalkEndFlag && !eventFlagData.MonokumaTruth_DataProcessingRoom)
             {
                 eventFlagData.MonokumaTruth_DataProcessingRoom = true;
                 gameManager.OpenTextWindow(EndText);

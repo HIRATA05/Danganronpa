@@ -27,6 +27,7 @@ MonoBehaviour:
   SelfIntoro_All: 0
   SelfIntoro_Call: 0
   AppMonokuma: 0
+  AppMonokumaEnd: 0
   AppMonokumaAfter: 0
   AdventureStart: 0
   DiningDiscStart: 0
@@ -67,7 +68,7 @@ MonoBehaviour:
   Lacky_DataProcessingRoom: 0
   Chara_DataProcessingRoom: 0
   EscepeEvent: 0
-  GameStart_ClassRoom: 1
+  GameStart_ClassRoom: 0
   RoomIn_Dining: 0
   RoomIn_Garden: 0
   RoomIn_EntranceHall: 0
@@ -80,4 +81,5 @@ MonoBehaviour:
   RoomIn_HackerRoom: 0
   RoomIn_DataProcessingRoom: 0
   RoomIn: 1
+  F2ClassRoom: 0
   Score: 0

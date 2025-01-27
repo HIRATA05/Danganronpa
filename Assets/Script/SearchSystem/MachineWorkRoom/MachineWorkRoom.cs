@@ -26,13 +26,13 @@ public class MachineWorkRoom : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //n‚ß‚Ä2ŠK‹³º‚Ö“ü‚Á‚½‚Ì‰ï˜b
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_MachineWorkRoom)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_MachineWorkRoom)
             {
                 eventFlagData.RoomIn_MachineWorkRoom = true;
                 gameManager.OpenTextWindow(RoomText);
             }
             //‹³º’TõŒã
-            else if (eventFlagData.currentRoom == roomName && eventFlagData.HackerPressMachineRequest && !eventFlagData.PreesMoveDown)
+            else if (/*eventFlagData.currentRoom == roomName &&*/ eventFlagData.HackerPressMachineRequest && !eventFlagData.PreesMoveDown)
             {
                 eventFlagData.PreesMoveDown = true;
                 gameManager.OpenTextWindow(PreesText);

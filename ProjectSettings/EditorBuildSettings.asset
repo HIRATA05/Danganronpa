@@ -9,42 +9,45 @@ EditorBuildSettings:
     path: Assets/Scenes/Hirata/Title_Hirata.unity
     guid: 06e8b629b1a822a4596c97b2c408b402
   - enabled: 1
-    path: Assets/Scenes/Hirata/ClassRoomF1_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u6559\u5BA41F.unity"
     guid: e5df84b9baefee84593febc82beca00b
   - enabled: 1
-    path: Assets/Scenes/Hirata/Dining_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u98DF\u5802.unity"
     guid: 1074d4b57446cb04ab52dd0eee945fcc
   - enabled: 1
     path: Assets/Scenes/Hirata/EndingScene.unity
     guid: a57bd7eaa4045e14fb5a798dd81c4582
   - enabled: 1
-    path: Assets/Scenes/Hirata/ClassRoomF2_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u6559\u5BA42F.unity"
     guid: 5a82e30ca5f10ed48bfa221c873f2775
   - enabled: 1
-    path: Assets/Scenes/Hirata/DataProcessingRoom_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u60C5\u5831\u51E6\u7406\u5BA4.unity"
     guid: bf988b3e63c523342a8898813c7ddf0c
   - enabled: 1
-    path: Assets/Scenes/Hirata/KyudoHall_Hirata.unity
+    path: Assets/Scenes/Map.unity
+    guid: 296692764828e544d9b3a4e0bc144bbe
+  - enabled: 1
+    path: "Assets/Scenes/Hirata/\u9053\u5834.unity"
     guid: 252f6834aa7578744a9f6bba8cf16a23
   - enabled: 1
-    path: Assets/Scenes/Hirata/Gym_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u4F53\u80B2\u9928.unity"
     guid: 889c0a1203d68c44b9ef9480983edb2a
   - enabled: 1
-    path: Assets/Scenes/Hirata/Warehouse_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u5009\u5EAB.unity"
     guid: 834cdc4961b42cf489f46c18f38dd42b
   - enabled: 1
-    path: Assets/Scenes/Hirata/Garden_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u4E2D\u5EAD.unity"
     guid: c9f3942ee74eb374fa47edaf247f158f
   - enabled: 1
-    path: Assets/Scenes/Hirata/EntranceHall_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u7384\u95A2\u30DB\u30FC\u30EB.unity"
     guid: 06d56fdaa5292f04f96bb273456dec9e
   - enabled: 1
-    path: Assets/Scenes/Hirata/Library_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u56F3\u66F8\u5BA4.unity"
     guid: 3d39da512787a17408563288bbeae7e4
   - enabled: 1
-    path: Assets/Scenes/Hirata/MachineWorkRoom_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u6A5F\u68B0\u5DE5\u4F5C\u5BA4.unity"
     guid: 18e68df298997c3449d1982141afc1be
   - enabled: 1
-    path: Assets/Scenes/Hirata/HackerRoom_Hirata.unity
+    path: "Assets/Scenes/Hirata/\u751F\u5F92\u500B\u5BA4.unity"
     guid: bd40c0086bec73a4588ceecd3992b441
   m_configObjects: {}

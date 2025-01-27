@@ -25,7 +25,7 @@ public class Library : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //Žn‚ß‚Ä‘ÌˆçŠÙ‚Ö“ü‚Á‚½Žž‚Ì‰ï˜b
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_Library)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_Library)
             {
                 eventFlagData.RoomIn_Library = true;
                 gameManager.OpenTextWindow(RoomFirstText);

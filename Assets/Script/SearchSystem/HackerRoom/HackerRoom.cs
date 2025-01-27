@@ -25,7 +25,7 @@ public class HackerRoom : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //ハッカーの個室へ入った時の会話
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_HackerRoom)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_HackerRoom)
             {
                 eventFlagData.RoomIn_HackerRoom = true;
                 gameManager.OpenTextWindow(RoomText);

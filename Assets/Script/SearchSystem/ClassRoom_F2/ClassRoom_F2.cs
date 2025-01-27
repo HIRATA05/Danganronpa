@@ -26,13 +26,13 @@ public class ClassRoom_F2 : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //énÇﬂÇƒ2äKã≥é∫Ç÷ì¸Ç¡ÇΩéûÇÃâÔòb
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_ClassRoom_F2)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_ClassRoom_F2)
             {
                 eventFlagData.RoomIn_ClassRoom_F2 = true;
                 gameManager.OpenTextWindow(RoomText);
             }
             //ã≥é∫íTçıå„
-            else if (eventFlagData.currentRoom == roomName && eventFlagData.ClassRoomF2_All && !eventFlagData.ClassRoomF2_All_TalkStart)
+            else if (/*eventFlagData.currentRoom == roomName &&*/ eventFlagData.ClassRoomF2_All && !eventFlagData.ClassRoomF2_All_TalkStart)
             {
                 eventFlagData.ClassRoomF2_All_TalkStart = true;
                 gameManager.OpenTextWindow(F2LackyText);

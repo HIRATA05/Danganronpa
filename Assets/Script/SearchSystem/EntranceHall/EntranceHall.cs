@@ -28,13 +28,13 @@ public class EntranceHall : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //始めて玄関ホールへ入った時の会話
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_EntranceHall)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_EntranceHall)
             {
                 eventFlagData.RoomIn_EntranceHall = true;
                 gameManager.OpenTextWindow(RoomFirstText);
             }
             //自己紹介後呼び出し
-            if (eventFlagData.currentRoom == roomName && eventFlagData.SelfIntoro_All && !eventFlagData.SelfIntoro_Call)
+            if (/*eventFlagData.currentRoom == roomName &&*/ eventFlagData.SelfIntoro_All && !eventFlagData.SelfIntoro_Call)
             {
                 Debug.Log("モノクマの登場");
                 eventFlagData.SelfIntoro_Call = true;

@@ -25,7 +25,7 @@ public class KyudoHall : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //Žn‚ß‚Ä’†’ë‚Ö“ü‚Á‚½Žž‚Ì‰ï˜b
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_KyudoHall)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_KyudoHall)
             {
                 eventFlagData.RoomIn_KyudoHall = true;
                 gameManager.OpenTextWindow(RoomFirstText);

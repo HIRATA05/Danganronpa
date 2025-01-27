@@ -147,6 +147,9 @@ public class EventFlagData : ScriptableObject
     public void RoomIn_True() { RoomIn = true; }
     public void RoomIn_False() { RoomIn = false; }
 
+    //移動制限
+    public bool F2ClassRoom;//２階イベント中
+
     //リザルトのスコア
     [Header("スコア")] public int Score = 0;
 
