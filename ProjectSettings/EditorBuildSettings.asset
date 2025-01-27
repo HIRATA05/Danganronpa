@@ -17,4 +17,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hirata/EndingScene.unity
     guid: a57bd7eaa4045e14fb5a798dd81c4582
+  - enabled: 1
+    path: Assets/Scenes/Hirata/ClassRoomF2_Hirata.unity
+    guid: 5a82e30ca5f10ed48bfa221c873f2775
+  - enabled: 1
+    path: Assets/Scenes/Hirata/DataProcessingRoom_Hirata.unity
+    guid: bf988b3e63c523342a8898813c7ddf0c
+  - enabled: 1
+    path: Assets/Scenes/Hirata/KyudoHall_Hirata.unity
+    guid: 252f6834aa7578744a9f6bba8cf16a23
+  - enabled: 1
+    path: Assets/Scenes/Hirata/Gym_Hirata.unity
+    guid: 889c0a1203d68c44b9ef9480983edb2a
+  - enabled: 1
+    path: Assets/Scenes/Hirata/Warehouse_Hirata.unity
+    guid: 834cdc4961b42cf489f46c18f38dd42b
+  - enabled: 1
+    path: Assets/Scenes/Hirata/Garden_Hirata.unity
+    guid: c9f3942ee74eb374fa47edaf247f158f
+  - enabled: 1
+    path: Assets/Scenes/Hirata/EntranceHall_Hirata.unity
+    guid: 06d56fdaa5292f04f96bb273456dec9e
+  - enabled: 1
+    path: Assets/Scenes/Hirata/Library_Hirata.unity
+    guid: 3d39da512787a17408563288bbeae7e4
+  - enabled: 1
+    path: Assets/Scenes/Hirata/MachineWorkRoom_Hirata.unity
+    guid: 18e68df298997c3449d1982141afc1be
+  - enabled: 1
+    path: Assets/Scenes/Hirata/HackerRoom_Hirata.unity
+    guid: bd40c0086bec73a4588ceecd3992b441
   m_configObjects: {}

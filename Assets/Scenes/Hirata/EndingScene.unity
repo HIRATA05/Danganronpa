@@ -1053,6 +1053,7 @@ MonoBehaviour:
   rectTransform: {fileID: 232837717}
   Endpos: 3200
   ThanksText: {fileID: 1490317269}
+  speed: 0.2
 --- !u!1 &254785813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,9 +3228,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ae6a2a03f82af354fbb11b05cc47bf68, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8bfc4c1e59ea77249aa262708914e89e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

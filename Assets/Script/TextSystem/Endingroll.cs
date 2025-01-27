@@ -13,6 +13,7 @@ public class Endingroll : MonoBehaviour
     public float Endpos;
     public GameObject ThanksText;
 
+    public float speed = 0.5f;
     float QuitTime = 10.0f;
     float time = 0.0f;
 
@@ -28,7 +29,7 @@ public class Endingroll : MonoBehaviour
         if (rectTransform.anchoredPosition.y < Endpos)
         {
 
-            Staffrollposition.y += 0.5f;
+            Staffrollposition.y += speed;
             rectTransform.anchoredPosition = Staffrollposition;
         }
         else
