@@ -107,17 +107,13 @@ public class GameManager : MonoBehaviour
             }
         }
         */
-    }
-
-    //探索中Mキーでマップを開く
-    public void MapSceneMove()
-    {
-        if(playerController == PlayerController.ReticleMode)
+        //探索中Mキーでマップを開く
+        if (playerController == PlayerController.ReticleMode)
         {
             if (Input.GetKeyDown(KeyCode.M))
             {
                 SceneManager.LoadScene(MapScene);
-            }   
+            }
         }
     }
 

@@ -114,6 +114,10 @@ namespace TECHC.Kamiyashiki
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneController.LoadScene(eventFlagData.currentRoom); // MかESCキー押すと元の部屋に戻る
+            }
 #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.Alpha0)) { LockRoom(); } // 全ての部屋をロックする
             if (Input.GetKeyDown(KeyCode.Alpha1)) { UnlockRoom(RoomName.教室1F); }
