@@ -18,7 +18,7 @@ public class InteractDoor : MonoBehaviour, IReceiveSearch
         if (gameManager.eventFlagData.GameStart_All_TalkStart)
         {
             //•Ê‚Ì•”‰®‚ÉˆÚ“®
-            SceneManager.LoadScene("End");
+            SceneManager.LoadScene("Map");
         }
         else
         {
