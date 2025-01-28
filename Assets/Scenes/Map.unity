@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 74813984}
   - component: {fileID: 74813983}
   m_Layer: 6
-  m_Name: MapButton8
+  m_Name: "\u9053\u5834"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 76266137}
   - component: {fileID: 76266136}
   m_Layer: 6
-  m_Name: MapButton7
+  m_Name: "\u4F53\u80B2\u9928"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 364510805}
   - component: {fileID: 364510804}
   m_Layer: 6
-  m_Name: MapButton4
+  m_Name: "\u7384\u95A2\u30DB\u30FC\u30EB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 400366324}
   - component: {fileID: 400366323}
   m_Layer: 6
-  m_Name: MapButton10
+  m_Name: "\u56F3\u66F8\u5BA4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,17 +817,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400366321}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: -0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1701629764}
-  m_Father: {fileID: 1696699003}
+  m_Father: {fileID: 2085269349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.8, y: 128.8}
+  m_AnchoredPosition: {x: 37.79996, y: -128.79997}
   m_SizeDelta: {x: 272.1, y: 151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400366323
@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 640139117}
   - component: {fileID: 640139116}
   m_Layer: 6
-  m_Name: MapButton1
+  m_Name: "\u6559\u5BA41F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1536,7 +1536,7 @@ GameObject:
   - component: {fileID: 834574927}
   - component: {fileID: 834574926}
   m_Layer: 6
-  m_Name: MapButton5
+  m_Name: "\u98DF\u5802"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1657,7 +1657,7 @@ GameObject:
   - component: {fileID: 919053437}
   - component: {fileID: 919053436}
   m_Layer: 6
-  m_Name: MapButton2
+  m_Name: "\u60C5\u5831\u51E6\u7406\u5BA4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2165,44 +2165,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583789759}
   m_CullTransparentMesh: 1
---- !u!1 &1696699002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1696699003}
-  m_Layer: 6
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1696699003
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696699002}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1709571563}
-  - {fileID: 400366322}
-  - {fileID: 1712115284}
-  m_Father: {fileID: 2085269349}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1701629763
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,7 +2257,7 @@ GameObject:
   - component: {fileID: 1709571565}
   - component: {fileID: 1709571564}
   m_Layer: 6
-  m_Name: MapButton9
+  m_Name: "\u6559\u5BA42F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2308,17 +2270,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709571562}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: -0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1583789760}
-  m_Father: {fileID: 1696699003}
+  m_Father: {fileID: 2085269349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -340.41, y: -28}
+  m_AnchoredPosition: {x: 340.41, y: 28.000038}
   m_SizeDelta: {x: 261.1, y: 138.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1709571564
@@ -2416,7 +2378,7 @@ GameObject:
   - component: {fileID: 1712115286}
   - component: {fileID: 1712115285}
   m_Layer: 6
-  m_Name: MapButton11
+  m_Name: "\u6A5F\u68B0\u5DE5\u4F5C\u5BA4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2429,17 +2391,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712115283}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: -0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1965919226}
-  m_Father: {fileID: 1696699003}
+  m_Father: {fileID: 2085269349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220.5, y: -84.8}
+  m_AnchoredPosition: {x: -220.5, y: 84.79997}
   m_SizeDelta: {x: 308.51, y: 151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1712115285
@@ -2834,7 +2796,7 @@ GameObject:
   - component: {fileID: 2065910348}
   - component: {fileID: 2065910347}
   m_Layer: 6
-  m_Name: MapButton12
+  m_Name: "\u751F\u5F92\u500B\u5BA4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2955,7 +2917,7 @@ GameObject:
   - component: {fileID: 2071868007}
   - component: {fileID: 2071868006}
   m_Layer: 6
-  m_Name: MapButton6
+  m_Name: "\u5009\u5EAB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3093,7 +3055,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1696699003}
+  - {fileID: 1709571563}
+  - {fileID: 400366322}
+  - {fileID: 1712115284}
   m_Father: {fileID: 2134440436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3231,7 +3195,7 @@ GameObject:
   - component: {fileID: 2128467383}
   - component: {fileID: 2128467382}
   m_Layer: 6
-  m_Name: MapButton3
+  m_Name: "\u4E2D\u5EAD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

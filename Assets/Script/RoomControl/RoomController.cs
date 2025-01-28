@@ -19,7 +19,7 @@ namespace TECHC.Kamiyashiki
         ‹³º2F,
         }‘º,
         ‹@ŠBHìº,
-        TestRoom,
+        TestRoom, // EventFragData‚ÌCurrentRoom‚ğRoomName(Enum)Œ^‚É•ÏX‚µ‚½‚©‚çARoom.cs‚ÌTestRoom‚¾‚¯•Ê‚Ì•û–@‚Å‘‚¢‚½•û‚ª‚¢‚¢‚©‚à
     }
 
     [System.Serializable]
