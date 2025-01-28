@@ -11,7 +11,7 @@ public class InteractWindowRopeGarden : MonoBehaviour, IReceiveSearch
     //[SerializeField] private DialogueText F2MoveText; //2ŠK‚Ö‚ÌˆÚ“®
     [SerializeField] private DialogueText MoveAfterText;//2ŠKˆÚ“®Œã
 
-    [SerializeField] private string MoveScene;
+    [SerializeField] private RoomName MoveScene;
 
     private GameManager gameManager;
 
@@ -24,7 +24,7 @@ public class InteractWindowRopeGarden : MonoBehaviour, IReceiveSearch
             //•”‰®‚ÌˆÚ“® 2ŠK‚Ì‹³Žº
             gameManager.eventFlagData.currentRoom = MoveScene;
             gameManager.eventFlagData.F2Intrusion = true;
-            SceneManager.LoadScene(MoveScene);
+            SceneController.LoadScene(MoveScene);
         }
         //2ŠK‚Ö‚ÌˆÚ“®Œã
         else

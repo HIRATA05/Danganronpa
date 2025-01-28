@@ -1,14 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TECHC.Kamiyashiki;
 
 [CreateAssetMenu(fileName = "EventFlag", menuName = "ScriptableObjects/CreateEventFlagData")]
 public class EventFlagData : ScriptableObject
 {
     //現在の部屋
     [Header("現在の部屋")]
-    public string currentRoom;
+    public RoomName currentRoom;
 
     //アイテム
     [Header("アイテム")]

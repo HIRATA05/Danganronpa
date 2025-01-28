@@ -1,13 +1,11 @@
-using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
+using TECHC.Kamiyashiki;
 using UnityEngine;
 
 public class Room : MonoBehaviour
 {
     //現在いる部屋を定義 部屋の数だけ作成
 
-    public string roomName;
+    public RoomName roomName;
 
     [SerializeField, Header("部屋の中での自動発生会話")] private DialogueText RoomText;
 
@@ -23,7 +21,7 @@ public class Room : MonoBehaviour
     void Update()
     {
         //現在の部屋がこの部屋でフラグがTrueで発生フラグが立った時イベント発生
-        if (gameManager.eventFlagData.currentRoom == roomName && roomName == "TestRoom" && gameManager.eventFlagData.RoomIn)
+        if (gameManager.eventFlagData.currentRoom == roomName && roomName == RoomName.TestRoom && gameManager.eventFlagData.RoomIn)
         {
             Debug.Log("RoomIn");
             gameManager.OpenTextWindow(RoomText);

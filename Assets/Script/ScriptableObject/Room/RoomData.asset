@@ -9,16 +9,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd3d75c2db81af74f93842f97676ac59, type: 3}
+  m_Script: {fileID: 11500000, guid: cca6b4e60ba0a2748acb06b0075719dd, type: 3}
   m_Name: RoomData
   m_EditorClassIdentifier: 
-  RoomList:
-  - roomNameString: "\u6559\u5BA4"
-    roomName: 0
-    isRoomActive: 0
-  - roomNameString: "\u5236\u5FA1\u5BA4"
-    roomName: 1
-    isRoomActive: 0
-  - roomNameString: "\u4E2D\u5EAD"
-    roomName: 2
-    isRoomActive: 0
+  roomStates:
+  - roomName: 0
+    isLocked: 0
+  - roomName: 1
+    isLocked: 0
+  - roomName: 2
+    isLocked: 0
+  - roomName: 3
+    isLocked: 0
+  - roomName: 4
+    isLocked: 0
+  - roomName: 5
+    isLocked: 0
+  - roomName: 6
+    isLocked: 0
+  - roomName: 7
+    isLocked: 0
+  - roomName: 8
+    isLocked: 0
+  - roomName: 9
+    isLocked: 0
+  - roomName: 10
+    isLocked: 0
+  - roomName: 11
+    isLocked: 0
