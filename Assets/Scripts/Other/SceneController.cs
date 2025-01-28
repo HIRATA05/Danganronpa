@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ namespace TECHC.Kamiyashiki
         Title,
         InGame,
         Results,
+        Map,
     }
  
     public static class SceneController
@@ -24,7 +26,7 @@ namespace TECHC.Kamiyashiki
             yield return new WaitForSecondsRealtime(waitTime);
             SceneManager.LoadScene(sceneName.ToString());
         }
-        public static void LoadScene(SceneName sceneName)
+        public static void LoadScene(Enum sceneName)
         {
             SceneManager.LoadScene(sceneName.ToString());
         }

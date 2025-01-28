@@ -1,81 +1,257 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static TECHC.Kamiyashiki.RoomController;
 
 namespace TECHC.Kamiyashiki
 {
-    [System.Serializable]
     public enum RoomName
     {
-        ControlRoom,
-        ClassRoom,
-        Garden,
-    }
-
-    [System.Serializable]
-    public class Room
-    {
-        public RoomName roomName; // ï¿½ï¿½ï¿½ï¿½ï¿½Ì–ï¿½ï¿½O (enum ï¿½^ï¿½É•ÏX)
-        public GameObject roomObject; // ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½g
-        public GameObject mapImage; // ï¿½}ï¿½bï¿½vï¿½Å‚Ì•\ï¿½ï¿½ï¿½æ‘œ
+        ‹³º1F,
+        î•ñˆ—º,
+        ŒºŠÖƒz[ƒ‹,
+        H“°,
+        ’†’ë,
+        ‘ÌˆçŠÙ,
+        ‘qŒÉ,
+        “¹ê,
+        ¶“kŒÂº,
+        ‹³º2F,
+        }‘º,
+        ‹@ŠBHìº,
     }
 
     public class RoomController : MonoBehaviour
     {
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-        public List<Room> roomList = new List<Room>();
-        private Dictionary<RoomName, Vector3> roomPositions = new Dictionary<RoomName, Vector3>();
 
+        [Header("ƒtƒ‰ƒOƒf[ƒ^")]
+        [SerializeField] private EventFlagData eventFlagData;
+
+        private static RoomController instance = null;
+
+        [System.Serializable]
+        public class Room
+        {
+            public string roomNameString; // •”‰®‚ÌƒV[ƒ“–¼(QÆ‚É‚ÍEnum‚ğ„§)
+            public RoomName roomName; // •”‰®‚ÌEnum
+            public GameObject roomButton; // ƒ}ƒbƒv‚É”z’u‚·‚éƒ{ƒ^ƒ“
+            public bool isLocked; // •”‰®‚ª‰ğ•ú‚³‚ê‚Ä‚¢‚é‚©
+        }
+
+        [Header("Še•”‰®İ’è")]
+        [SerializeField]
+        private Room[] roomList;
+        private RoomName currentRoom;
+        public GameObject MapPanel;
+
+        [Header("ƒCƒxƒ“ƒgƒVƒXƒeƒ€")]
         [SerializeField] private EventSystem eventSystem;
-        [SerializeField] private GameObject playerObject;
+
+        public static RoomController Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    // ƒV[ƒ“‚É‘¶İ‚µ‚È‚¢ê‡A©“®¶¬
+                    GameObject obj = new GameObject("GameDataManager");
+                    instance = obj.AddComponent<RoomController>();
+                }
+                return instance;
+            }
+        }
 
         private void Awake()
         {
-            foreach (var room in roomList)
+            // ƒVƒ“ƒOƒ‹ƒgƒ“
+            if (instance == null)
             {
-                //ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½İ’ï¿½
-                room.roomObject.name = room.roomName.ToString();
-                room.mapImage.name = room.roomName.ToString();
-
-                room.mapImage.GetComponent<Button>().onClick.AddListener(BeginMoveRoom);
-
-                if (!roomPositions.ContainsKey(room.roomName))
-                {
-                    roomPositions.Add(room.roomName, room.roomObject.transform.position);
-                }
-            }
-        }
-
-        public IEnumerator WaitAndMoveRoom(RoomName roomName, float waitTime, Transform target)
-        {
-            yield return new WaitForSecondsRealtime(waitTime);
-            MoveRoom(roomName, target);
-        }
-
-        public void MoveRoom(RoomName roomName, Transform target)
-        {
-            if (roomPositions.TryGetValue(roomName, out Vector3 position))
-            {
-                target.position = position;
+                instance = this;
+                DontDestroyOnLoad(gameObject);
             }
             else
             {
-                Debug.LogWarning($"Room '{roomName}' does not exist!");
+                Destroy(gameObject);
+            }
+
+            Init();
+        }
+
+        private void Init()
+        {
+            // ‰Šúİ’è
+            foreach (var room in roomList)
+            {
+                // ƒ{ƒ^ƒ“ƒIƒuƒWƒFƒNƒg‚Ì–¼‘O‚ğRoomName‚Æˆê’v‚³‚¹‚é
+                room.roomButton.name = room.roomName.ToString();
+                room.roomButton.GetComponentInChildren<Text>().text = room.roomName.ToString();
+
+                room.isLocked = true;
+            }
+            LockRoom();
+            // Œ»İ‚Ì•”‰®‚ğŠJ•ú‚·‚é
+            //currentRoom = RoomName.‹³º1F;
+            //OpenRoom(currentRoom);
+            
+            //ƒtƒ‰ƒO‚É‚æ‚Á‚Ä•”‰®‚ğŠJ•ú
+            if (!eventFlagData.F2ClassRoom)
+            {
+                OpenRoom(RoomName.‹³º1F);
+
+                if (eventFlagData.GameStart_All_TalkStart)
+                {
+                    OpenRoom(RoomName.ŒºŠÖƒz[ƒ‹);
+                    OpenRoom(RoomName.’†’ë);
+                    OpenRoom(RoomName.H“°);
+                } 
+            }
+            
+
+            if (eventFlagData.SelfIntoro_Call && !eventFlagData.F2ClassRoom)
+            {
+                OpenRoom(RoomName.‘ÌˆçŠÙ);
+            }
+
+            if (eventFlagData.AdventureStart && !eventFlagData.F2ClassRoom)
+            {
+                OpenRoom(RoomName.‘qŒÉ);
+                OpenRoom(RoomName.“¹ê);
+
+            }
+
+            if (eventFlagData.F2Intrusion)
+            {
+                OpenRoom(RoomName.‹³º2F);
+            }
+
+            if (eventFlagData.F2Intrusion && !eventFlagData.F2ClassRoom)
+            {
+                OpenRoom(RoomName.}‘º);
+                OpenRoom(RoomName.‹@ŠBHìº);
+            }
+
+            if (eventFlagData.PressMachineLock && eventFlagData.itemDataBase.truthBullets[6].getFlag)
+            {
+                OpenRoom(RoomName.¶“kŒÂº);
+            }
+
+            if (eventFlagData.itemDataBase.truthBullets[8].getFlag)
+            {
+                OpenRoom(RoomName.î•ñˆ—º);
+            }
+            
+        }
+
+        private void Update()
+        {
+            // ƒ}ƒbƒv‚ğŠJ‚­
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                SceneController.LoadScene(SceneName.Map);
+                MapPanel.SetActive(true);
+            }
+            /*
+            if (Input.GetKeyDown(KeyCode.Q)) { OpenRoom(RoomName.ClassRoom); }
+            if (Input.GetKeyDown(KeyCode.W)) { OpenRoom(RoomName.ControlRoom); }
+            if (Input.GetKeyDown(KeyCode.E)) { OpenRoom(RoomName.Garden); }*/
+
+            
+        }
+
+        private void LockRoom()
+        {
+            List<Room> lockedRoom = new List<Room>();
+            foreach (Room room in roomList)
+            {
+                if (room.isLocked)
+                    lockedRoom.Add(room);
+            }
+            if (lockedRoom.Count == 0)
+                return;
+
+            foreach (Room room in lockedRoom)
+            {
+                var button = room.roomButton.GetComponent<Button>();
+                button.interactable = false;
             }
         }
 
-        public void BeginMoveRoom()
+        private void UnlockRoom()
         {
-            Debug.Log("map");
+            List<Room> unlockedRoom = new List<Room>();
+            foreach (Room room in roomList)
+            {
+                if (!room.isLocked)
+                    unlockedRoom.Add(room);
+            }
+            if (unlockedRoom.Count == 0)
+                return;
+
+            foreach (Room room in unlockedRoom)
+            {
+                var button = room.roomButton.GetComponent<Button>();
+                button.interactable = true;
+
+                // ƒ}ƒbƒv‚Ìƒ{ƒ^ƒ“‚ÉƒCƒxƒ“ƒg‚ğ’Ç‰Á
+                button.onClick.AddListener(OnClickMoveRoom);
+            }
+        }
+
+        public void OpenRoom(RoomName roomName)
+        {
+            foreach(Room room in roomList)
+            {
+                if(room.roomName == roomName)
+                {
+                    room.isLocked = false;
+                }
+            }
+            UnlockRoom();
+        }
+
+        /// <summary>
+        /// •”‰®ˆÚ“®‚·‚é
+        /// </summary>
+        public void MoveRoom(RoomName _nextRoom)
+        {
+            currentRoom = _nextRoom;
+
+            SceneController.LoadScene(_nextRoom);
+            MapPanel.SetActive(false);
+        }
+
+        /// <summary>
+        /// n•bŠÔ‘Ò‚Á‚Ä‚©‚ç•”‰®ˆÚ“®‚·‚é
+        /// </summary>
+        public IEnumerator WaitAndMoveRoom(RoomName _roomName, float _waitTime)
+        {
+            yield return new WaitForSecondsRealtime(_waitTime);
+            MoveRoom(_roomName);
+        }
+
+        /// <summary>
+        /// •”‰®ˆÚ“®‚ğŠJn‚·‚é(ƒ{ƒ^ƒ“—pŠÖ”)
+        /// </summary>
+        public void OnClickMoveRoom()
+        {
+            string clickButtonName = eventSystem.currentSelectedGameObject.name;
+
+            // Œ»İ‚Ì•”‰®‚ğ‰Ÿ‚µ‚½‚çƒŠƒ^[ƒ“‚·‚é
+            if (clickButtonName == currentRoom.ToString())
+            {
+                return;
+            }
+
+            // •”‰®–¼‚ÆƒNƒŠƒbƒN‚µ‚½‰æ‘œ‚Ì–¼‘O‚ªˆê‚È‚ç•”‰®ˆÚ“®
             foreach (RoomName room in Enum.GetValues(typeof(RoomName)))
             {
-                if (eventSystem.currentSelectedGameObject.name == room.ToString())
+                if (clickButtonName == room.ToString())
                 {
-                    Debug.Log("move");
-                    MoveRoom(room, playerObject.transform);
+                    MoveRoom(room);
                 }
             }
         }

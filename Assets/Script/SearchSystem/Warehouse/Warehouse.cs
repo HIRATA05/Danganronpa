@@ -26,13 +26,13 @@ public class Warehouse : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //始めて倉庫へ入った時の会話
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_Warehouse)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_Warehouse)
             {
                 eventFlagData.RoomIn_Warehouse = true;
                 gameManager.OpenTextWindow(RoomFirstText);
             }
             //扉開錠の要請
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.WarehouseRequest && eventFlagData.IronBars)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.WarehouseRequest && eventFlagData.IronBars)
             {
                 eventFlagData.WarehouseRequest = true;
                 gameManager.OpenTextWindow(RequestText);

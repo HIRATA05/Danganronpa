@@ -20,7 +20,7 @@ public class TextWindow : MonoBehaviour
     RoomObjectManager roomObjectManager;
 
     [NonSerialized] public DialogueText dialogueText;
-    [SerializeField, Header("部屋表示ウィンドウのオブジェクト")] private GameObject roomObject;
+    //[SerializeField, Header("部屋表示ウィンドウのオブジェクト")] private GameObject roomObject;
     [SerializeField, Header("時間表示ウィンドウのオブジェクト")] private GameObject timeObject;
     [SerializeField, Header("テキストウィンドウのオブジェクト")] private GameObject panelObject;
     //表示するテキストによって変化するテキストウィンドウ
@@ -116,9 +116,10 @@ public class TextWindow : MonoBehaviour
         {
             if (!panelObject.activeSelf)
                 panelObject.SetActive(true);
+            if(timeObject.activeSelf)
+                timeObject.SetActive(false);
             //会話文表示処理を実行する
             ProgressText();
-            
         }
         else if(gameManager.playerController == GameManager.PlayerController.EventScene)
         {
@@ -468,12 +469,12 @@ public class TextWindow : MonoBehaviour
     {
         if (isChange == true)
         {
-            roomObject.SetActive(true);
+            //roomObject.SetActive(true);
             timeObject.SetActive(true);
         }
         else if (isChange == false)
         {
-            roomObject.SetActive(false);
+            //roomObject.SetActive(false);
             timeObject.SetActive(false);
         }
     }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -50,6 +51,8 @@ public class GameManager : MonoBehaviour
     //会話との間に待機時間が発生するイベントフラグ
     [NonSerialized] public static bool isTalkPause = false;
 
+    //マップシーン
+    public string MapScene = "Map";
     //エンディングシーン
     public string EndingScene = "EndingScene";
 
@@ -106,6 +109,17 @@ public class GameManager : MonoBehaviour
         */
     }
 
+    //探索中Mキーでマップを開く
+    public void MapSceneMove()
+    {
+        if(playerController == PlayerController.ReticleMode)
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                SceneManager.LoadScene(MapScene);
+            }   
+        }
+    }
 
     //ReticleModeに変更
     public void ReticleModeChange()

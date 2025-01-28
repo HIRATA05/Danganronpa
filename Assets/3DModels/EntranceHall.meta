@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/3DModels/EntranceHall.meta
 guid: 549c34b6bf511e3478fccf446ce3f99f
+========
+guid: bf8f066fd0f79cd44bcbfdb3e54a24ed
+>>>>>>>> main:Assets/3DModels/nakaniwa4.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

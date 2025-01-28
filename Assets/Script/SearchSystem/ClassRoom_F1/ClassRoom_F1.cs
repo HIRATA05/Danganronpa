@@ -26,7 +26,7 @@ public class ClassRoom_F1 : MonoBehaviour
         if(gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //‘S‚Ä’²‚×I‚í‚Á‚½
-            if (eventFlagData.currentRoom == roomName && eventFlagData.GameStart_All)
+            if (/*eventFlagData.currentRoom == roomName && */eventFlagData.GameStart_All)
             {
                 Debug.Log("GameStart_All");
                 eventFlagData.GameStart_All = false;

@@ -238,6 +238,17 @@ public class FlagChangeEffect : MonoBehaviour
         eventFlagData.AppMonokumaEnd = true;
     }
 
+    //2階イベント中移動制限
+    public void F2ClassRoom_True()
+    {
+        eventFlagData.F2ClassRoom = true;
+    }
+    //2階イベント中移動制限解除
+    public void F2ClassRoom_False()
+    {
+        eventFlagData.F2ClassRoom = false;
+    }
+
     //部屋移動
     public void SceneChange(string scene)
     {

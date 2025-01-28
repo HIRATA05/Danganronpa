@@ -27,7 +27,7 @@ public class Garden : MonoBehaviour
         if (gameManager.playerController == GameManager.PlayerController.ReticleMode)
         {
             //始めて中庭へ入った時の会話
-            if (eventFlagData.currentRoom == roomName && !eventFlagData.RoomIn_Garden)
+            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.RoomIn_Garden)
             {
                 eventFlagData.RoomIn_Garden = true;
                 gameManager.OpenTextWindow(RoomFirstText);
@@ -41,7 +41,7 @@ public class Garden : MonoBehaviour
             }
             */
             //自己紹介後呼び出し
-            if (eventFlagData.currentRoom == roomName && eventFlagData.SelfIntoro_All && !eventFlagData.SelfIntoro_Call)
+            if (/*eventFlagData.currentRoom == roomName &&*/ eventFlagData.SelfIntoro_All && !eventFlagData.SelfIntoro_Call)
             {
                 Debug.Log("モノクマの登場");
                 eventFlagData.SelfIntoro_Call = true;
