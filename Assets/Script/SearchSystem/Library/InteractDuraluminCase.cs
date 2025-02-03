@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TECHC.Kamiyashiki;
 using UnityEngine;
 
 public class InteractDuraluminCase : MonoBehaviour, IReceiveSearch
@@ -8,6 +9,8 @@ public class InteractDuraluminCase : MonoBehaviour, IReceiveSearch
 
     [SerializeField] private DialogueText NormalText; //図書室のケース調査前
     [SerializeField] private DialogueText AfterText; //図書室のケース調査後
+
+    [SerializeField] private Mystery duraluminMystery; 
 
     private GameManager gameManager;
 
@@ -22,7 +25,7 @@ public class InteractDuraluminCase : MonoBehaviour, IReceiveSearch
         }
         else if(gameManager.eventFlagData.DuraluminCaseInteract && !gameManager.eventFlagData.DuraluminCaseLogic)
         {
-            Debug.Log("数字入力処理を発生させる");
+            duraluminMystery.StartMystery();
         }
         else
         {

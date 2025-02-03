@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour
         ReticleMode,//探索
         TextWindowMode,//会話
         DiscussionMode,//議論
-        EventScene//イベントシーン
+        EventScene,//イベントシーン
+        MysteryMode, //謎解き
     }
     [NonSerialized] public PlayerController playerController;
 
