@@ -8,25 +8,22 @@ namespace TECHC.Kamiyashiki
 {
     public class DuraluminMystery : Mystery
     {
+        // TODO:謎解き時、後ろのオブジェクト干渉しないように
+        // TODO:ノートPC入手のフラグ
+
         [Header("南京錠の各ロック(左から)")]
         [SerializeField] private GameObject[] locks;
 
+        [Header("南京錠の各ロックを動かすボタン")]
         [SerializeField] private Button[] lockButtons;
 
         private float rotAngle = 36;
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                gameManager.playerController = GameManager.PlayerController.MysteryMode;
-                SolvingMystery();
-            }
-        }
-
         protected override void SolvingMystery()
         {
             base.SolvingMystery();
+
+            ResetLock();
 
             int length = lockButtons.Length;
             int half = lockButtons.Length / 2;
@@ -36,13 +33,11 @@ namespace TECHC.Kamiyashiki
                 if (index < half)
                 {
                     lockButtons[index].onClick.AddListener(() => TurnLock(index, true));
-                    Debug.Log("TurnLock(" + index + ", " + "True)");
                 }
                 else
                 {
                     int adjustedIndex = index % half;
                     lockButtons[index].onClick.AddListener(() => TurnLock(adjustedIndex, false));
-                    Debug.Log("TurnLock(" + adjustedIndex + ", " + "False)");
                 }
             }
         }
@@ -51,14 +46,29 @@ namespace TECHC.Kamiyashiki
         {
             float addRot = isUp ? rotAngle : -rotAngle;
             locks[lockNum].transform.Rotate(addRot, 0, 0);
+            currentPIN[lockNum] = (currentPIN[lockNum] + (isUp ? 1 : -1) + 10) % 10; // 0の時下:-1+10=9、9%10=9;9の時上:1+10=11、11%10=1
+            CheckLock();
         }
 
         public void ResetLock()
         {
-            foreach (var _lock in locks)
+            for (int i = 0; i < currentPIN.Length; i++)
             {
-                _lock.transform.Rotate(0, 0, 0);
+                locks[i].transform.localRotation = Quaternion.Euler(0, 0, 0);
+                currentPIN[i] = 0;
             }
+        }
+
+        public void CheckLock()
+        {
+            for (int i = 0; i < currentPIN.Length; i++)
+            {
+                if (currentPIN[i] != mysteryState.PIN[i])
+                {
+                    return;
+                }
+            }
+            SuccessMystery();
         }
     }
 }
