@@ -103,7 +103,7 @@ public class ReticleAim : MonoBehaviour
                     SearchObjInformationText.color = Color.black;
 
                 //この状態で調べるとテキスト表示
-                if (Input.GetKeyUp(KeyCode.Space))
+                if (Input.GetMouseButtonDown(0)/*Input.GetKeyUp(KeyCode.Space)*/)
                 {
                     //インタフェースを確認する
                     IReceiveSearch SearchObj = hit.transform.GetComponent<IReceiveSearch>();

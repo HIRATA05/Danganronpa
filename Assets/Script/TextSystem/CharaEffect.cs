@@ -94,6 +94,38 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceFrightened();
         }
     }
+    public void ChangeFace_Rage(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceRage();
+        }
+    }
+    public void ChangeFace_Excitement(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceExcitement();
+        }
+    }
+    public void ChangeFace_Upset(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceUpset();
+        }
+    }
+    public void ChangeFace_Despair(GameObject chara)
+    {
+        //CharaFaceChangeがアタッチされているか確認
+        if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
+        {
+            chara.GetComponent<CharaFaceChange>().ChangeFaceDespair();
+        }
+    }
 
     //イベントCGを表示
     public void EventImageDisplay(Sprite sprite)

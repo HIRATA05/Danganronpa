@@ -15,24 +15,24 @@ MonoBehaviour:
   currentRoom: 10
   itemDataBase: {fileID: 11400000, guid: 4d33a3ffe9762db44973a8f7ebbdf278, type: 2}
   EscepeSwitch: 0
-  GameStart: 0
-  GameStart_Window: 1
-  GameStart_Monitor: 1
-  GameStart_Lacky: 1
+  GameStart: 1
+  GameStart_Window: 0
+  GameStart_Monitor: 0
+  GameStart_Lacky: 0
   GameStart_All: 0
-  GameStart_All_TalkStart: 1
-  SelfIntoro_Archer: 1
-  SelfIntoro_Hacker: 1
-  SelfIntoro_PhantomThief: 1
-  SelfIntoro_All: 1
-  SelfIntoro_Call: 1
+  GameStart_All_TalkStart: 0
+  SelfIntoro_Archer: 0
+  SelfIntoro_Hacker: 0
+  SelfIntoro_PhantomThief: 0
+  SelfIntoro_All: 0
+  SelfIntoro_Call: 0
   AppMonokuma: 0
-  AppMonokumaEnd: 1
-  AppMonokumaAfter: 1
-  AdventureStart: 1
+  AppMonokumaEnd: 0
+  AppMonokumaAfter: 0
+  AdventureStart: 0
   DiningDiscStart: 0
   WarehouseRequest: 0
-  Digitalclock: 1
+  Digitalclock: 0
   BatteryInLight: 0
   F2Request: 0
   F2Open: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   ClassRoomF2_All_TalkStart: 0
   BookShelf: 0
   LibraryBook: 0
-  DuraluminCaseInteract: 1
+  DuraluminCaseInteract: 0
   DuraluminCaseLogic: 0
   MemoMachineWork: 0
   PressMachineLock: 0
@@ -69,14 +69,14 @@ MonoBehaviour:
   Chara_DataProcessingRoom: 0
   EscepeEvent: 0
   GameStart_ClassRoom: 0
-  RoomIn_Dining: 1
-  RoomIn_Garden: 1
-  RoomIn_EntranceHall: 1
-  RoomIn_Gym: 1
+  RoomIn_Dining: 0
+  RoomIn_Garden: 0
+  RoomIn_EntranceHall: 0
+  RoomIn_Gym: 0
   RoomIn_Warehouse: 0
-  RoomIn_KyudoHall: 1
+  RoomIn_KyudoHall: 0
   RoomIn_ClassRoom_F2: 0
-  RoomIn_Library: 1
+  RoomIn_Library: 0
   RoomIn_MachineWorkRoom: 0
   RoomIn_HackerRoom: 0
   RoomIn_DataProcessingRoom: 0

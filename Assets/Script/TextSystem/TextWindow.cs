@@ -81,7 +81,7 @@ public class TextWindow : MonoBehaviour
     private double RectSetAllow = 0.0001;
 
     //現在のカメラ分割設定
-    TalkCameraManager.CameraSet.CameraDivision currentCameraDivision = TalkCameraManager.CameraSet.CameraDivision.CenterOnly;
+    TalkCameraManager.CameraSet.CameraDivision currentCameraDivision/* = TalkCameraManager.CameraSet.CameraDivision.CenterOnly*/;
 
     //子オブジェクトを指定するための3つのヴァーチャルカメラ番号
     private const int vcamNumCenter = 2, vcamNumRight = 3, vcamNumLeft = 4;
@@ -114,10 +114,12 @@ public class TextWindow : MonoBehaviour
         //テキストを表示
         if (gameManager.playerController == GameManager.PlayerController.TextWindowMode)
         {
+            /*
             if (!panelObject.activeSelf)
                 panelObject.SetActive(true);
             if(timeObject.activeSelf)
                 timeObject.SetActive(false);
+            */
             //会話文表示処理を実行する
             ProgressText();
         }
@@ -134,6 +136,7 @@ public class TextWindow : MonoBehaviour
     {
         if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterOnly)
         {
+            //Debug.Log("カメラenabled:True CenterOnly");
             CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_CenterOnly_Left,
@@ -162,9 +165,9 @@ public class TextWindow : MonoBehaviour
         }
         else if(currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.None)
         {
+            //Debug.Log("カメラenabled:False None");
             //会話カメラ無し
             CameraEnabledOff();
-            Debug.Log("カメラenabled false");
             /*
             TaklCamera_1.enabled = false;
             TaklCamera_2.enabled = false;
@@ -199,19 +202,7 @@ public class TextWindow : MonoBehaviour
             //最初の会話の表示
             DisplayDialogueText();
         }
-
-        //カメラが非表示なら表示する
-        if (!TaklCamera_1.enabled)
-        {
-            /*
-            Debug.Log("カメラenabled true");
-            TaklCamera_1.enabled = true;
-            TaklCamera_2.enabled = true;
-            TaklCamera_3.enabled = true;
-            */
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetMouseButtonDown(0)/*Input.GetKeyDown(KeyCode.Space)*/)
         {
             //次の会話の表示
             DisplayDialogueText();
@@ -246,6 +237,11 @@ public class TextWindow : MonoBehaviour
             roomObjectManager.RoomObjectPriorityChange(cameraSet.camLookLeft, vcamNumLeft);
 
             //カメラ分割を設定
+            currentCameraDivision = cameraSet.camDivision;
+            
+            //それぞれのカメラの表示範囲を指定の位置まで移動する
+            TalkCameraRectMove();
+            /*
             if (currentCameraDivision != cameraSet.camDivision)
             {
                 //それぞれのカメラの表示範囲を指定の位置まで移動する
@@ -253,7 +249,7 @@ public class TextWindow : MonoBehaviour
 
                 TalkCameraRectMove();
             }
-
+            */
             //話者の名前を表示
             //speakerNameText.text = dialogueText.textInfomations[index].speakerName;
             if(dialogueText.textInfomations[index].speakerName == "シノノメ トオル")

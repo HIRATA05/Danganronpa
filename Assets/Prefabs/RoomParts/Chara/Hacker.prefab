@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662d0e3b0cc4e784e95ee160e7383230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjName: "\u6C34\u7121\u702C\u7F6A\u9999"
+  ObjName: "\u30DF\u30CA\u30BB\u30C4\u30DF\u30AB"
 --- !u!114 &1321926923142370224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,16 +87,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceImage:
   - {fileID: 21300000, guid: f370dc5c3e4672c4f842c6a9bd5b32c3, type: 3}
-  - {fileID: 21300000, guid: be0faae43ef754e419f362ffec783101, type: 3}
-  - {fileID: 21300000, guid: be0faae43ef754e419f362ffec783101, type: 3}
-  - {fileID: 21300000, guid: be0faae43ef754e419f362ffec783101, type: 3}
-  - {fileID: 21300000, guid: be0faae43ef754e419f362ffec783101, type: 3}
-  - {fileID: 21300000, guid: 845d3970ef90b47489a86a3e12089548, type: 3}
-  - {fileID: 21300000, guid: 284d8df6aa2abf144ba46af11e34a32a, type: 3}
-  - {fileID: 21300000, guid: 6e8f32f849e8dac448f173fa2e13d5ed, type: 3}
-  - {fileID: 21300000, guid: c342b4ad9775acb4ea2cfd8308c1ec54, type: 3}
-  - {fileID: 21300000, guid: 845d3970ef90b47489a86a3e12089548, type: 3}
-  - {fileID: 21300000, guid: 284d8df6aa2abf144ba46af11e34a32a, type: 3}
+  - {fileID: 21300000, guid: ef5a0639d41a0ba4ab86471f801ae261, type: 3}
+  - {fileID: 21300000, guid: 850a4d7d0ac804b44bae54de83acee0a, type: 3}
+  - {fileID: 21300000, guid: 5f2147a10badcf946818beda28d02f88, type: 3}
+  - {fileID: 21300000, guid: 5b06fb88ea3ab5c45aac85d6f084bc2e, type: 3}
+  - {fileID: 21300000, guid: 9dbc1e5a43d65df408925a518b421534, type: 3}
+  - {fileID: 21300000, guid: e4f58b48f12f900448c07276653a4a28, type: 3}
+  - {fileID: 21300000, guid: 878a60bc79c81f040abd81da354a1957, type: 3}
+  - {fileID: 21300000, guid: f370dc5c3e4672c4f842c6a9bd5b32c3, type: 3}
+  - {fileID: 21300000, guid: 17d32a77675173d48b22c6c70bb7ec5b, type: 3}
+  - {fileID: 21300000, guid: f370dc5c3e4672c4f842c6a9bd5b32c3, type: 3}
   defaultFace: {fileID: 21300000, guid: f370dc5c3e4672c4f842c6a9bd5b32c3, type: 3}
 --- !u!1 &183079196313184484
 GameObject:

@@ -789,6 +789,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 766664772958486094, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: ObjName
+      value: "\u30B3\u30C8\u30AE\u30DE\u30CA"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 66b865a7fb0b6374e9080127c6b34480, type: 3}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 064c92b67e632a24ba38a717aff8730b, type: 3}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c89791d5cccdac4ebc2393ea96f5e38, type: 3}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1bab342dffa80e94198048cef98c36f3, type: 3}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 67c2091131f065f41873a799d0598635, type: 3}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 39bf917d9e27c1b48b8e8722a8c7e09e, type: 3}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: be0faae43ef754e419f362ffec783101, type: 3}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7bae4ffcca8e4a8489895562bcc6860f, type: 3}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1bab342dffa80e94198048cef98c36f3, type: 3}
+    - target: {fileID: 1713347454245733620, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: faceImage.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: be0faae43ef754e419f362ffec783101, type: 3}
     - target: {fileID: 2519714435001285592, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -863,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[6].cameraSet.Array.data[14].OnTalkEvent.m_PersistentCalls.m_Calls.Array.size
@@ -887,11 +931,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[15].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[6].cameraSet.Array.data[14].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -919,6 +967,10 @@ PrefabInstance:
       objectReference: {fileID: 4065281530428706071}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4065281530428706071}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 4065281530428706071}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
@@ -950,6 +1002,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[6].cameraSet.Array.data[14].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -975,11 +1031,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[15].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: EventImageDelete
+      value: EventImageDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SESound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EventImageDelete
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[6].cameraSet.Array.data[14].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1010,6 +1070,10 @@ PrefabInstance:
       value: CharaEffect, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CharaEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[6].cameraSet.Array.data[14].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CharaEffect, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1036,11 +1100,15 @@ PrefabInstance:
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[15].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: e43a54c01c4779944b88402a7b1a2122, type: 3}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 8300000, guid: c0efb1817e34de7489eabd85743bfca4, type: 3}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[6].cameraSet.Array.data[14].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
@@ -1067,11 +1135,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[15].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.Sprite, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
+      propertyPath: talkSet.Array.data[4].cameraSet.Array.data[19].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2666759280042299066, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: talkSet.Array.data[6].cameraSet.Array.data[14].OnTalkEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
