@@ -38,13 +38,13 @@ namespace TECHC.Kamiyashiki
 
         private void Awake()
         {
-            GameObject gm = GameObject.Find("GameManager");
-            gameManager = gm.GetComponent<GameManager>();
-
             foreach (var mystery in mysteryData.mysteryDatas)
             {
                 mysteryState = mystery;
             }
+
+            GameObject gm = GameObject.Find("GameManager");
+            gameManager = gm.GetComponent<GameManager>();
 
             backToSubjectButton.onClick.AddListener(BackToSubuject);
             backToReticleModeButton.onClick.AddListener(BackToReticleMode);
@@ -64,6 +64,11 @@ namespace TECHC.Kamiyashiki
             solvingCamera.fieldOfView = solvingFOV;
             alwaysPanel.gameObject.SetActive(false);
             solvingPanel.gameObject.SetActive(false);
+
+            if (mysteryState.IsSolved == true)
+            {
+                SuccessMystery();
+            }
         }
 
         private void Update()
@@ -106,8 +111,10 @@ namespace TECHC.Kamiyashiki
                 obj.SetActive(true);
             }
 
-            Debug.Log("SUCCESS!");
-            BackToReticleMode();
+            if(gameManager.playerController == GameManager.PlayerController.MysteryMode)
+            {
+                BackToReticleMode();
+            }
         }
 
         protected void SpotSubject()
