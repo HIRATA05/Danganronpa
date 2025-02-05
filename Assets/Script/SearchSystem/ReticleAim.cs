@@ -38,7 +38,8 @@ public class ReticleAim : MonoBehaviour
 
     void Update()
     {
-        if(gameManager.playerController == PlayerController.ReticleMode)
+        if(gameManager.playerController == PlayerController.ReticleMode
+       || gameManager.playerController == PlayerController.MysteryMode)
         {
             ReticleMove();
         }

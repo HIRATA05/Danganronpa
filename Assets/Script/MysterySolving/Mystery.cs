@@ -14,15 +14,27 @@ namespace TECHC.Kamiyashiki
         [SerializeField] protected MysteryID mysteryID;
 
         [Header("謎解き部分を映すカメラ")]
-        [SerializeField] protected Camera mysteryCamera;
+        [SerializeField] protected Camera subjectCamera;
+        [SerializeField] protected Camera solvingCamera;
+        [SerializeField] protected float subjectFOV = 60f;
+        [SerializeField] protected float solvingFOV = 2f;
 
-        [Header("戻るボタン")]
+        [Header("UI")]
         [SerializeField] protected Button backToSubjectButton;
         [SerializeField] protected Button backToReticleModeButton;
+        [SerializeField] protected Button mysteryStartButton;
+        [SerializeField] protected GameObject alwaysPanel;
+        [SerializeField] protected GameObject solvingPanel;
+
+        [Header("謎解き成功時隠す、表示するオブジェクト")]
+        [SerializeField] private GameObject[] hideObjs;
+        [SerializeField] private GameObject[] showObjs;
 
         // この謎解きのデータ
         protected MysteryData.MysteryState mysteryState;
         protected GameManager gameManager;
+
+        protected int[] currentPIN;
 
         private void Awake()
         {
@@ -36,6 +48,33 @@ namespace TECHC.Kamiyashiki
 
             backToSubjectButton.onClick.AddListener(BackToSubuject);
             backToReticleModeButton.onClick.AddListener(BackToReticleMode);
+            mysteryStartButton.onClick.AddListener(SpotMystery);
+
+            currentPIN = new int[mysteryState.PIN.Length];
+            for (int i = 0; i < currentPIN.Length; i++)
+            {
+                currentPIN[i] = 0;
+            }
+
+            mysteryStartButton.gameObject.SetActive(false);
+
+            subjectCamera.depth = -1;
+            solvingCamera.depth = -1;
+            subjectCamera.fieldOfView = subjectFOV;
+            solvingCamera.fieldOfView = solvingFOV;
+            alwaysPanel.gameObject.SetActive(false);
+            solvingPanel.gameObject.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if (gameManager.playerController == GameManager.PlayerController.MysteryMode)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+
+                }
+            }
         }
 
         public void StartMystery()
@@ -49,36 +88,64 @@ namespace TECHC.Kamiyashiki
 
         }
 
-        private void EndMystery()
+        protected void EndMystery()
         {
             BackToReticleMode();
         }
 
-        private void SuccessMystery()
+        protected virtual void SuccessMystery()
         {
+            mysteryState.IsSolved = true;
 
+            foreach (var obj in hideObjs)
+            {
+                obj.SetActive(false);
+            }
+            foreach (var obj in showObjs)
+            {
+                obj.SetActive(true);
+            }
+
+            Debug.Log("SUCCESS!");
+            BackToReticleMode();
         }
 
-        private void SpotSubject()
+        protected void SpotSubject()
         {
             // 謎解き対象を映す
+            subjectCamera.depth = 1;
+            alwaysPanel.gameObject.SetActive(true);
+            solvingPanel.gameObject.SetActive(false);
 
+            backToSubjectButton.gameObject.SetActive(false);
+            backToReticleModeButton.gameObject.SetActive(true);
+            mysteryStartButton.gameObject.SetActive(true);
         }
-        private void SpotMystery()
+        protected void SpotMystery()
         {
             // 謎解き部分を映す
+            solvingCamera.depth = 1;
+            solvingPanel.gameObject.SetActive(true);
+
+            backToSubjectButton.gameObject.SetActive(true);
+            backToReticleModeButton.gameObject.SetActive(false);
+            mysteryStartButton.gameObject.SetActive(false);
 
             // 謎解きを開始する
             SolvingMystery();
         }
 
-        private void BackToSubuject()
+        protected void BackToSubuject()
         {
             SpotSubject();
         }
 
-        private void BackToReticleMode()
+        protected void BackToReticleMode()
         {
+            subjectCamera.depth = -1;
+            solvingCamera.depth = -1;
+            alwaysPanel.gameObject.SetActive(false);
+            solvingPanel.gameObject.SetActive(false);
             gameManager.playerController = GameManager.PlayerController.ReticleMode;
         }
     }

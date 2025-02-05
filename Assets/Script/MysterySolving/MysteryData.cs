@@ -16,7 +16,7 @@ namespace TECHC.Kamiyashiki
         {
             public MysteryID mysteryID;
             public bool IsSolved;
-            public int[] pass = new int[4];
+            public int[] PIN = new int[4];
         }
 
         public List<MysteryState> mysteryDatas = new List<MysteryState>();
