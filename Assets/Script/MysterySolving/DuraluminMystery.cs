@@ -8,9 +8,6 @@ namespace TECHC.Kamiyashiki
 {
     public class DuraluminMystery : Mystery
     {
-        // TODO:謎解き時、後ろのオブジェクト干渉しないように
-        // TODO:ノートPC入手のフラグ
-
         [Header("南京錠の各ロック(左から)")]
         [SerializeField] private GameObject[] locks;
 
@@ -19,12 +16,9 @@ namespace TECHC.Kamiyashiki
 
         private float rotAngle = 36;
 
-        protected override void SolvingMystery()
+        private void Start()
         {
-            base.SolvingMystery();
-
-            ResetLock();
-
+            // ロック上下ボタンに関数を割り当て
             int length = lockButtons.Length;
             int half = lockButtons.Length / 2;
             for (int i = 0; i < length; i++)
@@ -40,6 +34,13 @@ namespace TECHC.Kamiyashiki
                     lockButtons[index].onClick.AddListener(() => TurnLock(adjustedIndex, false));
                 }
             }
+        }
+
+        protected override void SolvingMystery()
+        {
+            base.SolvingMystery();
+
+            ResetLock();
         }
 
         public void TurnLock(int lockNum, bool isUp)

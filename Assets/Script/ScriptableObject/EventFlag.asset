@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16632fd449f146949a0131af5ff9d9e8, type: 3}
   m_Name: EventFlag
   m_EditorClassIdentifier: 
-  currentRoom: 10
+  currentRoom: 0
   itemDataBase: {fileID: 11400000, guid: 4d33a3ffe9762db44973a8f7ebbdf278, type: 2}
   EscepeSwitch: 0
   GameStart: 1
-  GameStart_Window: 0
-  GameStart_Monitor: 0
-  GameStart_Lacky: 0
-  GameStart_All: 0
+  GameStart_Window: 1
+  GameStart_Monitor: 1
+  GameStart_Lacky: 1
+  GameStart_All: 1
   GameStart_All_TalkStart: 0
   SelfIntoro_Archer: 0
   SelfIntoro_Hacker: 0
@@ -69,17 +69,17 @@ MonoBehaviour:
   Chara_DataProcessingRoom: 0
   EscepeEvent: 0
   GameStart_ClassRoom: 1
-  RoomIn_Dining: 1
-  RoomIn_Garden: 1
-  RoomIn_EntranceHall: 1
-  RoomIn_Gym: 1
-  RoomIn_Warehouse: 1
-  RoomIn_KyudoHall: 1
-  RoomIn_ClassRoom_F2: 1
-  RoomIn_Library: 1
-  RoomIn_MachineWorkRoom: 1
-  RoomIn_HackerRoom: 1
-  RoomIn_DataProcessingRoom: 1
+  RoomIn_Dining: 0
+  RoomIn_Garden: 0
+  RoomIn_EntranceHall: 0
+  RoomIn_Gym: 0
+  RoomIn_Warehouse: 0
+  RoomIn_KyudoHall: 0
+  RoomIn_ClassRoom_F2: 0
+  RoomIn_Library: 0
+  RoomIn_MachineWorkRoom: 0
+  RoomIn_HackerRoom: 0
+  RoomIn_DataProcessingRoom: 0
   RoomIn: 1
-  F2ClassRoom: 1
+  F2ClassRoom: 0
   Score: 0
