@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16632fd449f146949a0131af5ff9d9e8, type: 3}
   m_Name: EventFlag
   m_EditorClassIdentifier: 
-  currentRoom: 10
+  currentRoom: 0
   itemDataBase: {fileID: 11400000, guid: 4d33a3ffe9762db44973a8f7ebbdf278, type: 2}
   EscepeSwitch: 0
   GameStart: 1
@@ -76,7 +76,7 @@ MonoBehaviour:
   RoomIn_Warehouse: 0
   RoomIn_KyudoHall: 0
   RoomIn_ClassRoom_F2: 0
-  RoomIn_Library: 0
+  RoomIn_Library: 1
   RoomIn_MachineWorkRoom: 0
   RoomIn_HackerRoom: 0
   RoomIn_DataProcessingRoom: 0

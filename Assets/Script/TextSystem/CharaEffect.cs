@@ -86,7 +86,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceSurprise();
         }
     }
-    public void ChangeFace_Frightened(GameObject chara)
+    public void ChangeFace_Frightened(GameObject chara)//怯え
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -110,7 +110,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceExcitement();
         }
     }
-    public void ChangeFace_Upset(GameObject chara)
+    public void ChangeFace_Upset(GameObject chara)//焦り
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)

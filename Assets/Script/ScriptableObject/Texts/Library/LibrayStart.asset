@@ -27,6 +27,6 @@ MonoBehaviour:
     colorType: 0
     windowType: 0
   - speakerName: "\u30B7\u30CE\u30CE\u30E1 \u30C8\u30AA\u30EB"
-    paragraphs: "\u2026\u6700\u8FD1\u307E\u3067\u8AB0\u304B\u304C\u4F7F\u3063\u3066\u3044\u305F\u306E\u304B\u3002"
+    paragraphs: "\u2026\u6700\u8FD1\u307E\u3067\u8AB0\u304B\u304C\u4F7F\u3063\u3066\u3044\u305F\u306E\u304B\uFF1F"
     colorType: 0
     windowType: 0

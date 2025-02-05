@@ -206,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceImage:
   - {fileID: 21300000, guid: 4efb918d7002b69479dd8b8119654c1f, type: 3}
-  - {fileID: 21300000, guid: 845d3970ef90b47489a86a3e12089548, type: 3}
+  - {fileID: 21300000, guid: 43e3c33e22d3f774b9981f04185cc12e, type: 3}
   - {fileID: 21300000, guid: 8021dc79a01ce154383d403ab37ae54a, type: 3}
   - {fileID: 21300000, guid: 148ef689d8755ee4ba25cb64bdcf4a7a, type: 3}
   - {fileID: 21300000, guid: 2a61b0e08a327954cb77a2b9b40c2a8e, type: 3}

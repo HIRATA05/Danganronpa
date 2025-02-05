@@ -134,31 +134,32 @@ public class TextWindow : MonoBehaviour
     //3つのカメラの表示範囲を移動する
     void TalkCameraRectMove()
     {
+        //CameraEnabledOn();
         if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterOnly)
         {
             //Debug.Log("カメラenabled:True CenterOnly");
-            CameraEnabledOn();
+            //CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_CenterOnly_Left,
                                 rect_CenterOnly_Center, rect_CenterOnly_Right, rect_CenterOnly_Left));
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterAndRight)
         {
-            CameraEnabledOn();
+            //CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_CenteringRight_Center, rect_CenteringRight_Right, rect_CenteringRight_Left));
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterAndLeft)
         {
-            CameraEnabledOn();
+            //CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_CenteringLeft_Center, rect_CenteringLeft_Right, rect_CenteringLeft_Left));
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.All)
         {
-            CameraEnabledOn();
+            //CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_All_Center, rect_All_Right, rect_All_Left));
@@ -188,6 +189,8 @@ public class TextWindow : MonoBehaviour
         {
             isStartFlag = true;
             panelObject.SetActive(true);
+
+            UIWindowActive(true);
 
             //主人公の表示処理
             var mainChara = mainTalkChara.transform.GetChild(0).gameObject.transform.GetChild(0);
@@ -236,12 +239,15 @@ public class TextWindow : MonoBehaviour
             //左のカメラ
             roomObjectManager.RoomObjectPriorityChange(cameraSet.camLookLeft, vcamNumLeft);
 
+            CameraEnabledOn();
+            /*
             //カメラ分割を設定
             currentCameraDivision = cameraSet.camDivision;
-            
+
             //それぞれのカメラの表示範囲を指定の位置まで移動する
             TalkCameraRectMove();
-            /*
+            */
+            //カメラ分割を設定
             if (currentCameraDivision != cameraSet.camDivision)
             {
                 //それぞれのカメラの表示範囲を指定の位置まで移動する
@@ -249,7 +255,7 @@ public class TextWindow : MonoBehaviour
 
                 TalkCameraRectMove();
             }
-            */
+            
             //話者の名前を表示
             //speakerNameText.text = dialogueText.textInfomations[index].speakerName;
             if(dialogueText.textInfomations[index].speakerName == "シノノメ トオル")
@@ -284,7 +290,7 @@ public class TextWindow : MonoBehaviour
             }
 
             //一瞬非表示
-            UIWindowActive(false);
+            //UIWindowActive(false);
 
             //会話イベントを発生
             cameraSet.OnTalkEvent.Invoke();
@@ -299,7 +305,7 @@ public class TextWindow : MonoBehaviour
             }
 
             //表示解除
-            UIWindowActive(true);
+            //UIWindowActive(true);
 
             if (!isTyping)
             {
@@ -441,12 +447,12 @@ public class TextWindow : MonoBehaviour
         if (dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Normal)
         {
             panelObject.GetComponent<Image>().sprite = textWindowNormal;
-            UIWindowActive(true);
+            UIWindowActive(false);
         }
         else if (dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Dark)
         {
             panelObject.GetComponent<Image>().sprite = textWindowDark;
-            UIWindowActive(true);
+            UIWindowActive(false);
         }
         else if (dialogueText.textInfomations[index].windowType == TextInfomation.TextWindowType.Normal_NonUI)
         {
