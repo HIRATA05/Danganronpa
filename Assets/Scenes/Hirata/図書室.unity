@@ -1513,8 +1513,6 @@ MonoBehaviour:
   - {fileID: 1926508148}
   - {fileID: 253196139}
   - {fileID: 561687977}
-  hideObjs: []
-  showObjs: []
   lockButtons:
   - {fileID: 633144336}
   - {fileID: 804779684}
@@ -8536,7 +8534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5352308064179424729, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9
+      value: 7.21
       objectReference: {fileID: 0}
     - target: {fileID: 5352308064179424729, guid: cd1d795c3b3cd384fbd0f1e466c80c3d, type: 3}
       propertyPath: m_LocalPosition.z

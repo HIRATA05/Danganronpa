@@ -37,7 +37,7 @@ public class CharaEffect : MonoBehaviour
 
     //引数は表情を変化させるキャラ、オブジェクトがキャラかどうか判別
     //スプライトを別の表情画像に変化
-    public void ChangeFace_Normal(GameObject chara)
+    public void ChangeFace_Normal(GameObject chara)//通常
     {
         //CharaFaceChangeがアタッチされているか確認
         if(chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -46,7 +46,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceNormal();
         }
     }
-    public void ChangeFace_Talk(GameObject chara)
+    public void ChangeFace_Talk(GameObject chara)//話す
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -54,7 +54,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceTalk();
         }
     }
-    public void ChangeFace_Think(GameObject chara)
+    public void ChangeFace_Think(GameObject chara)//思考
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -62,7 +62,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceThink();
         }
     }
-    public void ChangeFace_Joy(GameObject chara)
+    public void ChangeFace_Joy(GameObject chara)//笑顔
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -70,7 +70,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceJoy();
         }
     }
-    public void ChangeFace_Anger(GameObject chara)
+    public void ChangeFace_Anger(GameObject chara)//怒り
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -78,7 +78,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceAnger();
         }
     }
-    public void ChangeFace_Surprise(GameObject chara)
+    public void ChangeFace_Surprise(GameObject chara)//驚き
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -94,7 +94,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceFrightened();
         }
     }
-    public void ChangeFace_Rage(GameObject chara)
+    public void ChangeFace_Rage(GameObject chara)//激怒
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
@@ -118,7 +118,7 @@ public class CharaEffect : MonoBehaviour
             chara.GetComponent<CharaFaceChange>().ChangeFaceUpset();
         }
     }
-    public void ChangeFace_Despair(GameObject chara)
+    public void ChangeFace_Despair(GameObject chara)//絶望
     {
         //CharaFaceChangeがアタッチされているか確認
         if (chara != null && chara.GetComponent<CharaFaceChange>() != null)
