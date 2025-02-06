@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TECHC.Kamiyashiki;
 using UnityEngine;
 
 public class InteractPhantomThiefGarden : MonoBehaviour, IReceiveSearch
@@ -25,6 +26,7 @@ public class InteractPhantomThiefGarden : MonoBehaviour, IReceiveSearch
         else if(gameManager.eventFlagData.itemDataBase.truthBullets[1].getFlag && gameManager.eventFlagData.itemDataBase.truthBullets[2].getFlag &&
             gameManager.eventFlagData.itemDataBase.truthBullets[5].getFlag && gameManager.eventFlagData.F2Open)
         {
+            gameManager.eventFlagData.F2OpenPhantomThief = true;
             gameManager.OpenTextWindow(RequestClaerAfterText);
         }
         //2ŠK‚Ö‚ÌˆÚ“®‚ð’ñˆÄŒãƒAƒCƒeƒ€–³‚µ

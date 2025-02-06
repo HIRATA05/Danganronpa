@@ -32,9 +32,9 @@ public class Warehouse : MonoBehaviour
                 gameManager.OpenTextWindow(RoomFirstText);
             }
             //î‡äJè˘ÇÃóvêø
-            if (/*eventFlagData.currentRoom == roomName &&*/ !eventFlagData.WarehouseRequest && eventFlagData.IronBars)
+            if (/*eventFlagData.currentRoom == roomName &&*/ eventFlagData.WarehouseRequest && eventFlagData.IronBars && !eventFlagData.IronBarsOpenBefor)
             {
-                eventFlagData.WarehouseRequest = true;
+                eventFlagData.IronBarsOpenBefor = true;
                 gameManager.OpenTextWindow(RequestText);
             }
         }

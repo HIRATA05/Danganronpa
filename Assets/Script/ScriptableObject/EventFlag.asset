@@ -43,6 +43,7 @@ MonoBehaviour:
   IronBars: 0
   WarehouseArcher: 0
   IronBarsOpen: 0
+  IronBarsOpenBefor: 0
   ClassRoomF2StartPhantomThief: 0
   ClassRoomF2_Vent: 0
   ClassRoomF2_Window: 0
@@ -80,6 +81,6 @@ MonoBehaviour:
   RoomIn_MachineWorkRoom: 0
   RoomIn_HackerRoom: 0
   RoomIn_DataProcessingRoom: 0
-  RoomIn: 1
+  RoomIn: 0
   F2ClassRoom: 0
   Score: 0

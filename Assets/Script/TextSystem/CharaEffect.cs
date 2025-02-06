@@ -264,12 +264,14 @@ public class CharaEffect : MonoBehaviour
     public void BGMSound(AudioClip audio)
     {
         audioSourceBgm.clip = audio;
+        audioSourceBgm.Play();
     }
 
     //SE
     public void SESound(AudioClip audio)
     {
         audioSourceSe.clip = audio;
+        audioSourceSe.Play();
     }
 
 }

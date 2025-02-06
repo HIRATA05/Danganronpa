@@ -252,10 +252,11 @@ public class TextWindow : MonoBehaviour
 
                 TalkCameraRectMove();
             }
-            
+            Debug.Log("currentCameraDivision:" + currentCameraDivision + " cameraSet.camDivision:" + cameraSet.camDivision);
+
             //話者の名前を表示
             //speakerNameText.text = dialogueText.textInfomations[index].speakerName;
-            if(dialogueText.textInfomations[index].speakerName == "シノノメ トオル")
+            if (dialogueText.textInfomations[index].speakerName == "シノノメ トオル")
             {
                 speakerName.color = Color.white;
                 speakerName.sprite = speakerNameDetective;
@@ -290,7 +291,7 @@ public class TextWindow : MonoBehaviour
             //UIWindowActive(false);
 
             //会話イベントを発生
-            cameraSet.OnTalkEvent.Invoke();
+            //cameraSet.OnTalkEvent.Invoke();
             //StartCoroutine(NextTalkEvent(cameraSet));
 
             
@@ -300,7 +301,7 @@ public class TextWindow : MonoBehaviour
             if (!isTyping)
             {
                 //会話イベントを発生
-                //cameraSet.OnTalkEvent.Invoke();
+                cameraSet.OnTalkEvent.Invoke();
 
                 dialogueCoroutine = StartCoroutine(TypeDialogueText(dialogueText.textInfomations[index].paragraphs));
             }

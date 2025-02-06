@@ -99,7 +99,7 @@ namespace TECHC.Kamiyashiki
                 UnlockRoom(RoomName.‹@ŠBHìº);
             }
 
-            if (eventFlagData.PressMachineLock && eventFlagData.itemDataBase.truthBullets[6].getFlag)
+            if (eventFlagData.PressMachineLock && eventFlagData.itemDataBase.truthBullets[6].getFlag && !eventFlagData.itemDataBase.truthBullets[8].getFlag)
             {
                 UnlockRoom(RoomName.¶“kŒÂº);
             }
@@ -184,7 +184,7 @@ namespace TECHC.Kamiyashiki
         public void OnClickMoveRoom(RoomName roomName)
         {
             // Œ»İ‚Ì•”‰®‚Æ“¯‚¶ê‡ˆÚ“®‚µ‚È‚¢
-            if (eventFlagData.currentRoom == roomName) { return; }
+            //if (eventFlagData.currentRoom == roomName) { return; }
 
             eventFlagData.currentRoom = roomName;
             SceneController.LoadScene(roomName);

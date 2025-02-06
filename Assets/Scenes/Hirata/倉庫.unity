@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 445471d36ff623e43be56b8af288c2ff, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1548,6 +1548,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6402431294947022126, guid: baff2a771d0503d4eaf92012611c5f07, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6340125874133149806, guid: baff2a771d0503d4eaf92012611c5f07, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5059965465086103436, guid: baff2a771d0503d4eaf92012611c5f07, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1372547951046624712, guid: baff2a771d0503d4eaf92012611c5f07, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: baff2a771d0503d4eaf92012611c5f07, type: 3}
       propertyPath: m_Name
       value: souko_v2
@@ -1574,6 +1590,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5687008327605280622, guid: baff2a771d0503d4eaf92012611c5f07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350140315392298347, guid: baff2a771d0503d4eaf92012611c5f07, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6643841104627667484, guid: baff2a771d0503d4eaf92012611c5f07, type: 3}
@@ -1909,7 +1929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5894409997832520586, guid: 4f632b1e3a389bc4abe85a782c85fdd6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.04
+      value: -2.12
       objectReference: {fileID: 0}
     - target: {fileID: 5894409997832520586, guid: 4f632b1e3a389bc4abe85a782c85fdd6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1917,7 +1937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5894409997832520586, guid: 4f632b1e3a389bc4abe85a782c85fdd6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.58
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 5894409997832520586, guid: 4f632b1e3a389bc4abe85a782c85fdd6, type: 3}
       propertyPath: m_LocalRotation.w

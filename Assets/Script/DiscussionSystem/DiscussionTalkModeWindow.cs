@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static DiscussionEventManager;
 using static TalkCameraManager;
 
@@ -22,6 +23,13 @@ public class DiscussionTalkModeWindow : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speakerDialogueText;
     int index = 0;
     bool isTyping;
+
+    [SerializeField, Header("話者の名前画像")] private Image speakerName;
+    [SerializeField] private Sprite speakerNameDetective;//探偵
+    [SerializeField] private Sprite speakerNameLacky;//幸運
+    [SerializeField] private Sprite speakerNameHacker;//ハッカー
+    [SerializeField] private Sprite speakerNameArcher;//弓道家
+    [SerializeField] private Sprite speakerNameThief;//怪盗
 
     private Coroutine dialogueCoroutine;
 
@@ -81,7 +89,7 @@ public class DiscussionTalkModeWindow : MonoBehaviour
             DisplayDialogueText();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)/*gameManager.KeyInputSpace()*/)
+        if (Input.GetMouseButtonDown(0) /*Input.GetKeyDown(KeyCode.Space) gameManager.KeyInputSpace()*/)
         {
             //次の会話の表示
             DisplayDialogueText();
@@ -103,8 +111,39 @@ public class DiscussionTalkModeWindow : MonoBehaviour
                 speakerDialogueText.color = Color.cyan;
             else speakerDialogueText.color = Color.white;
 
+            
             //話者の名前を表示
             speakerNameText.text = dialogueText.textInfomations[index].speakerName;
+            if (dialogueText.textInfomations[index].speakerName == "シノノメ トオル")
+            {
+                speakerName.color = Color.white;
+                speakerName.sprite = speakerNameDetective;
+            }
+            else if (dialogueText.textInfomations[index].speakerName == "コトギ マナ")
+            {
+                speakerName.color = Color.white;
+                speakerName.sprite = speakerNameLacky;
+            }
+            else if (dialogueText.textInfomations[index].speakerName == "ミナセ ツミカ")
+            {
+                speakerName.color = Color.white;
+                speakerName.sprite = speakerNameHacker;
+            }
+            else if (dialogueText.textInfomations[index].speakerName == "レイゼイ リン")
+            {
+                speakerName.color = Color.white;
+                speakerName.sprite = speakerNameArcher;
+            }
+            else if (dialogueText.textInfomations[index].speakerName == "ニカイドウ ハルノ")
+            {
+                speakerName.color = Color.white;
+                speakerName.sprite = speakerNameThief;
+            }
+            else
+            {
+                speakerName.color = Color.clear;
+                speakerName.sprite = null;
+            }
 
             //会話中のキャラにカメラを向ける
             SpeechCameraSet(speakerNameText);

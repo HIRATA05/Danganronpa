@@ -15,6 +15,6 @@ MonoBehaviour:
   textinfo: LackyMachineRoom
   textInfomations:
   - speakerName: "\u30B3\u30C8\u30AE \u30DE\u30CA"
-    paragraphs: LackyMachineRoom
+    paragraphs: "SF\u611F\u306E\u3042\u308B\u90E8\u5C4B\u3067\u3059\u3088\u306D\u3002\u3082\u3046\u5B66\u6821\u3063\u3066\u611F\u3058\u3058\u3083\u306A\u3044\u3067\u3059\u306D\u3002"
     colorType: 0
     windowType: 0

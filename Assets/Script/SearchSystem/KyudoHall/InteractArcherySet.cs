@@ -14,7 +14,7 @@ public class InteractArcherySet : MonoBehaviour, IReceiveSearch
     public void ReceiveSearch()
     {
         //ê‡‚É‚æ‚Á‚Ä‚Íƒtƒ‰ƒO‚É‚æ‚Á‚ÄğŒ•ªŠò
-        if (gameManager.eventFlagData.itemDataBase.truthBullets[2].getFlag)
+        if (!gameManager.eventFlagData.itemDataBase.truthBullets[2].getFlag)
         {
             gameManager.OpenTextWindow(GetText);
         }

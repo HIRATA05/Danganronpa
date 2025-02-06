@@ -8,7 +8,7 @@ public class DiscussionEventManager : MonoBehaviour
 
     private DiscussionManager discussionManager;
     private DiscussionTalkModeWindow discussionTalkModeWindow;
-    private DiscussionUI discussionUI;
+    [SerializeField] private DiscussionUI discussionUI;
 
     //会話時のイベント
     [System.Serializable]
@@ -37,8 +37,8 @@ public class DiscussionEventManager : MonoBehaviour
         GameObject dw = GameObject.Find("DiscussionTalkModeWindow");
         discussionTalkModeWindow = dw.GetComponent<DiscussionTalkModeWindow>();
 
-        GameObject du = GameObject.Find("DiscussionUI");
-        discussionUI = du.GetComponent<DiscussionUI>();
+        //GameObject du = GameObject.Find("DiscussionUI");
+        //discussionUI = du.GetComponent<DiscussionUI>();
     }
 
     void Update()

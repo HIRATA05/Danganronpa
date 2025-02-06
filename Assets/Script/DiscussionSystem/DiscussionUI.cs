@@ -12,7 +12,7 @@ public class DiscussionUI : MonoBehaviour
     //議論のUI
 
     //ゲームマネージャー
-    [SerializeField] private GameManager gameManager;
+    /*[SerializeField]*/ private GameManager gameManager;
     //議論全体の管理
     //[SerializeField] private DiscussionManager discussionManager;
     //UIのウィンドウ
@@ -262,7 +262,7 @@ public class DiscussionUI : MonoBehaviour
         
 
         //フェードインさせる
-        StartCoroutine(gameManager.FadeScreen(true));
+        //StartCoroutine(gameManager.FadeScreen(true));
 
         //論破演出画像を非表示
         if (RefuteEffect.activeSelf)
@@ -277,7 +277,7 @@ public class DiscussionUI : MonoBehaviour
         isRefuteFinish = true;
 
         //フェードアウトさせる
-        StartCoroutine(gameManager.FadeScreen(false));
+        //StartCoroutine(gameManager.FadeScreen(false));
         /*
         //フェードアウトさせる
         while (!Mathf.Approximately(color.a, FadeOutAlpha))
@@ -363,7 +363,8 @@ public class DiscussionUI : MonoBehaviour
     
     void Start()
     {
-        
+        GameObject gm = GameObject.Find("GameManager");
+        gameManager = gm.GetComponent<GameManager>();
     }
 
     void Update()

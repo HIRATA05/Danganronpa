@@ -72,6 +72,7 @@ public class EventFlagData : ScriptableObject
     public bool IronBars;//“SŠiq’Tõ
     public bool WarehouseArcher;//‘qŒÉ‚É‚¢‚é‹|“¹‰Æ
     public bool IronBarsOpen;//“SŠiq‰ğœ
+    public bool IronBarsOpenBefor;//“SŠiq‰ğœ‘O
 
     //2ŠK‹³º
     [Header("2ŠK‹³º")]

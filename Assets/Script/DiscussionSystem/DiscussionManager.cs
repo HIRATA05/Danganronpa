@@ -151,10 +151,12 @@ public class DiscussionManager : MonoBehaviour
     public void BgmAudio(AudioClip audio)
     {
         audioSourceBgm.clip = audio;
+        audioSourceBgm.Play();
     }
     public void SeAudio(AudioClip audio)
     {
         audioSourceSe.clip = audio;
+        audioSourceSe.Play();
     }
 
     void Start()

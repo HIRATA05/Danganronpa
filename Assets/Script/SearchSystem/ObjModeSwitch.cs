@@ -123,7 +123,7 @@ public class ObjModeSwitch : MonoBehaviour
         }
         else if (objType == ObjType.GardenPhantomThief)
         {
-            if (eventFlagData.AdventureStart && eventFlagData.F2OpenPhantomThief && !eventFlagData.F2Intrusion)//’TõŠJn‚©‚ç2ŠKN“üŒã‚ÌŠÔ•\¦
+            if (eventFlagData.AdventureStart && !eventFlagData.F2OpenPhantomThief && !eventFlagData.F2Intrusion)//’TõŠJn‚©‚ç2ŠKN“üŒã‚ÌŠÔ•\¦
             {
                 Befor.SetActive(false);
                 After.SetActive(true);

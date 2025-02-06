@@ -18,11 +18,11 @@ public class InteractChestMachineWorkRoom : MonoBehaviour, IReceiveSearch
         //ê‡‚É‚æ‚Á‚Ä‚Íƒtƒ‰ƒO‚É‚æ‚Á‚ÄğŒ•ªŠò
 
         //’I‚ÌŒ®‰ğœ
-        if (gameManager.eventFlagData.PressMachineShelfUnlock)
+        if (gameManager.eventFlagData.PressMachineShelfUnlock && gameManager.eventFlagData.itemDataBase.truthBullets[8].getFlag == true)
         {
             gameManager.OpenTextWindow(AfterText);
         }
-        else if (!gameManager.eventFlagData.PressMachineShelfUnlock && gameManager.eventFlagData.PreesMoveDown)
+        else if (gameManager.eventFlagData.PressMachineShelfUnlock && gameManager.eventFlagData.PreesMoveDown)
         {
             gameManager.eventFlagData.PressMachineShelfUnlock = true;
             gameManager.OpenTextWindow(KeyUnlockText);
