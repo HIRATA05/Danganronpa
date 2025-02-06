@@ -76,7 +76,7 @@ MonoBehaviour:
   RoomIn_Warehouse: 0
   RoomIn_KyudoHall: 0
   RoomIn_ClassRoom_F2: 0
-  RoomIn_Library: 1
+  RoomIn_Library: 0
   RoomIn_MachineWorkRoom: 0
   RoomIn_HackerRoom: 0
   RoomIn_DataProcessingRoom: 0
