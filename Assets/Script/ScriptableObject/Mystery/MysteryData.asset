@@ -15,4 +15,4 @@ MonoBehaviour:
   mysteryDatas:
   - mysteryID: 0
     IsSolved: 0
-    PIN: 01000000020000000300000004000000
+    PIN: 01000000010000000300000007000000

@@ -182,8 +182,6 @@ public class TextWindow : MonoBehaviour
     //会話の進行
     public void ProgressText()
     {
-        //パネルが非表示なら表示する
-
         //最初の表示処理
         if (!isStartFlag /*!panelObject.activeSelf*/)
         {
@@ -215,7 +213,6 @@ public class TextWindow : MonoBehaviour
     //会話文表示処理
     public async void DisplayDialogueText()
     {
-
         //scriptableObjectの情報をパネルに表示する
         if (dialogueText.textInfomations.Length > index)
         {
@@ -296,16 +293,9 @@ public class TextWindow : MonoBehaviour
             cameraSet.OnTalkEvent.Invoke();
             //StartCoroutine(NextTalkEvent(cameraSet));
 
-            //自己紹介関数で自己紹介発生フラグをTrue
-            //Trueの時はUniTaskで待機
-            if (GameManager.isTalkPause)
-            {
-                //設定したイベントが完了するまで待機
-                await UniTask.WaitUntil(() => GameManager.isTalkEvent);
-            }
-
-            //表示解除
-            //UIWindowActive(true);
+            
+                
+            Debug.Log("クリック　会話イベント進行");
 
             if (!isTyping)
             {
@@ -318,7 +308,23 @@ public class TextWindow : MonoBehaviour
             {
                 StopTyping();
             }
-            
+
+            //自己紹介関数で自己紹介発生フラグをTrue
+            //Trueの時はUniTaskで待機
+            if (GameManager.isTalkPause)
+            {
+                Debug.Log("自己紹介イベント発生");
+                //設定したイベントが完了するまで待機
+                await UniTask.WaitUntil(() => GameManager.isTalkEvent);
+                Debug.Log("自己紹介イベント終了");
+            }
+
+            //イベント演出終了でテキスト表示
+            if (!panelObject.activeSelf)
+            {
+                panelObject.SetActive(true);
+                Debug.Log("イベント演出終了でテキスト表示");
+            }
         }
         else
         {
@@ -358,7 +364,7 @@ public class TextWindow : MonoBehaviour
             }
         }
     }
-
+    /*
     private IEnumerator NextTalkEvent(CameraSet cameraSet)
     {
         GameManager.isTalkEvent = false;
@@ -381,7 +387,7 @@ public class TextWindow : MonoBehaviour
         {
             StopTyping();
         }
-    }
+    }*/
 
     //ダイアログのテキストを一文字づつ表示
     private IEnumerator TypeDialogueText(string paragraph)

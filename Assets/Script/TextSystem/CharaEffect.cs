@@ -173,12 +173,13 @@ public class CharaEffect : MonoBehaviour
     //自己紹介イベントを表示
     public void SelfIntoroDisplay(Sprite sprite)
     {
-        GameManager.isTalkPause = true;
-        eventcgImage.sprite = sprite;
-        eventcgImage.enabled = true;
-
         //操作不能にする
         gameManager.playerController = GameManager.PlayerController.EventScene;
+
+        GameManager.isTalkPause = true;
+        
+        eventcgImage.sprite = sprite;
+        eventcgImage.enabled = true;
 
         //SE
         SESound(SelfIntroSE);

@@ -238,7 +238,6 @@ public class ObjModeSwitch : MonoBehaviour
                 After.SetActive(false);
             }
         }
-        
 
         else if (objType == ObjType.Ending)
         {
@@ -267,56 +266,73 @@ public class ObjModeSwitch : MonoBehaviour
         if (objType == ObjType.GameStartGym)
         {
             eventFlagData.AdventureStart = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.MonokumaGym)
         {
             eventFlagData.AppMonokuma = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.Digitalclock)
         {
             eventFlagData.Digitalclock = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.WarehouseArcher)
         {
             eventFlagData.WarehouseArcher = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.RopeWindow)
         {
             eventFlagData.RopeWindow = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.GardenArcher)
         {
             eventFlagData.F2OpenArcher = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.ClassRoomF2PhantomThief)
         {
             eventFlagData.ClassRoomF2StartPhantomThief = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.ClassRoomF2Lacky && eventFlagData.ClassRoomF2_Vent && eventFlagData.ClassRoomF2_Window)
         {
             eventFlagData.ClassRoomF2_All = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.PressMachine)
         {
             eventFlagData.PressMachineShelfUnlock = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.MachineRoomHacker)
         {
             eventFlagData.HackerPressMachineRequest = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.MonokuGreenMove)
         {
             eventFlagData.MonokumaGreenPreesMove = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.DataProcessRoomLacky)
         {
             eventFlagData.Lacky_DataProcessingRoom = true;
+            DisplayObjSwitch_After();
         }
         else if (objType == ObjType.DataProcessRoomChara)
         {
             eventFlagData.Chara_DataProcessingRoom = true;
+            DisplayObjSwitch_After();
         }
 
+    }
+
+    public void DisplayObjSwitch_After()
+    {
         Befor.SetActive(false);
         After.SetActive(true);
     }
