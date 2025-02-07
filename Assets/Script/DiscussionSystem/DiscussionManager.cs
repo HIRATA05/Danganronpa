@@ -504,6 +504,8 @@ public class DiscussionManager : MonoBehaviour
 
         //最大発言番号を設定
         discussionUI.SpeechNumMaxSet(speechSet.Length);
+        //ライフを設定
+        discussionUI.SpeechPowerSet();
 
         //UIを表示
         discussionUI.DiscussionDispUI(true);
@@ -562,7 +564,7 @@ public class DiscussionManager : MonoBehaviour
         //UIを非表示
         discussionUI.DiscussionDispUI(false);
 
-        //現在のライフに従ってスコアを減らす
+        //現在のライフに従ってスコアを増やす
         discussionUI.LifeCountScoreUp();
 
         //議論終了後の会話データを入れる

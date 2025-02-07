@@ -83,6 +83,7 @@ public class ReticleAim : MonoBehaviour
                         }
                         else if (hit.transform.CompareTag("SearchChara"))
                         {
+                            /*
                             //‰ñ“]‚ğI—¹
                             //transform‚ğæ“¾
                             Transform myTransform = this.transform;
@@ -90,12 +91,20 @@ public class ReticleAim : MonoBehaviour
                             Vector3 worldAngle = new(0.0f, 0.0f, 0.0f);
                             //‰ñ“]Šp“x‚ğİ’è
                             myTransform.eulerAngles = worldAngle;
-
+                            */
                             //Æ€‚ğ•Ï‰»‚³‚¹‚é
                             aimImage.sprite = OnCollisionAimImage_Chara;
                             //Æ€ƒTƒCƒY•ÏX
                             transform.localScale = new Vector3(OnCollisionAimSize, OnCollisionAimSize, OnCollisionAimSize);
                         }
+
+                        //‰ñ“]‚ğI—¹
+                        //transform‚ğæ“¾
+                        Transform myTransform = this.transform;
+                        //‰ñ“]’l‚ğƒ[ƒ
+                        Vector3 worldAngle = new(0.0f, 0.0f, 0.0f);
+                        //‰ñ“]Šp“x‚ğİ’è
+                        myTransform.eulerAngles = worldAngle;
 
                         //Æ€‚ğ‰Â‹‰»‚·‚é
                         if (aimImage.color != Color.white)

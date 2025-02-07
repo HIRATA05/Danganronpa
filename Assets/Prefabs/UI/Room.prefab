@@ -207,7 +207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 560, y: 94.99603}
+  m_AnchoredPosition: {x: 590.2, y: 70.1}
   m_SizeDelta: {x: 306.2234, y: 64.619}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6105336041979171353
@@ -2925,7 +2925,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &883790992651414594
 CanvasRenderer:
@@ -2955,7 +2955,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4edb1ad84155bb149aec184ba82709ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95fa34eabef2c9d4d97d5e1a75919efe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2997,9 +2997,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 4064687981902862873}
   aimImage: {fileID: 4576999316434599255}
-  OnCollisionAimImage_Obj: {fileID: 21300000, guid: e35043f528ba2e64aaa23833b5e7514e, type: 3}
-  OnCollisionAimImage_Chara: {fileID: 21300000, guid: e0e1a84bac2555a4999806f58bae8dc7, type: 3}
-  DisCollisionAimImage: {fileID: 21300000, guid: 4edb1ad84155bb149aec184ba82709ce, type: 3}
+  OnCollisionAimImage_Obj: {fileID: 21300000, guid: 944bb533005776d4fb468e8e6ebd9457, type: 3}
+  OnCollisionAimImage_Chara: {fileID: 21300000, guid: e45ea82ca0fbc9b4a832f703c8667511, type: 3}
+  DisCollisionAimImage: {fileID: 21300000, guid: 95fa34eabef2c9d4d97d5e1a75919efe, type: 3}
   OnCollisionAimSize: 0.5
   DisCollisionAimSize: 0.8
   SearchObjInformationWindow: {fileID: 6254022085475662826}
@@ -3295,7 +3295,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -429.2}
-  m_SizeDelta: {x: 854, y: 78}
+  m_SizeDelta: {x: 854, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9128955614561283234
 CanvasRenderer:
@@ -3325,7 +3325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5736029d6b1daad418a3b1c1fbe93be9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f14a973db288df4092ef1c009cd0602, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3578,8 +3578,8 @@ MonoBehaviour:
   talkCameraManager: {fileID: 2666759280042299066}
   timeObject: {fileID: 3233576093766774110}
   panelObject: {fileID: 3645623216223848065}
-  textWindowNormal: {fileID: 21300000, guid: bfe277e3186c20949841a453a2370628, type: 3}
-  textWindowDark: {fileID: 21300000, guid: 1a090898c9b2cc548be0e29b17bd95e0, type: 3}
+  textWindowNormal: {fileID: 21300000, guid: a4da608d0a487284c8adf095f90ef9d1, type: 3}
+  textWindowDark: {fileID: 21300000, guid: 456c717f8b1bbe24d8e7ee40e7e5d214, type: 3}
   speakerNameText: {fileID: 7100789483767325297}
   speakerName: {fileID: 4439152356552068353}
   speakerNameDetective: {fileID: 21300000, guid: bf1698520bef33e40acfe4165c46d4e0, type: 3}
@@ -4642,7 +4642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bfe277e3186c20949841a453a2370628, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4da608d0a487284c8adf095f90ef9d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6426,7 +6426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -15}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 1300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1786998833490799186
@@ -12073,6 +12073,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2519714435001285592}
     m_Modifications:
+    - target: {fileID: 2570621172936012052, guid: b8037c2abb00b2d418a17f9728eb2729, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4134659042160014020, guid: b8037c2abb00b2d418a17f9728eb2729, type: 3}
       propertyPath: m_Name
       value: DiscussionGame
