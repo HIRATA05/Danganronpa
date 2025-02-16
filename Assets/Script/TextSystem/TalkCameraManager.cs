@@ -16,7 +16,8 @@ public class TalkCameraManager : MonoBehaviour
             CenterAndRight,//中央と右
             CenterAndLeft,//中央と左
             All,//3つ全て
-            None//カメラ無し
+            None,//カメラ無し
+            Start
         }
 
         //カメラで表示するオブジェクト

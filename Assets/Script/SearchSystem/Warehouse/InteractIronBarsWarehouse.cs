@@ -33,12 +33,19 @@ public class InteractIronBarsWarehouse : MonoBehaviour, IReceiveSearch
             if(camPos == CamPosMode.Front)
             {
                 camPos = CamPosMode.Back;
-                Cam.transform.position = Back;
+                Cam.transform.localPosition = Back;
+                //奥の向きに変える
+                //Cam.transform.Rotate(new Vector3(0,-40,0));
+                Cam.transform.eulerAngles = new Vector3(0, -34, 0);
+                //transform.eulerAngles = new Vector3(0, 0, 90);
             }
             else
             {
                 camPos = CamPosMode.Front;
-                Cam.transform.position = Front;
+                Cam.transform.localPosition = Front;
+                //前の向きに変える
+                //Cam.transform.Rotate(new Vector3(0, 40, 0));
+                Cam.transform.eulerAngles = new Vector3(0, 40, 0);
             }
         }
         else
@@ -59,7 +66,7 @@ public class InteractIronBarsWarehouse : MonoBehaviour, IReceiveSearch
         //フラグで非表示
         if (gameManager.eventFlagData.IronBarsOpen)
         {
-            IronBars.SetActive(false);
+            if(IronBars.activeSelf) IronBars.SetActive(false);
 
         }
     }

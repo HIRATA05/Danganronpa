@@ -81,7 +81,7 @@ public class TextWindow : MonoBehaviour
     private double RectSetAllow = 0.0001;
 
     //現在のカメラ分割設定
-    TalkCameraManager.CameraSet.CameraDivision currentCameraDivision/* = TalkCameraManager.CameraSet.CameraDivision.CenterOnly*/;
+    TalkCameraManager.CameraSet.CameraDivision currentCameraDivision = TalkCameraManager.CameraSet.CameraDivision.Start;
 
     //子オブジェクトを指定するための3つのヴァーチャルカメラ番号
     private const int vcamNumCenter = 2, vcamNumRight = 3, vcamNumLeft = 4;
@@ -135,38 +135,39 @@ public class TextWindow : MonoBehaviour
     void TalkCameraRectMove()
     {
         //CameraEnabledOn();
+        Debug.Log("カメラenabledチェック");
         if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterOnly)
         {
-            //Debug.Log("カメラenabled:True CenterOnly");
-            //CameraEnabledOn();
+            Debug.Log("カメラenabled:True CenterOnly");
+            CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_CenterOnly_Left,
                                 rect_CenterOnly_Center, rect_CenterOnly_Right, rect_CenterOnly_Left));
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterAndRight)
         {
-            //CameraEnabledOn();
+            CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_CenteringRight_Center, rect_CenteringRight_Right, rect_CenteringRight_Left));
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.CenterAndLeft)
         {
-            //CameraEnabledOn();
+            CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_CenteringLeft_Center, rect_CenteringLeft_Right, rect_CenteringLeft_Left));
         }
         else if (currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.All)
         {
-            //CameraEnabledOn();
+            CameraEnabledOn();
             //会話カメラ表示範囲の変化　中央・右・左の順で指定
             StartCoroutine(CameraRectMove(rect_current_Center, rect_current_Right, rect_current_Left,
                                 rect_All_Center, rect_All_Right, rect_All_Left));
         }
         else if(currentCameraDivision == TalkCameraManager.CameraSet.CameraDivision.None)
         {
-            //Debug.Log("カメラenabled:False None");
+            Debug.Log("カメラenabled:False None");
             //会話カメラ無し
             CameraEnabledOff();
             /*
@@ -236,7 +237,7 @@ public class TextWindow : MonoBehaviour
             //左のカメラ
             roomObjectManager.RoomObjectPriorityChange(cameraSet.camLookLeft, vcamNumLeft);
 
-            CameraEnabledOn();
+            //CameraEnabledOn();
             /*
             //カメラ分割を設定
             currentCameraDivision = cameraSet.camDivision;
@@ -244,6 +245,7 @@ public class TextWindow : MonoBehaviour
             //それぞれのカメラの表示範囲を指定の位置まで移動する
             TalkCameraRectMove();
             */
+            
             //カメラ分割を設定
             if (currentCameraDivision != cameraSet.camDivision)
             {
@@ -252,6 +254,7 @@ public class TextWindow : MonoBehaviour
 
                 TalkCameraRectMove();
             }
+            
             Debug.Log("currentCameraDivision:" + currentCameraDivision + " cameraSet.camDivision:" + cameraSet.camDivision);
 
             //話者の名前を表示
@@ -296,7 +299,7 @@ public class TextWindow : MonoBehaviour
 
             
                 
-            Debug.Log("クリック　会話イベント進行");
+            //Debug.Log("クリック　会話イベント進行");
 
             if (!isTyping)
             {
@@ -344,6 +347,9 @@ public class TextWindow : MonoBehaviour
 
             //画面効果の切り替え
             gameManager.SwitchDepthOfField(false);
+
+            //会話カメラ設定を会話開始時の設定に変更
+            currentCameraDivision = CameraSet.CameraDivision.Start;
 
             //会話用カメラの非表示
             CameraEnabledOff();
